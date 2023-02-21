@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-20 Mon 19:47 -->
+<!-- 2023-02-21 Tue 12:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Website Construction</title>
@@ -201,13 +201,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org55db7d8">1. hosting with dropbox</a>
+<li><a href="#orgc2db04d">1. hosting with dropbox</a>
 <ul>
-<li><a href="#org9f12533">1.1. Things to learn</a>
+<li><a href="#orga0a336b">1.1. Things to learn</a>
 <ul>
-<li><a href="#orgcab139f">1.1.1. Git - use github properly</a></li>
-<li><a href="#org5aa4184">1.1.2. Dropbox hosting</a></li>
-<li><a href="#org7260cbb">1.1.3. Building a site with emacs + (HTML, CC? what else?)</a></li>
+<li><a href="#org4c6423a">1.1.1. Git - use github properly</a></li>
+<li><a href="#org2b6f44d">1.1.2. Dropbox hosting</a></li>
+<li><a href="#orga22d221">1.1.3. Building a site with emacs + (HTML, CC? what else?)</a></li>
 </ul>
 </li>
 </ul>
@@ -216,33 +216,37 @@
 </div>
 </div>
 
-<div id="outline-container-org55db7d8" class="outline-2">
-<h2 id="org55db7d8"><span class="section-number-2">1.</span> hosting with dropbox</h2>
+<div id="outline-container-orgc2db04d" class="outline-2">
+<h2 id="orgc2db04d"><span class="section-number-2">1.</span> hosting with dropbox</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="https://alexcican.com/post/guide-hosting-website-dropbox-github/">How I moved my websites to Dropbox and GitHub</a></li>
 </ul>
-</div>
 
-<div id="outline-container-org9f12533" class="outline-3">
-<h3 id="org9f12533"><span class="section-number-3">1.1.</span> Things to learn</h3>
+
+<ul class="org-ul">
+<li><a href="https://sendagirich.github.io/AA.html#org840288c">All Aboard ideas</a></li>
+</ul>
+</div>
+<div id="outline-container-orga0a336b" class="outline-3">
+<h3 id="orga0a336b"><span class="section-number-3">1.1.</span> Things to learn</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-orgcab139f" class="outline-4">
-<h4 id="orgcab139f"><span class="section-number-4">1.1.1.</span> <a href="git.html">Git</a> - use github properly</h4>
+<div id="outline-container-org4c6423a" class="outline-4">
+<h4 id="org4c6423a"><span class="section-number-4">1.1.1.</span> <a href="git.html">Git</a> - use github properly</h4>
 </div>
-<div id="outline-container-org5aa4184" class="outline-4">
-<h4 id="org5aa4184"><span class="section-number-4">1.1.2.</span> Dropbox hosting</h4>
+<div id="outline-container-org2b6f44d" class="outline-4">
+<h4 id="org2b6f44d"><span class="section-number-4">1.1.2.</span> Dropbox hosting</h4>
 </div>
-<div id="outline-container-org7260cbb" class="outline-4">
-<h4 id="org7260cbb"><span class="section-number-4">1.1.3.</span> Building a site with emacs + (HTML, CC? what else?)</h4>
+<div id="outline-container-orga22d221" class="outline-4">
+<h4 id="orga22d221"><span class="section-number-4">1.1.3.</span> Building a site with emacs + (HTML, CC? what else?)</h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Richard Williams</p>
-<p class="date">Created: 2023-02-20 Mon 19:47</p>
+<p class="date">Created: 2023-02-21 Tue 12:11</p>
 </div>
 </body>
 </html>
