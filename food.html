@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-02 Fri 18:19 -->
+<!-- 2023-06-02 Fri 18:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -194,8 +194,402 @@
   .org-svg { }
 </style>
 <style type="text/css">
-article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#eee8d5;color:#657b83;margin:1em}body{background-color:#fdf6e3;margin:0 auto;max-width:23cm;border:1pt solid #93a1a1;padding:1em}code{background-color:#eee8d5;padding:2px}a{color:#b58900}a:visited{color:#cb4b16}a:hover{color:#cb4b16}h1{color:#d33682}h2,h3,h4,h5,h6{color:#859900}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+/******************************************************
+* I copied these styles from markdotto.com, who is
+* the creator of bootstrap, and I also did some
+* modification. Thanks Mark for the beautiful theme,
+* so I reserved the @mdo sign below.
+*****************************************************/
+
+/*
+__
+__                  /\ \
+/'_`\_    ___ ___    \_\ \    ___
+/'/'_` \ /' __` __`\  /'_` \  / __`\
+/\ \ \L\ \/\ \/\ \/\ \/\ \L\ \/\ \L\ \
+\ \ `\__,_\ \_\ \_\ \_\ \___,_\ \____/
+\ `\_____\\/_/\/_/\/_/\/__,_ /\/___/
+`\/_____/
+
+*/
+
+
+
+/* Body resets
+-------------------------------------------------- */
+
+* {
+-webkit-box-sizing:  border-box;
+-moz-box-sizing:  border-box;
+box-sizing:  border-box;
+}
+html, body {
+margin:  0;
+padding:  0;
+}
+html {
+font-size:  62.5%;
+}
+body {
+padding:  20px;
+font-family:  Menlo, Monaco, monospace;
+font-size:  14px;
+line-height:  1.5;
+color:  #666;
+background-color:  #fff;
+}
+p {
+margin:  0 0 20px;
+}
+h1, h2, h3 {
+position:  relative;
+margin:  30px 0 20px;
+font-size:  18px;
+font-weight:  bold;
+line-height:  1.1;
+color:  #111;
+text-rendering:  optimizeLegibility;
+}
+h1:before, h2:before, h3:before {
+position:  absolute;
+top:  auto;
+color:  #ccc;
+display:  none;
+}
+h1:before {
+content:  "";
+left:  -1.25em;
+}
+h2:before {
+content:  "*";
+left:  -2em;
+}
+h3:before {
+content:  "**";
+left:  -2.5em;
+}
+i, em, b, strong {
+padding-left:  .1em;
+padding-right:  .1em;
+}
+b, strong {
+font-weight:  bold;
+color:  #333;
+}
+b:before, b: after, strong:before, strong: after {
+content:  "*";
+}
+i:before, i: after, em:before, em: after {
+content:  "/";
+}
+hr {
+margin:  0;
+border:  0;
+}
+hr: after {
+display:  block;
+margin:  20px 0;
+content:  "----------------------------------------------------------------";
+color:  #ccc;
+}
+ul, ol {
+padding:  0;
+margin:  0 0 20px;
+}
+code, pre {
+font-family:  Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+code {
+color:  #d14;
+}
+code:before, code: after {
+content:  "=";
+color:  #ccc;
+}
+pre {
+display:  block;
+margin:  0 0 14px;
+padding:  15px;
+border-radius:  3px 3px 3px 3px;
+font-size:  18px;
+line-height:  28px;
+background-color:  #f5f5f5;
+white-space:  pre;
+white-space:  pre-wrap;
+word-break:  break-all;
+word-wrap:  break-word;
+}
+blockquote {
+padding:  0 0 0 20px;
+margin:  0 30px 20px -22.5px;
+color:  #999;
+border-left:  8px solid #e5e5e5;
+}
+blockquote p: last-child {
+margin-bottom:  0;
+}
+img {
+display:  block;
+margin:  0;
+border-radius:  5px;
+}
+a {
+font-weight:  inherit;
+line-height:  inherit;
+color:  #000;
+text-decoration:  none;
+}
+sup a:before {
+content:  "[";
+}
+sup a: after {
+content:  "]";
+}
+a: hover {
+text-decoration:  underline;
+}
+table {
+line-height:  2.5;
+margin-bottom:  15px;
+max-width:  100%;
+width:  100%;
+}
+table td, table th {
+padding:  0 15px;
+}
+table th.left, table td.left {
+text-align:  left;
+}
+table th.right, table td.right {
+text-align:  right;
+}
+/******************************************************/
+/* body */
+body {
+margin:  0 auto;
+max-width:  770px;
+}
+/* head */
+.masthead {
+color:  #888;
+}
+.masthead: after {
+display:  block;
+content:  '----------------------------------------------------------------';
+margin:  10px 0;
+color:  #ccc;
+}
+.masthead a {
+color:  #333;
+}
+.masthead ul {
+list-style:  none;
+}
+.masthead li {
+display:  inline-block;
+}
+.masthead li + li:before {
+display:  inline-block;
+content:  "\00B7 \00a0";
+color:  #ccc;
+}
+/* searchform*/
+#searchform {
+position:  absolute;
+top:  54px;
+right:  30.4%;
+}
+#searchform #s {
+background:  url("/media/img/search.png") no-repeat 5px 6px;
+box-shadow:  inset 0 1px 1px rgba(0,0,0,0.1);
+border:  1px solid #ddd;
+border-radius:  2px;
+-moz-border-radius:  2px;
+width:  90px;
+height:  30px;
+line-height:  12px;
+padding:  4px 10px 4px 28px;
+
+-webkit-transition-duration:  400ms;
+-webkit-transition-property:  width, background;
+-webkit-transition-timing-function:  ease;
+-moz-transition-duration:  400ms;
+-moz-transition-property:  width, background;
+-moz-transition-timing-function:  ease;
+-o-transition-duration:  400ms;
+-o-transition-property:  width, background;
+-o-transition-timing-function:  ease;
+}
+#searchform #s: focus {
+background-color:  #f9f9f9;
+width:  160px;
+}
+.masthead img.avatar {
+position:  relative;
+float:  right;
+margin-top:  -100px;
+margin-bottom:  -100%;
+margin-right:  10%;
+width:  200px;
+background-color:  #fff;
+}
+/* post */
+.post {
+position:  relative;
+}
+.post: after {
+display:  block;
+content:  "----------------------------------------------------------------";
+color:  #ccc;
+}
+.post img {
+max-width:  100%;
+}
+.post li {
+list-style:  none outside none;
+}
+.post ul > li:before {
+content:  "- ";
+margin-left:  -1.25em;
+color:  #ccc;
+}
+.post ol {
+counter-reset:  o-list;
+}
+.post ol > li:before {
+content:  counter(o-list) ") ";
+counter-increment:  o-list;
+margin-left:  -1.85em;
+color:  #ccc;
+}
+
+/* special for li in pre */
+.post pre li {
+list-style-type:  decimal;
+}
+
+.post pre li:before {
+display:  none;
+}
+
+/* meta info */
+.post-info {
+display:  inline-block;
+margin:  -10px 0 -10px;
+color:  #999;
+}
+.post-info + .post-info:before {
+content:  "\2223 \00a0";
+}
+.post-meta: after {
+content:  "----------------------------------------------------------------";
+display:  block;
+margin-top:  -1px;
+color:  #ccc;
+}
+
+/* table of content */
+#table-of-contents {
+position:  fixed;
+right:  0em;
+top:  0em;
+border: 1px solid #e1e1e8;
+-webkit-box-shadow:  0 0 1em #777777;
+-moz-box-shadow:  0 0 1em #777777;
+-webkit-border-bottom-left-radius:  5px;
+-moz-border-radius-bottomleft:  5px;
+text-align:  center;
+/* ensure doesn't flow off the screen when expanded */
+max-height:  80%;
+overflow:  auto;
+z-index:  200;
+}
+
+#table-of-contents h2 {
+max-width:  20em;
+font-weight:  normal;
+padding-left:  0.5em;
+padding-top:  0.05em;
+padding-bottom:  0.05em;
+}
+
+#table-of-contents ul {
+margin-left:  14pt;
+margin-bottom:  10pt;
+padding:  0
+}
+
+#table-of-contents li {
+padding:  0;
+margin:  1px;
+list-style:  none;
+}
+
+#table-of-contents ul>: first-child {
+color:  blue;
+}
+
+#table-of-contents #text-table-of-contents {
+display:  none;
+text-align:  left;
+}
+
+#table-of-contents: hover #text-table-of-contents {
+display:  block;
+padding:  0.5em;
+margin-top:  -1.5em;
+}
+
+/* footer */
+.footer {
+margin:  80px 0 0;
+text-align:  center;
+font-size:  15px;
+color:  #999;
+}
+.footer > p {
+margin:  0;
+line-height:  1.5;
+}
+.footpara {
+display:  inline;
+}
+
+/* Responsive
+-------------------------------------------------- */
+
+@media (min-width:  768px) {
+/* Increase body padding and font-sizes */
+body {
+padding:  30px;
+font-size:  18px;
+line-height:  1.75;
+}
+h1:before, h2:before, h3:before {
+display:  inline;
+}
+}
+
+@media (min-width:  1024px) {
+body {
+padding:  30px;
+}
+}
 </style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',function() {
+document.getElementById("table-of-contents").onclick = function() {
+var elem = document.getElementById("text-table-of-contents");
+elem.style.display = elem.style.display == "block" ? "none" : "block";
+}
+});
+
+var url = document.location.href;
+var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
+function show_org_source(){
+document.location.href = orgsource;
+}
+</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -224,64 +618,68 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org959dcdb">Food</a>
+<li><a href="#org0862e1f">Food</a>
 <ul>
-<li><a href="#org144c635">Food</a></li>
-<li><a href="#org97a434e">Meals</a></li>
+<li><a href="#org56d541b">Food</a></li>
+<li><a href="#orge3fb654">Meals</a></li>
 </ul>
 </li>
-<li><a href="#orge130dc7">Key phrases 1</a>
+<li><a href="#org2bf952d">Key phrases 1</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgb08f21a">Dialogue 1</a></li>
+<li><a href="#orge60c925">Dialogue 1</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc038db4">Food adjectives</a></li>
-<li><a href="#org556602e">Cooking methods</a>
+<li><a href="#org44e87c1">Food adjectives</a></li>
+<li><a href="#org09ae2fc">Cooking methods</a>
 <ul>
-<li><a href="#orgb5822e6">Key phrases 2</a>
+<li><a href="#orgcd8ceac">Key phrases 2</a>
 <ul>
-<li><a href="#org9ee811e">Dialogue 2</a></li>
+<li><a href="#orgc5f9bc6">Dialogue 2</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb3f22cd">Cooking Utensils</a>
+<li><a href="#org904e1ed">Cooking Utensils</a>
 <ul>
-<li><a href="#orgff91777">Ingredients</a>
+<li><a href="#orga2d6d83">Ingredients</a>
 <ul>
-<li><a href="#org2f48ec5">Dialogue 3</a></li>
+<li><a href="#orgd44b7f9">Dialogue 3</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org6fda7fd">Questions</a></li>
-<li><a href="#orgea1365e">Test</a>
+<li><a href="#org84c6e98">Questions</a></li>
+<li><a href="#org6219244">Test</a>
 <ul>
-<li><a href="#org7251518">Dishes</a></li>
+<li><a href="#org1e3329b">Dishes</a></li>
 </ul>
 </li>
-<li><a href="#orgba46d24">Nokori</a>
+<li><a href="#org57087e3">Nokori</a>
 <ul>
-<li><a href="#org9dcdbf2">Heading</a></li>
+<li><a href="#org004e4c8">Heading</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <p>
+/home/rich/Dropbox/My<sub>documents</sub>/Areas/Tech/emacs<sub>templates</sub><sub>and</sub><sub>info</sub>/html<sub>export</sub><sub>templates</sub>/org-themes-master/src/solarized<sub>light</sub>/solarized<sub>light.theme</sub>
+</p>
+
+<p>
 /home/rich/Dropbox/My<sub>documents</sub>/Areas/Tech/emacs<sub>templates</sub><sub>and</sub><sub>info</sub>/html<sub>export</sub><sub>templates</sub>/org-themes-master/src/readtheorg<sub>inline</sub> (copy)/readtheorg<sub>inline.theme</sub>
 </p>
-<div id="outline-container-org959dcdb" class="outline-2">
-<h2 id="org959dcdb">Food</h2>
-<div class="outline-text-2" id="text-org959dcdb">
+<div id="outline-container-org0862e1f" class="outline-2">
+<h2 id="org0862e1f">Food</h2>
+<div class="outline-text-2" id="text-org0862e1f">
 </div>
-<div id="outline-container-org144c635" class="outline-3">
-<h3 id="org144c635">Food</h3>
-<div class="outline-text-3" id="text-org144c635">
+<div id="outline-container-org56d541b" class="outline-3">
+<h3 id="org56d541b">Food</h3>
+<div class="outline-text-3" id="text-org56d541b">
 <div class="org-center">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -382,9 +780,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </div>
 </div>
 </div>
-<div id="outline-container-org97a434e" class="outline-3">
-<h3 id="org97a434e">Meals</h3>
-<div class="outline-text-3" id="text-org97a434e">
+<div id="outline-container-orge3fb654" class="outline-3">
+<h3 id="orge3fb654">Meals</h3>
+<div class="outline-text-3" id="text-orge3fb654">
 <div class="org-center">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -428,9 +826,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 
 
-<div id="outline-container-orge130dc7" class="outline-2">
-<h2 id="orge130dc7">Key phrases 1</h2>
-<div class="outline-text-2" id="text-orge130dc7">
+<div id="outline-container-org2bf952d" class="outline-2">
+<h2 id="org2bf952d">Key phrases 1</h2>
+<div class="outline-text-2" id="text-org2bf952d">
 <ul class="org-ul">
 <li>It&rsquo;s a kind of&#x2026;</li>
 <li>It&rsquo;s like&#x2026;</li>
@@ -438,9 +836,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </ul>
 </div>
 
-<div id="outline-container-orgb08f21a" class="outline-4">
-<h4 id="orgb08f21a">Dialogue 1</h4>
-<div class="outline-text-4" id="text-orgb08f21a">
+<div id="outline-container-orge60c925" class="outline-4">
+<h4 id="orge60c925">Dialogue 1</h4>
+<div class="outline-text-4" id="text-orge60c925">
 <ul class="org-ul">
 <li><code>C = customer</code></li>
 <li><code>W = waiter or waitress</code></li>
@@ -456,9 +854,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </div>
 </div>
 
-<div id="outline-container-orgc038db4" class="outline-2">
-<h2 id="orgc038db4">Food adjectives</h2>
-<div class="outline-text-2" id="text-orgc038db4">
+<div id="outline-container-org44e87c1" class="outline-2">
+<h2 id="org44e87c1">Food adjectives</h2>
+<div class="outline-text-2" id="text-org44e87c1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -567,9 +965,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </div>
 </div>
 
-<div id="outline-container-org556602e" class="outline-2">
-<h2 id="org556602e">Cooking methods</h2>
-<div class="outline-text-2" id="text-org556602e">
+<div id="outline-container-org09ae2fc" class="outline-2">
+<h2 id="org09ae2fc">Cooking methods</h2>
+<div class="outline-text-2" id="text-org09ae2fc">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -624,9 +1022,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </table>
 </div>
 
-<div id="outline-container-orgb5822e6" class="outline-3">
-<h3 id="orgb5822e6">Key phrases 2</h3>
-<div class="outline-text-3" id="text-orgb5822e6">
+<div id="outline-container-orgcd8ceac" class="outline-3">
+<h3 id="orgcd8ceac">Key phrases 2</h3>
+<div class="outline-text-3" id="text-orgcd8ceac">
 <p>
 It’s made by -ing…
 It’s made by steaming vegetables.
@@ -634,9 +1032,9 @@ It’s made with / from steamed vegetables.
 </p>
 </div>
 
-<div id="outline-container-org9ee811e" class="outline-4">
-<h4 id="org9ee811e">Dialogue 2</h4>
-<div class="outline-text-4" id="text-org9ee811e">
+<div id="outline-container-orgc5f9bc6" class="outline-4">
+<h4 id="orgc5f9bc6">Dialogue 2</h4>
+<div class="outline-text-4" id="text-orgc5f9bc6">
 <ul class="org-ul">
 <li>C = customer</li>
 <li>W = waiter or waitress</li>
@@ -653,9 +1051,9 @@ It’s made with / from steamed vegetables.
 </div>
 </div>
 
-<div id="outline-container-orgb3f22cd" class="outline-2">
-<h2 id="orgb3f22cd">Cooking Utensils</h2>
-<div class="outline-text-2" id="text-orgb3f22cd">
+<div id="outline-container-org904e1ed" class="outline-2">
+<h2 id="org904e1ed">Cooking Utensils</h2>
+<div class="outline-text-2" id="text-org904e1ed">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -704,9 +1102,9 @@ It’s made with / from steamed vegetables.
 </div>
 
 
-<div id="outline-container-orgff91777" class="outline-3">
-<h3 id="orgff91777">Ingredients</h3>
-<div class="outline-text-3" id="text-orgff91777">
+<div id="outline-container-orga2d6d83" class="outline-3">
+<h3 id="orga2d6d83">Ingredients</h3>
+<div class="outline-text-3" id="text-orga2d6d83">
 <p>
 flour water milk cream cheese
 sugar
@@ -751,9 +1149,9 @@ sauce~
 </table>
 </div>
 
-<div id="outline-container-org2f48ec5" class="outline-4">
-<h4 id="org2f48ec5">Dialogue 3</h4>
-<div class="outline-text-4" id="text-org2f48ec5">
+<div id="outline-container-orgd44b7f9" class="outline-4">
+<h4 id="orgd44b7f9">Dialogue 3</h4>
+<div class="outline-text-4" id="text-orgd44b7f9">
 <ul class="org-ul">
 <li>C = customer</li>
 <li>W = waiter or waitress</li>
@@ -788,9 +1186,9 @@ You should&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org6fda7fd" class="outline-2">
-<h2 id="org6fda7fd">Questions</h2>
-<div class="outline-text-2" id="text-org6fda7fd">
+<div id="outline-container-org84c6e98" class="outline-2">
+<h2 id="org84c6e98">Questions</h2>
+<div class="outline-text-2" id="text-org84c6e98">
 <ul class="org-ul">
 <li>phrases
 <ul class="org-ul">
@@ -808,9 +1206,9 @@ You should&#x2026;
 </ul>
 </div>
 </div>
-<div id="outline-container-orgea1365e" class="outline-2">
-<h2 id="orgea1365e">Test</h2>
-<div class="outline-text-2" id="text-orgea1365e">
+<div id="outline-container-org6219244" class="outline-2">
+<h2 id="org6219244">Test</h2>
+<div class="outline-text-2" id="text-org6219244">
 <ul class="org-ul">
 <li>Explain a dish using three or more of the following:
 <ul class="org-ul">
@@ -835,9 +1233,9 @@ You should&#x2026;
 </ul>
 </div>
 
-<div id="outline-container-org7251518" class="outline-3">
-<h3 id="org7251518">Dishes</h3>
-<div class="outline-text-3" id="text-org7251518">
+<div id="outline-container-org1e3329b" class="outline-3">
+<h3 id="org1e3329b">Dishes</h3>
+<div class="outline-text-3" id="text-org1e3329b">
 <p>
 okonomiyaki
 monjayaki
@@ -863,9 +1261,9 @@ goya champoru
 </div>
 </div>
 </div>
-<div id="outline-container-orgba46d24" class="outline-2">
-<h2 id="orgba46d24">Nokori</h2>
-<div class="outline-text-2" id="text-orgba46d24">
+<div id="outline-container-org57087e3" class="outline-2">
+<h2 id="org57087e3">Nokori</h2>
+<div class="outline-text-2" id="text-org57087e3">
 <div class="org-center">
 <p>
 <b>Food</b>
@@ -941,9 +1339,9 @@ This is a quote.
 </div>
 
 
-<div id="outline-container-org9dcdbf2" class="outline-3">
-<h3 id="org9dcdbf2">Heading</h3>
-<div class="outline-text-3" id="text-org9dcdbf2">
+<div id="outline-container-org004e4c8" class="outline-3">
+<h3 id="org004e4c8">Heading</h3>
+<div class="outline-text-3" id="text-org004e4c8">
 <p>
 This is some text with a specific font: {\fontenc{Arial}Arial font}.
 </p>
@@ -960,7 +1358,7 @@ Fuga
 This is some text with a specific font: .
 </p>
 
-<pre class="example" environment="{times}" id="orgb8af7e4">
+<pre class="example" environment="{times}" id="org9c9dd5c">
   This sentence is false.
 </pre>
 </div>
@@ -969,7 +1367,7 @@ This is some text with a specific font: .
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Richard Williams</p>
-<p class="date">Created: 2023-06-02 Fri 18:19</p>
+<p class="date">Created: 2023-06-02 Fri 18:22</p>
 </div>
 </body>
 </html>
