@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-02 Fri 18:22 -->
+<!-- 2023-06-02 Fri 18:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -194,402 +194,8 @@
   .org-svg { }
 </style>
 <style type="text/css">
-/******************************************************
-* I copied these styles from markdotto.com, who is
-* the creator of bootstrap, and I also did some
-* modification. Thanks Mark for the beautiful theme,
-* so I reserved the @mdo sign below.
-*****************************************************/
-
-/*
-__
-__                  /\ \
-/'_`\_    ___ ___    \_\ \    ___
-/'/'_` \ /' __` __`\  /'_` \  / __`\
-/\ \ \L\ \/\ \/\ \/\ \/\ \L\ \/\ \L\ \
-\ \ `\__,_\ \_\ \_\ \_\ \___,_\ \____/
-\ `\_____\\/_/\/_/\/_/\/__,_ /\/___/
-`\/_____/
-
-*/
-
-
-
-/* Body resets
--------------------------------------------------- */
-
-* {
--webkit-box-sizing:  border-box;
--moz-box-sizing:  border-box;
-box-sizing:  border-box;
-}
-html, body {
-margin:  0;
-padding:  0;
-}
-html {
-font-size:  62.5%;
-}
-body {
-padding:  20px;
-font-family:  Menlo, Monaco, monospace;
-font-size:  14px;
-line-height:  1.5;
-color:  #666;
-background-color:  #fff;
-}
-p {
-margin:  0 0 20px;
-}
-h1, h2, h3 {
-position:  relative;
-margin:  30px 0 20px;
-font-size:  18px;
-font-weight:  bold;
-line-height:  1.1;
-color:  #111;
-text-rendering:  optimizeLegibility;
-}
-h1:before, h2:before, h3:before {
-position:  absolute;
-top:  auto;
-color:  #ccc;
-display:  none;
-}
-h1:before {
-content:  "";
-left:  -1.25em;
-}
-h2:before {
-content:  "*";
-left:  -2em;
-}
-h3:before {
-content:  "**";
-left:  -2.5em;
-}
-i, em, b, strong {
-padding-left:  .1em;
-padding-right:  .1em;
-}
-b, strong {
-font-weight:  bold;
-color:  #333;
-}
-b:before, b: after, strong:before, strong: after {
-content:  "*";
-}
-i:before, i: after, em:before, em: after {
-content:  "/";
-}
-hr {
-margin:  0;
-border:  0;
-}
-hr: after {
-display:  block;
-margin:  20px 0;
-content:  "----------------------------------------------------------------";
-color:  #ccc;
-}
-ul, ol {
-padding:  0;
-margin:  0 0 20px;
-}
-code, pre {
-font-family:  Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-code {
-color:  #d14;
-}
-code:before, code: after {
-content:  "=";
-color:  #ccc;
-}
-pre {
-display:  block;
-margin:  0 0 14px;
-padding:  15px;
-border-radius:  3px 3px 3px 3px;
-font-size:  18px;
-line-height:  28px;
-background-color:  #f5f5f5;
-white-space:  pre;
-white-space:  pre-wrap;
-word-break:  break-all;
-word-wrap:  break-word;
-}
-blockquote {
-padding:  0 0 0 20px;
-margin:  0 30px 20px -22.5px;
-color:  #999;
-border-left:  8px solid #e5e5e5;
-}
-blockquote p: last-child {
-margin-bottom:  0;
-}
-img {
-display:  block;
-margin:  0;
-border-radius:  5px;
-}
-a {
-font-weight:  inherit;
-line-height:  inherit;
-color:  #000;
-text-decoration:  none;
-}
-sup a:before {
-content:  "[";
-}
-sup a: after {
-content:  "]";
-}
-a: hover {
-text-decoration:  underline;
-}
-table {
-line-height:  2.5;
-margin-bottom:  15px;
-max-width:  100%;
-width:  100%;
-}
-table td, table th {
-padding:  0 15px;
-}
-table th.left, table td.left {
-text-align:  left;
-}
-table th.right, table td.right {
-text-align:  right;
-}
-/******************************************************/
-/* body */
-body {
-margin:  0 auto;
-max-width:  770px;
-}
-/* head */
-.masthead {
-color:  #888;
-}
-.masthead: after {
-display:  block;
-content:  '----------------------------------------------------------------';
-margin:  10px 0;
-color:  #ccc;
-}
-.masthead a {
-color:  #333;
-}
-.masthead ul {
-list-style:  none;
-}
-.masthead li {
-display:  inline-block;
-}
-.masthead li + li:before {
-display:  inline-block;
-content:  "\00B7 \00a0";
-color:  #ccc;
-}
-/* searchform*/
-#searchform {
-position:  absolute;
-top:  54px;
-right:  30.4%;
-}
-#searchform #s {
-background:  url("/media/img/search.png") no-repeat 5px 6px;
-box-shadow:  inset 0 1px 1px rgba(0,0,0,0.1);
-border:  1px solid #ddd;
-border-radius:  2px;
--moz-border-radius:  2px;
-width:  90px;
-height:  30px;
-line-height:  12px;
-padding:  4px 10px 4px 28px;
-
--webkit-transition-duration:  400ms;
--webkit-transition-property:  width, background;
--webkit-transition-timing-function:  ease;
--moz-transition-duration:  400ms;
--moz-transition-property:  width, background;
--moz-transition-timing-function:  ease;
--o-transition-duration:  400ms;
--o-transition-property:  width, background;
--o-transition-timing-function:  ease;
-}
-#searchform #s: focus {
-background-color:  #f9f9f9;
-width:  160px;
-}
-.masthead img.avatar {
-position:  relative;
-float:  right;
-margin-top:  -100px;
-margin-bottom:  -100%;
-margin-right:  10%;
-width:  200px;
-background-color:  #fff;
-}
-/* post */
-.post {
-position:  relative;
-}
-.post: after {
-display:  block;
-content:  "----------------------------------------------------------------";
-color:  #ccc;
-}
-.post img {
-max-width:  100%;
-}
-.post li {
-list-style:  none outside none;
-}
-.post ul > li:before {
-content:  "- ";
-margin-left:  -1.25em;
-color:  #ccc;
-}
-.post ol {
-counter-reset:  o-list;
-}
-.post ol > li:before {
-content:  counter(o-list) ") ";
-counter-increment:  o-list;
-margin-left:  -1.85em;
-color:  #ccc;
-}
-
-/* special for li in pre */
-.post pre li {
-list-style-type:  decimal;
-}
-
-.post pre li:before {
-display:  none;
-}
-
-/* meta info */
-.post-info {
-display:  inline-block;
-margin:  -10px 0 -10px;
-color:  #999;
-}
-.post-info + .post-info:before {
-content:  "\2223 \00a0";
-}
-.post-meta: after {
-content:  "----------------------------------------------------------------";
-display:  block;
-margin-top:  -1px;
-color:  #ccc;
-}
-
-/* table of content */
-#table-of-contents {
-position:  fixed;
-right:  0em;
-top:  0em;
-border: 1px solid #e1e1e8;
--webkit-box-shadow:  0 0 1em #777777;
--moz-box-shadow:  0 0 1em #777777;
--webkit-border-bottom-left-radius:  5px;
--moz-border-radius-bottomleft:  5px;
-text-align:  center;
-/* ensure doesn't flow off the screen when expanded */
-max-height:  80%;
-overflow:  auto;
-z-index:  200;
-}
-
-#table-of-contents h2 {
-max-width:  20em;
-font-weight:  normal;
-padding-left:  0.5em;
-padding-top:  0.05em;
-padding-bottom:  0.05em;
-}
-
-#table-of-contents ul {
-margin-left:  14pt;
-margin-bottom:  10pt;
-padding:  0
-}
-
-#table-of-contents li {
-padding:  0;
-margin:  1px;
-list-style:  none;
-}
-
-#table-of-contents ul>: first-child {
-color:  blue;
-}
-
-#table-of-contents #text-table-of-contents {
-display:  none;
-text-align:  left;
-}
-
-#table-of-contents: hover #text-table-of-contents {
-display:  block;
-padding:  0.5em;
-margin-top:  -1.5em;
-}
-
-/* footer */
-.footer {
-margin:  80px 0 0;
-text-align:  center;
-font-size:  15px;
-color:  #999;
-}
-.footer > p {
-margin:  0;
-line-height:  1.5;
-}
-.footpara {
-display:  inline;
-}
-
-/* Responsive
--------------------------------------------------- */
-
-@media (min-width:  768px) {
-/* Increase body padding and font-sizes */
-body {
-padding:  30px;
-font-size:  18px;
-line-height:  1.75;
-}
-h1:before, h2:before, h3:before {
-display:  inline;
-}
-}
-
-@media (min-width:  1024px) {
-body {
-padding:  30px;
-}
-}
+/* * Cascading stylesheet for GNU Emacs org mode * Nicolas P. Rougier - September 2020 * Released under a Creative Commons CC-BY 4.0 licence */ body {    font-family: "Roboto Mono", monospace;    font-size: 14px;    font-weight: 300;    color:  rgba(51, 51, 51, 1.00);    line-height: 1.4em;    font-weight: light;    counter-reset: section;    counter-reset: toc-section;    counter-increment: toc-section;}a, a:visited {    text-decoration: none;    color: rgba(48,63,159, 1.00);}.org-bold {    font-weight: 400;}i, i a {    color: #999999;    font-style: normal;}.org-italic, .org-org-meta-line {    color: rgba(48,63,159, 0.75);    font-style: normal;}.org-face-salient {    font-weight: 400;}/* Blinking cursor when strike-through */.custom { animation: blinker 1s linear infinite; }@keyframes blinker { 50% { opacity: 0; } }/* --- Side notes --- */div.side-note::before {    content: "Note";    color: rgba(0,0,0,.75);    font-weight: 400;}div.side-note {    color: rgba(0,0,0,.5);    float: left;    font-size: .85em;    line-height: 1.25em;    margin-left: -24em;    width: 20em;}/* --- Table of contents --- */#table-of-contents {    padding-top: 0em;    margin-top: 0em;    text-transform: uppercase;}#table-of-contents ul {    padding: 0;    font-weight: 400;    list-style: none;    counter-reset: list 0;}#table-of-contents ul ul {    padding-left:0em;    font-weight: 300;    font-size: 90%;    line-height: 1.5em;    margin-top: 0em;    margin-bottom: 1em;    padding-left: 2em;}#table-of-contents h2:before {    content: "";    counter-reset: section;}#table-of-contents ul li {    vertical-align: top;    display: inline-block;    width: 32%;}#table-of-contents ul li:before {    display: inline-block;    counter-increment: list;    content: counters(list, ".") ".";    width: 2.0em;    margin-left: -2.0em;    text-align: right;    text-transform: uppercase;    color:#2255bb;}#table-of-contents ul li ul,#table-of-contents ul li ul li {    display: static;    width: 100%;    padding-left: 0;    line-height: 1.35em;}#table-of-contents ul li ul li:before {    content: ""}#table-of-contents h2 {    font-size: 1em;    font-weight: 400;    padding-top: 5em;}#table-of-contents h2:before {    content: "ʘ";}blockquote {    color: #999999;    padding-top: 0;    margin-left: 1em;    padding-left: 1em;    border-left: 3px solid #cccccc;}ul.org-ul {    padding-left: 0}ul.org-ul li  {    list-style-type: none;    margin-bottom: .5em;}ul.org-ul li p {    display: inline-block;    margin-top: 0em;    margin-bottom: 0em;}ul.org-ul li::before {    display: inline-block;    content: "ʘ";    color: #999999;    width: 1em;    margin-left: -1em;}ol.org-ol {    padding-left: 0;    margin-left: 2em;    list-style: none;    counter-reset: li;}.org-ol li  {    counter-increment: li;    margin-bottom: .25em;}.org-ol li::before {    content: counter(li) ". ";    color: #999999;    display: inline-block;    width: 2em;    margin-left: -2em;}#content, #postamble {    margin: 0 auto;    max-width: 920px;    margin-top: 2.5%;    margin-bottom: 2.5%;}#postamble {/*    border-top: 1px solid #999999; */    padding-top: 1.5em;}#postamble p, #postamble a {    color: #999999;    line-height: 1.25em;    margin: 0;    text-align: right;}h1.title {    font-size: 1.5em;    margin-top: 4em;    margin-bottom: 0em;    font-weight: 400;    text-align: left;}span.subtitle {    display: inline-block;    margin-top: .25em;    font-size: 74.5%;    font-weight: 300;    color: #999999;}h3 { padding-top: .5em; }h1, h2, h3, h4 {    color: black;    font-size: 1em;    font-weight: 400;    /* font-variant: all-small-caps; */    text-transform: uppercase;}h2 { padding-top: 5em; }h3 { padding-top: 3em; }body {  counter-reset: section;}h2 {  counter-reset: subsection;}h2::before {    color: #cccccc;    float: left;    text-align: right;    font-weight: 300;    width: 7.5em;    margin-left: -8.0em;    counter-increment: section;    content: "Chapter " counter(section) " ";}h3::before {    color: #cccccc;    float: left;    text-align: right;    font-weight: 300;    width: 2.5em;    margin-left: -3.0em;    counter-increment: subsection;    content: counter(section) "." counter(subsection) " ";}code {    background-color: #f9f9f9;    font-family: "Roboto Mono", sans-serif;    font-weight: 400;}pre::before {    color: #cccccc;    float: left;    text-align: right;    font-weight: 300;    width: 3.0em;    margin-left: -4.25em;    font-variant: small-caps;    content: "";}pre.src-lisp::before { content: "lisp"; }pre.src-org::before { content: "org"; }pre {    color: #00008b;    background-color: #fbfbfb;    overflow: auto;    margin: 0em;    padding: 0.25em;    padding-left: 0.5em;    line-height: 1.35em;    font-family: "Roboto Mono", sans-serif;    font-weight: 300;    border-left: 2px dotted #00008b;}pre.src {    position: relative;    overflow: visible;}/* --- Code folding --- */details {    color: rgba(48,63,159, 1.00);    background: #fbfbfb;    border: 1px solid rgba(48,63,159, 1.00);    border-radius: 3px;    padding:  0.25em;    margin-bottom: 1.0em;}details pre {    border: 0;}details pre.src-lisp::before { content: ""; }summary {    outline: 0;    color: rgba(48,63,159, 1.00);}summary::after {    font-size: 0.85em;    color: rgba(48,63,159, 0.25);    display: inline-block;    float: right;    content: "Click to fold/unfold";    padding-right:  0.5em;}/* --- Table --- */table { min-width: 100%; }table, tbody, td, tr, th, colgroup, thead {    border: 0;/*    padding: 0;*/}table {    margin-top: 1em;}thead {    border-bottom: 1px dashed black;}th {    text-align: left;    font-weight: 400;    padding: 0;    margin-bottom: 0.25em;    padding-bottom: 0.25em;}td { padding: 0; }tr:nth-child(even) {background: #f9f9f9;}tr:nth-child(odd) {background: #ffffff;}tbody {/* border-bottom: 1px solid black; */}/* --- Description list --- */dd {    margin-top: 0.25em;    margin-bottom: 0.50em;}/* --- Back links in header --- */div.back a {    float: right;    font-weight: 300;    color: #cccccc;    font-variant: small-caps;    margin-top: -2.5em;}/* h2 { border-bottom: .5px solid #999999; } */
 </style>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded',function() {
-document.getElementById("table-of-contents").onclick = function() {
-var elem = document.getElementById("text-table-of-contents");
-elem.style.display = elem.style.display == "block" ? "none" : "block";
-}
-});
-
-var url = document.location.href;
-var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
-function show_org_source(){
-document.location.href = orgsource;
-}
-</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -618,54 +224,62 @@ document.location.href = orgsource;
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0862e1f">Food</a>
+<li><a href="#org4f0a007">Food</a>
 <ul>
-<li><a href="#org56d541b">Food</a></li>
-<li><a href="#orge3fb654">Meals</a></li>
+<li><a href="#orgb72b9ee">Food</a></li>
+<li><a href="#orgc1a6eff">Meals</a></li>
 </ul>
 </li>
-<li><a href="#org2bf952d">Key phrases 1</a>
+<li><a href="#orgda767af">Key phrases 1</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orge60c925">Dialogue 1</a></li>
+<li><a href="#org0152340">Dialogue 1</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org44e87c1">Food adjectives</a></li>
-<li><a href="#org09ae2fc">Cooking methods</a>
+<li><a href="#org6dc0ace">Food adjectives</a></li>
+<li><a href="#orgbfa4a62">Cooking methods</a>
 <ul>
-<li><a href="#orgcd8ceac">Key phrases 2</a>
+<li><a href="#org693ce8d">Key phrases 2</a>
 <ul>
-<li><a href="#orgc5f9bc6">Dialogue 2</a></li>
+<li><a href="#orgbcc7862">Dialogue 2</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org904e1ed">Cooking Utensils</a>
+<li><a href="#org64f4769">Cooking Utensils</a>
 <ul>
-<li><a href="#orga2d6d83">Ingredients</a>
+<li><a href="#org2de6142">Ingredients</a>
 <ul>
-<li><a href="#orgd44b7f9">Dialogue 3</a></li>
+<li><a href="#org2e08923">Dialogue 3</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org84c6e98">Questions</a></li>
-<li><a href="#org6219244">Test</a>
+<li><a href="#org0352eb0">Questions</a></li>
+<li><a href="#org028fd1f">Test</a>
 <ul>
-<li><a href="#org1e3329b">Dishes</a></li>
+<li><a href="#orgb6ac8fe">Dishes</a></li>
 </ul>
 </li>
-<li><a href="#org57087e3">Nokori</a>
+<li><a href="#org58ff98b">Nokori</a>
 <ul>
-<li><a href="#org004e4c8">Heading</a></li>
+<li><a href="#org6b4e733">Heading</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
+<p>
+/home/rich/Dropbox/My<sub>documents</sub>/Areas/Tech/emacs<sub>templates</sub><sub>and</sub><sub>info</sub>/html<sub>export</sub><sub>templates</sub>/org-themes-master/src/white<sub>clean</sub>/white<sub>clean.theme</sub>
+</p>
+
+<p>
+/home/rich/Dropbox/My<sub>documents</sub>/Areas/Tech/emacs<sub>templates</sub><sub>and</sub><sub>info</sub>/html<sub>export</sub><sub>templates</sub>/org-themes-master/src/white<sub>clean</sub>/white<sub>clean.theme</sub>
+</p>
+
 <p>
 /home/rich/Dropbox/My<sub>documents</sub>/Areas/Tech/emacs<sub>templates</sub><sub>and</sub><sub>info</sub>/html<sub>export</sub><sub>templates</sub>/org-themes-master/src/solarized<sub>light</sub>/solarized<sub>light.theme</sub>
 </p>
@@ -673,13 +287,13 @@ document.location.href = orgsource;
 <p>
 /home/rich/Dropbox/My<sub>documents</sub>/Areas/Tech/emacs<sub>templates</sub><sub>and</sub><sub>info</sub>/html<sub>export</sub><sub>templates</sub>/org-themes-master/src/readtheorg<sub>inline</sub> (copy)/readtheorg<sub>inline.theme</sub>
 </p>
-<div id="outline-container-org0862e1f" class="outline-2">
-<h2 id="org0862e1f">Food</h2>
-<div class="outline-text-2" id="text-org0862e1f">
+<div id="outline-container-org4f0a007" class="outline-2">
+<h2 id="org4f0a007">Food</h2>
+<div class="outline-text-2" id="text-org4f0a007">
 </div>
-<div id="outline-container-org56d541b" class="outline-3">
-<h3 id="org56d541b">Food</h3>
-<div class="outline-text-3" id="text-org56d541b">
+<div id="outline-container-orgb72b9ee" class="outline-3">
+<h3 id="orgb72b9ee">Food</h3>
+<div class="outline-text-3" id="text-orgb72b9ee">
 <div class="org-center">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -780,9 +394,9 @@ document.location.href = orgsource;
 </div>
 </div>
 </div>
-<div id="outline-container-orge3fb654" class="outline-3">
-<h3 id="orge3fb654">Meals</h3>
-<div class="outline-text-3" id="text-orge3fb654">
+<div id="outline-container-orgc1a6eff" class="outline-3">
+<h3 id="orgc1a6eff">Meals</h3>
+<div class="outline-text-3" id="text-orgc1a6eff">
 <div class="org-center">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -826,9 +440,9 @@ document.location.href = orgsource;
 
 
 
-<div id="outline-container-org2bf952d" class="outline-2">
-<h2 id="org2bf952d">Key phrases 1</h2>
-<div class="outline-text-2" id="text-org2bf952d">
+<div id="outline-container-orgda767af" class="outline-2">
+<h2 id="orgda767af">Key phrases 1</h2>
+<div class="outline-text-2" id="text-orgda767af">
 <ul class="org-ul">
 <li>It&rsquo;s a kind of&#x2026;</li>
 <li>It&rsquo;s like&#x2026;</li>
@@ -836,9 +450,9 @@ document.location.href = orgsource;
 </ul>
 </div>
 
-<div id="outline-container-orge60c925" class="outline-4">
-<h4 id="orge60c925">Dialogue 1</h4>
-<div class="outline-text-4" id="text-orge60c925">
+<div id="outline-container-org0152340" class="outline-4">
+<h4 id="org0152340">Dialogue 1</h4>
+<div class="outline-text-4" id="text-org0152340">
 <ul class="org-ul">
 <li><code>C = customer</code></li>
 <li><code>W = waiter or waitress</code></li>
@@ -854,9 +468,9 @@ document.location.href = orgsource;
 </div>
 </div>
 
-<div id="outline-container-org44e87c1" class="outline-2">
-<h2 id="org44e87c1">Food adjectives</h2>
-<div class="outline-text-2" id="text-org44e87c1">
+<div id="outline-container-org6dc0ace" class="outline-2">
+<h2 id="org6dc0ace">Food adjectives</h2>
+<div class="outline-text-2" id="text-org6dc0ace">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -965,9 +579,9 @@ document.location.href = orgsource;
 </div>
 </div>
 
-<div id="outline-container-org09ae2fc" class="outline-2">
-<h2 id="org09ae2fc">Cooking methods</h2>
-<div class="outline-text-2" id="text-org09ae2fc">
+<div id="outline-container-orgbfa4a62" class="outline-2">
+<h2 id="orgbfa4a62">Cooking methods</h2>
+<div class="outline-text-2" id="text-orgbfa4a62">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1022,9 +636,9 @@ document.location.href = orgsource;
 </table>
 </div>
 
-<div id="outline-container-orgcd8ceac" class="outline-3">
-<h3 id="orgcd8ceac">Key phrases 2</h3>
-<div class="outline-text-3" id="text-orgcd8ceac">
+<div id="outline-container-org693ce8d" class="outline-3">
+<h3 id="org693ce8d">Key phrases 2</h3>
+<div class="outline-text-3" id="text-org693ce8d">
 <p>
 It’s made by -ing…
 It’s made by steaming vegetables.
@@ -1032,9 +646,9 @@ It’s made with / from steamed vegetables.
 </p>
 </div>
 
-<div id="outline-container-orgc5f9bc6" class="outline-4">
-<h4 id="orgc5f9bc6">Dialogue 2</h4>
-<div class="outline-text-4" id="text-orgc5f9bc6">
+<div id="outline-container-orgbcc7862" class="outline-4">
+<h4 id="orgbcc7862">Dialogue 2</h4>
+<div class="outline-text-4" id="text-orgbcc7862">
 <ul class="org-ul">
 <li>C = customer</li>
 <li>W = waiter or waitress</li>
@@ -1051,9 +665,9 @@ It’s made with / from steamed vegetables.
 </div>
 </div>
 
-<div id="outline-container-org904e1ed" class="outline-2">
-<h2 id="org904e1ed">Cooking Utensils</h2>
-<div class="outline-text-2" id="text-org904e1ed">
+<div id="outline-container-org64f4769" class="outline-2">
+<h2 id="org64f4769">Cooking Utensils</h2>
+<div class="outline-text-2" id="text-org64f4769">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1102,9 +716,9 @@ It’s made with / from steamed vegetables.
 </div>
 
 
-<div id="outline-container-orga2d6d83" class="outline-3">
-<h3 id="orga2d6d83">Ingredients</h3>
-<div class="outline-text-3" id="text-orga2d6d83">
+<div id="outline-container-org2de6142" class="outline-3">
+<h3 id="org2de6142">Ingredients</h3>
+<div class="outline-text-3" id="text-org2de6142">
 <p>
 flour water milk cream cheese
 sugar
@@ -1149,9 +763,9 @@ sauce~
 </table>
 </div>
 
-<div id="outline-container-orgd44b7f9" class="outline-4">
-<h4 id="orgd44b7f9">Dialogue 3</h4>
-<div class="outline-text-4" id="text-orgd44b7f9">
+<div id="outline-container-org2e08923" class="outline-4">
+<h4 id="org2e08923">Dialogue 3</h4>
+<div class="outline-text-4" id="text-org2e08923">
 <ul class="org-ul">
 <li>C = customer</li>
 <li>W = waiter or waitress</li>
@@ -1186,9 +800,9 @@ You should&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org84c6e98" class="outline-2">
-<h2 id="org84c6e98">Questions</h2>
-<div class="outline-text-2" id="text-org84c6e98">
+<div id="outline-container-org0352eb0" class="outline-2">
+<h2 id="org0352eb0">Questions</h2>
+<div class="outline-text-2" id="text-org0352eb0">
 <ul class="org-ul">
 <li>phrases
 <ul class="org-ul">
@@ -1206,9 +820,9 @@ You should&#x2026;
 </ul>
 </div>
 </div>
-<div id="outline-container-org6219244" class="outline-2">
-<h2 id="org6219244">Test</h2>
-<div class="outline-text-2" id="text-org6219244">
+<div id="outline-container-org028fd1f" class="outline-2">
+<h2 id="org028fd1f">Test</h2>
+<div class="outline-text-2" id="text-org028fd1f">
 <ul class="org-ul">
 <li>Explain a dish using three or more of the following:
 <ul class="org-ul">
@@ -1233,9 +847,9 @@ You should&#x2026;
 </ul>
 </div>
 
-<div id="outline-container-org1e3329b" class="outline-3">
-<h3 id="org1e3329b">Dishes</h3>
-<div class="outline-text-3" id="text-org1e3329b">
+<div id="outline-container-orgb6ac8fe" class="outline-3">
+<h3 id="orgb6ac8fe">Dishes</h3>
+<div class="outline-text-3" id="text-orgb6ac8fe">
 <p>
 okonomiyaki
 monjayaki
@@ -1261,9 +875,9 @@ goya champoru
 </div>
 </div>
 </div>
-<div id="outline-container-org57087e3" class="outline-2">
-<h2 id="org57087e3">Nokori</h2>
-<div class="outline-text-2" id="text-org57087e3">
+<div id="outline-container-org58ff98b" class="outline-2">
+<h2 id="org58ff98b">Nokori</h2>
+<div class="outline-text-2" id="text-org58ff98b">
 <div class="org-center">
 <p>
 <b>Food</b>
@@ -1339,9 +953,9 @@ This is a quote.
 </div>
 
 
-<div id="outline-container-org004e4c8" class="outline-3">
-<h3 id="org004e4c8">Heading</h3>
-<div class="outline-text-3" id="text-org004e4c8">
+<div id="outline-container-org6b4e733" class="outline-3">
+<h3 id="org6b4e733">Heading</h3>
+<div class="outline-text-3" id="text-org6b4e733">
 <p>
 This is some text with a specific font: {\fontenc{Arial}Arial font}.
 </p>
@@ -1358,7 +972,7 @@ Fuga
 This is some text with a specific font: .
 </p>
 
-<pre class="example" environment="{times}" id="org9c9dd5c">
+<pre class="example" environment="{times}" id="orge9f6ba2">
   This sentence is false.
 </pre>
 </div>
@@ -1367,7 +981,7 @@ This is some text with a specific font: .
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Richard Williams</p>
-<p class="date">Created: 2023-06-02 Fri 18:22</p>
+<p class="date">Created: 2023-06-02 Fri 18:27</p>
 </div>
 </body>
 </html>
