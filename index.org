@@ -1,0 +1,11 @@
+#+title: Homepage
+#+SETUPFILE:/home/rich/Dropbox/My_documents/Areas/Tech/emacs_templates_and_info/html_export_templates/org-themes-master/src/readtheorg_inline/readtheorg_inline.theme
+
+This is the home page
+
+
+* Teaching resources
+This site is to share materials with students.
+
+* Materials
++ [[https://github.com/sendagirich/sendagirich.github.io/blob/main/food.htm][Food materials]]
