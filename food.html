@@ -3,198 +3,510 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-02 Fri 18:45 -->
+<!-- 2023-06-02 Fri 18:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
 <meta name="author" content="Richard Williams" />
 <meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
-</style>
 <style type="text/css">
-/* Variables. Feel free to edit these! */:root {    --color-primary: #028090;    --color-secondary: #00A896;    --color-soft-white: #FFFFF0;    --color-soft-black: #444;    --color-hard-black: #222;    --color-special-todo: #790604;    --font-normal: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman";    --font-headings: 'Elsie', cursive;    --font-size-1: 33.57px;    --font-size-2: 26.86px;    --font-size-3: 21.48px;    --font-size-4: 17.19px;    --font-size-small: 11px;}/* Selection color */::selection {    background-color: var(--color-primary);    color: var(--color-soft-white);}/* Remove outer padding */html, body{    margin: 0;}/* Heading styles */h1, h2, h3, h4, h5, h6{    color: var(--color-hard-black);    font-family: var(--font-headings)}/* Scaled font sizes */h1{font-size: var(--font-size-1);}h2{font-size: var(--font-size-2);}h3{font-size: var(--font-size-3);}h3{font-size: var(--font-size-4);}h4{font-size: var(--font-size-4);}h5{font-size: var(--font-size-4);}h1 > .subtitle{    font-size: 21.48px;}/* Normal text style(including code) */p, pre, ol, ul, table, code{    color: #444;    font-size: var(--font-size-4);    font-family: var(--font-normal)}/* Better anchor tags */a{    color: inherit;}a:hover{    color: var(--color-secondary);}/* Force footer to bottom and center */#postamble{    text-align: center;    width: 100%;}#postamble > p{    display: inline;}.title{   padding: 2vh 5vw;}/* Responsive images */img{    max-width: 100%;    height: auto;}/* Responsive code blocks and tables */pre, .outline-text-2, .outline-text-3, outline-text-4{    max-width: 100%;    overflow-x: auto;}/* Responsive content positioning */@media only screen and (min-width: 750px) /* Large screens */{    .outline-2{        padding: 2vh 20vw;    }}@media only screen and (max-width: 750px) /* Small screens */{    .outline-2{        padding: 2vh 5vw;    }}/* Code blocks */.org-keyword{    color: var(--color-primary);}.org-rainbow-delimiters-depth-1{    color: var(--color-secondary);}.org-org-meta-line{    color: var(--color-primary);}blockquote{    border-left:5px solid var(--color-primary);    padding-left: 10px;}.todo{    color: var(--color-special-todo);}.done{    color: var(--color-primary);}/* Tags.   The way org exports tags is a little strange.   They are exported as a span with class "tag" containing each   of the tags in its own span with class and contents equal to   the tags name. This is actually really useful as it allows   for targeting both the "tag group" and each tag individually */.tag{    margin-top: 5px;    display: block;    color: var(--color-soft-white);    font-size: var(--font-size-small);    font-family: var(--font-normal)}.tag > span{    background-color: var(--color-secondary);    text-transform: uppercase;    border-radius: 2px;    width: fit-content;    height: auto;    padding: 1px 5px;    margin: 1px;}.underline{    text-decoration: underline;}
+body {
+font-family: Helvetica, Arial, sans-serif;
+font-size: 16px;
+line-height: 1.4;
+color: #33333f;
+}
+
+code {
+font-family: "Inconsolata", "monospace";
+font-size: 16px;
+}
+
+p>code, li>code {
+background-color: #eee;
+padding: 0.25em;
+}
+
+h1, h2, h3 {
+font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+border-bottom: 1px solid #f0c;
+padding-bottom: 0.5em;
+font-size: 1.75em;
+}
+
+h3 {
+margin-top: 2em;
+font-size: 1.5em;
+}
+
+h4 {
+font-size: 1.25em;
+}
+
+h5 {
+font-size: 1em;
+}
+
+h2 code, h3 code, h4 code, h5 code, td code {
+font-family: inherit !important;
+font-size: inherit !important;
+}
+
+td code {
+font-weight: bold;
+}
+
+a:link, a:hover, a:visited {
+text-decoration: none;
+color: black;
+}
+
+a:link {
+background: #ff8;
+}
+
+a:visited {
+color: #666;
+background: #ffc;
+}
+
+a:link:hover,
+a:visited:hover {
+background: #ff0;
+}
+
+a[href^="http"] {
+background: #bff;
+}
+
+a[href^="http"]:visited {
+background: #dff;
+}
+
+a[href^="http"]:link:hover,
+a[href^="http"]:visited:hover {
+background: #0ff;
+}
+
+a[href^="http"]:after {
+content: "\21B3";
+background: white;
+padding-left: 0.2em;
+}
+
+#meta {
+margin-top: 2em;
+}
+
+#table-of-contents a:link,
+#table-of-contents a:visited {
+color: black;
+background: transparent;
+}
+
+#table-of-contents {
+line-height: 1.2;
+}
+#table-of-contents h2 {
+border-bottom: 0;
+}
+
+#table-of-contents ul {
+list-style: none;
+padding-left: 0.5em;
+font-weight: normal;
+}
+
+#table-of-contents div>ul>li {
+margin-top: 1em;
+font-weight: bold;
+}
+
+#table-of-contents .tag {
+display: none;
+}
+
+#table-of-contents .todo,
+#table-of-contents .done {
+font-size: 80%;
+}
+
+#table-of-contents ol>li {
+margin-top: 1em;
+}
+
+table {
+width: 100%;
+}
+
+table, th, td {
+border: 1px solid #666;
+}
+
+th, td {
+padding: 0.5em;
+text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+background-color: #eee;
+}
+
+img {
+max-width: 90%;
+}
+
+div.notice {
+position: relative;
+margin: 0 1.2em;
+padding: 0.25em 1em;
+border-left: 4px solid;
+}
+
+table + div.notice {
+margin-top: 2em;
+}
+
+div.notice a {
+background: transparent !important;
+border-bottom: 1px dotted;
+}
+
+div.notice a[href^="http"]:after {
+background: transparent !important;
+}
+
+div.notice:before {
+position: absolute;
+top: 0;
+right: 0;
+padding: 0.25em 0.5em 0;
+font-size: 60%;
+border-bottom-left-radius: 0.5em;
+}
+
+.notice-warning {
+background: #fcc;
+color: #600;
+}
+
+.notice-example {
+background: #def;
+color: #069;
+}
+
+.notice-info {
+background: #efe;
+color: #060;
+}
+
+.notice-warning a {
+color: #600;
+}
+
+.notice-example a {
+color: #069;
+}
+
+.notice-info a {
+color: #060;
+}
+
+div.notice-warning:before {
+content: "WARNING";
+background: #c99;
+color: #fcc;
+}
+
+div.notice-example:before {
+content: "EXAMPLE";
+background: #abc;
+color: #def;
+}
+
+div.notice-info:before {
+content: "INFO";
+background: #9c9;
+color: #efe;
+}
+
+/* things inside the #+BEGIN_NOTE...#+END_NOTE block */
+div.NOTE a {
+background: transparent !important;
+border-bottom: 1px dotted;
+}
+
+div.NOTE {
+position: relative;
+margin: 0 1.2em;
+padding: 0.25em 1em;
+border-left: 4px solid;
+margin-top: 2em;
+background: #efe;
+color: #060;
+}
+
+div.NOTE:before {
+position: absolute;
+top: 0;
+right: 0;
+padding: 0.25em 0.5em 0;
+font-size: 60%;
+border-bottom-left-radius: 0.5em;
+content: "NOTE";
+background: #9c9;
+color: #efe;
+}
+
+blockquote {
+padding: 0px 10px 0px 10px;
+border: 1px solid #ddd;
+background: #eee;
+box-shadow: 5px 5px 5px #eee;
+border-radius: 2px;
+line-height: 1.2em;
+}
+
+pre {
+font-family: "Inconsolata", "monospace";
+font-size: 100%;
+border: 0;
+box-shadow: none;
+overflow: auto;
+}
+
+pre.example:before {
+content: "EXAMPLE";
+display: block;
+border-bottom: 1px dotted;
+margin-bottom: 1em;
+}
+
+pre.example {
+background: #fec;
+color: #666;
+font-size: 0.85em;
+}
+
+pre {
+background-color: #f8f8f8;
+background-size: 8px 8px;
+background-image: linear-gradient(135deg, transparent 25%, rgba(0, 0, 0, 0.02) 25%, rgba(0, 0, 0, 0.02) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, 0.02) 75%, rgba(0, 0, 0, 0.02));
+}
+
+pre.src {
+padding: 0.5em;
+}
+
+pre.src:before {
+display: block;
+position: absolute;
+background-color: #ccccd0;
+top: 0;
+right: 0;
+padding: 0.25em 0.5em;
+border-bottom-left-radius: 8px;
+border: 0;
+color: white;
+font-size: 80%;
+}
+
+pre.src-plantuml:before {
+content: "UML";
+}
+
+pre.src-javascript:before {
+content: "JS";
+}
+
+pre.src-clojure:before {
+content: "CLJ";
+}
+
+pre.src-c:before {
+content: "C";
+}
+
+pre.src-sh:before {
+content: "Shell";
+}
+
+pre.src-es:before {
+content: "ES";
+}
+
+span.org-string {
+color: #f94;
+}
+
+span.org-keyword {
+color: #c07;
+}
+
+span.org-variable-name {
+color: #f04;
+}
+
+span.org-clojure-keyword {
+color: #09f;
+}
+
+span.org-comment, span.org-comment-delimiter {
+color: #999;
+}
+
+span.org-rainbow-delimiters-depth-1, span.org-rainbow-delimiters-depth-5 {
+color: #666;
+}
+
+span.org-rainbow-delimiters-depth-2, span.org-rainbow-delimiters-depth-6 {
+color: #888;
+}
+
+span.org-rainbow-delimiters-depth-3, span.org-rainbow-delimiters-depth-7 {
+color: #aaa;
+}
+
+span.org-rainbow-delimiters-depth-4, span.org-rainbow-delimiters-depth-8 {
+color: #ccc;
+}
+
+div.figure {
+font-size: 0.85em;
+}
+
+.tag {
+font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+font-size: 11px;
+font-weight: normal;
+float: right;
+margin-top: 1em;
+background: transparent;
+}
+
+.tag span {
+background: #ccc;
+padding: 0 0.5em;
+border-radius: 0.2em;
+color: white;
+}
+
+.todo, .done {
+font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+font-weight: normal;
+padding: 0 0.25em;
+border-radius: 0.2em;
+}
+
+.todo {
+background: #f04;
+color: white;
+}
+
+.done {
+background: #5f7;
+color: white;
+}
+
+@media screen {
+h1.title {
+text-align: left;
+margin: 0.5em 0 1em 0;
+}
+
+h2 {
+margin-top: 3em;
+}
+
+#table-of-contents {
+position: fixed;
+top: 0;
+left: 0;
+padding: 2em 0 2em 2em;
+width: 290px;
+height: 100vh;
+font-size: 11px;
+background: #eee;
+overlow-x: hidden;
+overlow-y: auto;
+}
+
+#table-of-contents h2 {
+margin-top: 0;
+}
+
+#table-of-contents code {
+font-size: 12px;
+}
+
+div#content {
+margin-left: 320px;
+max-width: 1100px;
+}
+div#postamble {
+margin-left: 320px;
+max-width: 1100px;
+}
+}
+
+@media screen and (max-width: 1024px) {
+html, body {
+font-size: 14px;
+}
+
+#table-of-contents {
+display: none;
+}
+
+h1.title {
+margin-left: 0%;
+}
+
+div#content {
+margin-left: 5%;
+max-width: 90%;
+}
+div#postamble {
+margin-left: 5%;
+max-width: 90%;
+}
+}
+
+@media print {
+
+body {
+color: black;
+}
+
+@page {
+margin: 25mm;
+}
+
+h2, h3 {
+page-break-before: always;
+margin-top: 0;
+}
+
+table {
+page-break-inside: avoid;
+}
+
+a:visited {
+color: black;
+background: #ff8;
+}
+
+a[href^="http"]:visited {
+background: #bff;
+}
+
+div.notice:before {
+display: none;
+}
+}
 </style>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -224,61 +536,61 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org42e33a5">Food</a>
+<li><a href="#org7641e88">Food</a>
 <ul>
-<li><a href="#org23e4656">Food</a></li>
-<li><a href="#org6136acb">Meals</a></li>
+<li><a href="#org65d357c">Food</a></li>
+<li><a href="#org82761a2">Meals</a></li>
 </ul>
 </li>
-<li><a href="#orga69dd32">Key phrases 1</a>
+<li><a href="#org5379178">Key phrases 1</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgcb20c18">Dialogue 1</a></li>
+<li><a href="#orga482658">Dialogue 1</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc17627f">Food adjectives</a></li>
-<li><a href="#orge8871e5">Cooking methods</a>
+<li><a href="#org4cbab4f">Food adjectives</a></li>
+<li><a href="#org87d6b23">Cooking methods</a>
 <ul>
-<li><a href="#org2b87f5e">Key phrases 2</a>
+<li><a href="#orgc5c49ae">Key phrases 2</a>
 <ul>
-<li><a href="#orgfbe7d3e">Dialogue 2</a></li>
+<li><a href="#org6f28cfb">Dialogue 2</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb07f532">Cooking Utensils</a>
+<li><a href="#org7e68a70">Cooking Utensils</a>
 <ul>
-<li><a href="#org9192c1a">Ingredients</a>
+<li><a href="#orgce4cec5">Ingredients</a>
 <ul>
-<li><a href="#org3ea1a60">Dialogue 3</a></li>
+<li><a href="#orgdadf277">Dialogue 3</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org194d5df">Questions</a></li>
-<li><a href="#org300fb66">Test</a>
+<li><a href="#orga94d8aa">Questions</a></li>
+<li><a href="#orgd289260">Test</a>
 <ul>
-<li><a href="#orgd225ff2">Dishes</a></li>
+<li><a href="#org6665a3a">Dishes</a></li>
 </ul>
 </li>
-<li><a href="#orgcad3f0f">Nokori</a>
+<li><a href="#orgbe97aa4">Nokori</a>
 <ul>
-<li><a href="#orgb4ee06d">Heading</a></li>
+<li><a href="#org9df772c">Heading</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org42e33a5" class="outline-2">
-<h2 id="org42e33a5">Food</h2>
-<div class="outline-text-2" id="text-org42e33a5">
+<div id="outline-container-org7641e88" class="outline-2">
+<h2 id="org7641e88">Food</h2>
+<div class="outline-text-2" id="text-org7641e88">
 </div>
-<div id="outline-container-org23e4656" class="outline-3">
-<h3 id="org23e4656">Food</h3>
-<div class="outline-text-3" id="text-org23e4656">
+<div id="outline-container-org65d357c" class="outline-3">
+<h3 id="org65d357c">Food</h3>
+<div class="outline-text-3" id="text-org65d357c">
 <div class="org-center">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -379,9 +691,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org6136acb" class="outline-3">
-<h3 id="org6136acb">Meals</h3>
-<div class="outline-text-3" id="text-org6136acb">
+<div id="outline-container-org82761a2" class="outline-3">
+<h3 id="org82761a2">Meals</h3>
+<div class="outline-text-3" id="text-org82761a2">
 <div class="org-center">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -425,9 +737,9 @@
 
 
 
-<div id="outline-container-orga69dd32" class="outline-2">
-<h2 id="orga69dd32">Key phrases 1</h2>
-<div class="outline-text-2" id="text-orga69dd32">
+<div id="outline-container-org5379178" class="outline-2">
+<h2 id="org5379178">Key phrases 1</h2>
+<div class="outline-text-2" id="text-org5379178">
 <ul class="org-ul">
 <li>It&rsquo;s a kind of&#x2026;</li>
 <li>It&rsquo;s like&#x2026;</li>
@@ -435,9 +747,9 @@
 </ul>
 </div>
 
-<div id="outline-container-orgcb20c18" class="outline-4">
-<h4 id="orgcb20c18">Dialogue 1</h4>
-<div class="outline-text-4" id="text-orgcb20c18">
+<div id="outline-container-orga482658" class="outline-4">
+<h4 id="orga482658">Dialogue 1</h4>
+<div class="outline-text-4" id="text-orga482658">
 <ul class="org-ul">
 <li><code>C = customer</code></li>
 <li><code>W = waiter or waitress</code></li>
@@ -453,9 +765,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgc17627f" class="outline-2">
-<h2 id="orgc17627f">Food adjectives</h2>
-<div class="outline-text-2" id="text-orgc17627f">
+<div id="outline-container-org4cbab4f" class="outline-2">
+<h2 id="org4cbab4f">Food adjectives</h2>
+<div class="outline-text-2" id="text-org4cbab4f">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -564,9 +876,9 @@
 </div>
 </div>
 
-<div id="outline-container-orge8871e5" class="outline-2">
-<h2 id="orge8871e5">Cooking methods</h2>
-<div class="outline-text-2" id="text-orge8871e5">
+<div id="outline-container-org87d6b23" class="outline-2">
+<h2 id="org87d6b23">Cooking methods</h2>
+<div class="outline-text-2" id="text-org87d6b23">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -621,9 +933,9 @@
 </table>
 </div>
 
-<div id="outline-container-org2b87f5e" class="outline-3">
-<h3 id="org2b87f5e">Key phrases 2</h3>
-<div class="outline-text-3" id="text-org2b87f5e">
+<div id="outline-container-orgc5c49ae" class="outline-3">
+<h3 id="orgc5c49ae">Key phrases 2</h3>
+<div class="outline-text-3" id="text-orgc5c49ae">
 <p>
 It’s made by -ing…
 It’s made by steaming vegetables.
@@ -631,9 +943,9 @@ It’s made with / from steamed vegetables.
 </p>
 </div>
 
-<div id="outline-container-orgfbe7d3e" class="outline-4">
-<h4 id="orgfbe7d3e">Dialogue 2</h4>
-<div class="outline-text-4" id="text-orgfbe7d3e">
+<div id="outline-container-org6f28cfb" class="outline-4">
+<h4 id="org6f28cfb">Dialogue 2</h4>
+<div class="outline-text-4" id="text-org6f28cfb">
 <ul class="org-ul">
 <li>C = customer</li>
 <li>W = waiter or waitress</li>
@@ -650,9 +962,9 @@ It’s made with / from steamed vegetables.
 </div>
 </div>
 
-<div id="outline-container-orgb07f532" class="outline-2">
-<h2 id="orgb07f532">Cooking Utensils</h2>
-<div class="outline-text-2" id="text-orgb07f532">
+<div id="outline-container-org7e68a70" class="outline-2">
+<h2 id="org7e68a70">Cooking Utensils</h2>
+<div class="outline-text-2" id="text-org7e68a70">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -701,9 +1013,9 @@ It’s made with / from steamed vegetables.
 </div>
 
 
-<div id="outline-container-org9192c1a" class="outline-3">
-<h3 id="org9192c1a">Ingredients</h3>
-<div class="outline-text-3" id="text-org9192c1a">
+<div id="outline-container-orgce4cec5" class="outline-3">
+<h3 id="orgce4cec5">Ingredients</h3>
+<div class="outline-text-3" id="text-orgce4cec5">
 <p>
 flour water milk cream cheese
 sugar
@@ -748,9 +1060,9 @@ sauce~
 </table>
 </div>
 
-<div id="outline-container-org3ea1a60" class="outline-4">
-<h4 id="org3ea1a60">Dialogue 3</h4>
-<div class="outline-text-4" id="text-org3ea1a60">
+<div id="outline-container-orgdadf277" class="outline-4">
+<h4 id="orgdadf277">Dialogue 3</h4>
+<div class="outline-text-4" id="text-orgdadf277">
 <ul class="org-ul">
 <li>C = customer</li>
 <li>W = waiter or waitress</li>
@@ -785,9 +1097,9 @@ You should&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org194d5df" class="outline-2">
-<h2 id="org194d5df">Questions</h2>
-<div class="outline-text-2" id="text-org194d5df">
+<div id="outline-container-orga94d8aa" class="outline-2">
+<h2 id="orga94d8aa">Questions</h2>
+<div class="outline-text-2" id="text-orga94d8aa">
 <ul class="org-ul">
 <li>phrases
 <ul class="org-ul">
@@ -805,9 +1117,9 @@ You should&#x2026;
 </ul>
 </div>
 </div>
-<div id="outline-container-org300fb66" class="outline-2">
-<h2 id="org300fb66">Test</h2>
-<div class="outline-text-2" id="text-org300fb66">
+<div id="outline-container-orgd289260" class="outline-2">
+<h2 id="orgd289260">Test</h2>
+<div class="outline-text-2" id="text-orgd289260">
 <ul class="org-ul">
 <li>Explain a dish using three or more of the following:
 <ul class="org-ul">
@@ -832,9 +1144,9 @@ You should&#x2026;
 </ul>
 </div>
 
-<div id="outline-container-orgd225ff2" class="outline-3">
-<h3 id="orgd225ff2">Dishes</h3>
-<div class="outline-text-3" id="text-orgd225ff2">
+<div id="outline-container-org6665a3a" class="outline-3">
+<h3 id="org6665a3a">Dishes</h3>
+<div class="outline-text-3" id="text-org6665a3a">
 <p>
 okonomiyaki
 monjayaki
@@ -860,9 +1172,9 @@ goya champoru
 </div>
 </div>
 </div>
-<div id="outline-container-orgcad3f0f" class="outline-2">
-<h2 id="orgcad3f0f">Nokori</h2>
-<div class="outline-text-2" id="text-orgcad3f0f">
+<div id="outline-container-orgbe97aa4" class="outline-2">
+<h2 id="orgbe97aa4">Nokori</h2>
+<div class="outline-text-2" id="text-orgbe97aa4">
 <div class="org-center">
 <p>
 <b>Food</b>
@@ -938,9 +1250,9 @@ This is a quote.
 </div>
 
 
-<div id="outline-container-orgb4ee06d" class="outline-3">
-<h3 id="orgb4ee06d">Heading</h3>
-<div class="outline-text-3" id="text-orgb4ee06d">
+<div id="outline-container-org9df772c" class="outline-3">
+<h3 id="org9df772c">Heading</h3>
+<div class="outline-text-3" id="text-org9df772c">
 <p>
 This is some text with a specific font: {\fontenc{Arial}Arial font}.
 </p>
@@ -957,7 +1269,7 @@ Fuga
 This is some text with a specific font: .
 </p>
 
-<pre class="example" environment="{times}" id="org86200c2">
+<pre class="example" environment="{times}" id="org37f257e">
   This sentence is false.
 </pre>
 </div>
@@ -966,7 +1278,7 @@ This is some text with a specific font: .
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Richard Williams</p>
-<p class="date">Created: 2023-06-02 Fri 18:45</p>
+<p class="date">Created: 2023-06-02 Fri 18:47</p>
 </div>
 </body>
 </html>
