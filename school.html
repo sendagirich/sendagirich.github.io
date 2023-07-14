@@ -1,221 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<!-- 2023-07-15 Sat 00:11 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- 2023-07-15 Sat 00:14 -->
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>My School Day</title>
 <meta name="author" content="Richard Williams" />
 <meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
-</style>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
-html,body,div,span,dl,dt,dd,ul,ol,li,a,table,h1,h2,h3,h4,h5,h6,p,pre,form,fieldset,blockquote,.src,.example{margin:0px;padding:0px;font-weight:normal;text-decoration:none;font-size:inherit;color:inherit;}.section-number-1,.section-number-2,.section-number-3,.section-number-4,.section-number-5,.section-number-6{font-weight:inherit;}.float-right{float:right;}.author{color:#666;line-height:3em;}body{    font:87.5% "Georgia Serif", Times, Palatino, "Times New Roman", serif;    background: #DCDCDC;}a{color:blue;}html>body{font-size:14px;}body{    width:54em;    padding:1.5em;    padding-top:6em;    margin: auto;}p{    line-height:1.5em;    font-size:1em;    margin-top:1.5em;    margin-bottom:1.5em;}.post_list{    margin-top:1.5em;}.title{text-align:left;}h1{font-size:2.5em;line-height:1.2em;}h2{font-size:1.5em;line-height:1em;margin-top:2em;margin-bottom:1em;}h3{    font-size:1.1667em;    line-height: 1.286em;    margin-top:1.929em;    margin-bottom:0.643em;    font-weight:bolder;}h4{    font-weight:bold;    line-height:3em;}/*p + dl{    margin-top:-1.5em;    border:1px solid red;}*/dt{font-weight:bold;}dd{padding-left:1.5em;}li{    font-size:100%;    line-height:1.5em;}div{margin:0!important;padding:0!important;}/*table{display:none;}*/.src,.example{margin:0;padding:1em;font-size:1em;line-height:1.5em;}.src{background:#444;color:#fff;}.example{background:#242834;color:#fff;padding:.75em}.header{    font-family:Arial,Helvetica,Verdana,sans-serif;    vertical-align:text-top;    position:absolute;    top:0px;left:0px;    right:0px;    background:#345;    padding:.75em 1.5em!important;    border-bottom:1.5em solid #EBD6D6;    border-bottom-color:#9FB8D3;    background:#0F4D92;    border-bottom:1em solid #cdf;    background:#444;    background:#49A;    background:transparent;    background:#eef0ff;    background:#933;    background:#A55;    border-color:#EDD;    /*background: #939;    border-color:#EDE;*/    /* background:#359; */    /* border-color:#9AC; */}.header h1{font:1.75em Arial,Helvetica,Verdana,sans-serif;line-height:1.166em;font-weight:bold;color:#b90;color:#06a;color:#fff;text-shadow: #822 0px 0px 2px;font-weight:normal;display:inline;}.header h1 em{    color:#b90;    color:#fc2;    color:#b90;    color:#db2;    color:#fd4;    font-weight:bold;    font-style:normal;}.header * {vertical-align:middle;}.header ul {    display:inline;    padding-left:1.5em;    margin-left:0!important;}.header li {    display:inline;    padding:0 .75em;}.header li a{    text-decoration:none;    color:#ffd;}/*dl{display:none;}*/ol{margin-left:1.5em;}ul{    list-style-type: disc;    margin-left:1.5em;}ul ul{    list-style-type:circle;}#table-of-contents ul{list-style-type:none;}#text-table-of-contents > ul:first-child > li > a{ font-weight:bold;}#postamble p,#postamble a{    font-size:.857em;    line-height:1.75em;    padding:0;    margin:0;}#postamble{    margin:1.75em 0!important;    border-top:1px solid #888;}blockquote{    margin-left:1em;}/*** blue **/a{}.header a{background:inherit;}h1,h2,h3,h4,h5,h6, #text-table-of-contents li{    color:#026;    color:#0A3361;    font-weight:normal;}.header{background:#0F4D92;border-bottom-color:#AFC4DB}/*.header h1{text-shadow: #228 0px 0px 2px;}*/h1,h2,h3,h4,h5,h6{    color:#373737;    font-weight:bolder;}h1.title{font-weight:normal;font-size:3em;line-height:1em;}body{width:48em;}img{max-width:48em;}body{text-align:justify;     font:12px "Lucida Grande","Trebuchet MS","Bitstream Vera Sans",Verdana,Helvetica,sans-serif !important;     color:#272727;}code{    font-weight:inherit;    color:#048;    color:black;}a{color:#00e}a:visited{color:#551A8B}.figure {    background:#ddd;    border:1px solid #ccc;    font-size:.90em;    line-height:1.666em;    padding:1.5em!important;    text-align:left!important;    margin-bottom:1.666em;}.outline-2{    margin:3em 0!important;}body{padding-top:9em;padding-left:3em;}.header{    padding-left:3!important;}.header h1, .header h1 em {    text-shadow:none;    font-size:1.5em!important;}.header {    background:transparent;    padding-left:3em!important;    border-bottom:none;    color:inherit!important;    background:#dde8ff;    border-bottom:1px solid #c3d9ff;}.header h1, .header h1 em {    text-shadow:none;    color:#06c;    font-family:"Georgia Serif", Times, Palatino, "Times New Roman", serif;}.header li a {    color:inherit!important;    text-decoration:underline;}#text-table-of-contents a {}
+html,button,input,select,textarea {  color: #484C66;}html {  font-size: 90%;  line-height: 1.4;}*,*:before,*:after {  -moz-box-sizing: border-box;  -webkit-box-sizing: border-box;  box-sizing: border-box;}a {  white-space: pre;  white-space: pre-wrap;  white-space: pre-line;  white-space: -pre-wrap;  white-space: -o-pre-wrap;  white-space: -moz-pre-wrap;  white-space: -hp-pre-wrap;  word-wrap: break-word;  text-decoration: none;}a:hover {  color: #0A4C89;}/* * Remove text-shadow in selection highlight: h5bp.com/i * These selection rule sets have to be separate. * Customize the background color to match your design. */::-moz-selection {  background: #0A4C89;  color: #FFF;  text-shadow: none;}::selection {  background: #0A4C89;  color: #FFF;  text-shadow: none;}/* * A better looking default horizontal rule */hr {  display: block;  height: 1px;  border: 0;  border-top: 1px dashed #CCC;  margin: 1em 0;  padding: 0;}/* * Remove the gap between images, videos, audio and canvas and the bottom of * their containers: h5bp.com/i/440 */audio,canvas,img,video {  vertical-align: middle;}/* * Remove default fieldset styles. */fieldset {  border: 0;  margin: 0;  padding: 0;}/* * Allow only vertical resizing of textareas. */textarea {  resize: vertical;}/* ==========================================================================   Author's custom styles   ========================================================================== */.todo,.done,.tag {  font-family: "Source Pro", Monaco, "Courier New", monospace;  padding: 0 0.3em;  background-color: #EEE;  border: 1px solid #CCC;}.todo {  color: #DD4433;}.done {  color: #44934B;}.tag {  font-size: 80%;  font-weight: normal;  margin: 0 0.3em;  display: none;}.timestamp {  color: #BEBEBE;}.timestamp-kwd {  color: #5F9EA0;}.right {  margin-left: auto;  margin-right: 0px;  text-align: right;}.left {  margin-left: 0px;  margin-right: auto;  text-align: left;}.center {  margin-left: auto;  margin-right: auto;  text-align: center;}.underline {  text-decoration: underline;}#postamble p,#preamble p {  font-size: 90%;  margin: .2em;}pre,code {  font-family: "Source Pro", Monaco, "Courier New", monospace;  padding-left: 0.3em;  padding-right: 0.3em;}pre {  font-size: 90%;  padding: 8pt;  overflow: auto;  white-space: pre;  word-wrap: normal;}pre.src {  position: relative;}pre.src:before {  display: none;  position: absolute;  background-color: #FFF;  top: 0.5em;  right: 0.5em;  padding: 4px;  border: 1px solid #CCC;}pre.src-sh:before {  content: "Shell Script";}pre.src-bash:before {  content: "Bash Script";}pre.src-emacs-lisp:before {  content: "Emacs Lisp";}pre.src-R:before {  content: "R";}pre.src-perl:before {  content: "Perl";}pre.src-java:before {  content: "Java";}pre.src-sql:before {  content: "SQL";}pre.src-c:before {  content: "C";}pre.src-cpp:before {  content: "C++";}pre.src-html:before {  content: "HTML";}table {  border-collapse: collapse;  display: block;  overflow-x: auto;}caption.t-above {  caption-side: top;}caption.t-bottom {  caption-side: bottom;}td, th {  vertical-align: top;  border: 1px solid #CCC;  padding: 0.5em;}th.right {  text-align: center;}th.left {  text-align: center;}th.center {  text-align: center;}td.right {  text-align: right;}td.left {  text-align: left;}td.center {  text-align: center;}dt {  font-weight: bold;}#footnotes {  border-top: 5px solid #0A4C89;  margin-bottom: 5em;}#footnotes h2 {  display: none;}#text-footnotes {  margin-top: 1em;}.footpara:nth-child(2) {  display: inline;}.footpara {  display: block;}.footdef sup:before {  content: "[";}.footdef sup:after {  content: "]";}.footdef p {  display: inline;}figure {  margin: 0;}figure img {  max-width: 100%;}figcaption {  text-align: center;  font-size: 0.8rem;}.inlinetask {  padding: 10px;  border: 2px solid gray;  margin: 10px;  background: #ffffcc;}#org-div-home-and-up {  text-align: right;  font-size: 70%;  white-space: nowrap;}textarea {  overflow-x: auto;}.linenr {  font-size: smaller;}.code-highlighted {  background-color: #ffff00;}.org-info-js_info-navigation {  border-style: none;}#org-info-js_console-label {  font-size: 10px;  font-weight: bold;  white-space: nowrap;}.org-info-js_search-highlight {  background-color: #ffff00;  color: #000000;  font-weight: bold;}p.verse,blockquote {  margin: 0;  padding: 0;  padding-left: 3%;  border-left: 5px solid #0A4C89;}body {  font-family: Lora, Palatino, Georgia, serif;  width: 92%;  max-width: 1024px;  margin: 0 auto;  background-color: #FFF;}h2 {  line-height: 1.62em;}.title {  margin: 0 0 2em 0;  line-height: 2em;  border-bottom: 5px solid #0A4C89;  text-align: center;}#postamble {  font-size: 80%;  line-height: 1.4em;  text-align: right;}h1, h2, h3, h4, h5, h6 {  font-family: "Source Sans Pro", sans-serif;  color: #222;}.outline-2 {  margin-bottom: 4em;}.outline-2 h2 {  border-bottom: 1px solid #CCC;}.outline-text-2 code, pre {  background-color: #EEE;}#table-of-contents {  display: none;  margin-left: 0.5em;}#text-table-of-contents ul {  padding-left: 1.8em;}#text-table-of-contents li {  list-style-type: circle;  margin: 0.4em 0;}#text-table-of-contents ul ul {  margin: 0;}#text-table-of-contents li li {  font-weight: normal;  font-size: 90%;  margin: 0;}#content {  overflow: hidden;  *zoom: 1;}/* ==========================================================================   EXAMPLE Media Queries for Responsive Design.   These examples override the primary ('mobile first') styles.   Modify as content requires.   ========================================================================== */@media only screen and (min-width: 35em) {  /* Style adjustments for viewports that meet the condition */}@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {  /* Style adjustments for high resolution devices */}/* ==========================================================================   Print styles.   Inlined to avoid required HTTP connection: h5bp.com/r   ========================================================================== */@media print {  * {    background: transparent !important;    color: #000 !important;    /* Black prints faster: h5bp.com/s */    box-shadow: none !important;    text-shadow: none !important;  }  a,  a:visited {    text-decoration: underline;  }  a[href]:after {    content: " (" attr(href) ")";  }  abbr[title]:after {    content: " (" attr(title) ")";  }  /*   * Don't show links for images, or javascript/internal links   */  .ir a:after,  a[href^="javascript:"]:after,  a[href^="#"]:after {    content: "";  }  pre,  blockquote {    /* border: 1px solid #999; */    page-break-inside: avoid;  }  thead {    display: table-header-group;    /* h5bp.com/t */  }  tr,  img {    page-break-inside: avoid;  }  img {    max-width: 100% !important;  }  @page {    margin: 0.5cm;  }  p,  h2,  h3 {    orphans: 3;    widows: 3;  }  h2,  h3 {    page-break-after: avoid;  }  #table-of-contents {    display: block;    width: initial;    border: none;  }  #table-of-contents a {    text-decoration: none;  }}/* large screen */@media screen and (min-width: 40rem) {  html {    font-size: 100%;  }  #table-of-contents {    display: block;    padding: 1em;    width: 32%;    min-width: 18em;    float: right;    background-color: #EEE;    position: relative;    /* required by z-index */    z-index: 5000;    border: 1px solid #CCC;  }  .tag {    display: initial;  }}
 </style>
 </head>
 <body>
 <div id="content" class="content">
+<header>
 <h1 class="title">My School Day</h1>
-<div id="table-of-contents" role="doc-toc">
+</header><nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org24fcd12">Lessons</a>
+<li><a href="#org2e10dd7">Lessons</a>
 <ul>
-<li><a href="#org449b940">Week one. September 4th</a></li>
+<li><a href="#orgb973ce2">Week one. September 4th</a></li>
 </ul>
 </li>
-<li><a href="#orgd0335d4">Course plan</a></li>
-<li><a href="#org9863f42">Assessment</a></li>
-<li><a href="#orge0cd13b">Links</a></li>
+<li><a href="#org49311ae">Course plan</a></li>
+<li><a href="#orge30fd1c">Assessment</a></li>
+<li><a href="#org92b1d6b">Links</a></li>
 </ul>
 </div>
-</div>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+</nav>
+<table>
 
 
 <tbody>
@@ -223,13 +40,13 @@ html,body,div,span,dl,dt,dd,ul,ol,li,a,table,h1,h2,h3,h4,h5,h6,p,pre,form,fields
 </tr>
 </tbody>
 </table>
-<div id="outline-container-org24fcd12" class="outline-2">
-<h2 id="org24fcd12">Lessons</h2>
-<div class="outline-text-2" id="text-org24fcd12">
+<div id="outline-container-org2e10dd7" class="outline-2">
+<h2 id="org2e10dd7">Lessons</h2>
+<div class="outline-text-2" id="text-org2e10dd7">
 </div>
-<div id="outline-container-org449b940" class="outline-3">
-<h3 id="org449b940">Week one. September 4th</h3>
-<div class="outline-text-3" id="text-org449b940">
+<div id="outline-container-orgb973ce2" class="outline-3">
+<h3 id="orgb973ce2">Week one. September 4th</h3>
+<div class="outline-text-3" id="text-orgb973ce2">
 <p>
 <code>You will learn:</code>
 </p>
@@ -266,9 +83,9 @@ html,body,div,span,dl,dt,dd,ul,ol,li,a,table,h1,h2,h3,h4,h5,h6,p,pre,form,fields
 </div>
 </div>
 </div>
-<div id="outline-container-orgd0335d4" class="outline-2">
-<h2 id="orgd0335d4">Course plan</h2>
-<div class="outline-text-2" id="text-orgd0335d4">
+<div id="outline-container-org49311ae" class="outline-2">
+<h2 id="org49311ae">Course plan</h2>
+<div class="outline-text-2" id="text-org49311ae">
 <ul class="org-ul">
 <li>Week 1: School subjects</li>
 <li>Week 2: School periods</li>
@@ -287,19 +104,19 @@ html,body,div,span,dl,dt,dd,ul,ol,li,a,table,h1,h2,h3,h4,h5,h6,p,pre,form,fields
 <p>
 <b>Course plan table</b>
 </p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
-<col  class="org-right" />
+<col  class="org-right">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -419,9 +236,9 @@ html,body,div,span,dl,dt,dd,ul,ol,li,a,table,h1,h2,h3,h4,h5,h6,p,pre,form,fields
 </div>
 </div>
 
-<div id="outline-container-org9863f42" class="outline-2">
-<h2 id="org9863f42">Assessment</h2>
-<div class="outline-text-2" id="text-org9863f42">
+<div id="outline-container-orge30fd1c" class="outline-2">
+<h2 id="orge30fd1c">Assessment</h2>
+<div class="outline-text-2" id="text-orge30fd1c">
 <p>
 <b>Sample questions</b>
 </p>
@@ -448,9 +265,9 @@ html,body,div,span,dl,dt,dd,ul,ol,li,a,table,h1,h2,h3,h4,h5,h6,p,pre,form,fields
 </div>
 </div>
 
-<div id="outline-container-orge0cd13b" class="outline-2">
-<h2 id="orge0cd13b">Links</h2>
-<div class="outline-text-2" id="text-orge0cd13b">
+<div id="outline-container-org92b1d6b" class="outline-2">
+<h2 id="org92b1d6b">Links</h2>
+<div class="outline-text-2" id="text-org92b1d6b">
 <ul class="org-ul">
 <li><a href="https://sendagirich.github.io/school_materials.html">School Materials</a></li>
 <li><a href="https://sendagirich.github.io/extra_materials.html">Extra Materials</a></li>
@@ -461,7 +278,7 @@ html,body,div,span,dl,dt,dd,ul,ol,li,a,table,h1,h2,h3,h4,h5,h6,p,pre,form,fields
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Richard Williams</p>
-<p class="date">Created: 2023-07-15 Sat 00:11</p>
+<p class="date">Created: 2023-07-15 Sat 00:14</p>
 </div>
 </body>
 </html>
