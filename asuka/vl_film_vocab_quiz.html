@@ -1,421 +1,312 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
-<meta name="author" content="Richard Williams" />
-<meta name="generator" content="Org Mode" />
+<meta charset="utf-8"/>
+<meta name="author" content="Richard Williams"/>
 <style type="text/css">
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
+.underline { text-decoration: underline; }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/dracula.css" id="theme"/>
 </head>
 <body>
-<div id="content" class="content">
-<div id="outline-container-org9bc4b5b" class="outline-2">
-<h2 id="org9bc4b5b">The written text of a film or TV program, including dialogue and directions for acting and camera work.</h2>
-<div class="outline-text-2" id="text-org9bc4b5b">
-</div>
-<div id="outline-container-org52bb06b" class="outline-3">
-<h3 id="org52bb06b"><b>s _ r _ pt/scr _ _ nplay</b></h3>
-</div>
-<div id="outline-container-orgc6e5cb1" class="outline-3">
-<h3 id="orgc6e5cb1"><b>script/screenplay</b></h3>
-</div>
-</div>
-<div id="outline-container-org0733f10" class="outline-2">
-<h2 id="org0733f10">The person in control of making the film who gives instructions to the crew and actors.</h2>
-<div class="outline-text-2" id="text-org0733f10">
-</div>
-<div id="outline-container-org38949cf" class="outline-3">
-<h3 id="org38949cf"><b>d _ r _ ct _ r</b></h3>
-</div>
-<div id="outline-container-org2de9c74" class="outline-3">
-<h3 id="org2de9c74"><b>director</b></h3>
-</div>
-</div>
-<div id="outline-container-orgdaf15c1" class="outline-2">
-<h2 id="orgdaf15c1">Actors and actresses who appear in the film or TV program.</h2>
-<div class="outline-text-2" id="text-orgdaf15c1">
-</div>
-<div id="outline-container-orgde5896a" class="outline-3">
-<h3 id="orgde5896a"><b>c _ s _</b></h3>
-</div>
-<div id="outline-container-orgb5ded9a" class="outline-3">
-<h3 id="orgb5ded9a"><b>cast</b></h3>
-</div>
-</div>
-<div id="outline-container-org3156999" class="outline-2">
-<h2 id="org3156999">The music that accompanies a film or TV program, often made for the film.</h2>
-<div class="outline-text-2" id="text-org3156999">
-</div>
-<div id="outline-container-orgb29e616" class="outline-3">
-<h3 id="orgb29e616"><b>so _ ndt _ _ck</b></h3>
-</div>
-<div id="outline-container-orge5bea80" class="outline-3">
-<h3 id="orge5bea80"><b>soundtrack</b></h3>
-</div>
-</div>
-<div id="outline-container-org86942a1" class="outline-2">
-<h2 id="org86942a1">The main story line of the film.</h2>
-<div class="outline-text-2" id="text-org86942a1">
-</div>
-<div id="outline-container-orgd469783" class="outline-3">
-<h3 id="orgd469783"><b>p _ _ t</b></h3>
-</div>
-<div id="outline-container-orgb5874c0" class="outline-3">
-<h3 id="orgb5874c0"><b>plot</b></h3>
-</div>
-</div>
-<div id="outline-container-orgea3466e" class="outline-2">
-<h2 id="orgea3466e">A continuous camera recording that makes up a scene.</h2>
-<div class="outline-text-2" id="text-orgea3466e">
-</div>
-<div id="outline-container-org90ce8e6" class="outline-3">
-<h3 id="org90ce8e6"><b>s _ _t</b></h3>
-</div>
-<div id="outline-container-org84d25f4" class="outline-3">
-<h3 id="org84d25f4"><b>shot</b></h3>
-</div>
-</div>
-<div id="outline-container-org0461883" class="outline-2">
-<h2 id="org0461883">The time and place where the film&rsquo;s or show&rsquo;s story occurs.</h2>
-<div class="outline-text-2" id="text-org0461883">
-</div>
-<div id="outline-container-org8274032" class="outline-3">
-<h3 id="org8274032"><b>s _ tt _ ng</b></h3>
-</div>
-<div id="outline-container-orgf3e2c59" class="outline-3">
-<h3 id="orgf3e2c59"><b>setting</b></h3>
-</div>
-</div>
-<div id="outline-container-org8902b80" class="outline-2">
-<h2 id="org8902b80">Creating the  visual images of the film.</h2>
-<div class="outline-text-2" id="text-org8902b80">
-</div>
-<div id="outline-container-orgccac9ed" class="outline-3">
-<h3 id="orgccac9ed"><b>c _ n _ matography</b></h3>
-</div>
-<div id="outline-container-org0db1878" class="outline-3">
-<h3 id="org0db1878"><b>cinematography</b></h3>
-</div>
-</div>
-<div id="outline-container-org981fc07" class="outline-2">
-<h2 id="org981fc07">Visual or practical effects created to enhance the realism or artistic value of scenes.</h2>
-<div class="outline-text-2" id="text-org981fc07">
-</div>
-<div id="outline-container-org486d62f" class="outline-3">
-<h3 id="org486d62f"><b>sp _ cial eff _ _ ts</b></h3>
-</div>
-<div id="outline-container-org17e4188" class="outline-3">
-<h3 id="org17e4188"><b>special effects</b></h3>
-</div>
-</div>
-<div id="outline-container-orgcc611c6" class="outline-2">
-<h2 id="orgcc611c6">The name of the film.</h2>
-<div class="outline-text-2" id="text-orgcc611c6">
-</div>
-<div id="outline-container-orgcc7a7fa" class="outline-3">
-<h3 id="orgcc7a7fa"><b>t _ t _ e</b></h3>
-</div>
-<div id="outline-container-org78039f0" class="outline-3">
-<h3 id="org78039f0"><b>title</b></h3>
-</div>
-</div>
-<div id="outline-container-orge7e9cae" class="outline-2">
-<h2 id="orge7e9cae">Spoken conversation between characters in a film or TV program.</h2>
-<div class="outline-text-2" id="text-orge7e9cae">
-</div>
-<div id="outline-container-orgd75cde9" class="outline-3">
-<h3 id="orgd75cde9"><b>d _ al _ gue</b></h3>
-</div>
-<div id="outline-container-org41c0cd8" class="outline-3">
-<h3 id="org41c0cd8"><b>dialogue</b></h3>
-</div>
-</div>
-<div id="outline-container-org3cbb926" class="outline-2">
-<h2 id="org3cbb926">Instrumental music that plays in the background of scenes, often used to set the mood or emphasize emotions.</h2>
-<div class="outline-text-2" id="text-org3cbb926">
-</div>
-<div id="outline-container-orgea1c699" class="outline-3">
-<h3 id="orgea1c699"><b>b _ ckgr _ und sc _ re</b></h3>
-</div>
-<div id="outline-container-org1d3c9ca" class="outline-3">
-<h3 id="org1d3c9ca"><b>background score</b></h3>
-</div>
-</div>
-<div id="outline-container-orge2813cc" class="outline-2">
-<h2 id="orge2813cc">A unit of the story that usually takes place in a single setting, such as a room or building.</h2>
-<div class="outline-text-2" id="text-orge2813cc">
-</div>
-<div id="outline-container-orgc1ab538" class="outline-3">
-<h3 id="orgc1ab538"><b>sc _ ne</b></h3>
-</div>
-<div id="outline-container-org70070e6" class="outline-3">
-<h3 id="org70070e6"><b>scene</b></h3>
-</div>
-</div>
-<div id="outline-container-org93a72b0" class="outline-2">
-<h2 id="org93a72b0">The first scene or sequence in a film or TV program, setting the tone and premise.</h2>
-<div class="outline-text-2" id="text-org93a72b0">
-</div>
-<div id="outline-container-org1597109" class="outline-3">
-<h3 id="org1597109"><b>op _ ning sc _ ne</b></h3>
-</div>
-<div id="outline-container-orgd382cb9" class="outline-3">
-<h3 id="orgd382cb9"><b>opening scene</b></h3>
-</div>
-</div>
-<div id="outline-container-orgb6d4802" class="outline-2">
-<h2 id="orgb6d4802">The final scene or sequence in a film or TV program, often resolving the plot or leaving a lasting impression.</h2>
-<div class="outline-text-2" id="text-orgb6d4802">
-</div>
-<div id="outline-container-org0a16b91" class="outline-3">
-<h3 id="org0a16b91"><b>c _ _ sing scene</b></h3>
-</div>
-<div id="outline-container-org2c2e055" class="outline-3">
-<h3 id="org2c2e055"><b>closing scene</b></h3>
-</div>
-</div>
-<div id="outline-container-orgbce3523" class="outline-2">
-<h2 id="orgbce3523">The clothing worn by characters in a film or TV program, which can define time period, culture, or character traits.</h2>
-<div class="outline-text-2" id="text-orgbce3523">
-</div>
-<div id="outline-container-orgbcf7492" class="outline-3">
-<h3 id="orgbcf7492"><b>c _ stumes</b></h3>
-</div>
-<div id="outline-container-org05ada79" class="outline-3">
-<h3 id="org05ada79"><b>costumes</b></h3>
-</div>
-</div>
-<div id="outline-container-org9ad96c9" class="outline-2">
-<h2 id="org9ad96c9">The way characters undergo change or growth through the story.</h2>
-<div class="outline-text-2" id="text-org9ad96c9">
-</div>
-<div id="outline-container-org0c7ab1d" class="outline-3">
-<h3 id="org0c7ab1d"><b>ch_ racter d _ vel _pment</b></h3>
-</div>
-<div id="outline-container-org579212e" class="outline-3">
-<h3 id="org579212e"><b>character development</b></h3>
-</div>
-</div>
-<div id="outline-container-org3326010" class="outline-2">
-<h2 id="org3326010">Using a computer to assemble shots to make a film and adding sound and special effects.</h2>
-<div class="outline-text-2" id="text-org3326010">
-</div>
-<div id="outline-container-org0d96f1f" class="outline-3">
-<h3 id="org0d96f1f"><b>ed _ t _ ng</b></h3>
-</div>
-<div id="outline-container-orgab89f8b" class="outline-3">
-<h3 id="orgab89f8b"><b>editing</b></h3>
-</div>
-</div>
-<div id="outline-container-org28540a9" class="outline-2">
-<h2 id="org28540a9">The type of film or TV program, such as drama, comedy, horror, etc.</h2>
-<div class="outline-text-2" id="text-org28540a9">
-</div>
-<div id="outline-container-org62b7946" class="outline-3">
-<h3 id="org62b7946"><b>g _nr _</b></h3>
-</div>
-<div id="outline-container-org6ffbee5" class="outline-3">
-<h3 id="org6ffbee5"><b>genre</b></h3>
-</div>
-</div>
-<div id="outline-container-org0b9dc1b" class="outline-2">
-<h2 id="org0b9dc1b">Links</h2>
-<div class="outline-text-2" id="text-org0b9dc1b">
-<ul class="org-ul">
+<div class="reveal">
+<div class="slides">
+<section>
+<section id="slide-org3271d5c">
+<h2 id="org3271d5c">The written text of a film or TV program, including dialogue and directions for acting and camera work.</h2>
+<div class="outline-text-2" id="text-org3271d5c">
+</div>
+</section>
+<section id="slide-orga7e9161">
+<h3 id="orga7e9161"><b>s _ r _ pt/scr _ _ nplay</b></h3>
+</section>
+<section id="slide-orgba7ac95">
+<h3 id="orgba7ac95"><b>script/screenplay</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgabad4bb">
+<h2 id="orgabad4bb">The person in control of making the film who gives instructions to the crew and actors.</h2>
+<div class="outline-text-2" id="text-orgabad4bb">
+</div>
+</section>
+<section id="slide-org20bd652">
+<h3 id="org20bd652"><b>d _ r _ ct _ r</b></h3>
+</section>
+<section id="slide-orgc0a7b0a">
+<h3 id="orgc0a7b0a"><b>director</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgbbd0263">
+<h2 id="orgbbd0263">Actors and actresses who appear in the film or TV program.</h2>
+<div class="outline-text-2" id="text-orgbbd0263">
+</div>
+</section>
+<section id="slide-org7f7a474">
+<h3 id="org7f7a474"><b>c _ s _</b></h3>
+</section>
+<section id="slide-orgfd4ad57">
+<h3 id="orgfd4ad57"><b>cast</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org03b19a6">
+<h2 id="org03b19a6">The music that accompanies a film or TV program, often made for the film.</h2>
+<div class="outline-text-2" id="text-org03b19a6">
+</div>
+</section>
+<section id="slide-org5af3d98">
+<h3 id="org5af3d98"><b>so _ ndt _ _ck</b></h3>
+</section>
+<section id="slide-orgfc92b14">
+<h3 id="orgfc92b14"><b>soundtrack</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgbb2bc63">
+<h2 id="orgbb2bc63">The main story line of the film.</h2>
+<div class="outline-text-2" id="text-orgbb2bc63">
+</div>
+</section>
+<section id="slide-org1a357d4">
+<h3 id="org1a357d4"><b>p _ _ t</b></h3>
+</section>
+<section id="slide-orgd72e3d2">
+<h3 id="orgd72e3d2"><b>plot</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org632dcea">
+<h2 id="org632dcea">A continuous camera recording that makes up a scene.</h2>
+<div class="outline-text-2" id="text-org632dcea">
+</div>
+</section>
+<section id="slide-org13d2719">
+<h3 id="org13d2719"><b>s _ _t</b></h3>
+</section>
+<section id="slide-org0448f62">
+<h3 id="org0448f62"><b>shot</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org96ec562">
+<h2 id="org96ec562">The time and place where the film&rsquo;s or show&rsquo;s story occurs.</h2>
+<div class="outline-text-2" id="text-org96ec562">
+</div>
+</section>
+<section id="slide-org6370ee4">
+<h3 id="org6370ee4"><b>s _ tt _ ng</b></h3>
+</section>
+<section id="slide-org68a2fe8">
+<h3 id="org68a2fe8"><b>setting</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org4bf1654">
+<h2 id="org4bf1654">Creating the  visual images of the film.</h2>
+<div class="outline-text-2" id="text-org4bf1654">
+</div>
+</section>
+<section id="slide-orga6511cb">
+<h3 id="orga6511cb"><b>c _ n _ matography</b></h3>
+</section>
+<section id="slide-org68caba4">
+<h3 id="org68caba4"><b>cinematography</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org3d8b5f8">
+<h2 id="org3d8b5f8">Visual or practical effects created to enhance the realism or artistic value of scenes.</h2>
+<div class="outline-text-2" id="text-org3d8b5f8">
+</div>
+</section>
+<section id="slide-orgbe69fd1">
+<h3 id="orgbe69fd1"><b>sp _ cial eff _ _ ts</b></h3>
+</section>
+<section id="slide-org9147175">
+<h3 id="org9147175"><b>special effects</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org0b010b8">
+<h2 id="org0b010b8">The name of the film.</h2>
+<div class="outline-text-2" id="text-org0b010b8">
+</div>
+</section>
+<section id="slide-org2bf54da">
+<h3 id="org2bf54da"><b>t _ t _ e</b></h3>
+</section>
+<section id="slide-org01bf299">
+<h3 id="org01bf299"><b>title</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org7e8a229">
+<h2 id="org7e8a229">Spoken conversation between characters in a film or TV program.</h2>
+<div class="outline-text-2" id="text-org7e8a229">
+</div>
+</section>
+<section id="slide-org1306c47">
+<h3 id="org1306c47"><b>d _ al _ gue</b></h3>
+</section>
+<section id="slide-orgbb8e8cc">
+<h3 id="orgbb8e8cc"><b>dialogue</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org50c9356">
+<h2 id="org50c9356">Instrumental music that plays in the background of scenes, often used to set the mood or emphasize emotions.</h2>
+<div class="outline-text-2" id="text-org50c9356">
+</div>
+</section>
+<section id="slide-org1e6ae39">
+<h3 id="org1e6ae39"><b>b _ ckgr _ und sc _ re</b></h3>
+</section>
+<section id="slide-orgd0eaf67">
+<h3 id="orgd0eaf67"><b>background score</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgd9e3b23">
+<h2 id="orgd9e3b23">A unit of the story that usually takes place in a single setting, such as a room or building.</h2>
+<div class="outline-text-2" id="text-orgd9e3b23">
+</div>
+</section>
+<section id="slide-orgd2878d4">
+<h3 id="orgd2878d4"><b>sc _ ne</b></h3>
+</section>
+<section id="slide-org7d681cd">
+<h3 id="org7d681cd"><b>scene</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org53a0794">
+<h2 id="org53a0794">The first scene or sequence in a film or TV program, setting the tone and premise.</h2>
+<div class="outline-text-2" id="text-org53a0794">
+</div>
+</section>
+<section id="slide-org08bd115">
+<h3 id="org08bd115"><b>op _ ning sc _ ne</b></h3>
+</section>
+<section id="slide-orgbaa427e">
+<h3 id="orgbaa427e"><b>opening scene</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org1a10632">
+<h2 id="org1a10632">The final scene or sequence in a film or TV program, often resolving the plot or leaving a lasting impression.</h2>
+<div class="outline-text-2" id="text-org1a10632">
+</div>
+</section>
+<section id="slide-org24b6a57">
+<h3 id="org24b6a57"><b>c _ _ sing scene</b></h3>
+</section>
+<section id="slide-org4285645">
+<h3 id="org4285645"><b>closing scene</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org08f5c39">
+<h2 id="org08f5c39">The clothing worn by characters in a film or TV program, which can define time period, culture, or character traits.</h2>
+<div class="outline-text-2" id="text-org08f5c39">
+</div>
+</section>
+<section id="slide-org735bce0">
+<h3 id="org735bce0"><b>c _ stumes</b></h3>
+</section>
+<section id="slide-orga03304e">
+<h3 id="orga03304e"><b>costumes</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org3481331">
+<h2 id="org3481331">The way characters undergo change or growth through the story.</h2>
+<div class="outline-text-2" id="text-org3481331">
+</div>
+</section>
+<section id="slide-org1f43193">
+<h3 id="org1f43193"><b>ch_ racter d _ vel _pment</b></h3>
+</section>
+<section id="slide-orgec703d0">
+<h3 id="orgec703d0"><b>character development</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org5bdc537">
+<h2 id="org5bdc537">Using a computer to assemble shots to make a film and adding sound and special effects.</h2>
+<div class="outline-text-2" id="text-org5bdc537">
+</div>
+</section>
+<section id="slide-orge3abe32">
+<h3 id="orge3abe32"><b>ed _ t _ ng</b></h3>
+</section>
+<section id="slide-orge471ada">
+<h3 id="orge471ada"><b>editing</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orga8c7a05">
+<h2 id="orga8c7a05">The type of film or TV program, such as drama, comedy, horror, etc.</h2>
+<div class="outline-text-2" id="text-orga8c7a05">
+</div>
+</section>
+<section id="slide-org947811b">
+<h3 id="org947811b"><b>g _nr _</b></h3>
+</section>
+<section id="slide-org49cbda8">
+<h3 id="org49cbda8"><b>genre</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgdc8bea3">
+<h2 id="orgdc8bea3">Links</h2>
+<ul>
 <li>🔗 <a href="https://sendagirich.github.io/asuka/vl_lessons.html">Lessons</a></li>
 <li>🔗 <a href="https://sendagirich.github.io/asuka/vl_index.html">Home</a></li>
+
 </ul>
+</section>
+</section>
 </div>
 </div>
-</div>
-<div id="postamble" class="status">
-<p class="author">Author: Richard Williams</p>
-</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/search/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+margin: 0.00,
+
+transition: 'cube',
+transitionSpeed: '',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
 </body>
 </html>
