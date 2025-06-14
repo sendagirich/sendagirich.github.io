@@ -1,384 +1,235 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8"/>
 <title>Film Genres Quiz</title>
-<meta name="author" content="Richard Williams" />
-<meta name="generator" content="Org Mode" />
+<meta name="author" content="Richard Williams"/>
 <style type="text/css">
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
+.underline { text-decoration: underline; }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/dracula.css" id="theme"/>
 </head>
 <body>
-<div id="content" class="content">
-<h1 class="title">Film Genres Quiz</h1>
+<div class="reveal">
+<div class="slides">
 
-<div id="outline-container-org6fcbdf9" class="outline-2">
-<h2 id="org6fcbdf9">These films have lots of monsters such as Frankenstein, or Dracula. These films make you scared and afraid.</h2>
-<div class="outline-text-2" id="text-org6fcbdf9">
-</div>
-<div id="outline-container-orgbfeb1b4" class="outline-3">
-<h3 id="orgbfeb1b4"><b>H _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-org7e76027" class="outline-3">
-<h3 id="org7e76027"><b>Horror</b></h3>
-</div>
-</div>
-<div id="outline-container-org2c91fd1" class="outline-2">
-<h2 id="org2c91fd1">Films in which the heroes have lots of battles, do incredible stunts and drive fast.</h2>
-<div class="outline-text-2" id="text-org2c91fd1">
-</div>
-<div id="outline-container-orge2e2b8e" class="outline-3">
-<h3 id="orge2e2b8e"><b>A _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-org65ea19b" class="outline-3">
-<h3 id="org65ea19b"><b>Action</b></h3>
-</div>
-</div>
-<div id="outline-container-org10e5800" class="outline-2">
-<h2 id="org10e5800">These films have fighting such as kung-fu Judo, Karate, Taekwondo and so on. Bruce Lee made very famous martial arts films.</h2>
-<div class="outline-text-2" id="text-org10e5800">
-</div>
-<div id="outline-container-orgc8868ef" class="outline-3">
-<h3 id="orgc8868ef"><b>M _ _ _ _ _ _ a _ _ _</b></h3>
-</div>
-<div id="outline-container-org0d9495f" class="outline-3">
-<h3 id="org0d9495f"><b>Martial arts</b></h3>
-</div>
-</div>
-<div id="outline-container-org99f9646" class="outline-2">
-<h2 id="org99f9646">These films include films about pirates, historical adventures such as sailing around the world and space exploration.</h2>
-<div class="outline-text-2" id="text-org99f9646">
-</div>
-<div id="outline-container-org8e111e7" class="outline-3">
-<h3 id="org8e111e7"><b>A _ _ _ _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-orgf698925" class="outline-3">
-<h3 id="orgf698925"><b>Adventure</b></h3>
-</div>
-</div>
-<div id="outline-container-org5ecd1dc" class="outline-2">
-<h2 id="org5ecd1dc">There are many different types of these films. In general, these films make you laugh - a lot!</h2>
-<div class="outline-text-2" id="text-org5ecd1dc">
-</div>
-<div id="outline-container-org84e667b" class="outline-3">
-<h3 id="org84e667b"><b>C _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-org6ca7786" class="outline-3">
-<h3 id="org6ca7786"><b>Comedy</b></h3>
-</div>
-</div>
-<div id="outline-container-org50a0a17" class="outline-2">
-<h2 id="org50a0a17">These films are love stories made to melt our hearts with stories of people finding each other and falling in love. Many of these films are romantic comedies.</h2>
-<div class="outline-text-2" id="text-org50a0a17">
-</div>
-<div id="outline-container-org640abb3" class="outline-3">
-<h3 id="org640abb3"><b>R _ _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-orga4230f1" class="outline-3">
-<h3 id="orga4230f1"><b>Romance</b></h3>
-</div>
-</div>
-<div id="outline-container-orge76236e" class="outline-2">
-<h2 id="orge76236e">These films are about real-life stories.</h2>
-<div class="outline-text-2" id="text-orge76236e">
-</div>
-<div id="outline-container-orgbf97e85" class="outline-3">
-<h3 id="orgbf97e85"><b>D _ _ _ _ _ _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-org219c3cf" class="outline-3">
-<h3 id="org219c3cf"><b>Documentary</b></h3>
-</div>
-</div>
-<div id="outline-container-orga1a2978" class="outline-2">
-<h2 id="orga1a2978">These films are can be cartoons such as Disney films or with computer animation.</h2>
-<div class="outline-text-2" id="text-orga1a2978">
-</div>
-<div id="outline-container-org8de0602" class="outline-3">
-<h3 id="org8de0602"><b>A _ _ _ _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-org803a392" class="outline-3">
-<h3 id="org803a392"><b>Animation</b></h3>
-</div>
-</div>
-<div id="outline-container-org1601762" class="outline-2">
-<h2 id="org1601762">These films are a type of adventure film. The focus on horrible things happening like end of the world films.</h2>
-<div class="outline-text-2" id="text-org1601762">
-</div>
-<div id="outline-container-org95b8ef4" class="outline-3">
-<h3 id="org95b8ef4"><b>D _ _ _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-orgfc2e2eb" class="outline-3">
-<h3 id="orgfc2e2eb"><b>Disaster</b></h3>
-</div>
-</div>
-<div id="outline-container-org17cfbea" class="outline-2">
-<h2 id="org17cfbea">These films are also a type of adventure film. These films feature superheroes from comic books such as Superman, Batman, and Spiderman.</h2>
-<div class="outline-text-2" id="text-org17cfbea">
-</div>
-<div id="outline-container-org7cc91f0" class="outline-3">
-<h3 id="org7cc91f0"><b>S _ _ _ _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-orge215bf5" class="outline-3">
-<h3 id="orge215bf5"><b>Superhero</b></h3>
-</div>
-</div>
-<div id="outline-container-org44b4226" class="outline-2">
-<h2 id="org44b4226">These films are set in the future and might be about other planets, or just about the future of our planet Earth. these films often feature many elements of adventure films such as chases and battles.</h2>
-<div class="outline-text-2" id="text-org44b4226">
-</div>
-<div id="outline-container-org7990aeb" class="outline-3">
-<h3 id="org7990aeb"><b>S _ _ _ _ _ _-F _ _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-org8fa2de8" class="outline-3">
-<h3 id="org8fa2de8"><b>Science-Fiction</b></h3>
-</div>
-</div>
-<div id="outline-container-org3504c98" class="outline-2">
-<h2 id="org3504c98">These films are often sad stories about difficult situations in life such as fighting cancer or difficult love stories.</h2>
-<div class="outline-text-2" id="text-org3504c98">
-</div>
-<div id="outline-container-org6cffef1" class="outline-3">
-<h3 id="org6cffef1"><b>D _ _ _ _</b></h3>
-</div>
-<div id="outline-container-orgc9ceec0" class="outline-3">
-<h3 id="orgc9ceec0"><b>Drama</b></h3>
-</div>
-</div>
-<div id="outline-container-org7358349" class="outline-2">
-<h2 id="org7358349">These films are based on real events that happened in the past that are historically important.</h2>
-<div class="outline-text-2" id="text-org7358349">
-</div>
-<div id="outline-container-orgfc2260d" class="outline-3">
-<h3 id="orgfc2260d"><b>H _ _ _ _ _ _ _ _ _ D _ _ _ _</b></h3>
-</div>
-<div id="outline-container-orgce01c21" class="outline-3">
-<h3 id="orgce01c21"><b>Historical Drama</b></h3>
-</div>
-</div>
-<div id="outline-container-org453175b" class="outline-2">
-<h2 id="org453175b">These films are spy stories that are similar to adventure films, but often feature international spy rings, or countries trying to find out secrets about each other.</h2>
-<div class="outline-text-2" id="text-org453175b">
-</div>
-<div id="outline-container-org6c5c728" class="outline-3">
-<h3 id="org6c5c728"><b>T _ _ _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-orgb9f1736" class="outline-3">
-<h3 id="orgb9f1736"><b>Thriller</b></h3>
-</div>
-</div>
-<div id="outline-container-orgd221bb3" class="outline-2">
-<h2 id="orgd221bb3">These films focus on solving crimes. Usually, there is a detective who must find out who committed a crime before the criminal commits other horrible crimes.</h2>
-<div class="outline-text-2" id="text-orgd221bb3">
-</div>
-<div id="outline-container-org0df9ba7" class="outline-3">
-<h3 id="org0df9ba7"><b>D _ _ _ _ _ _ _ _ s _ _ _ _</b></h3>
-</div>
-<div id="outline-container-org2e5412b" class="outline-3">
-<h3 id="org2e5412b"><b>Detective story</b></h3>
-</div>
-</div>
-<div id="outline-container-orge3e0ade" class="outline-2">
-<h2 id="orge3e0ade">These films have lots of songs and often dances.</h2>
-<div class="outline-text-2" id="text-orge3e0ade">
-</div>
-<div id="outline-container-org8e985bb" class="outline-3">
-<h3 id="org8e985bb"><b>M _ _ _ _ _ _</b></h3>
-</div>
-<div id="outline-container-orgb6a6d5a" class="outline-3">
-<h3 id="orgb6a6d5a"><b>Musical</b></h3>
-</div>
-</div>
-<div id="outline-container-orgc81de2d" class="outline-2">
-<h2 id="orgc81de2d">Links</h2>
-<div class="outline-text-2" id="text-orgc81de2d">
-<ul class="org-ul">
+<section>
+<section id="slide-org3a30c3b">
+<h2 id="org3a30c3b">These films have lots of monsters such as Frankenstein, or Dracula. These films make you scared and afraid.</h2>
+<div class="outline-text-2" id="text-org3a30c3b">
+</div>
+</section>
+<section id="slide-org7c60925">
+<h3 id="org7c60925"><b>H _ _ _ _ _</b></h3>
+</section>
+<section id="slide-org83c273b">
+<h3 id="org83c273b"><b>Horror</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org9b70ba5">
+<h2 id="org9b70ba5">Films in which the heroes have lots of battles, do incredible stunts and drive fast.</h2>
+<div class="outline-text-2" id="text-org9b70ba5">
+</div>
+</section>
+<section id="slide-org9ab6531">
+<h3 id="org9ab6531"><b>A _ _ _ _ _</b></h3>
+</section>
+<section id="slide-orge3420e9">
+<h3 id="orge3420e9"><b>Action</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org705d02d">
+<h2 id="org705d02d">These films have fighting such as kung-fu Judo, Karate, Taekwondo and so on. Bruce Lee made very famous martial arts films.</h2>
+<div class="outline-text-2" id="text-org705d02d">
+</div>
+</section>
+<section id="slide-org51ee9f8">
+<h3 id="org51ee9f8"><b>M _ _ _ _ _ _ a _ _ _</b></h3>
+</section>
+<section id="slide-orgde43cab">
+<h3 id="orgde43cab"><b>Martial arts</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org646ea2a">
+<h2 id="org646ea2a">These films include films about pirates, historical adventures such as sailing around the world and space exploration.</h2>
+<div class="outline-text-2" id="text-org646ea2a">
+</div>
+</section>
+<section id="slide-orgbcd083d">
+<h3 id="orgbcd083d"><b>A _ _ _ _ _ _ _ _</b></h3>
+</section>
+<section id="slide-orgb6d26d2">
+<h3 id="orgb6d26d2"><b>Adventure</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org4e3bee0">
+<h2 id="org4e3bee0">There are many different types of these films. In general, these films make you laugh - a lot!</h2>
+<div class="outline-text-2" id="text-org4e3bee0">
+</div>
+</section>
+<section id="slide-orgd67abde">
+<h3 id="orgd67abde"><b>C _ _ _ _ _</b></h3>
+</section>
+<section id="slide-org5f76e7a">
+<h3 id="org5f76e7a"><b>Comedy</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org1e5b73a">
+<h2 id="org1e5b73a">These films are love stories made to melt our hearts with stories of people finding each other and falling in love. Many of these films are romantic comedies.</h2>
+<div class="outline-text-2" id="text-org1e5b73a">
+</div>
+</section>
+<section id="slide-org3b55be6">
+<h3 id="org3b55be6"><b>R _ _ _ _ _ _</b></h3>
+</section>
+<section id="slide-org72aa471">
+<h3 id="org72aa471"><b>Romance</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org87848ec">
+<h2 id="org87848ec">These films are about real-life stories.</h2>
+<div class="outline-text-2" id="text-org87848ec">
+</div>
+</section>
+<section id="slide-org5f0e3ae">
+<h3 id="org5f0e3ae"><b>D _ _ _ _ _ _ _ _ _ _</b></h3>
+</section>
+<section id="slide-org9ae05e3">
+<h3 id="org9ae05e3"><b>Documentary</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgdb4b6d9">
+<h2 id="orgdb4b6d9">These films are can be cartoons such as Disney films or with computer animation.</h2>
+<div class="outline-text-2" id="text-orgdb4b6d9">
+</div>
+</section>
+<section id="slide-org7d3d839">
+<h3 id="org7d3d839"><b>A _ _ _ _ _ _ _ _</b></h3>
+</section>
+<section id="slide-org9e390ad">
+<h3 id="org9e390ad"><b>Animation</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgfc24a9a">
+<h2 id="orgfc24a9a">These films are a type of adventure film. The focus on horrible things happening like end of the world films.</h2>
+<div class="outline-text-2" id="text-orgfc24a9a">
+</div>
+</section>
+<section id="slide-org10d64cd">
+<h3 id="org10d64cd"><b>D _ _ _ _ _ _ _</b></h3>
+</section>
+<section id="slide-org9d78f74">
+<h3 id="org9d78f74"><b>Disaster</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgcc57041">
+<h2 id="orgcc57041">These films are also a type of adventure film. These films feature superheroes from comic books such as Superman, Batman, and Spiderman.</h2>
+<div class="outline-text-2" id="text-orgcc57041">
+</div>
+</section>
+<section id="slide-org92b5344">
+<h3 id="org92b5344"><b>S _ _ _ _ _ _ _ _</b></h3>
+</section>
+<section id="slide-org0f1bfbe">
+<h3 id="org0f1bfbe"><b>Superhero</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org2cbe5a0">
+<h2 id="org2cbe5a0">These films are set in the future and might be about other planets, or just about the future of our planet Earth. these films often feature many elements of adventure films such as chases and battles.</h2>
+<div class="outline-text-2" id="text-org2cbe5a0">
+</div>
+</section>
+<section id="slide-org236ec94">
+<h3 id="org236ec94"><b>S _ _ _ _ _ _-F _ _ _ _ _ _</b></h3>
+</section>
+<section id="slide-org6f08f11">
+<h3 id="org6f08f11"><b>Science-Fiction</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgf4b0214">
+<h2 id="orgf4b0214">These films are often sad stories about difficult situations in life such as fighting cancer or difficult love stories.</h2>
+<div class="outline-text-2" id="text-orgf4b0214">
+</div>
+</section>
+<section id="slide-org2415039">
+<h3 id="org2415039"><b>D _ _ _ _</b></h3>
+</section>
+<section id="slide-org610bab1">
+<h3 id="org610bab1"><b>Drama</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org9808649">
+<h2 id="org9808649">These films are based on real events that happened in the past that are historically important.</h2>
+<div class="outline-text-2" id="text-org9808649">
+</div>
+</section>
+<section id="slide-orgc145042">
+<h3 id="orgc145042"><b>H _ _ _ _ _ _ _ _ _ D _ _ _ _</b></h3>
+</section>
+<section id="slide-orge9cb4f7">
+<h3 id="orge9cb4f7"><b>Historical Drama</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org5b3dc65">
+<h2 id="org5b3dc65">These films are spy stories that are similar to adventure films, but often feature international spy rings, or countries trying to find out secrets about each other.</h2>
+<div class="outline-text-2" id="text-org5b3dc65">
+</div>
+</section>
+<section id="slide-org4b1033d">
+<h3 id="org4b1033d"><b>T _ _ _ _ _ _ _</b></h3>
+</section>
+<section id="slide-org89ba793">
+<h3 id="org89ba793"><b>Thriller</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgfd56491">
+<h2 id="orgfd56491">These films focus on solving crimes. Usually, there is a detective who must find out who committed a crime before the criminal commits other horrible crimes.</h2>
+<div class="outline-text-2" id="text-orgfd56491">
+</div>
+</section>
+<section id="slide-orgb89b705">
+<h3 id="orgb89b705"><b>D _ _ _ _ _ _ _ _ s _ _ _ _</b></h3>
+</section>
+<section id="slide-org336de94">
+<h3 id="org336de94"><b>Detective story</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-orgb4d99fc">
+<h2 id="orgb4d99fc">These films have lots of songs and often dances.</h2>
+<div class="outline-text-2" id="text-orgb4d99fc">
+</div>
+</section>
+<section id="slide-orgb42f6cb">
+<h3 id="orgb42f6cb"><b>M _ _ _ _ _ _</b></h3>
+</section>
+<section id="slide-org9713632">
+<h3 id="org9713632"><b>Musical</b></h3>
+</section>
+</section>
+<section>
+<section id="slide-org04e5e9e">
+<h2 id="org04e5e9e">Links</h2>
+<ul>
 <li>🔗 <a href="https://sendagirich.github.io/asuka/vl_lessons.html">Lessons</a></li>
 <li>🔗 <a href="https://sendagirich.github.io/asuka/vl_film_english.html">Film English</a></li>
+
 </ul>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -388,14 +239,49 @@
 </tr>
 </tbody>
 </table>
-<ul class="org-ul">
+<ul>
 <li>🔗 <a href="https://sendagirich.github.io/asuka/vl_index.html">Home</a></li>
+
 </ul>
+</section>
+</section>
 </div>
 </div>
-</div>
-<div id="postamble" class="status">
-<p class="author">Author: Richard Williams</p>
-</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/search/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+margin: 0.00,
+
+transition: 'cube',
+transitionSpeed: '',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
 </body>
 </html>
