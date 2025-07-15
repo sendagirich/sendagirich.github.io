@@ -1,220 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<!-- 2025-07-15 Tue 14:17 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- 2025-07-15 Tue 14:44 -->
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Difficult sounds for Japanese speakers</title>
 <meta name="author" content="Richard Williams" />
 <meta name="generator" content="Org Mode" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
-</style>
-<style type="text/css">
-article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+html,button,input,select,textarea {  color: #484C66;}html {  font-size: 90%;  line-height: 1.4;}*,*:before,*:after {  -moz-box-sizing: border-box;  -webkit-box-sizing: border-box;  box-sizing: border-box;}a {  white-space: pre;  white-space: pre-wrap;  white-space: pre-line;  white-space: -pre-wrap;  white-space: -o-pre-wrap;  white-space: -moz-pre-wrap;  white-space: -hp-pre-wrap;  word-wrap: break-word;  text-decoration: none;}a:hover {  color: #0A4C89;}/* * Remove text-shadow in selection highlight: h5bp.com/i * These selection rule sets have to be separate. * Customize the background color to match your design. */::-moz-selection {  background: #0A4C89;  color: #FFF;  text-shadow: none;}::selection {  background: #0A4C89;  color: #FFF;  text-shadow: none;}/* * A better looking default horizontal rule */hr {  display: block;  height: 1px;  border: 0;  border-top: 1px dashed #CCC;  margin: 1em 0;  padding: 0;}/* * Remove the gap between images, videos, audio and canvas and the bottom of * their containers: h5bp.com/i/440 */audio,canvas,img,video {  vertical-align: middle;}/* * Remove default fieldset styles. */fieldset {  border: 0;  margin: 0;  padding: 0;}/* * Allow only vertical resizing of textareas. */textarea {  resize: vertical;}/* ==========================================================================   Author's custom styles   ========================================================================== */.todo,.done,.tag {  font-family: "Source Pro", Monaco, "Courier New", monospace;  padding: 0 0.3em;  background-color: #EEE;  border: 1px solid #CCC;}.todo {  color: #DD4433;}.done {  color: #44934B;}.tag {  font-size: 80%;  font-weight: normal;  margin: 0 0.3em;  display: none;}.timestamp {  color: #BEBEBE;}.timestamp-kwd {  color: #5F9EA0;}.right {  margin-left: auto;  margin-right: 0px;  text-align: right;}.left {  margin-left: 0px;  margin-right: auto;  text-align: left;}.center {  margin-left: auto;  margin-right: auto;  text-align: center;}.underline {  text-decoration: underline;}#postamble p,#preamble p {  font-size: 90%;  margin: .2em;}pre,code {  font-family: "Source Pro", Monaco, "Courier New", monospace;  padding-left: 0.3em;  padding-right: 0.3em;}pre {  font-size: 90%;  padding: 8pt;  overflow: auto;  white-space: pre;  word-wrap: normal;}pre.src {  position: relative;}pre.src:before {  display: none;  position: absolute;  background-color: #FFF;  top: 0.5em;  right: 0.5em;  padding: 4px;  border: 1px solid #CCC;}pre.src-sh:before {  content: "Shell Script";}pre.src-bash:before {  content: "Bash Script";}pre.src-emacs-lisp:before {  content: "Emacs Lisp";}pre.src-R:before {  content: "R";}pre.src-perl:before {  content: "Perl";}pre.src-java:before {  content: "Java";}pre.src-sql:before {  content: "SQL";}pre.src-c:before {  content: "C";}pre.src-cpp:before {  content: "C++";}pre.src-html:before {  content: "HTML";}table {  border-collapse: collapse;  display: block;  overflow-x: auto;}caption.t-above {  caption-side: top;}caption.t-bottom {  caption-side: bottom;}td, th {  vertical-align: top;  border: 1px solid #CCC;  padding: 0.5em;}th.right {  text-align: center;}th.left {  text-align: center;}th.center {  text-align: center;}td.right {  text-align: right;}td.left {  text-align: left;}td.center {  text-align: center;}dt {  font-weight: bold;}#footnotes {  border-top: 5px solid #0A4C89;  margin-bottom: 5em;}#footnotes h2 {  display: none;}#text-footnotes {  margin-top: 1em;}.footpara:nth-child(2) {  display: inline;}.footpara {  display: block;}.footdef sup:before {  content: "[";}.footdef sup:after {  content: "]";}.footdef p {  display: inline;}figure {  margin: 0;}figure img {  max-width: 100%;}figcaption {  text-align: center;  font-size: 0.8rem;}.inlinetask {  padding: 10px;  border: 2px solid gray;  margin: 10px;  background: #ffffcc;}#org-div-home-and-up {  text-align: right;  font-size: 70%;  white-space: nowrap;}textarea {  overflow-x: auto;}.linenr {  font-size: smaller;}.code-highlighted {  background-color: #ffff00;}.org-info-js_info-navigation {  border-style: none;}#org-info-js_console-label {  font-size: 10px;  font-weight: bold;  white-space: nowrap;}.org-info-js_search-highlight {  background-color: #ffff00;  color: #000000;  font-weight: bold;}p.verse,blockquote {  margin: 0;  padding: 0;  padding-left: 3%;  border-left: 5px solid #0A4C89;}body {  font-family: Lora, Palatino, Georgia, serif;  width: 92%;  max-width: 1024px;  margin: 0 auto;  background-color: #FFF;}h2 {  line-height: 1.62em;}.title {  margin: 0 0 2em 0;  line-height: 2em;  border-bottom: 5px solid #0A4C89;  text-align: center;}#postamble {  font-size: 80%;  line-height: 1.4em;  text-align: right;}h1, h2, h3, h4, h5, h6 {  font-family: "Source Sans Pro", sans-serif;  color: #222;}.outline-2 {  margin-bottom: 4em;}.outline-2 h2 {  border-bottom: 1px solid #CCC;}.outline-text-2 code, pre {  background-color: #EEE;}#table-of-contents {  display: none;  margin-left: 0.5em;}#text-table-of-contents ul {  padding-left: 1.8em;}#text-table-of-contents li {  list-style-type: circle;  margin: 0.4em 0;}#text-table-of-contents ul ul {  margin: 0;}#text-table-of-contents li li {  font-weight: normal;  font-size: 90%;  margin: 0;}#content {  overflow: hidden;  *zoom: 1;}/* ==========================================================================   EXAMPLE Media Queries for Responsive Design.   These examples override the primary ('mobile first') styles.   Modify as content requires.   ========================================================================== */@media only screen and (min-width: 35em) {  /* Style adjustments for viewports that meet the condition */}@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {  /* Style adjustments for high resolution devices */}/* ==========================================================================   Print styles.   Inlined to avoid required HTTP connection: h5bp.com/r   ========================================================================== */@media print {  * {    background: transparent !important;    color: #000 !important;    /* Black prints faster: h5bp.com/s */    box-shadow: none !important;    text-shadow: none !important;  }  a,  a:visited {    text-decoration: underline;  }  a[href]:after {    content: " (" attr(href) ")";  }  abbr[title]:after {    content: " (" attr(title) ")";  }  /*   * Don't show links for images, or javascript/internal links   */  .ir a:after,  a[href^="javascript:"]:after,  a[href^="#"]:after {    content: "";  }  pre,  blockquote {    /* border: 1px solid #999; */    page-break-inside: avoid;  }  thead {    display: table-header-group;    /* h5bp.com/t */  }  tr,  img {    page-break-inside: avoid;  }  img {    max-width: 100% !important;  }  @page {    margin: 0.5cm;  }  p,  h2,  h3 {    orphans: 3;    widows: 3;  }  h2,  h3 {    page-break-after: avoid;  }  #table-of-contents {    display: block;    width: initial;    border: none;  }  #table-of-contents a {    text-decoration: none;  }}/* large screen */@media screen and (min-width: 40rem) {  html {    font-size: 100%;  }  #table-of-contents {    display: block;    padding: 1em;    width: 32%;    min-width: 18em;    float: right;    background-color: #EEE;    position: relative;    /* required by z-index */    z-index: 5000;    border: 1px solid #CCC;  }  .tag {    display: initial;  }}
 </style>
 </head>
 <body>
 <div id="content" class="content">
+<header>
 <h1 class="title">Difficult sounds for Japanese speakers</h1>
-<div id="outline-container-org6ef3d45" class="outline-4">
-<h4 id="org6ef3d45">Look at the <a href="https://sendagirich.github.io/general-english/pron/pron_key_terms.html">Pronunciation key terms</a> words here if you need to review them.</h4>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org72ae65f">Look at the Pronunciation key terms words here if you need to review them.</a></li>
+</ul>
+</li>
+<li><a href="#orgb0fc39f">Japanese has only five main vowel sounds that are similar to (but not exactly the same as) vowel sounds in English:</a></li>
+<li><a href="#org3b57c99">English has more sounds than Japanese. Japanese does not have these sounds:</a></li>
+</ul>
+</li>
+<li><a href="#org3dc468d">Pracising difficult sounds</a>
+<ul>
+<li><a href="#org3661c4a">Consonants</a>
+<ul>
+<li><a href="#org1fdbdef">/θ​/ (think, thank you, math)</a></li>
+<li><a href="#orgfe6bbd8">/ð​/ (then, that, mother)</a></li>
+<li><a href="#org21df1de">/l​/ (light, long, pilot)</a></li>
+<li><a href="#org0ef3f01">/r​/ (right, wrong, pirate)</a></li>
+<li><a href="#org2ef6c05">/f​/ (ferry, fine, offer)</a></li>
+<li><a href="#org59e8ddb">/v​/ (very, vine, alive)</a></li>
+<li><a href="#org5944904">/s​/ (see, sign, mass)</a></li>
+<li><a href="#org8a156d5">/ʃ​/ (she, shine, mash)</a></li>
+</ul>
+</li>
+<li><a href="#org56195ac">Practice constrasting these sounds</a>
+<ul>
+<li><a href="#orgc535e4c">/s​/ and /ʃ​/</a></li>
+<li><a href="#org1257347">/s​/ and /θ​/</a></li>
+<li><a href="#orgef33b81">/​z​/ and /ð​/</a></li>
+<li><a href="#orgcdbcef7"><i>/f​/</i> and /​h​/</a></li>
+<li><a href="#org162c803">/v​/   and /​b​/</a></li>
+<li><a href="#org4b2ec8f">/l​/ and /r​/</a></li>
+</ul>
+</li>
+<li><a href="#orgd138fd6">Try these tongue twisters</a>
+<ul>
+<li><a href="#orgc32ffd9">Sea shells</a></li>
+<li><a href="#org60bce04">Red lorry (lorry = truck in British English)</a></li>
+<li><a href="#orgc5fbb26">Lucky rabbits</a></li>
+</ul>
+</li>
+<li><a href="#org38e1ff8">Consonant clusters</a></li>
+<li><a href="#org52e4a7d">Long vowels</a>
+<ul>
+<li><a href="#org4a00a94">/​iː​/ (sea, pea, easy) Contrast with /​I​/ (in)</a></li>
+<li><a href="#org6fd5ecd">/​ɑː​/ (car, far) Contrast with /​æ​/ (cat)</a></li>
+<li><a href="#org281a765">/​ɔː​/ (more, law) Contrast with /​ɒ​/ (hot)</a></li>
+<li><a href="#org17cf3d6">/​uː​/ (goose, who, two) Contrast with /​ʊ​/ (put)</a></li>
+<li><a href="#orgce64d43">/​ɜː​/ (bird) Contrast with /​ʊ​/ (put)</a></li>
+</ul>
+</li>
+<li><a href="#org159255c"><b>/​ə​/</b> The shwa - weak vowel sound</a>
+<ul>
+<li><a href="#org3a0f3a4">We will look at the shwa /​ə​/ (mother) a following lesson on weak forms</a></li>
+</ul>
+</li>
+<li><a href="#orgca4434e">Diphthongs</a>
+<ul>
+<li><a href="#org5395d2f">/​əʊ​/ (goat) Contrast with /​ɒ​/ (hot)</a></li>
+<li><a href="#orgde2a84c">/​eə/ (hair)</a></li>
+<li><a href="#org9c5d3fd">/​ɪə/ (ear)</a></li>
+<li><a href="#orgf500081">/​ʊə/ (pure)</a></li>
+<li><a href="#org345c57c">/​eɪ​/ (face)</a></li>
+<li><a href="#org335d7ac">/​aɪ​/ (price)</a></li>
+<li><a href="#orgee3bdae">/​ɔɪ​/ (choice)</a></li>
+<li><a href="#orgfac2b79">/​aʊ​/ (mouth)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge166af1">Practise</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org5921ede">🔗 Rhythm</a></li>
+<li><a href="#org79c3711">🔗 Pronunciation</a></li>
+</ul>
 </div>
-<div id="outline-container-org0cd1492" class="outline-3">
-<h3 id="org0cd1492">Japanese has only five main vowel sounds that are similar to (but not exactly the same as) vowel sounds in English:</h3>
-<div class="outline-text-3" id="text-org0cd1492">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+</nav>
+<div id="outline-container-org72ae65f" class="outline-4">
+<h4 id="org72ae65f">Look at the <a href="https://sendagirich.github.io/general-english/pron/pron_key_terms.html">Pronunciation key terms</a> words here if you need to review them.</h4>
+</div>
+<div id="outline-container-orgb0fc39f" class="outline-3">
+<h3 id="orgb0fc39f">Japanese has only five main vowel sounds that are similar to (but not exactly the same as) vowel sounds in English:</h3>
+<div class="outline-text-3" id="text-orgb0fc39f">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <tbody>
 <tr>
@@ -250,26 +147,26 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </table>
 </div>
 </div>
-<div id="outline-container-orgcb401d3" class="outline-3">
-<h3 id="orgcb401d3">English has more sounds than Japanese. Japanese does not have these sounds:</h3>
-<div class="outline-text-3" id="text-orgcb401d3">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org3b57c99" class="outline-3">
+<h3 id="org3b57c99">English has more sounds than Japanese. Japanese does not have these sounds:</h3>
+<div class="outline-text-3" id="text-org3b57c99">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <tbody>
 <tr>
@@ -284,27 +181,27 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </tbody>
 </table>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <tbody>
 <tr>
@@ -410,9 +307,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </ul>
 </div>
 </div>
-<div id="outline-container-org345b773" class="outline-2">
-<h2 id="org345b773">Pracising difficult sounds</h2>
-<div class="outline-text-2" id="text-org345b773">
+<div id="outline-container-org3dc468d" class="outline-2">
+<h2 id="org3dc468d">Pracising difficult sounds</h2>
+<div class="outline-text-2" id="text-org3dc468d">
 <ul class="org-ul">
 <li>Look at the following videos and practise saying the words.</li>
 <li>Use a mirror (or your phone camera) to look at your mouth when you practice these sounds.</li>
@@ -420,53 +317,53 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 <li>Try to listen for these sounds next time you hear spoken English from your teacher or in a movie.</li>
 </ul>
 </div>
-<div id="outline-container-orgc230da6" class="outline-3">
-<h3 id="orgc230da6">Consonants</h3>
-<div class="outline-text-3" id="text-orgc230da6">
+<div id="outline-container-org3661c4a" class="outline-3">
+<h3 id="org3661c4a">Consonants</h3>
+<div class="outline-text-3" id="text-org3661c4a">
 </div>
-<div id="outline-container-org02a779e" class="outline-4">
-<h4 id="org02a779e"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst6">/θ​/ (think, thank you, math)</a></h4>
+<div id="outline-container-org1fdbdef" class="outline-4">
+<h4 id="org1fdbdef"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst6">/θ​/ (think, thank you, math)</a></h4>
 </div>
-<div id="outline-container-org13f2be7" class="outline-4">
-<h4 id="org13f2be7"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst6">/ð​/ (then, that, mother)</a></h4>
+<div id="outline-container-orgfe6bbd8" class="outline-4">
+<h4 id="orgfe6bbd8"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst6">/ð​/ (then, that, mother)</a></h4>
 </div>
-<div id="outline-container-org299e663" class="outline-4">
-<h4 id="org299e663"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-other-consonants/otherconst5">/l​/ (light, long, pilot)</a></h4>
+<div id="outline-container-org21df1de" class="outline-4">
+<h4 id="org21df1de"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-other-consonants/otherconst5">/l​/ (light, long, pilot)</a></h4>
 </div>
-<div id="outline-container-org10075a8" class="outline-4">
-<h4 id="org10075a8"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-other-consonants/otherconst6">/r​/ (right, wrong, pirate)</a></h4>
+<div id="outline-container-org0ef3f01" class="outline-4">
+<h4 id="org0ef3f01"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-other-consonants/otherconst6">/r​/ (right, wrong, pirate)</a></h4>
 </div>
-<div id="outline-container-org7e77a09" class="outline-4">
-<h4 id="org7e77a09"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst5">/f​/ (ferry, fine, offer)</a></h4>
+<div id="outline-container-org2ef6c05" class="outline-4">
+<h4 id="org2ef6c05"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst5">/f​/ (ferry, fine, offer)</a></h4>
 </div>
-<div id="outline-container-org3e3fd2c" class="outline-4">
-<h4 id="org3e3fd2c"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst5">/v​/ (very, vine, alive)</a></h4>
+<div id="outline-container-org59e8ddb" class="outline-4">
+<h4 id="org59e8ddb"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst5">/v​/ (very, vine, alive)</a></h4>
 </div>
-<div id="outline-container-org4e43795" class="outline-4">
-<h4 id="org4e43795"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst7">/s​/ (see, sign, mass)</a></h4>
+<div id="outline-container-org5944904" class="outline-4">
+<h4 id="org5944904"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst7">/s​/ (see, sign, mass)</a></h4>
 </div>
-<div id="outline-container-org28c05c9" class="outline-4">
-<h4 id="org28c05c9"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst8">/ʃ​/ (she, shine, mash)</a></h4>
+<div id="outline-container-org8a156d5" class="outline-4">
+<h4 id="org8a156d5"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst8">/ʃ​/ (she, shine, mash)</a></h4>
 </div>
 </div>
-<div id="outline-container-orgbbcf2fa" class="outline-3">
-<h3 id="orgbbcf2fa">Practice constrasting these sounds</h3>
-<div class="outline-text-3" id="text-orgbbcf2fa">
+<div id="outline-container-org56195ac" class="outline-3">
+<h3 id="org56195ac">Practice constrasting these sounds</h3>
+<div class="outline-text-3" id="text-org56195ac">
 </div>
-<div id="outline-container-orgff9a17d" class="outline-4">
-<h4 id="orgff9a17d"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst7">/s​/</a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst8">/ʃ​/</a></h4>
-<div class="outline-text-4" id="text-orgff9a17d">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-orgc535e4c" class="outline-4">
+<h4 id="orgc535e4c"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst7">/s​/</a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst8">/ʃ​/</a></h4>
+<div class="outline-text-4" id="text-orgc535e4c">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -501,20 +398,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </table>
 </div>
 </div>
-<div id="outline-container-orgf1302fc" class="outline-4">
-<h4 id="orgf1302fc"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst7">/s​/</a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst6">/θ​/</a></h4>
-<div class="outline-text-4" id="text-orgf1302fc">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org1257347" class="outline-4">
+<h4 id="org1257347"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst7">/s​/</a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst6">/θ​/</a></h4>
+<div class="outline-text-4" id="text-org1257347">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -572,22 +469,22 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </table>
 </div>
 </div>
-<div id="outline-container-orgf882d89" class="outline-4">
-<h4 id="orgf882d89"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst7">/​z​/</a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst6">/ð​/</a></h4>
-<div class="outline-text-4" id="text-orgf882d89">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-orgef33b81" class="outline-4">
+<h4 id="orgef33b81"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst7">/​z​/</a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst6">/ð​/</a></h4>
+<div class="outline-text-4" id="text-orgef33b81">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -652,20 +549,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </table>
 </div>
 </div>
-<div id="outline-container-orgaab0e34" class="outline-4">
-<h4 id="orgaab0e34"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst5"><i>/f​/</i></a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-other-consonants/otherconst4">/​h​/</a></h4>
-<div class="outline-text-4" id="text-orgaab0e34">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-orgcdbcef7" class="outline-4">
+<h4 id="orgcdbcef7"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiceless-consonants/vlessconst5"><i>/f​/</i></a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-other-consonants/otherconst4">/​h​/</a></h4>
+<div class="outline-text-4" id="text-orgcdbcef7">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -723,20 +620,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </table>
 </div>
 </div>
-<div id="outline-container-org315caf2" class="outline-4">
-<h4 id="org315caf2"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst5">/v​/  </a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst1">/​b​/</a></h4>
-<div class="outline-text-4" id="text-org315caf2">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org162c803" class="outline-4">
+<h4 id="org162c803"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst5">/v​/  </a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-voiced-consonants/voicedconst1">/​b​/</a></h4>
+<div class="outline-text-4" id="text-org162c803">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -794,20 +691,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </table>
 </div>
 </div>
-<div id="outline-container-org8aa44f7" class="outline-4">
-<h4 id="org8aa44f7"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-other-consonants/otherconst5">/l​/</a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-other-consonants/otherconst6">/r​/</a></h4>
-<div class="outline-text-4" id="text-org8aa44f7">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org4b2ec8f" class="outline-4">
+<h4 id="org4b2ec8f"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-other-consonants/otherconst5">/l​/</a> and <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-other-consonants/otherconst6">/r​/</a></h4>
+<div class="outline-text-4" id="text-org4b2ec8f">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -866,13 +763,13 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </div>
 </div>
 </div>
-<div id="outline-container-orgb9c73ce" class="outline-3">
-<h3 id="orgb9c73ce">Try these tongue twisters</h3>
-<div class="outline-text-3" id="text-orgb9c73ce">
+<div id="outline-container-orgd138fd6" class="outline-3">
+<h3 id="orgd138fd6">Try these tongue twisters</h3>
+<div class="outline-text-3" id="text-orgd138fd6">
 </div>
-<div id="outline-container-orgef78ec2" class="outline-4">
-<h4 id="orgef78ec2">Sea shells</h4>
-<div class="outline-text-4" id="text-orgef78ec2">
+<div id="outline-container-orgc32ffd9" class="outline-4">
+<h4 id="orgc32ffd9">Sea shells</h4>
+<div class="outline-text-4" id="text-orgc32ffd9">
 <ul class="org-ul">
 <li>She sells seashells by the seashore,</li>
 <li>The shells she sells are seashells, I’m sure.</li>
@@ -881,26 +778,26 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 </ul>
 </div>
 </div>
-<div id="outline-container-org54ff129" class="outline-4">
-<h4 id="org54ff129">Red lorry (lorry = truck in British English)</h4>
-<div class="outline-text-4" id="text-org54ff129">
+<div id="outline-container-org60bce04" class="outline-4">
+<h4 id="org60bce04">Red lorry (lorry = truck in British English)</h4>
+<div class="outline-text-4" id="text-org60bce04">
 <ul class="org-ul">
 <li>Red lorry, yellow lorry, red lorry, yellow lorry.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org92d96b7" class="outline-4">
-<h4 id="org92d96b7">Lucky rabbits</h4>
-<div class="outline-text-4" id="text-org92d96b7">
+<div id="outline-container-orgc5fbb26" class="outline-4">
+<h4 id="orgc5fbb26">Lucky rabbits</h4>
+<div class="outline-text-4" id="text-orgc5fbb26">
 <ul class="org-ul">
 <li>Lucky rabbits leap rapidly over lazy lions.</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org7189761" class="outline-3">
-<h3 id="org7189761">Consonant clusters</h3>
-<div class="outline-text-3" id="text-org7189761">
+<div id="outline-container-org38e1ff8" class="outline-3">
+<h3 id="org38e1ff8">Consonant clusters</h3>
+<div class="outline-text-3" id="text-org38e1ff8">
 <ul class="org-ul">
 <li><p>
 Remember not to add a vowel sound between consonants if they should not bee there.
@@ -915,24 +812,24 @@ bring not buringu
 </ul>
 </div>
 </div>
-<div id="outline-container-orga970b2d" class="outline-3">
-<h3 id="orga970b2d">Long vowels</h3>
-<div class="outline-text-3" id="text-orga970b2d">
+<div id="outline-container-org52e4a7d" class="outline-3">
+<h3 id="org52e4a7d">Long vowels</h3>
+<div class="outline-text-3" id="text-org52e4a7d">
 </div>
-<div id="outline-container-org8c10ad6" class="outline-4">
-<h4 id="org8c10ad6"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-long-vowels/longvowel1">/​iː​/ (sea, pea, easy)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel1">/​I​/ (in)</a></h4>
-<div class="outline-text-4" id="text-org8c10ad6">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org4a00a94" class="outline-4">
+<h4 id="org4a00a94"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-long-vowels/longvowel1">/​iː​/ (sea, pea, easy)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel1">/​I​/ (in)</a></h4>
+<div class="outline-text-4" id="text-org4a00a94">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -990,20 +887,20 @@ bring not buringu
 </table>
 </div>
 </div>
-<div id="outline-container-orgda03276" class="outline-4">
-<h4 id="orgda03276"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-long-vowels/longvowel3">/​ɑː​/ (car, far)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel7">/​æ​/ (cat)</a></h4>
-<div class="outline-text-4" id="text-orgda03276">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org6fd5ecd" class="outline-4">
+<h4 id="org6fd5ecd"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-long-vowels/longvowel3">/​ɑː​/ (car, far)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel7">/​æ​/ (cat)</a></h4>
+<div class="outline-text-4" id="text-org6fd5ecd">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -1061,20 +958,20 @@ bring not buringu
 </table>
 </div>
 </div>
-<div id="outline-container-orga1b5694" class="outline-4">
-<h4 id="orga1b5694"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-long-vowels/longvowel4">/​ɔː​/ (more, law)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel4">/​ɒ​/ (hot)</a></h4>
-<div class="outline-text-4" id="text-orga1b5694">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org281a765" class="outline-4">
+<h4 id="org281a765"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-long-vowels/longvowel4">/​ɔː​/ (more, law)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel4">/​ɒ​/ (hot)</a></h4>
+<div class="outline-text-4" id="text-org281a765">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -1132,20 +1029,20 @@ bring not buringu
 </table>
 </div>
 </div>
-<div id="outline-container-org7a61ffe" class="outline-4">
-<h4 id="org7a61ffe"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-long-vowels/longvowel2">/​uː​/ (goose, who, two)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel2">/​ʊ​/ (put)</a></h4>
-<div class="outline-text-4" id="text-org7a61ffe">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org17cf3d6" class="outline-4">
+<h4 id="org17cf3d6"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-long-vowels/longvowel2">/​uː​/ (goose, who, two)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel2">/​ʊ​/ (put)</a></h4>
+<div class="outline-text-4" id="text-org17cf3d6">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -1203,20 +1100,20 @@ bring not buringu
 </table>
 </div>
 </div>
-<div id="outline-container-orgf847849" class="outline-4">
-<h4 id="orgf847849"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-long-vowels/longvowel5">/​ɜː​/ (bird)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel2">/​ʊ​/ (put)</a></h4>
-<div class="outline-text-4" id="text-orgf847849">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-orgce64d43" class="outline-4">
+<h4 id="orgce64d43"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-long-vowels/longvowel5">/​ɜː​/ (bird)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel2">/​ʊ​/ (put)</a></h4>
+<div class="outline-text-4" id="text-orgce64d43">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -1275,35 +1172,35 @@ bring not buringu
 </div>
 </div>
 </div>
-<div id="outline-container-org47123df" class="outline-3">
-<h3 id="org47123df"><b>/​ə​/</b> The shwa - weak vowel sound</h3>
-<div class="outline-text-3" id="text-org47123df">
+<div id="outline-container-org159255c" class="outline-3">
+<h3 id="org159255c"><b>/​ə​/</b> The shwa - weak vowel sound</h3>
+<div class="outline-text-3" id="text-org159255c">
 </div>
-<div id="outline-container-orgf7dfb35" class="outline-4">
-<h4 id="orgf7dfb35">We will look at the <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel5">shwa /​ə​/ (mother)</a> a following lesson on <a href="https://sendagirich.github.io/general-english/pron/pron_weak_forms.html">weak forms</a></h4>
+<div id="outline-container-org3a0f3a4" class="outline-4">
+<h4 id="org3a0f3a4">We will look at the <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel5">shwa /​ə​/ (mother)</a> a following lesson on <a href="https://sendagirich.github.io/general-english/pron/pron_weak_forms.html">weak forms</a></h4>
 </div>
 </div>
-<div id="outline-container-org86d154b" class="outline-3">
-<h3 id="org86d154b">Diphthongs</h3>
-<div class="outline-text-3" id="text-org86d154b">
+<div id="outline-container-orgca4434e" class="outline-3">
+<h3 id="orgca4434e">Diphthongs</h3>
+<div class="outline-text-3" id="text-orgca4434e">
 <ul class="org-ul">
 <li>The first four dipthongs include the <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel5">shwa /​ə​/ sound.</a></li>
 </ul>
 </div>
-<div id="outline-container-orgacbdca3" class="outline-4">
-<h4 id="orgacbdca3"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs5">/​əʊ​/ (goat)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel4">/​ɒ​/ (hot)</a></h4>
-<div class="outline-text-4" id="text-orgacbdca3">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org5395d2f" class="outline-4">
+<h4 id="org5395d2f"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs5">/​əʊ​/ (goat)</a> Contrast with <a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-short-vowels/shortvowel4">/​ɒ​/ (hot)</a></h4>
+<div class="outline-text-4" id="text-org5395d2f">
+<table>
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 
-<col  class="org-left" />
+<col  class="org-left">
 </colgroup>
 <thead>
 <tr>
@@ -1361,43 +1258,43 @@ bring not buringu
 </table>
 </div>
 </div>
-<div id="outline-container-orgdacc449" class="outline-4">
-<h4 id="orgdacc449"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs6">/​eə/ (hair)</a></h4>
+<div id="outline-container-orgde2a84c" class="outline-4">
+<h4 id="orgde2a84c"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs6">/​eə/ (hair)</a></h4>
 </div>
-<div id="outline-container-orge306f7f" class="outline-4">
-<h4 id="orge306f7f"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs1">/​ɪə/ (ear)</a></h4>
+<div id="outline-container-org9c5d3fd" class="outline-4">
+<h4 id="org9c5d3fd"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs1">/​ɪə/ (ear)</a></h4>
 </div>
-<div id="outline-container-org51ec688" class="outline-4">
-<h4 id="org51ec688"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs2">/​ʊə/ (pure)</a></h4>
+<div id="outline-container-orgf500081" class="outline-4">
+<h4 id="orgf500081"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs2">/​ʊə/ (pure)</a></h4>
 </div>
-<div id="outline-container-org62db50f" class="outline-4">
-<h4 id="org62db50f"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs8">/​eɪ​/ (face)</a></h4>
+<div id="outline-container-org345c57c" class="outline-4">
+<h4 id="org345c57c"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs8">/​eɪ​/ (face)</a></h4>
 </div>
-<div id="outline-container-org323db98" class="outline-4">
-<h4 id="org323db98"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs3">/​aɪ​/ (price)</a></h4>
+<div id="outline-container-org335d7ac" class="outline-4">
+<h4 id="org335d7ac"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs3">/​aɪ​/ (price)</a></h4>
 </div>
-<div id="outline-container-org9619c27" class="outline-4">
-<h4 id="org9619c27"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs4">/​ɔɪ​/ (choice)</a></h4>
+<div id="outline-container-orgee3bdae" class="outline-4">
+<h4 id="orgee3bdae"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs4">/​ɔɪ​/ (choice)</a></h4>
 </div>
-<div id="outline-container-org9d0a2d7" class="outline-4">
-<h4 id="org9d0a2d7"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs7">/​aʊ​/ (mouth)</a></h4>
+<div id="outline-container-orgfac2b79" class="outline-4">
+<h4 id="orgfac2b79"><a href="https://www.bbc.co.uk/learningenglish/english/features/pronunciation-diphthongs/diphthongs7">/​aʊ​/ (mouth)</a></h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org16cde5f" class="outline-2">
-<h2 id="org16cde5f">Practise</h2>
-<div class="outline-text-2" id="text-org16cde5f">
+<div id="outline-container-orge166af1" class="outline-2">
+<h2 id="orge166af1">Practise</h2>
+<div class="outline-text-2" id="text-orge166af1">
 <ul class="org-ul">
 <li>Practise dictating to your phone.</li>
 </ul>
 
-<hr />
+<hr>
 </div>
-<div id="outline-container-orgc4e2e6d" class="outline-4">
-<h4 id="orgc4e2e6d">🔗 <a href="https://sendagirich.github.io/general-english/pron/pron_rhythm.html">Rhythm</a></h4>
+<div id="outline-container-org5921ede" class="outline-4">
+<h4 id="org5921ede">🔗 <a href="https://sendagirich.github.io/general-english/pron/pron_rhythm.html">Rhythm</a></h4>
 </div>
-<div id="outline-container-org356392b" class="outline-4">
-<h4 id="org356392b">🔗 <a href="https://sendagirich.github.io/general-english/pron/pron_index.html">Pronunciation</a></h4>
+<div id="outline-container-org79c3711" class="outline-4">
+<h4 id="org79c3711">🔗 <a href="https://sendagirich.github.io/general-english/pron/pron_index.html">Pronunciation</a></h4>
 </div>
 </div>
 </div>
