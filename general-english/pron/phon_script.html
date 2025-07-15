@@ -1,240 +1,342 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<!-- 2025-07-11 Fri 14:19 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- 2025-07-15 Tue 14:33 -->
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Phonemic Script</title>
 <meta name="author" content="Richard Williams" />
 <meta name="generator" content="Org Mode" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
-</style>
-<style type="text/css">
-article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+html,button,input,select,textarea {  color: #484C66;}html {  font-size: 90%;  line-height: 1.4;}*,*:before,*:after {  -moz-box-sizing: border-box;  -webkit-box-sizing: border-box;  box-sizing: border-box;}a {  white-space: pre;  white-space: pre-wrap;  white-space: pre-line;  white-space: -pre-wrap;  white-space: -o-pre-wrap;  white-space: -moz-pre-wrap;  white-space: -hp-pre-wrap;  word-wrap: break-word;  text-decoration: none;}a:hover {  color: #0A4C89;}/* * Remove text-shadow in selection highlight: h5bp.com/i * These selection rule sets have to be separate. * Customize the background color to match your design. */::-moz-selection {  background: #0A4C89;  color: #FFF;  text-shadow: none;}::selection {  background: #0A4C89;  color: #FFF;  text-shadow: none;}/* * A better looking default horizontal rule */hr {  display: block;  height: 1px;  border: 0;  border-top: 1px dashed #CCC;  margin: 1em 0;  padding: 0;}/* * Remove the gap between images, videos, audio and canvas and the bottom of * their containers: h5bp.com/i/440 */audio,canvas,img,video {  vertical-align: middle;}/* * Remove default fieldset styles. */fieldset {  border: 0;  margin: 0;  padding: 0;}/* * Allow only vertical resizing of textareas. */textarea {  resize: vertical;}/* ==========================================================================   Author's custom styles   ========================================================================== */.todo,.done,.tag {  font-family: "Source Pro", Monaco, "Courier New", monospace;  padding: 0 0.3em;  background-color: #EEE;  border: 1px solid #CCC;}.todo {  color: #DD4433;}.done {  color: #44934B;}.tag {  font-size: 80%;  font-weight: normal;  margin: 0 0.3em;  display: none;}.timestamp {  color: #BEBEBE;}.timestamp-kwd {  color: #5F9EA0;}.right {  margin-left: auto;  margin-right: 0px;  text-align: right;}.left {  margin-left: 0px;  margin-right: auto;  text-align: left;}.center {  margin-left: auto;  margin-right: auto;  text-align: center;}.underline {  text-decoration: underline;}#postamble p,#preamble p {  font-size: 90%;  margin: .2em;}pre,code {  font-family: "Source Pro", Monaco, "Courier New", monospace;  padding-left: 0.3em;  padding-right: 0.3em;}pre {  font-size: 90%;  padding: 8pt;  overflow: auto;  white-space: pre;  word-wrap: normal;}pre.src {  position: relative;}pre.src:before {  display: none;  position: absolute;  background-color: #FFF;  top: 0.5em;  right: 0.5em;  padding: 4px;  border: 1px solid #CCC;}pre.src-sh:before {  content: "Shell Script";}pre.src-bash:before {  content: "Bash Script";}pre.src-emacs-lisp:before {  content: "Emacs Lisp";}pre.src-R:before {  content: "R";}pre.src-perl:before {  content: "Perl";}pre.src-java:before {  content: "Java";}pre.src-sql:before {  content: "SQL";}pre.src-c:before {  content: "C";}pre.src-cpp:before {  content: "C++";}pre.src-html:before {  content: "HTML";}table {  border-collapse: collapse;  display: block;  overflow-x: auto;}caption.t-above {  caption-side: top;}caption.t-bottom {  caption-side: bottom;}td, th {  vertical-align: top;  border: 1px solid #CCC;  padding: 0.5em;}th.right {  text-align: center;}th.left {  text-align: center;}th.center {  text-align: center;}td.right {  text-align: right;}td.left {  text-align: left;}td.center {  text-align: center;}dt {  font-weight: bold;}#footnotes {  border-top: 5px solid #0A4C89;  margin-bottom: 5em;}#footnotes h2 {  display: none;}#text-footnotes {  margin-top: 1em;}.footpara:nth-child(2) {  display: inline;}.footpara {  display: block;}.footdef sup:before {  content: "[";}.footdef sup:after {  content: "]";}.footdef p {  display: inline;}figure {  margin: 0;}figure img {  max-width: 100%;}figcaption {  text-align: center;  font-size: 0.8rem;}.inlinetask {  padding: 10px;  border: 2px solid gray;  margin: 10px;  background: #ffffcc;}#org-div-home-and-up {  text-align: right;  font-size: 70%;  white-space: nowrap;}textarea {  overflow-x: auto;}.linenr {  font-size: smaller;}.code-highlighted {  background-color: #ffff00;}.org-info-js_info-navigation {  border-style: none;}#org-info-js_console-label {  font-size: 10px;  font-weight: bold;  white-space: nowrap;}.org-info-js_search-highlight {  background-color: #ffff00;  color: #000000;  font-weight: bold;}p.verse,blockquote {  margin: 0;  padding: 0;  padding-left: 3%;  border-left: 5px solid #0A4C89;}body {  font-family: Lora, Palatino, Georgia, serif;  width: 92%;  max-width: 1024px;  margin: 0 auto;  background-color: #FFF;}h2 {  line-height: 1.62em;}.title {  margin: 0 0 2em 0;  line-height: 2em;  border-bottom: 5px solid #0A4C89;  text-align: center;}#postamble {  font-size: 80%;  line-height: 1.4em;  text-align: right;}h1, h2, h3, h4, h5, h6 {  font-family: "Source Sans Pro", sans-serif;  color: #222;}.outline-2 {  margin-bottom: 4em;}.outline-2 h2 {  border-bottom: 1px solid #CCC;}.outline-text-2 code, pre {  background-color: #EEE;}#table-of-contents {  display: none;  margin-left: 0.5em;}#text-table-of-contents ul {  padding-left: 1.8em;}#text-table-of-contents li {  list-style-type: circle;  margin: 0.4em 0;}#text-table-of-contents ul ul {  margin: 0;}#text-table-of-contents li li {  font-weight: normal;  font-size: 90%;  margin: 0;}#content {  overflow: hidden;  *zoom: 1;}/* ==========================================================================   EXAMPLE Media Queries for Responsive Design.   These examples override the primary ('mobile first') styles.   Modify as content requires.   ========================================================================== */@media only screen and (min-width: 35em) {  /* Style adjustments for viewports that meet the condition */}@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {  /* Style adjustments for high resolution devices */}/* ==========================================================================   Print styles.   Inlined to avoid required HTTP connection: h5bp.com/r   ========================================================================== */@media print {  * {    background: transparent !important;    color: #000 !important;    /* Black prints faster: h5bp.com/s */    box-shadow: none !important;    text-shadow: none !important;  }  a,  a:visited {    text-decoration: underline;  }  a[href]:after {    content: " (" attr(href) ")";  }  abbr[title]:after {    content: " (" attr(title) ")";  }  /*   * Don't show links for images, or javascript/internal links   */  .ir a:after,  a[href^="javascript:"]:after,  a[href^="#"]:after {    content: "";  }  pre,  blockquote {    /* border: 1px solid #999; */    page-break-inside: avoid;  }  thead {    display: table-header-group;    /* h5bp.com/t */  }  tr,  img {    page-break-inside: avoid;  }  img {    max-width: 100% !important;  }  @page {    margin: 0.5cm;  }  p,  h2,  h3 {    orphans: 3;    widows: 3;  }  h2,  h3 {    page-break-after: avoid;  }  #table-of-contents {    display: block;    width: initial;    border: none;  }  #table-of-contents a {    text-decoration: none;  }}/* large screen */@media screen and (min-width: 40rem) {  html {    font-size: 100%;  }  #table-of-contents {    display: block;    padding: 1em;    width: 32%;    min-width: 18em;    float: right;    background-color: #EEE;    position: relative;    /* required by z-index */    z-index: 5000;    border: 1px solid #CCC;  }  .tag {    display: initial;  }}
 </style>
 </head>
 <body>
 <div id="content" class="content">
+<header>
 <h1 class="title">Phonemic Script</h1>
-<div id="outline-container-orgb0dea40" class="outline-2">
-<h2 id="orgb0dea40">Phonemic chart</h2>
-<div class="outline-text-2" id="text-orgb0dea40">
+</header><div id="outline-container-orgf5c96d4" class="outline-2">
+<h2 id="orgf5c96d4">Phonemic chart</h2>
+<div class="outline-text-2" id="text-orgf5c96d4">
 </div>
-<div id="outline-container-orge1523e1" class="outline-5">
-<h5 id="orge1523e1">This chart shows all of the sounds in spoken English. If you learn these symbols you can read how to pronounce any word. Good dictionaries will use this for each word.</h5>
-<div class="outline-text-5" id="text-orge1523e1">
+<div id="outline-container-org07dbe49" class="outline-5">
+<h5 id="org07dbe49">This chart shows all of the sounds in spoken English. If you learn these symbols you can read how to pronounce any word. Good dictionaries will use this for each word.</h5>
+<div class="outline-text-5" id="text-org07dbe49">
 
-<div id="org5c8005a" class="figure">
-<p><img src="https://sendagirich.github.io/kodaira/assets/phonemic_chart.jpg" alt="phonemic_chart.jpg" width="100%" />
-</p>
+<figure id="orga9d4b76">
+<img src="https://sendagirich.github.io/kodaira/assets/phonemic_chart.jpg" alt="phonemic_chart.jpg" width="100%">
+
+</figure>
 </div>
 </div>
+<div id="outline-container-org0eca75b" class="outline-4">
+<h4 id="org0eca75b">🔗 <a href="https://dictionary.cambridge.org/help/phonetics.html">Here is the correct sound for each symbol in UK and US English</a></h4>
 </div>
-<div id="outline-container-orge5c9a0e" class="outline-3">
-<h3 id="orge5c9a0e">🔗 <a href="https://dictionary.cambridge.org/help/phonetics.html">Here is the correct sound for each symbol in UK and US English</a></h3>
+<div id="outline-container-org7ab3961" class="outline-4">
+<h4 id="org7ab3961">🔗 <a href="https://englishwithlucy.com/phonemic-chart/">Here is a phonemic chart with all the sounds in British English</a></h4>
+<div class="outline-text-4" id="text-org7ab3961">
 </div>
-<div id="outline-container-org6f37e34" class="outline-3">
-<h3 id="org6f37e34">🔗 <a href="https://englishwithlucy.com/phonemic-chart/">Here is a phonemic chart with all the sounds in British English</a></h3>
-<div class="outline-text-3" id="text-org6f37e34">
+<div id="outline-container-orge3994fc" class="outline-6">
+<h6 id="orge3994fc">Q1. Which vowel sounds do you have in Japanese?</h6>
+<div class="outline-text-6" id="text-orge3994fc">
 </div>
-<div id="outline-container-orgc5b2dab" class="outline-5">
-<h5 id="orgc5b2dab">Q1. Which sounds do you have in Japanese?</h5>
-</div>
-<div id="outline-container-org83772b0" class="outline-5">
-<h5 id="org83772b0">Q2. Which sounds do you not have?</h5>
-</div>
-<div id="outline-container-orga95b510" class="outline-5">
-<h5 id="orga95b510">Q3. Which sounds are most difficult for you to pronounce?</h5>
-<div class="outline-text-5" id="text-orga95b510">
+<ul class="org-ul">
+<li><a id="orga5ef7ec"></a>Japanese only has five main vowel sounds: a i, u, e, o. although these can be long and short. :noexport<br>
+<div class="outline-text-7" id="text-orga5ef7ec">
 <p>
-We will look at some of the sounds that Japanese speakers often have difficulty with in the next lesson. 
+Japanese shares <b><b>some</b></b> vowel sounds with English, but even these are not always identical in quality. Here are the <b><b>closest matches</b></b> in <b><b>phonemic script (IPA)</b></b>:
 </p>
-<hr />
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+<p>
+### <b><b>1. Japanese Vowels That (Roughly) Exist in English</b></b>
+</p>
+<ul class="org-ul">
+<li><b><b><i>a</i></b></b> (あ) → Similar to English <b><b><i>ɑː</i></b></b> (as in &ldquo;father&rdquo;) but more central [a] rather than back [ɑː].</li>
+<li><b><b><i>i</i></b></b> (い) → Close to English <b><b><i>iː</i></b></b> (as in &ldquo;see&rdquo;), but shorter and without diphthongization.</li>
+<li><b><b><i>u</i></b></b> (う) → Technically [ɯ̈] (unrounded), but often perceived as English <b><b><i>uː</i></b></b> (as in &ldquo;goose&rdquo;), though very different in articulation.</li>
+<li><b><b><i>e</i></b></b> (え) → Near English <b><b><i>eɪ</i></b></b> (as in &ldquo;face&rdquo;) but without the glide (pure [e̞]).</li>
+<li><b><b><i>o</i></b></b> (お) → Similar to English <b><b><i>oʊ</i></b></b> (as in &ldquo;goat&rdquo;) but without the glide (pure [o̞]).</li>
+</ul>
+
+<p>
+### <b><b>Important Notes:</b></b>
+</p>
+<ol class="org-ol">
+<li><b><b>No exact equivalents</b></b> – Japanese vowels are <b><b>shorter, purer (monophthongs), and more stable</b></b> than English vowels.</li>
+<li><b><b>No tense/lax distinctions</b></b> – Japanese lacks:
+<ul class="org-ul">
+<li><i>ɪ</i> (vs. <i>iː</i>)</li>
+<li><i>ɛ</i> (vs. <i>eɪ</i>)</li>
+<li><i>ʊ</i> (vs. <i>uː</i>)</li>
+</ul></li>
+<li><b><b>No schwa <i>ə</i></b></b> – English’s most common vowel doesn’t exist in Japanese.</li>
+</ol>
+
+<p>
+### <b><b>Summary of Shared Vowels (IPA):</b></b>
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Japanese</th>
+<th scope="col" class="org-left">Closest English Match</th>
+<th scope="col" class="org-left">Example (English)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b><b><i>a</i></b></b></td>
+<td class="org-left"><i>ɑː</i> (but central)</td>
+<td class="org-left">&ldquo;father&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left"><b><b><i>i</i></b></b></td>
+<td class="org-left"><i>iː</i> (but shorter)</td>
+<td class="org-left">&ldquo;see&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left"><b><b><i>u</i></b></b></td>
+<td class="org-left"><i>uː</i> (but unrounded)</td>
+<td class="org-left">&ldquo;goose&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left"><b><b><i>e</i></b></b></td>
+<td class="org-left"><i>eɪ</i> (no glide)</td>
+<td class="org-left">&ldquo;face&rdquo;</td>
+</tr>
+
+<tr>
+<td class="org-left"><b><b><i>o</i></b></b></td>
+<td class="org-left"><i>oʊ</i> (no glide)</td>
+<td class="org-left">&ldquo;goat&rdquo;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+### <b><b>Key Difference:</b></b>
+Japanese vowels are <b><b>always pronounced clearly</b></b>, while English vowels often reduce (e.g., schwa <i>ə</i> in &ldquo;about&rdquo;) or diphthongize.
+</p>
+
+<p>
+Would you like examples of how Japanese speakers approximate English vowels?:
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org87b82e8" class="outline-6">
+<h6 id="org87b82e8">Q2. Which vowel sounds do you not have?</h6>
+</div>
+<div id="outline-container-org1381d91" class="outline-6">
+<h6 id="org1381d91">Q3. Which consonant sounds do you have in Japanese?</h6>
+</div>
+<div id="outline-container-org7b19189" class="outline-6">
+<h6 id="org7b19189">Q4. Which consonant sounds do you not have?</h6>
+<div class="outline-text-6" id="text-org7b19189">
+<p>
+Here are the <b><b>English consonant sounds that standard Japanese lacks</b></b>, presented in <b><b>phonemic script (IPA)</b></b> with examples:
+</p>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+### <b><b>1. Fricatives (Japanese lacks these entirely)</b></b>
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b><b>English Sound (IPA)</b></b></th>
+<th scope="col" class="org-left">Example (English)</th>
+<th scope="col" class="org-left">Japanese Approximation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b><b><i>θ</i></b></b> (voiceless &ldquo;th&rdquo;)</td>
+<td class="org-left">&ldquo;think&rdquo;</td>
+<td class="org-left">Replaced with <i>s</i> (e.g., シンク <i>sinku</i>)</td>
+</tr>
+
+<tr>
+<td class="org-left"><b><b><i>ð</i></b></b> (voiced &ldquo;th&rdquo;)</td>
+<td class="org-left">&ldquo;this&rdquo;</td>
+<td class="org-left">Replaced with <i>z</i> or <i>d</i> (e.g., ディス <i>disu</i>)</td>
+</tr>
+
+<tr>
+<td class="org-left"><b><b><i>v</i></b></b></td>
+<td class="org-left">&ldquo;very&rdquo;</td>
+<td class="org-left">Replaced with <i>b</i> (e.g., ベリー <i>berii</i>)</td>
+</tr>
+
+<tr>
+<td class="org-left"><b><b><i>ʒ</i></b></b></td>
+<td class="org-left">&ldquo;vision&rdquo;</td>
+<td class="org-left">Replaced with <i>ʑ</i> or <i>dʑ</i> (e.g., ビジョン <i>bidʑon</i>)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+### <b><b>2. Approximants/Liquids (Japanese lacks distinct phonemes)</b></b>
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b><b>English Sound (IPA)</b></b></th>
+<th scope="col" class="org-left">Example (English)</th>
+<th scope="col" class="org-left">Japanese Approximation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b><b><i>l</i></b></b></td>
+<td class="org-left">&ldquo;light&rdquo;</td>
+<td class="org-left">Merged with <i>ɾ</i> (e.g., ライト <i>ɾaito</i>)</td>
+</tr>
+
+<tr>
+<td class="org-left"><b><b><i>ɹ</i></b></b> (English &ldquo;r&rdquo;)</td>
+<td class="org-left">&ldquo;right&rdquo;</td>
+<td class="org-left">Replaced with <i>ɾ</i> (e.g., ライト <i>ɾaito</i>)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+### <b><b>3. Affricates (Japanese lacks some distinctions)</b></b>
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b><b>English Sound (IPA)</b></b></th>
+<th scope="col" class="org-left">Example (English)</th>
+<th scope="col" class="org-left">Japanese Approximation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b><b><i>dʒ</i></b></b></td>
+<td class="org-left">&ldquo;judge&rdquo;</td>
+<td class="org-left">Replaced with <i>dʑ</i> (e.g., ジャッジ <i>dʑadʑi</i>)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+### <b><b>4. Other Missing Consonants</b></b>
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b><b>English Sound (IPA)</b></b></th>
+<th scope="col" class="org-left">Example (English)</th>
+<th scope="col" class="org-left">Japanese Approximation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b><b><i>f</i></b></b> (true labiodental)</td>
+<td class="org-left">&ldquo;foot&rdquo;</td>
+<td class="org-left">Replaced with <i>ɸ</i> (e.g., フット <i>ɸutto</i>)</td>
+</tr>
+
+<tr>
+<td class="org-left"><b><b><i>w</i></b></b> (rounded)</td>
+<td class="org-left">&ldquo;water&rdquo;</td>
+<td class="org-left">Replaced with weaker <i>w̜</i> (e.g., ウォーター <i>w̜oːtaː</i>)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+### <b><b>Key Notes:</b></b>
+</p>
+<ol class="org-ol">
+<li><b><b>No voiced/voiceless fricative contrasts</b></b> (e.g., <i>s</i> vs. <i>z</i> exists, but <i>f</i> vs. <i>v</i> does not).</li>
+<li><b><b>No <i>l</i>-<i>ɹ</i> distinction</b></b> → Both merge into Japanese <i>ɾ</i> (a flap).</li>
+<li><b><b>No <i>θ, ð</i></b></b> → These are notoriously difficult for Japanese learners.</li>
+<li><b><b><i>h</i> allophony</b></b> → Japanese <i>h</i> becomes [ç] (before <i>i</i>) or [ɸ] (before <i>u</i>).</li>
+</ol>
+
+<p>
+&#x2014;
+</p>
+
+<p>
+### <b><b>Summary of Missing English Consonants (IPA):</b></b>
+<b><b><i>θ ð v ʒ l ɹ dʒ f</i></b></b> (true labiodental)
+</p>
+
+<p>
+Would you like examples of minimal pairs that Japanese speakers struggle with due to these gaps?
+</p>
+</div>
+</div>
+<div id="outline-container-org9d182e3" class="outline-6">
+<h6 id="org9d182e3">Q5. Which sounds are most difficult for you to pronounce?</h6>
+</div>
+<div id="outline-container-org9c51715" class="outline-5">
+<h5 id="org9c51715">→ <a href="https://sendagirich.github.io/general-english/pron/pron_diff_snds_jp.html">NEXT: 3: Difficult sounds for Japanese speakers</a></h5>
+<div class="outline-text-5" id="text-org9c51715">
+<table>
 
 
 <tbody>
@@ -244,10 +346,24 @@ We will look at some of the sounds that Japanese speakers often have difficulty 
 </table>
 </div>
 </div>
-<div id="outline-container-orge7de4b8" class="outline-4">
-<h4 id="orge7de4b8">→ <a href="https://sendagirich.github.io/general-english/pron/pron_diff_snds_jp.html">NEXT: 3: Difficult sounds for Japanese speakers</a></h4>
-<div class="outline-text-4" id="text-orge7de4b8">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div id="outline-container-org2b1cdb4" class="outline-5">
+<h5 id="org2b1cdb4">← <a href="https://sendagirich.github.io/general-english/pron/pron_key_terms.html">BACK: 1: Pronunciation key terms</a></h5>
+<div class="outline-text-5" id="text-org2b1cdb4">
+<table>
+
+
+<tbody>
+<tr>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div id="outline-container-org7e37027" class="outline-5">
+<h5 id="org7e37027">🔗 <b><a href="https://sendagirich.github.io/kodaira/kd_pron_index.html">Pronunciation</a></b></h5>
+<div class="outline-text-5" id="text-org7e37027">
+<table>
 
 
 <tbody>
@@ -257,35 +373,8 @@ We will look at some of the sounds that Japanese speakers often have difficulty 
 </table>
 </div>
 </div>
-<div id="outline-container-orgacf1439" class="outline-4">
-<h4 id="orgacf1439">← <a href="https://sendagirich.github.io/general-english/pron/pron_key_terms.html">BACK: 1: Pronunciation key terms</a></h4>
-<div class="outline-text-4" id="text-orgacf1439">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<tbody>
-<tr>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-</div>
-<div id="outline-container-org1bec71a" class="outline-4">
-<h4 id="org1bec71a">🔗 <b><a href="https://sendagirich.github.io/kodaira/kd_pron_index.html">Pronunciation</a></b></h4>
-<div class="outline-text-4" id="text-org1bec71a">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<tbody>
-<tr>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="outline-container-orgd7d8e6b" class="outline-4">
-<h4 id="orgd7d8e6b">🔗 <b><a href="https://sendagirich.github.io/kodaira/kd_y2_pres_index.html">Home</a></b></h4>
+<div id="outline-container-orgd4543a9" class="outline-5">
+<h5 id="orgd4543a9">🔗 <b><a href="https://sendagirich.github.io/kodaira/kd_y2_pres_index.html">Home</a></b></h5>
 </div>
 </div>
 </div>
