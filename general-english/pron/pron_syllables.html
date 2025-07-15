@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-15 Tue 13:39 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Syllables</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Syllables</h1>
+<div id="outline-container-org9f54ad1" class="outline-2">
+<h2 id="org9f54ad1">Syllable introduction</h2>
+<div class="outline-text-2" id="text-org9f54ad1">
+<ul class="org-ul">
+<li>A syllable is a beat of a word.</li>
+<li>The number of syllables and the number of letters are not the same.</li>
+<li>All the following words have one syllble:</li>
+</ul>
+<table border="1" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Word</th>
+<th scope="col" class="org-right">Syllables</th>
+<th scope="col" class="org-right">Letters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">to</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">strengths</td>
+<td class="org-right">1</td>
+<td class="org-right">9</td>
+</tr>
+
+<tr>
+<td class="org-left">it</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">scrunched</td>
+<td class="org-right">1</td>
+<td class="org-right">9</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="outline-container-orga22be7f" class="outline-5">
+<h5 id="orga22be7f">Here are examples of 1, 2, 3, 4, and 5 syllable words.</h5>
+<div class="outline-text-5" id="text-orga22be7f">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">1</th>
+<th scope="col" class="org-left">2</th>
+<th scope="col" class="org-left">3</th>
+<th scope="col" class="org-left">4</th>
+<th scope="col" class="org-left">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">take</td>
+<td class="org-left">photo</td>
+<td class="org-left">photograph</td>
+<td class="org-left">photographic</td>
+<td class="org-left">photographical</td>
+</tr>
+
+<tr>
+<td class="org-left">take</td>
+<td class="org-left">pho-to</td>
+<td class="org-left">pho-to-graph</td>
+<td class="org-left">pho-to-gra-phic</td>
+<td class="org-left">pho-to-gra-phi-cal</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">come</td>
+<td class="org-left">commune</td>
+<td class="org-left">communal</td>
+<td class="org-left">communicate</td>
+<td class="org-left">communication</td>
+</tr>
+
+<tr>
+<td class="org-left">come</td>
+<td class="org-left">com-mune</td>
+<td class="org-left">com-mu-nal</td>
+<td class="org-left">com-mu-ni-cate</td>
+<td class="org-left">com-mu-ni-ca-tion</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">tree</td>
+<td class="org-left">nature</td>
+<td class="org-left">environs</td>
+<td class="org-left">environment</td>
+<td class="org-left">environmental</td>
+</tr>
+
+<tr>
+<td class="org-left">tree</td>
+<td class="org-left">na-ture</td>
+<td class="org-left">en-vi-rons</td>
+<td class="org-left">en-vi-ron-ment</td>
+<td class="org-left">en-vi-ron-men-tal</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc81c753" class="outline-2">
+<h2 id="orgc81c753">Practise counting syllables</h2>
+<div class="outline-text-2" id="text-orgc81c753">
+</div>
+<div id="outline-container-orga86b1f8" class="outline-5">
+<h5 id="orga86b1f8">Take the quiz. How many syllables are in each word: 1, 2, 3, 4, or 5?</h5>
+</div>
+<div id="outline-container-orge6a205d" class="outline-3">
+<h3 id="orge6a205d">🔗  <a href="https://sendagirich.github.io/general-english/pron/pron_syllables_quiz.html">QUIZ</a></h3>
+</div>
+</div>
+<div id="outline-container-org557f2ee" class="outline-2">
+<h2 id="org557f2ee">Katakana!</h2>
+<div class="outline-text-2" id="text-org557f2ee">
+</div>
+<div id="outline-container-org5191da5" class="outline-3">
+<h3 id="org5191da5">English spelling</h3>
+<div class="outline-text-3" id="text-org5191da5">
+<ul class="org-ul">
+<li>In Japanese kana, how we write a character e.g. な is how we pronounce it: / næ /.</li>
+<li>This is different in English and the Roman alphabet e.g.
+<ul class="org-ul">
+<li>Same sounds different spelling:
+<ul class="org-ul">
+<li>no, / nəʊ /</li>
+<li>know / nəʊ /</li>
+</ul></li>
+<li>Same spelling but different sound:
+<ul class="org-ul">
+<li>live / laɪv / I like live music.</li>
+<li>live / lɪv /  I live in Tokyo.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org46dee07" class="outline-3">
+<h3 id="org46dee07">Katakana English</h3>
+<div class="outline-text-3" id="text-org46dee07">
+<ul class="org-ul">
+<li>Most English words cannot be written correctly in katakana.</li>
+<li>Therefore if you write then read everything in katakana you will speak with katakana pronunciation.</li>
+<li>Yu wiru supi-ku ulaiku zisu.</li>
+<li>Except for ん, katakana characters end with a vowel. Therefore, loan words (借用語) often have more syllables than in English.</li>
+</ul>
+<table border="1" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Katakana</th>
+<th scope="col" class="org-right">Syllables</th>
+<th scope="col" class="org-left">English</th>
+<th scope="col" class="org-right">Syllables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">ベッド</td>
+<td class="org-right">2</td>
+<td class="org-left">bed</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">ホテル</td>
+<td class="org-right">3</td>
+<td class="org-left">hotel</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">テニス</td>
+<td class="org-right">3</td>
+<td class="org-left">tennis</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">アイスクリーム</td>
+<td class="org-right">5</td>
+<td class="org-left">ice cream</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">サンドイッチ</td>
+<td class="org-right">4</td>
+<td class="org-left">sandwich</td>
+<td class="org-right">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org2f63c56" class="outline-2">
+<h2 id="org2f63c56">consonant word endings</h2>
+<div class="outline-text-2" id="text-org2f63c56">
+<ul class="org-ul">
+<li>Japanese has only has ん as a consonant word ending. Words usually end with a vowel.
+<ul class="org-ul">
+<li>katakana</li>
+<li>loan words</li>
+
+<li>Practise consonant word endings so that you do ot add an ア, イ, ウ, エ, orオ to the end of the word.</li>
+</ul></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">🟢</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">❌</th>
+<th scope="col" class="org-left">❌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">swimming</td>
+<td class="org-left">/ swɪmɪŋ /</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">NOT</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">スイミング</td>
+<td class="org-left">swimmingu</td>
+</tr>
+
+<tr>
+<td class="org-left">hot</td>
+<td class="org-left">/ hɑt /</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">NOT</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">ホット</td>
+<td class="org-left">hotto</td>
+</tr>
+
+<tr>
+<td class="org-left">soft</td>
+<td class="org-left">/ sɔft /</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">NOT</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">ソフト</td>
+<td class="org-left">sofuto</td>
+</tr>
+
+<tr>
+<td class="org-left">bed</td>
+<td class="org-left">/ bɛd /</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">NOT</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">ベッド</td>
+<td class="org-left">bedo</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Because katakana loan words usually end in a vowel, even if the English word ends in a consonant, English loan words often have more syllables in Japanese. This is a problem if you don&rsquo;t change your pronunciation.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org15b8386" class="outline-2">
+<h2 id="org15b8386">Consonant blends</h2>
+<div class="outline-text-2" id="text-org15b8386">
+<ul class="org-ul">
+<li>Because katakana is always consonant-vowel カ キ ク ケ コ you will add extra vowels (and therefore syllables) when consonants come together (consonants blends) such as pl, st,</li>
+<li>Consonant blends can be at the begging, middle or end of words.</li>
+</ul>
+
+<p>
+(2-letter):  
+</p>
+<ul class="org-ul">
+<li><b><b>L-blends</b></b>: bl-, cl-, fl-, gl-, pl-, sl- (e.g., <b>black, clip, fly</b>)</li>
+<li><b><b>R-blends</b></b>: br-, cr-, dr-, fr-, gr-, pr-, tr- (e.g., <b>brick, drop, green</b>)</li>
+<li><b><b>S-blends</b></b>: sc-, sk-, sm-, sn-, sp-, st-, sw- (e.g., <b>sky, smile, stop</b>)</li>
+<li><b><b>Other</b></b>: tw-, dw- (e.g., <b>twin, dwarf</b>)</li>
+</ul>
+
+<p>
+(3-letter):  
+</p>
+<ul class="org-ul">
+<li><p>
+<b><b>spr-, str-, scr-, spl-, squ-</b></b> (e.g., <b>spring, street, splash</b>)  
+</p>
+
+<p>
+<b><b>Final Consonant Blends</b></b>  
+</p></li>
+<li><b><b>-nt, -nd, -nk, -ng</b></b> (e.g., <b>tent, hand, sink, long</b>)</li>
+<li><b><b>-st, -sk, -sp, -ft, -lt, -lp, -lk</b></b> (e.g., <b>fast, ask, help</b>)</li>
+<li><b><b>-mp, -pt, -ct</b></b> (e.g., <b>jump, kept, act</b>)</li>
+</ul>
+</div>
+<div id="outline-container-org771c1ed" class="outline-4">
+<h4 id="org771c1ed">Compare katakana and english</h4>
+<div class="outline-text-4" id="text-org771c1ed">
+</div>
+<div id="outline-container-orgc989f64" class="outline-5">
+<h5 id="orgc989f64">Here is a video about consonant blends at the beginning of words.</h5>
+<div class="outline-text-5" id="text-orgc989f64">
+<p>
+<a href="https://www.bbc.co.uk/learningenglish/english/features/the_pronunciation_lounge/episode_4">https://www.bbc.co.uk/learningenglish/english/features/the_pronunciation_lounge/episode_4</a>
+</p>
+
+
+<p>
+&lt;iframe width=&ldquo;400&rdquo; height=&ldquo;500&rdquo; frameborder=&ldquo;0&rdquo; src=&ldquo;<a href="http://www.bbc.co.uk/programmes/p0kjx82k/player">http://www.bbc.co.uk/programmes/p0kjx82k/player</a>&rdquo;&gt;&lt;/iframe&gt;
+</p>
+
+<p>
+bl
+black
+</p>
+
+<p>
+pl
+play
+pulay
+</p>
+
+<p>
+buring
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
