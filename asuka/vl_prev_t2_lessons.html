@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-12-20 Sat 13:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Term 2 Lessons</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Term 2 Lessons</h1>
+<div id="outline-container-orgba4756b" class="outline-2">
+<h2 id="orgba4756b">12/19 Lesson 12 Final lesson of 2025</h2>
+<div class="outline-text-2" id="text-orgba4756b">
+</div>
+<div id="outline-container-org9176837" class="outline-3">
+<h3 id="org9176837">Lesson:</h3>
+<div class="outline-text-3" id="text-org9176837">
+</div>
+<div id="outline-container-org0b56930" class="outline-4">
+<h4 id="org0b56930">Period 1:</h4>
+<div class="outline-text-4" id="text-org0b56930">
+</div>
+<div id="outline-container-org9afb6e6" class="outline-5">
+<h5 id="org9afb6e6">Finish speaking tests</h5>
+</div>
+<div id="outline-container-org5f4ca01" class="outline-5">
+<h5 id="org5f4ca01">Finish watching The Hunger Games</h5>
+</div>
+</div>
+<div id="outline-container-org26b7d50" class="outline-4">
+<h4 id="org26b7d50">Period 2:</h4>
+<div class="outline-text-4" id="text-org26b7d50">
+</div>
+<div id="outline-container-org8556dda" class="outline-5">
+<h5 id="org8556dda">Fun and games.</h5>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbe9d7dc" class="outline-3">
+<h3 id="orgbe9d7dc">Homework</h3>
+<div class="outline-text-3" id="text-orgbe9d7dc">
+</div>
+<div id="outline-container-org3efc360" class="outline-4">
+<h4 id="org3efc360">Think of ideas for term 3 <a href="https://sendagirich.github.io/asuka/vl_object_vid.html">Object Video Project</a></h4>
+</div>
+<div id="outline-container-org1674835" class="outline-4">
+<h4 id="org1674835">Look at these <a href="https://sendagirich.github.io/asuka/vl_xmas_resources.html">English resources and Christmas films</a></h4>
+</div>
+</div>
+<div id="outline-container-orgf22260b" class="outline-3">
+<h3 id="orgf22260b">🎄 Merry Christmas and a Happy New Year!🎄</h3>
+</div>
+<div id="outline-container-org401d292" class="outline-3">
+<h3 id="org401d292">🎞 Well done with your projects and tests 🎞</h3>
+</div>
+<div id="outline-container-orgca4353f" class="outline-3">
+<h3 id="orgca4353f">⛄ Have a great winter holiday ⛄</h3>
+</div>
+<div id="outline-container-org31d7922" class="outline-3">
+<h3 id="org31d7922">📽 Please watch lots of films 📽</h3>
+</div>
+<div id="outline-container-orgba9757b" class="outline-3">
+<h3 id="orgba9757b">🐎 See you all on January 9th in 2026 🐎</h3>
+</div>
+</div>
+<div id="outline-container-org8bf3c88" class="outline-2">
+<h2 id="org8bf3c88">12/12 Lesson 11 Speaking test 🎉</h2>
+<div class="outline-text-2" id="text-org8bf3c88">
+</div>
+<div id="outline-container-org16b054e" class="outline-3">
+<h3 id="org16b054e">Lesson Aim:</h3>
+<div class="outline-text-3" id="text-org16b054e">
+<ul class="org-ul">
+<li>Each student will complete an individual speaking test where they will talk about the film they made.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org959a309" class="outline-2">
+<h2 id="org959a309">11/28 Lesson 10 <code>TEST</code></h2>
+<div class="outline-text-2" id="text-org959a309">
+</div>
+<div id="outline-container-org6b9f016" class="outline-3">
+<h3 id="org6b9f016">Lesson Aim:</h3>
+<div class="outline-text-3" id="text-org6b9f016">
+<ul class="org-ul">
+<li>Written Test</li>
+<li>Watch and reflect on student films</li>
+<li>Prepare for speaking test</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6359902" class="outline-3">
+<h3 id="org6359902">Lesson:</h3>
+<div class="outline-text-3" id="text-org6359902">
+</div>
+<div id="outline-container-orgce73bd2" class="outline-4">
+<h4 id="orgce73bd2">Test</h4>
+</div>
+<div id="outline-container-org93964c5" class="outline-4">
+<h4 id="org93964c5">Watch and review <a href="https://sendagirich.github.io/asuka/vl_student_films_2025.html">Student Films</a></h4>
+</div>
+<div id="outline-container-org4b491b5" class="outline-4">
+<h4 id="org4b491b5">Practice for the <a href="https://sendagirich.github.io/asuka/vl_spk_test.html">Speaking test</a> on December 12th</h4>
+</div>
+</div>
+<div id="outline-container-orgbf19f9e" class="outline-3">
+<h3 id="orgbf19f9e">Homework:</h3>
+<div class="outline-text-3" id="text-orgbf19f9e">
+<ul class="org-ul">
+<li>Prepare for the speaking test.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbccefc4" class="outline-2">
+<h2 id="orgbccefc4">11/21 Lesson 9</h2>
+<div class="outline-text-2" id="text-orgbccefc4">
+</div>
+<div id="outline-container-orgb2bcc22" class="outline-3">
+<h3 id="orgb2bcc22">Lesson Aim:</h3>
+<div class="outline-text-3" id="text-orgb2bcc22">
+<ul class="org-ul">
+<li>Submit videos</li>
+<li>Prepare for test next week</li>
+<li>Write a film trailer</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org473cff8" class="outline-3">
+<h3 id="org473cff8">Lesson:</h3>
+<div class="outline-text-3" id="text-org473cff8">
+</div>
+<div id="outline-container-org80ec189" class="outline-4">
+<h4 id="org80ec189">Submit your videos</h4>
+</div>
+<div id="outline-container-org48c2f27" class="outline-4">
+<h4 id="org48c2f27">Watch this HSM trailer</h4>
+<div class="outline-text-4" id="text-org48c2f27">
+<iframe width="420" height="240"
+src="https://www.youtube.com/embed/grNWo3dmzyE?si=kHLyWhOGxr4y2K-_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<div id="outline-container-org8e0527f" class="outline-5">
+<h5 id="org8e0527f"><a href="https://www.youtube.com/watch?v=grNWo3dmzyE">https://www.youtube.com/watch?v=grNWo3dmzyE</a></h5>
+</div>
+</div>
+<div id="outline-container-org73daec1" class="outline-4">
+<h4 id="org73daec1">Write a 30 second trailer for your video.</h4>
+<div class="outline-text-4" id="text-org73daec1">
+<ul class="org-ul">
+<li>Include:
+<ul class="org-ul">
+<li>title</li>
+<li>genre</li>
+<li>plot summary</li>
+<li>main characters</li>
+<li>why people should watch your film.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfb1c10d" class="outline-4">
+<h4 id="orgfb1c10d">Prepare for the test</h4>
+<div class="outline-text-4" id="text-orgfb1c10d">
+</div>
+<div id="outline-container-org27613b7" class="outline-5">
+<h5 id="org27613b7">1. Review HSM <a href="https://kenkyusaito.com/asuka/vl_hsm_characters.html">Characters</a></h5>
+</div>
+<div id="outline-container-org066aac9" class="outline-5">
+<h5 id="org066aac9">2. Review your worksheets</h5>
+</div>
+<div id="outline-container-orge5aeed0" class="outline-5">
+<h5 id="orge5aeed0">3. Ask questions to your partner about each scene</h5>
+<div class="outline-text-5" id="text-orge5aeed0">
+<ol class="org-ol">
+<li>Ski Resort</li>
+<li>Drama Class</li>
+<li>Gym</li>
+<li>Detention</li>
+<li>Audition</li>
+<li>Status Quo</li>
+<li>Secret Place</li>
+<li>Manipulation</li>
+<li>Break up</li>
+<li>Apology</li>
+<li>Make up</li>
+<li>Big Day</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org482ff70" class="outline-4">
+<h4 id="org482ff70">Interview</h4>
+<div class="outline-text-4" id="text-org482ff70">
+</div>
+<div id="outline-container-org78a8948" class="outline-5">
+<h5 id="org78a8948">1. Watch this short interview of HSM director Kenny Ortega</h5>
+<div class="outline-text-5" id="text-org78a8948">
+<iframe width="420" height="240"
+src="https://www.youtube.com/embed/6PqndCxNqg4?si=JnC0ltjsENJgxdwq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<div id="outline-container-org9908d26" class="outline-6">
+<h6 id="org9908d26"><a href="https://www.youtube.com/watch?v=6PqndCxNqg4">https://www.youtube.com/watch?v=6PqndCxNqg4</a></h6>
+</div>
+</div>
+<div id="outline-container-org31fb94a" class="outline-5">
+<h5 id="org31fb94a">2. In your groups choose to role-play the director, an actor or a character from HSM then write</h5>
+</div>
+<div id="outline-container-orgf352862" class="outline-5">
+<h5 id="orgf352862">3. Write questions for another student&rsquo;s role.</h5>
+<div class="outline-text-5" id="text-orgf352862">
+<ul class="org-ul">
+<li>Why&#x2026;?</li>
+<li>Who&#x2026;?</li>
+<li>What&#x2026;?</li>
+<li>Which&#x2026;?</li>
+<li>When&#x2026;?</li>
+<li>How&#x2026;?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org01c7922" class="outline-5">
+<h5 id="org01c7922">4. Interview other students.</h5>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd411938" class="outline-3">
+<h3 id="orgd411938">Homework:</h3>
+<div class="outline-text-3" id="text-orgd411938">
+<ul class="org-ul">
+<li>Prepare for the test next week.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeac212f" class="outline-2">
+<h2 id="orgeac212f">11/07 Lesson 8</h2>
+<div class="outline-text-2" id="text-orgeac212f">
+</div>
+<div id="outline-container-org9661f92" class="outline-3">
+<h3 id="org9661f92">Lesson Aim:</h3>
+<div class="outline-text-3" id="text-org9661f92">
+<ul class="org-ul">
+<li>Start recording films</li>
+<li>Review speaking test</li>
+<li>Finish illustrations</li>
+<li>Study Show don&rsquo;t tell</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7c984b4" class="outline-3">
+<h3 id="org7c984b4">Lesson:</h3>
+<div class="outline-text-3" id="text-org7c984b4">
+</div>
+<div id="outline-container-org973ba10" class="outline-4">
+<h4 id="org973ba10">Practice for the <a href="https://sendagirich.github.io/asuka/vl_spk_test.html">Speaking test</a> on December 12th</h4>
+<div class="outline-text-4" id="text-org973ba10">
+<ul class="org-ul">
+<li>Your speaking test grade will count towards your grade for term three.</li>
+<li>You will need to talk about these areas of film making:
+<ul class="org-ul">
+<li>script
+<ul class="org-ul">
+<li>plot</li>
+<li>characters</li>
+<li>setting</li>
+</ul></li>
+<li>shots
+<ul class="org-ul">
+<li>light</li>
+<li>colour</li>
+<li>movement</li>
+<li>composition</li>
+</ul></li>
+<li>pace and transitions</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org115df16" class="outline-4">
+<h4 id="org115df16">Study <a href="https://sendagirich.github.io/asuka/vl_show_not_tell.html">Show don&rsquo;t tell</a></h4>
+</div>
+<div id="outline-container-orgc9de376" class="outline-4">
+<h4 id="orgc9de376">Practice dialogue</h4>
+</div>
+<div id="outline-container-org511beab" class="outline-4">
+<h4 id="org511beab">Start recording audio</h4>
+</div>
+<div id="outline-container-org8264d25" class="outline-4">
+<h4 id="org8264d25">Finish drawing illustrations</h4>
+</div>
+</div>
+<div id="outline-container-org24cd63c" class="outline-3">
+<h3 id="org24cd63c">Homework:</h3>
+<div class="outline-text-3" id="text-org24cd63c">
+</div>
+<div id="outline-container-orgd96c86d" class="outline-4">
+<h4 id="orgd96c86d">Finish films</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orga9852ac" class="outline-2">
+<h2 id="orga9852ac">10/31 Lesson 7</h2>
+<div class="outline-text-2" id="text-orga9852ac">
+</div>
+<div id="outline-container-orgf5976fa" class="outline-3">
+<h3 id="orgf5976fa">🧟 Lesson Aim: 🧟</h3>
+<div class="outline-text-3" id="text-orgf5976fa">
+<ul class="org-ul">
+<li>Introduce the speaking test.</li>
+<li>Learn about editing and transitions.</li>
+<li>Finish storyboards</li>
+<li>Start final plates</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc3e4216" class="outline-3">
+<h3 id="orgc3e4216">👻 Lesson: 👻</h3>
+<div class="outline-text-3" id="text-orgc3e4216">
+</div>
+<div id="outline-container-orgd67943b" class="outline-4">
+<h4 id="orgd67943b">Warmer</h4>
+<div class="outline-text-4" id="text-orgd67943b">
+</div>
+<div id="outline-container-org6f5d164" class="outline-5">
+<h5 id="org6f5d164">Do you like scary movies? What is your favourite scary movie or Halloween movie? Why?</h5>
+</div>
+</div>
+<div id="outline-container-orgbb714fe" class="outline-4">
+<h4 id="orgbb714fe">Practice for the <a href="https://sendagirich.github.io/asuka/vl_spk_test.html">Speaking test</a> on December 12th</h4>
+<div class="outline-text-4" id="text-orgbb714fe">
+<ul class="org-ul">
+<li>Your speaking test grade will count towards your grade for term three.</li>
+<li>You will need to talk about these areas of film making:
+<ul class="org-ul">
+<li>script
+<ul class="org-ul">
+<li>plot</li>
+<li>characters</li>
+<li>setting</li>
+</ul></li>
+<li>shots
+<ul class="org-ul">
+<li>light</li>
+<li>colour</li>
+<li>movement</li>
+<li>composition</li>
+</ul></li>
+<li>pace and transitions - editing (we will look at this later)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge183bfd" class="outline-4">
+<h4 id="orge183bfd">Part of a film to add in the edit</h4>
+<div class="outline-text-4" id="text-orge183bfd">
+<ul class="org-ul">
+<li><b>Titles / Opening credits.</b>
+<ul class="org-ul">
+<li>Show the film title at the beginning of the film.</li>
+<li>They are often accompanied by music.</li>
+<li>In TV shows titles are usually part of an opening sequence.</li>
+</ul></li>
+<li><b>Closing credits</b>
+<ul class="org-ul">
+<li>List the cast and crew who made the film.</li>
+<li>In your film write the names of your group. You can use nicknames.</li>
+</ul></li>
+<li><b>Transitions</b>
+<ul class="org-ul">
+<li>Transitions are how changes are made between shots and scenes.</li>
+</ul></li>
+<li><b>Audio</b>
+<ul class="org-ul">
+<li>Dialogue from the actors is matched with the shots and also music and sound effects.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0af78ee" class="outline-4">
+<h4 id="org0af78ee">Learn about <a href="https://sendagirich.github.io/asuka/vl_edit.html">Editing</a> films</h4>
+</div>
+<div id="outline-container-orga6783a5" class="outline-4">
+<h4 id="orga6783a5">Watch how to make a film on your phone.</h4>
+</div>
+<div id="outline-container-org88aca49" class="outline-4">
+<h4 id="org88aca49">Finish storyboards, finish plates, record audio.</h4>
+</div>
+</div>
+<div id="outline-container-org8f295de" class="outline-3">
+<h3 id="org8f295de">👾 Homework:👾</h3>
+<div class="outline-text-3" id="text-org8f295de">
+<ul class="org-ul">
+<li>Finish storyboards, plates and scripts.</li>
+<li>Review what you have studied so far: <b><a href="https://sendagirich.github.io/asuka/vl_film_english.html">Film English</a></b></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbd0b57b" class="outline-2">
+<h2 id="orgbd0b57b">10/24 Lesson 6</h2>
+<div class="outline-text-2" id="text-orgbd0b57b">
+</div>
+<div id="outline-container-org4aca23b" class="outline-3">
+<h3 id="org4aca23b">Lesson Aim:</h3>
+<div class="outline-text-3" id="text-org4aca23b">
+<ul class="org-ul">
+<li>Learn about Lighting &amp; Colour in film.</li>
+<li>Review scripts.</li>
+<li>Start storyboards.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org199a98a" class="outline-3">
+<h3 id="org199a98a">Lesson:</h3>
+<div class="outline-text-3" id="text-org199a98a">
+</div>
+<div id="outline-container-org641e1ca" class="outline-4">
+<h4 id="org641e1ca">1. Tell your partner about your HSM review</h4>
+</div>
+<div id="outline-container-org498b6d2" class="outline-4">
+<h4 id="org498b6d2">2. Review <a href="https://sendagirich.github.io/asuka/vl_project.html">Project</a></h4>
+</div>
+<div id="outline-container-org45611d8" class="outline-4">
+<h4 id="org45611d8">3. What makes a good script?</h4>
+<div class="outline-text-4" id="text-org45611d8">
+</div>
+<div id="outline-container-org5262f48" class="outline-5">
+<h5 id="org5262f48">Ask yourself and your group partners the following questions about The Sound of Music.</h5>
+<div class="outline-text-5" id="text-org5262f48">
+</div>
+<div id="outline-container-orgd846450" class="outline-6">
+<h6 id="orgd846450">1. Who is it about?</h6>
+<div class="outline-text-6" id="text-orgd846450">
+</div>
+<ul class="org-ul">
+<li><a id="org7c28a14"></a>Maria, a nun who leaves to be a governess and the Von Trapp family, who she goes to work for.<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgcfd7772" class="outline-6">
+<h6 id="orgcfd7772">2. What did they want?</h6>
+<div class="outline-text-6" id="text-orgcfd7772">
+</div>
+<ul class="org-ul">
+<li><a id="org8a5864f"></a>For Maria to marry Captain Von Trapp and live with the family.<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgce7ae71" class="outline-6">
+<h6 id="orgce7ae71">3. Why can&rsquo;t they get it?</h6>
+<div class="outline-text-6" id="text-orgce7ae71">
+</div>
+<ul class="org-ul">
+<li><a id="org4ec3873"></a>Because the Captain is going to marry Baroness Shrader and Maria leaves.<br /></li>
+</ul>
+</div>
+<div id="outline-container-org1be1f15" class="outline-6">
+<h6 id="org1be1f15">4. What did they do about it?</h6>
+<div class="outline-text-6" id="text-org1be1f15">
+</div>
+<ul class="org-ul">
+<li><a id="org39f9a92"></a>Maria returns to the house and the Captain tells her he loves her.<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgce54e52" class="outline-6">
+<h6 id="orgce54e52">Why doesn&rsquo;t that work?</h6>
+<div class="outline-text-6" id="text-orgce54e52">
+</div>
+<ul class="org-ul">
+<li><a id="org3fcfa8b"></a>Because the Nazi&rsquo;s want the Captain to go away to fight for them.<br /></li>
+</ul>
+</div>
+<div id="outline-container-org6919d05" class="outline-6">
+<h6 id="org6919d05">6. How does it end?</h6>
+<div class="outline-text-6" id="text-org6919d05">
+</div>
+<ul class="org-ul">
+<li><a id="org6232786"></a>The family escape.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbb94733" class="outline-5">
+<h5 id="orgbb94733">Ask yours partner the following questions about your High School Musical.</h5>
+<div class="outline-text-5" id="text-orgbb94733">
+<ul class="org-ul">
+<li>1. Who is it about?</li>
+<li>2. What did they want?</li>
+<li>3. Why can&rsquo;t they get it?</li>
+<li>4. What did they do about it?</li>
+<li>5. Why doesn&rsquo;t that work?</li>
+<li><p>
+6. How does it end?
+</p>
+
+<p>
+🔗 <b><a href="https://sendagirich.github.io/asuka/vl_script.html">Example answers</a></b>
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org16e706f" class="outline-5">
+<h5 id="org16e706f">Ask yourself and your group partners the following questions about your script.</h5>
+<div class="outline-text-5" id="text-org16e706f">
+<ul class="org-ul">
+<li>1. Who is it about?</li>
+<li>2. What did they want?</li>
+<li>3. Why can&rsquo;t they get it?</li>
+<li>4. What did they do about it?</li>
+<li>5. Why doesn&rsquo;t that work?</li>
+<li>6. How does it end?</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc241fad" class="outline-4">
+<h4 id="orgc241fad">4. Learn about light and colour <a href="https://sendagirich.github.io/asuka/vl_light.html">Light and Colour</a></h4>
+</div>
+<div id="outline-container-org58590cf" class="outline-4">
+<h4 id="org58590cf">5. Review film making</h4>
+<div class="outline-text-4" id="text-org58590cf">
+</div>
+<div id="outline-container-orgaabda95" class="outline-5">
+<h5 id="orgaabda95"><a href="https://sendagirich.github.io/asuka/vl_shots.html">Shots 1</a></h5>
+</div>
+<div id="outline-container-orgc53af96" class="outline-5">
+<h5 id="orgc53af96"><a href="https://sendagirich.github.io/asuka/vl_shots_l2.html">Shots 2</a></h5>
+</div>
+<div id="outline-container-org00ab3ee" class="outline-5">
+<h5 id="org00ab3ee"><a href="https://sendagirich.github.io/asuka/vl_thirds.html">Rule of thirds</a></h5>
+</div>
+<div id="outline-container-orge6c7343" class="outline-5">
+<h5 id="orge6c7343"><a href="https://sendagirich.github.io/asuka/vl_storyboard.html">Storyboards</a></h5>
+</div>
+</div>
+<div id="outline-container-org8ea8229" class="outline-4">
+<h4 id="org8ea8229">6. Work on storyboards</h4>
+</div>
+</div>
+<div id="outline-container-org1b05ba2" class="outline-3">
+<h3 id="org1b05ba2">Homework:</h3>
+<div class="outline-text-3" id="text-org1b05ba2">
+<ul class="org-ul">
+<li>Continue your storyboards.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4ccd860" class="outline-2">
+<h2 id="org4ccd860">10/17 Lesson 5</h2>
+<div class="outline-text-2" id="text-org4ccd860">
+</div>
+<div id="outline-container-org27df0fb" class="outline-3">
+<h3 id="org27df0fb">Lesson Aim:</h3>
+<div class="outline-text-3" id="text-org27df0fb">
+<ul class="org-ul">
+<li>Review High School Musical.</li>
+<li>Introduce the rule of thirds.</li>
+<li>Start storyboards.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org169476b" class="outline-3">
+<h3 id="org169476b">Lessons</h3>
+<div class="outline-text-3" id="text-org169476b">
+</div>
+<div id="outline-container-org0ef9566" class="outline-4">
+<h4 id="org0ef9566">1. HSM review</h4>
+<div class="outline-text-4" id="text-org0ef9566">
+</div>
+<div id="outline-container-org47a407a" class="outline-5">
+<h5 id="org47a407a">1.1. Check new vocabulary before you listen to Richard&rsquo;s review.</h5>
+<div class="outline-text-5" id="text-org47a407a">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">catchy</td>
+<td class="org-left">覚えやすい</td>
+<td class="org-left">おぼえやすい</td>
+</tr>
+
+<tr>
+<td class="org-left">predictable</td>
+<td class="org-left">予測可能な</td>
+<td class="org-left">よそくかのうな</td>
+</tr>
+
+<tr>
+<td class="org-left">atmosphere</td>
+<td class="org-left">雰囲気</td>
+<td class="org-left">ふんいき</td>
+</tr>
+
+<tr>
+<td class="org-left">expectations</td>
+<td class="org-left">期待</td>
+<td class="org-left">きたい</td>
+</tr>
+
+<tr>
+<td class="org-left">strict</td>
+<td class="org-left">厳しい</td>
+<td class="org-left">きびしい</td>
+</tr>
+
+<tr>
+<td class="org-left">dialogue</td>
+<td class="org-left">対話</td>
+<td class="org-left">たいわ</td>
+</tr>
+
+<tr>
+<td class="org-left">detention</td>
+<td class="org-left">居残り</td>
+<td class="org-left">いのこり</td>
+</tr>
+
+<tr>
+<td class="org-left">excitement</td>
+<td class="org-left">興奮</td>
+<td class="org-left">こうふん</td>
+</tr>
+
+<tr>
+<td class="org-left">recommend</td>
+<td class="org-left">お勧めする</td>
+<td class="org-left">おすすめする</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org1ac394b" class="outline-5">
+<h5 id="org1ac394b">1.2. Listen to Richard&rsquo;s review then tell your partner about what you can remember.</h5>
+</div>
+<div id="outline-container-orge587a9f" class="outline-5">
+<h5 id="orge587a9f">1.3. Listen again and answer these questions:</h5>
+<div class="outline-text-5" id="text-orge587a9f">
+<ul class="org-ul">
+<li>Does he usually watch this type of film?</li>
+<li>Who is his favourite character? Why?</li>
+<li>What are his favourite scenes? Why?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5930ce9" class="outline-5">
+<h5 id="org5930ce9">1.4. Read through answers here 🔗 <a href="https://sendagirich.github.io/asuka/vl_hsm_review.html">High School Musical review</a> then write your own review.</h5>
+</div>
+</div>
+<div id="outline-container-org4e7faca" class="outline-4">
+<h4 id="org4e7faca">2. Fill in the form about your group&rsquo;s film</h4>
+<div class="outline-text-4" id="text-org4e7faca">
+</div>
+<ul class="org-ul">
+<li><a id="org4c0854c"></a><a href="https://sendagirich.github.io/asuka/assets/ws/t2_film_proposal.pdf">Film proposal PDF</a><br /></li>
+</ul>
+</div>
+<div id="outline-container-orgb5a9793" class="outline-4">
+<h4 id="orgb5a9793">3. Learn about the 🔗 <a href="https://sendagirich.github.io/asuka/vl_thirds.html">Rule of thirds</a></h4>
+</div>
+<div id="outline-container-org87ab853" class="outline-4">
+<h4 id="org87ab853">4. Learn about  🔗 <a href="https://sendagirich.github.io/asuka/vl_storyboard.html">Storyboards</a></h4>
+</div>
+<div id="outline-container-orge1d2384" class="outline-4">
+<h4 id="orge1d2384">5. Start your storyboard</h4>
+<div class="outline-text-4" id="text-orge1d2384">
+</div>
+<ul class="org-ul">
+<li><a id="org189b34f"></a><a href="https://sendagirich.github.io/asuka/assets/ws/storyboard_template.pdf">Storyboard PDF</a><br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7f17304" class="outline-3">
+<h3 id="org7f17304">Homework:</h3>
+<div class="outline-text-3" id="text-org7f17304">
+<ul class="org-ul">
+<li>Work on your storyboards.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2d33ea2" class="outline-2">
+<h2 id="org2d33ea2">10/10 Lesson 4 HSM 4</h2>
+<div class="outline-text-2" id="text-org2d33ea2">
+</div>
+<div id="outline-container-org419f964" class="outline-3">
+<h3 id="org419f964">Lesson Aim:</h3>
+<div class="outline-text-3" id="text-org419f964">
+<ul class="org-ul">
+<li>Watch HSM pt.4 Final part.</li>
+<li>Review
+<ul class="org-ul">
+<li>Script / story frameworks</li>
+<li>Shots</li>
+</ul></li>
+<li>Introduce: shots and meaning</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org182cc35" class="outline-3">
+<h3 id="org182cc35">Lesson:</h3>
+<div class="outline-text-3" id="text-org182cc35">
+<ol class="org-ol">
+<li>Watch HSM pt.4</li>
+<li><a href="https://sendagirich.github.io/asuka/assets/04_hsm.pdf">Worksheet 4</a></li>
+<li>Introduce static and travelling shots.</li>
+</ol>
+</div>
+<div id="outline-container-org5f8649a" class="outline-5">
+<h5 id="org5f8649a"><a href="https://sendagirich.github.io/asuka/vl_shots_l2.html">Shots 2</a></h5>
+</div>
+</div>
+<div id="outline-container-orgadd8446" class="outline-3">
+<h3 id="orgadd8446">Homework:</h3>
+<div class="outline-text-3" id="text-orgadd8446">
+<ul class="org-ul">
+<li>Finish scrips.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org936dfa8" class="outline-2">
+<h2 id="org936dfa8">19/19 Lesson 3 HSM 3</h2>
+<div class="outline-text-2" id="text-org936dfa8">
+</div>
+<div id="outline-container-org36fca79" class="outline-3">
+<h3 id="org36fca79">Lesson Aim:</h3>
+<div class="outline-text-3" id="text-org36fca79">
+<ul class="org-ul">
+<li>Watch HSM pt.3</li>
+<li>Learn about film shots</li>
+<li>Submit idea for your film</li>
+<li>Start your script</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgce1326b" class="outline-3">
+<h3 id="orgce1326b">Lesson:</h3>
+<div class="outline-text-3" id="text-orgce1326b">
+</div>
+<div id="outline-container-org510e315" class="outline-4">
+<h4 id="org510e315">1. Tell our partner about your film concept.</h4>
+</div>
+<div id="outline-container-org80fcdcd" class="outline-4">
+<h4 id="org80fcdcd">2. Watch HSM pt.3</h4>
+<div class="outline-text-4" id="text-org80fcdcd">
+<ul class="org-ul">
+<li>Locker room</li>
+<li>Canteen Gabriella and Taylor</li>
+<li>Corridor p Sharpay and basketball player</li>
+<li>Roof garden</li>
+<li>Singing practise</li>
+<li>Basketball practise</li>
+<li>Chad and Troy in library</li>
+<li>Sharpay and Ryan plan</li>
+<li>Science and basketball plan.</li>
+<li>Gabriella song.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org81a2fe9" class="outline-4">
+<h4 id="org81a2fe9">3. <a href="https://sendagirich.github.io/asuka/assets/03_hsm.pdf">Worksheet 3</a></h4>
+</div>
+<div id="outline-container-org420cf38" class="outline-4">
+<h4 id="org420cf38">4. Introduce shots</h4>
+<div class="outline-text-4" id="text-org420cf38">
+</div>
+<div id="outline-container-org475a6bb" class="outline-6">
+<h6 id="org475a6bb">Match the words to the definitions.</h6>
+<div class="outline-text-6" id="text-org475a6bb">
+<div class="org-src-container">
+<pre class="src src-nil"> A. Shot
+ B. Scene
+ C. Frame
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>A continuous action or event in a single place and time, made of one or more shots, that tells a part of the story.</li>
+<li>A single, continuous take from the camera, from the moment it starts recording to when it stops, representing a specific viewpoint or angle.</li>
+<li>A single still image that is part of in a sequence that show movement in film when they are played together.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0812d23" class="outline-5">
+<h5 id="org0812d23"><a href="https://sendagirich.github.io/asuka/vl_shots.html">Shots</a></h5>
+</div>
+</div>
+<div id="outline-container-orgb9f9d39" class="outline-4">
+<h4 id="orgb9f9d39">5. Prepare your film idea.</h4>
+<div class="outline-text-4" id="text-orgb9f9d39">
+<ol class="org-ol">
+<li>Decide on the idea for your film.</li>
+<li>Check key areas:
+<ul class="org-ul">
+<li>What is the genre?</li>
+<li>Where is it set?</li>
+<li>When is it set?</li>
+<li>Who are the characters?</li>
+<li>What is the plot?</li>
+</ul></li>
+<li>Prepare your script
+<ul class="org-ul">
+<li>Look at the HSM script below.</li>
+<li>Write your script like this. Write the scene with CUT TO. Then write your dialogue or narration.</li>
+</ul></li>
+</ol>
+</div>
+<div id="outline-container-orge0c9ff0" class="outline-5">
+<h5 id="orge0c9ff0">HSM script (scene one)</h5>
+<div class="outline-text-5" id="text-orge0c9ff0">
+<ul class="org-ul">
+<li>CUT TO: EXT. SKI LODGE, NEW YEAR’S EVE</li>
+
+<li>High School Musical logo appears on screen.</li>
+
+<li>CUT TO: INT. SKI LODGE, NEW YEAR’S EVE</li>
+
+<li>The ski lodge is alive with excitement as the inhabitants enjoy the festivities. Gabriella Montez sits on the sofa reading as Miss Montez approaches.</li>
+
+<li>MISS MONTEZ: Gabby, it’s New Year’s Eve. Enough reading.</li>
+
+<li>GABRIELLA: But, Mom, I&rsquo;m almost done</li>
+
+<li>MISS MONTEZ: The teen party? I&rsquo;ve laid out your best clothes, Come get ready.</li>
+
+<li>GABRIELLA: Can I have my book back?</li>
+
+<li>Miss Montez hands the book back to Gabriella.</li>
+
+<li>GABRIELLA: Thank you.</li>
+
+<li>MISS MONTEZ: Come on.</li>
+
+<li>Present ways of collaborative working e.g. google docs.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfcc540b" class="outline-3">
+<h3 id="orgfcc540b">Homework (No lessons for two weeks so you have lots of time!):</h3>
+<div class="outline-text-3" id="text-orgfcc540b">
+<ul class="org-ul">
+<li>Finish film scripts</li>
+<li>Look at shots videos</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb68f80b" class="outline-2">
+<h2 id="orgb68f80b">09/12 Lesson 2 HSM2</h2>
+<div class="outline-text-2" id="text-orgb68f80b">
+</div>
+<div id="outline-container-org8e344e8" class="outline-3">
+<h3 id="org8e344e8">Lesson Aim:</h3>
+<div class="outline-text-3" id="text-org8e344e8">
+<ul class="org-ul">
+<li>Watch HSM 2</li>
+<li>Continue to learn to talk about pictures.</li>
+<li>Look at film making process</li>
+<li>Introduce project</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd135681" class="outline-3">
+<h3 id="orgd135681">Lesson:</h3>
+<div class="outline-text-3" id="text-orgd135681">
+</div>
+<div id="outline-container-org9deccbd" class="outline-4">
+<h4 id="org9deccbd">1. Review HSM <a href="https://kenkyusaito.com/asuka/vl_hsm_characters.html">Characters</a></h4>
+</div>
+<div id="outline-container-orga6e6900" class="outline-4">
+<h4 id="orga6e6900">2. Watch HSM pt.2</h4>
+<div class="outline-text-4" id="text-orga6e6900">
+<ul class="org-ul">
+<li>audition</li>
+<li>cafeteria scene</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org16d3a44" class="outline-4">
+<h4 id="org16d3a44">3. <a href="https://sendagirich.github.io/asuka/assets/02_hsm.pdf">Worksheet 2</a></h4>
+</div>
+<div id="outline-container-org96fa26c" class="outline-4">
+<h4 id="org96fa26c">4. Review talking about pictures.</h4>
+<div class="outline-text-4" id="text-org96fa26c">
+</div>
+<div id="outline-container-orgc375710" class="outline-5">
+<h5 id="orgc375710">1. <a href="https://kenkyusaito.com/asuka/vl_image_pos.html">Place</a></h5>
+</div>
+<div id="outline-container-org8af1948" class="outline-5">
+<h5 id="org8af1948">2. <a href="https://kenkyusaito.com/asuka/vl_preps_of_place.html">Position</a></h5>
+</div>
+<div id="outline-container-org4a8b112" class="outline-5">
+<h5 id="org4a8b112">3. <a href="https://kenkyusaito.com/asuka/vl_image_colour.html">Colour</a></h5>
+</div>
+<div id="outline-container-orgb72321e" class="outline-5">
+<h5 id="orgb72321e">4. <a href="https://kenkyusaito.com/asuka/vl_image_light.html">Light</a></h5>
+</div>
+<div id="outline-container-org014bb76" class="outline-5">
+<h5 id="org014bb76">5. <a href="https://kenkyusaito.com/asuka/vl_image_camera.html">Camera</a></h5>
+</div>
+<div id="outline-container-org55c4f64" class="outline-5">
+<h5 id="org55c4f64">6. <a href="https://kenkyusaito.com/asuka/vl_image_texts.html">Quiz</a></h5>
+</div>
+<div id="outline-container-org46d2dc1" class="outline-5">
+<h5 id="org46d2dc1">7. <a href="https://kenkyusaito.com/asuka/vl_image_pictures.html">Pictures</a></h5>
+</div>
+</div>
+<div id="outline-container-orga40d4ff" class="outline-4">
+<h4 id="orga40d4ff">5. Introduce project</h4>
+<div class="outline-text-4" id="text-orga40d4ff">
+<ol class="org-ol">
+<li>Concept</li>
+<li>Script</li>
+<li>Story board</li>
+<li>Photo storyboard</li>
+<li>Record audio</li>
+<li>Publish / release film</li>
+<li>Promote film</li>
+<li>Review other groups&rsquo; films</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb083e26" class="outline-3">
+<h3 id="orgb083e26">Homework:</h3>
+<div class="outline-text-3" id="text-orgb083e26">
+<ul class="org-ul">
+<li>In groups, think of concepts for your film.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org12c15ef" class="outline-2">
+<h2 id="org12c15ef">09/05 Lesson 1 HSM1</h2>
+<div class="outline-text-2" id="text-org12c15ef">
+</div>
+<div id="outline-container-org4d10c24" class="outline-3">
+<h3 id="org4d10c24">Lesson Aim:</h3>
+<div class="outline-text-3" id="text-org4d10c24">
+<ul class="org-ul">
+<li>Start watching High School Musical</li>
+<li>Learn to describe images using prepositions of place, colour, and light</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8d3422d" class="outline-3">
+<h3 id="org8d3422d">Lesson:</h3>
+<div class="outline-text-3" id="text-org8d3422d">
+</div>
+<div id="outline-container-orgd1879df" class="outline-4">
+<h4 id="orgd1879df">Tell your partner about the best film you watched this summer.</h4>
+</div>
+<div id="outline-container-org50c22d3" class="outline-4">
+<h4 id="org50c22d3">Watch part one of High School Musical.</h4>
+<div class="outline-text-4" id="text-org50c22d3">
+<ul class="org-ul">
+<li>Scene 1: Ski resort</li>
+<li>Scene 2: First day of school</li>
+<li>Scene 3: Drama class</li>
+<li>Scene 4. Head in the game song</li>
+<li>Scene 4: Detention</li>
+<li>Scene 5: Principle&rsquo;s office</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd190caa" class="outline-4">
+<h4 id="orgd190caa">Complete <a href="https://sendagirich.github.io/asuka/assets/01_hsm.pdf">Worksheet 1</a></h4>
+</div>
+<div id="outline-container-org4d3e2ac" class="outline-4">
+<h4 id="org4d3e2ac">Describe images</h4>
+<div class="outline-text-4" id="text-org4d3e2ac">
+</div>
+<div id="outline-container-org053fee9" class="outline-5">
+<h5 id="org053fee9">1. <a href="https://kenkyusaito.com/asuka/vl_image_pos.html">Place</a></h5>
+</div>
+<div id="outline-container-org3500132" class="outline-5">
+<h5 id="org3500132">2. <a href="https://kenkyusaito.com/asuka/vl_image_colour.html">Colour</a></h5>
+</div>
+<div id="outline-container-org4516f23" class="outline-5">
+<h5 id="org4516f23">3. <a href="https://kenkyusaito.com/asuka/vl_image_light.html">Light</a></h5>
+<div class="outline-text-5" id="text-org4516f23">
+<hr />
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8c92a03" class="outline-3">
+<h3 id="org8c92a03">🔗 <a href="https://sendagirich.github.io/asuka/vl_index.html">Home</a></h3>
+</div>
+<div id="outline-container-org3e0e16e" class="outline-3">
+<h3 id="org3e0e16e">🔗 <a href="https://sendagirich.github.io/asuka/vl_previous_terms.html">Previous Terms</a></h3>
+</div>
+</div>
+</div>
+</body>
+</html>
