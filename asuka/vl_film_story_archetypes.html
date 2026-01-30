@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-30 Fri 12:35 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Types of story</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Types of story</h1>
+<ul class="org-ul">
+<li>Even though there are thousands of films that tell many different stories, film plots often follow general patterns or types of story. We call these archetypes.</li>
+<li>Here are seven story archetypes.</li>
+</ul>
+<div id="outline-container-orgbf1fadf" class="outline-2">
+<h2 id="orgbf1fadf">1. Rags to riches:</h2>
+<div class="outline-text-2" id="text-orgbf1fadf">
+<ul class="org-ul">
+<li>In a rags-to-riches story, a poor and unlucky main character gains something they lack (money, power, love) loses it, and then wins it back again by the end of the story. This plot archetype is popular in fairy tales like Cinderella as well as various Disney animated films like Aladdin and Ratatouille. The rags-to-riches tale is effectively an underdog story, wherein a simple, relatable character receives newly begotten privilege (whether via luck, conquest, or a magical trickster like a fairy godmother) and must balance the duties that come along with that privilege.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5aaf98d" class="outline-2">
+<h2 id="org5aaf98d">2. The quest:</h2>
+<div class="outline-text-2" id="text-org5aaf98d">
+<ul class="org-ul">
+<li>In a quest archetype, the main character must reach a certain location, attain a certain object, or fulfill a certain objective while conquering many obstacles along the way. The Odyssey is a classic quest story. So, too, is J.R.R. Tolkien’s The Lord of the Rings trilogy, Watership Down, the films Finding Nemo and The Wizard of Oz, and episodes of J.K. Rowling’s Harry Potter series.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0666e79" class="outline-2">
+<h2 id="org0666e79">3. Rebirth:</h2>
+<div class="outline-text-2" id="text-org0666e79">
+<ul class="org-ul">
+<li>The rebirth story archetype involves a character changing their ways and becoming a better person, resulting in a happy ending. Charles Dickens’ A Christmas Carol is a classic rebirth story, as Ebenezer Scrooge sees the error of his ways and transforms. Other examples include The Secret Garden, Beauty and the Beast, and the film Groundhog Day.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgacf5ff4" class="outline-2">
+<h2 id="orgacf5ff4">4. Overcoming the monster:</h2>
+<div class="outline-text-2" id="text-orgacf5ff4">
+<ul class="org-ul">
+<li>This story archetype, rooted in ancient classics like Perseus, Beowulf and the biblical David and Goliath, involves a hero who must conquer some sort of evil force—typically physical but sometimes metaphysical. Bram Stoker’s novel Dracula qualifies as an “overcoming the monster” story. Such stories often intertwine with what theorist Joseph Campbell referred to as “the hero’s journey,” wherein an inciting incident presents a call to action for the story’s main character, who will then—via the story’s rising action and climax—rise to the role of a hero. (Note that Campbell himself was extrapolating from the theories of Swiss psychologist Carl Jung.) The original Star Wars trilogy fits this archetype, as do standalone James Bond and Terminator films.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9cf6d43" class="outline-2">
+<h2 id="org9cf6d43">5. Comedy:</h2>
+<div class="outline-text-2" id="text-org9cf6d43">
+<ul class="org-ul">
+<li>The notion of comedy is intrinsic to humans as a species, and written examples trace back to the ancient Greek playwright Aristophanes. Comedic plot lines subvert expectations and blend the familiar with the absurd to keep audiences laughing and on their toes. William Shakespeare mastered classical comedy, with famous jester characters like Sir John Falstaff and ribald plots like that of A Midsummer Night’s Dream. Comedy remains immensely popular in contemporary TV and film, where main characters like Veep’s Selina Meyer and sidekicks like The Office’s Dwight Schrute exemplify comedic archetypes.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2fd6a18" class="outline-2">
+<h2 id="org2fd6a18">6. Tragedy:</h2>
+<div class="outline-text-2" id="text-org2fd6a18">
+<ul class="org-ul">
+<li>Tragedy is comedy’s mirror image. In a tragedy, a protagonist is undone by a critical character flaw or by the cruelty of fate. William Shakespeare mastered tragedy just as thoroughly as he did comedy, and his tragic masterpieces like Macbeth, Hamlet, King Lear, Othello, and Romeo and Juliet remain in heavy rotation in today’s playhouses. Leo Tolstoy’s masterwork Anna Karenina contains elements of both tragedy and rebirth, while twentieth-century films like Nicholas Roeg’s Don’t Look Now combine tragedy with horror to conjure almost nihilistic endings.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc7fce40" class="outline-2">
+<h2 id="orgc7fce40">7. Voyage and return:</h2>
+<div class="outline-text-2" id="text-orgc7fce40">
+<ul class="org-ul">
+<li>A voyage and return story sends a protagonist to a strange land, from which they will return armed with wisdom and life experience. J.R.R. Tolkien’s The Hobbit is a voyage and return story. Alice in Wonderland and The Chronicles of Narnia feature child protagonists who return from journeys with newfound wisdom.</li>
+</ul>
+
+
+<hr />
+
+
+<div id="org11f20e9" class="figure">
+<p><a href="https://sendagirich.github.io/asuka/vl_lessons.html" width="50%"><img src="https://sendagirich.github.io/general-english/assets/lsn-1.png" alt="lsn-1.png" width="50%" /></a>
+</p>
+</div>
+
+
+<div id="orgc9e68b6" class="figure">
+<p><a href="https://sendagirich.github.io/asuka/vl_index.html" width="100%"><img src="https://sendagirich.github.io/general-english/assets/hm-1.png" alt="hm-1.png" width="100%" /></a></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
