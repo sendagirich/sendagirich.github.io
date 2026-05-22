@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-05-22 Fri 20:28 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="outline-container-org854d685" class="outline-2">
+<h2 id="org854d685">897-910 verbs</h2>
+<div class="outline-text-2" id="text-org854d685">
+<ul class="org-ul">
+<li>897 unite</li>
+<li>898 leap</li>
+<li>899 exaggerate</li>
+<li>900 conquer</li>
+<li>901 melt</li>
+<li>902 invade</li>
+<li>903 modify</li>
+<li>904 scatter</li>
+<li>905 undergo</li>
+<li>906 evaluate</li>
+<li>907 bend</li>
+<li>908 derive from</li>
+<li>909 screaming</li>
+<li>910 gaze at</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org62b7c65" class="outline-2">
+<h2 id="org62b7c65">Texts</h2>
+<div class="outline-text-2" id="text-org62b7c65">
+</div>
+<div id="outline-container-org9249e6b" class="outline-3">
+<h3 id="org9249e6b">Text 1 (Narrative/Descriptive Style)</h3>
+<div class="outline-text-3" id="text-org9249e6b">
+<p>
+The small village of Greenhollow was peaceful, but one day, a swarm of bees decided to <b>invade</b> the town square. People started <b>screaming</b> and running. The mayor had to <b>evaluate</b> the situation quickly. She knew they must <b>unite</b> to solve the problem. A local beekeeper said the bees would <b>melt</b> the wax from their old hive and make a new one. He did not <b>exaggerate</b> when he said the swarm was huge. He could <b>gaze at</b> the bees and see their queen. To <b>conquer</b> their fear, the villagers helped move the hive. They had to <b>modify</b> an old box. The bees seemed to <b>undergo</b> a calm change. The keeper had to <b>bend</b> some branches to reach the hive. The honey they got would <b>derive from</b> the local flowers. He told the children not to <b>scatter</b> the bees. With a great <b>leap</b> of faith, the children helped. Finally, the bees were safe.
+</p>
+
+<p>
+<b>Comprehension Questions (one per target word):</b>
+</p>
+<ol class="org-ol">
+<li>What did the bees do to the town square?</li>
+<li>What were people doing when they saw the bees?</li>
+<li>What did the mayor need to do to the situation?</li>
+<li>What did the villagers need to do to solve the problem?</li>
+<li>What did the beekeeper say the bees would do with the wax?</li>
+<li>Did the beekeeper say the truth or tell a lie about the swarm size?</li>
+<li>What could the beekeeper do with his eyes to see the queen bee?</li>
+<li>What did the villagers need to do to their fear?</li>
+<li>What did the villagers have to do to the old box?</li>
+<li>What did the bees seem to do—experience a calm change?</li>
+<li>What did the keeper need to do with the branches?</li>
+<li>Where would the honey come from?</li>
+<li>What did the keeper tell the children not to do to the bees?</li>
+<li>What kind of movement did the children make to help?</li>
+</ol>
+
+<p>
+<b>Cloze Questions (one per target word):</b>
+</p>
+<ol class="org-ol">
+<li>The bees tried to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the town square.</li>
+<li>People were <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> in fear.</li>
+<li>The mayor needed to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the situation.</li>
+<li>The villagers had to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to solve the problem.</li>
+<li>The bees would <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the wax to make a new hive.</li>
+<li>The beekeeper did not <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> about the swarm size.</li>
+<li>The beekeeper could <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the queen bee.</li>
+<li>They needed to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> their fear of bees.</li>
+<li>They had to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the old box for the hive.</li>
+<li>The bees seemed to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> a calm change.</li>
+<li>The keeper had to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> some branches.</li>
+<li>The honey would <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> local flowers.</li>
+<li>The keeper told children not to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the bees.</li>
+<li>The children made a great <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> of faith.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org528d2ac" class="outline-3">
+<h3 id="org528d2ac">Text 2 (Dialogue Style)</h3>
+<div class="outline-text-3" id="text-org528d2ac">
+<p>
+<b>Anna:</b> Did you hear that ants are trying to <b>invade</b> our kitchen again?
+<b>Ben:</b> Yes! Mom was <b>screaming</b> this morning. We need to <b>evaluate</b> the problem.
+<b>Anna:</b> I think we should <b>unite</b> and clean every corner.
+<b>Ben:</b> Good idea. Don&rsquo;t <b>exaggerate</b> how bad it is, but it’s serious.
+<b>Anna:</b> I saw them <b>melt</b> some sugar on the floor. Disgusting!
+<b>Ben:</b> We must <b>conquer</b> this mess. Let’s <b>modify</b> our storage plan.
+<b>Anna:</b> The ants will <b>undergo</b> a surprise when we remove their food.
+<b>Ben:</b> I can <b>bend</b> a wire to block their hole.
+<b>Anna:</b> Where do they <b>derive from</b>? The garden?
+<b>Ben:</b> Probably. Don’t <b>scatter</b> the bait—keep it in one spot.
+<b>Anna:</b> I need to <b>gaze at</b> the floor to see where they come in.
+<b>Ben:</b> And with one big <b>leap</b>, we’ll jump into action!
+</p>
+
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>What are the ants trying to do to the kitchen?</li>
+<li>What was Mom doing this morning?</li>
+<li>What do the two friends need to do to the problem?</li>
+<li>What does Anna suggest they do together?</li>
+<li>What does Ben tell Anna not to do about the problem?</li>
+<li>What did the ants do to the sugar?</li>
+<li>What must they do to the mess?</li>
+<li>What do they plan to do to their storage plan?</li>
+<li>What will the ants undergo?</li>
+<li>What will Ben do to the wire?</li>
+<li>Where do the ants come from?</li>
+<li>What does Ben tell Anna not to do with the bait?</li>
+<li>What does Anna need to do to the floor?</li>
+<li>What kind of movement will they make to start?</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>The ants tried to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the kitchen.</li>
+<li>Mom was <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> this morning.</li>
+<li>They need to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the problem.</li>
+<li>They should <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to clean.</li>
+<li>Don&rsquo;t <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> how bad it is.</li>
+<li>The ants <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the sugar.</li>
+<li>They must <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the mess.</li>
+<li>They will <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> their storage plan.</li>
+<li>The ants will <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> a surprise.</li>
+<li>Ben will <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> a wire.</li>
+<li>The ants <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the garden.</li>
+<li>Don&rsquo;t <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the bait.</li>
+<li>Anna needs to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the floor.</li>
+<li>They will make a big <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> into action.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orge7a7f12" class="outline-3">
+<h3 id="orge7a7f12">Text 3 (Informative/Instructional Style)</h3>
+<div class="outline-text-3" id="text-orge7a7f12">
+<p>
+To prepare for a storm, you must <b>unite</b> your family in a safe room. Before the storm arrives, <b>evaluate</b> your supplies. Do not <b>exaggerate</b> the danger, but be serious. Strong winds can <b>scatter</b> objects from your yard. Rain can <b>invade</b> your home through cracks. You may need to <b>modify</b> your windows with boards. Ice can <b>melt</b> quickly if power comes back. Your house will <b>undergo</b> pressure changes. Listen for <b>screaming</b> winds outside. <b>Gaze at</b> the sky for signs of the storm. To <b>conquer</b> fear, stay calm. You can <b>bend</b> some materials to block doors. Calmness will <b>derive from</b> your planning. If water rises, take a <b>leap</b> to higher ground.
+</p>
+
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>What should you do with your family?</li>
+<li>What should you do to your supplies?</li>
+<li>What should you not do about the danger?</li>
+<li>What can strong winds do to objects?</li>
+<li>What can rain do to your home?</li>
+<li>What may you need to do to your windows?</li>
+<li>What can ice do quickly?</li>
+<li>What will your house undergo?</li>
+<li>What kind of winds should you listen for?</li>
+<li>What should you do to the sky?</li>
+<li>What should you do to your fear?</li>
+<li>What can you do to materials to block doors?</li>
+<li>Where will your calmness come from?</li>
+<li>What kind of movement should you make to higher ground?</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>You must <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> your family.</li>
+<li><span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> your supplies.</li>
+<li>Don&rsquo;t <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the danger.</li>
+<li>Winds can <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> objects.</li>
+<li>Rain can <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> your home.</li>
+<li>You may need to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> your windows.</li>
+<li>Ice can <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> quickly.</li>
+<li>Your house will <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> pressure changes.</li>
+<li>Listen for <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> winds.</li>
+<li><span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the sky for signs.</li>
+<li><span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> your fear.</li>
+<li>You can <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> materials.</li>
+<li>Calmness will <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> your planning.</li>
+<li>Take a <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to higher ground.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org635a40e" class="outline-3">
+<h3 id="org635a40e">Text 4 (Adventure/Story Style)</h3>
+<div class="outline-text-3" id="text-org635a40e">
+<p>
+The climbers had to <b>unite</b> their ropes before the ascent. They could <b>gaze at</b> the dangerous peak ahead. One climber started <b>screaming</b> when ice began to <b>melt</b> below him. He had to <b>evaluate</b> the risk of falling. He did not <b>exaggerate</b> the danger—it was real. To <b>conquer</b> the mountain, they needed to <b>modify</b> their route. A rockfall might <b>invade</b> their path. They had to <b>bend</b> their bodies to pass a narrow ledge. Their courage would <b>derive from</b> teamwork. The cold made them <b>undergo</b> shivering. Strong winds could <b>scatter</b> their gear. With a brave <b>leap</b>, they crossed a gap. Finally, they reached the top.
+</p>
+
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>What did the climbers have to do with their ropes?</li>
+<li>What could they do to the dangerous peak?</li>
+<li>What was the climber doing when ice melted?</li>
+<li>What did ice begin to do?</li>
+<li>What did the climber need to do to the risk?</li>
+<li>Did the climber say something true or false about the danger?</li>
+<li>What did they need to do to the mountain?</li>
+<li>What did they need to do to their route?</li>
+<li>What might a rockfall do to their path?</li>
+<li>What did they have to do with their bodies?</li>
+<li>Where would their courage come from?</li>
+<li>What did the cold make them undergo?</li>
+<li>What could strong winds do to their gear?</li>
+<li>What kind of movement did they make across a gap?</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>The climbers had to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> their ropes.</li>
+<li>They could <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the peak.</li>
+<li>A climber was <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span>.</li>
+<li>Ice began to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span>.</li>
+<li>He had to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the risk.</li>
+<li>He did not <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the danger.</li>
+<li>They needed to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the mountain.</li>
+<li>They had to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> their route.</li>
+<li>A rockfall might <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> their path.</li>
+<li>They had to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> their bodies.</li>
+<li>Courage would <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> teamwork.</li>
+<li>They had to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> shivering.</li>
+<li>Winds could <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> their gear.</li>
+<li>They made a brave <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org5199d44" class="outline-2">
+<h2 id="org5199d44">Answers</h2>
+<div class="outline-text-2" id="text-org5199d44">
+<p>
+<b>Text 1 Answers</b>
+<i>Comprehension:</i> 1. invade / 2. screaming / 3. evaluate / 4. unite / 5. melt / 6. exaggerate / 7. gaze at / 8. conquer / 9. modify / 10. undergo / 11. bend / 12. derive from / 13. scatter / 14. leap
+<i>Cloze:</i> 1. invade / 2. screaming / 3. evaluate / 4. unite / 5. melt / 6. exaggerate / 7. gaze at / 8. conquer / 9. modify / 10. undergo / 11. bend / 12. derive from / 13. scatter / 14. leap
+</p>
+
+<p>
+<b>Text 2 Answers</b>
+<i>Comprehension:</i> 1. invade / 2. screaming / 3. evaluate / 4. unite / 5. exaggerate / 6. melt / 7. conquer / 8. modify / 9. undergo / 10. bend / 11. derive from / 12. scatter / 13. gaze at / 14. leap
+<i>Cloze:</i> 1. invade / 2. screaming / 3. evaluate / 4. unite / 5. exaggerate / 6. melt / 7. conquer / 8. modify / 9. undergo / 10. bend / 11. derive from / 12. scatter / 13. gaze at / 14. leap
+</p>
+
+<p>
+<b>Text 3 Answers</b>
+<i>Comprehension:</i> 1. unite / 2. evaluate / 3. exaggerate / 4. scatter / 5. invade / 6. modify / 7. melt / 8. undergo / 9. screaming / 10. gaze at / 11. conquer / 12. bend / 13. derive from / 14. leap
+<i>Cloze:</i> 1. unite / 2. evaluate / 3. exaggerate / 4. scatter / 5. invade / 6. modify / 7. melt / 8. undergo / 9. screaming / 10. gaze at / 11. conquer / 12. bend / 13. derive from / 14. leap
+</p>
+
+<p>
+<b>Text 4 Answers</b>
+<i>Comprehension:</i> 1. unite / 2. gaze at / 3. screaming / 4. melt / 5. evaluate / 6. exaggerate / 7. conquer / 8. modify / 9. invade / 10. bend / 11. derive from / 12. undergo / 13. scatter / 14. leap
+<i>Cloze:</i> 1. unite / 2. gaze at / 3. screaming / 4. melt / 5. evaluate / 6. exaggerate / 7. conquer / 8. modify / 9. invade / 10. bend / 11. derive from / 12. undergo / 13. scatter / 14. leap
+</p>
+</div>
+</div>
+<div id="outline-container-orge011a8e" class="outline-2">
+<h2 id="orge011a8e">Text 1: Narrative (Historical Fiction)</h2>
+<div class="outline-text-2" id="text-orge011a8e">
+<p>
+The king wanted to <b>unite</b> the lands and <b>conquer</b> his enemies. He had to <b>leap</b> over a deep river during battle. Some say he would <b>exaggerate</b> the story of his victory. His army did not <b>invade</b> peacefully, but they made the people&rsquo;s lives <b>melt</b> away like snow. The king had to <b>modify</b> his plans when his soldiers began to <b>scatter</b> in fear. He had to <b>undergo</b> a tough time to <b>evaluate</b> his mistakes. He would <b>bend</b> under the weight of his armor. His courage seemed to <b>derive from</b> his father. The soldiers were <b>screaming</b> his name. The queen would <b>gaze at</b> him from the castle walls.
+</p>
+</div>
+<div id="outline-container-org076a63e" class="outline-4">
+<h4 id="org076a63e"><b>Comprehension Questions:</b></h4>
+<div class="outline-text-4" id="text-org076a63e">
+<ol class="org-ol">
+<li>What did the king want to do with the lands? (unite)</li>
+<li>What did the king want to do to his enemies? (conquer)</li>
+<li>What did the king have to do over a deep river? (leap)</li>
+<li>What did the king do about the story of his victory? (exaggerate)</li>
+<li>How did the army enter the land? (invade)</li>
+<li>What did the people&rsquo;s lives do? (melt)</li>
+<li>What did the king do to his plans? (modify)</li>
+<li>What did the soldiers do in fear? (scatter)</li>
+<li>What did the king have to undergo? (a tough time)</li>
+<li>What did the king do about his mistakes? (evaluate)</li>
+<li>What did he do under the weight of his armor? (bend)</li>
+<li>Where did his courage seem to derive from? (his father)</li>
+<li>What were the soldiers doing? (screaming his name)</li>
+<li>What did the queen do? (gaze at him)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgdbe6d3c" class="outline-4">
+<h4 id="orgdbe6d3c"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-orgdbe6d3c">
+<ol class="org-ol">
+<li>The king wanted to <span class="underline"><span class="underline">_</span></span> the lands.</li>
+<li>He wanted to <span class="underline"><span class="underline">_</span></span> his enemies.</li>
+<li>He had to <span class="underline"><span class="underline">_</span></span> over a deep river.</li>
+<li>He would <span class="underline"><span class="underline">_</span></span> the story.</li>
+<li>His army did not <span class="underline"><span class="underline">_</span></span> peacefully.</li>
+<li>The people&rsquo;s lives began to <span class="underline"><span class="underline">_</span></span> away.</li>
+<li>He had to <span class="underline"><span class="underline">_</span></span> his plans.</li>
+<li>The soldiers began to <span class="underline"><span class="underline">_</span></span> in fear.</li>
+<li>He had to <span class="underline"><span class="underline">_</span></span> a tough time.</li>
+<li>He had to <span class="underline"><span class="underline">_</span></span> his mistakes.</li>
+<li>He would <span class="underline"><span class="underline">_</span></span> under the weight.</li>
+<li>His courage seemed to <span class="underline"><span class="underline">_</span></span> from his father.</li>
+<li>The soldiers were <span class="underline"><span class="underline">_</span></span> his name.</li>
+<li>The queen would <span class="underline"><span class="underline">_</span></span> at him.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org964e057" class="outline-3">
+<h3 id="org964e057">Text 2: Dialogue (Two Friends at a Science Fair)</h3>
+<div class="outline-text-3" id="text-org964e057">
+<p>
+<b>Alice:</b> Look at this project. It says we can <b>unite</b> water and oil! I think that&rsquo;s an <b>exaggerate</b>.
+<b>Ben:</b> No, it&rsquo;s real. They use a special machine to <b>modify</b> the molecules. See? The oil doesn&rsquo;t <b>scatter</b>.
+<b>Alice:</b> That&rsquo;s cool. The next one is about volcanoes. It says they can <b>melt</b> metal. I wouldn&rsquo;t want to <b>invade</b> that volcano!
+<b>Ben:</b> Don&rsquo;t <b>exaggerate</b> again. For this project, they <b>leap</b> over a small fire. The presenter says they <b>derive from</b> ancient Roman ideas.
+<b>Alice:</b> I have to <b>evaluate</b> all of them for a grade. I need to <b>undergo</b> a lot of reading. I might <b>bend</b> my brain in half!
+<b>Ben:</b> Don&rsquo;t <b>scream</b>! Just <b>gaze at</b> the poster. You&rsquo;ll <b>conquer</b> this.
+</p>
+</div>
+<div id="outline-container-org06ad30f" class="outline-4">
+<h4 id="org06ad30f"><b>Comprehension Questions:</b></h4>
+<div class="outline-text-4" id="text-org06ad30f">
+<ol class="org-ol">
+<li>What does the first project say it can do to water and oil? (unite)</li>
+<li>What does Alice think about that claim? (exaggerate)</li>
+<li>What does the special machine do to the molecules? (modify)</li>
+<li>What doesn&rsquo;t the oil do? (scatter)</li>
+<li>What can the volcano machine do to metal? (melt)</li>
+<li>What does Alice not want to do to the volcano? (invade)</li>
+<li>What does the presenter do over the small fire? (leap)</li>
+<li>What does the presenter say their idea derives from? (ancient Roman ideas)</li>
+<li>What does Alice have to do to the projects? (evaluate)</li>
+<li>What does Alice have to undergo? (a lot of reading)</li>
+<li>What might Alice do to her brain? (bend)</li>
+<li>What does Ben tell Alice not to do? (scream)</li>
+<li>What does Ben tell Alice to do to the poster? (gaze at)</li>
+<li>What will Alice do to the task? (conquer)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1c0c864" class="outline-4">
+<h4 id="org1c0c864"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-org1c0c864">
+<ol class="org-ol">
+<li>This project says it can <span class="underline"><span class="underline">_</span></span> water and oil.</li>
+<li>Alice thinks that&rsquo;s an <span class="underline"><span class="underline">_</span></span>.</li>
+<li>They use a machine to <span class="underline"><span class="underline">_</span></span> the molecules.</li>
+<li>The oil does not <span class="underline"><span class="underline">_</span></span>.</li>
+<li>The volcano can <span class="underline"><span class="underline">_</span></span> metal.</li>
+<li>Alice doesn&rsquo;t want to <span class="underline"><span class="underline">_</span></span> the volcano.</li>
+<li>The presenter has to <span class="underline"><span class="underline">_</span></span> over a small fire.</li>
+<li>Their ideas <span class="underline"><span class="underline">_</span></span> from ancient Rome.</li>
+<li>Alice has to <span class="underline"><span class="underline">_</span></span> all the projects.</li>
+<li>She must <span class="underline"><span class="underline">_</span></span> a lot of reading.</li>
+<li>She might <span class="underline"><span class="underline">_</span></span> her brain.</li>
+<li>Ben says, &ldquo;Don&rsquo;t <span class="underline"><span class="underline">_</span></span>!&rdquo;</li>
+<li>He says, &ldquo;Just <span class="underline"><span class="underline">_</span></span> at the poster.&rdquo;</li>
+<li>Alice will <span class="underline"><span class="underline">_</span></span> this task.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc5401db" class="outline-3">
+<h3 id="orgc5401db">Text 3: Informational (How Mountains Form)</h3>
+<div class="outline-text-3" id="text-orgc5401db">
+<p>
+Millions of years ago, tectonic forces began to <b>unite</b> land masses. These forces <b>conquer</b> the flat land by pushing it up. The earth didn&rsquo;t need to <b>leap</b> – it moved slowly. To say it happened fast would be to <b>exaggerate</b>. Heat from below can <b>melt</b> rock into magma. This magma can <b>invade</b> cracks in the rock. Rain and wind <b>modify</b> the mountain shape over time. They <b>scatter</b> soil and rock down the slopes. The mountain must <b>undergo</b> this for millions of years. Scientists <b>evaluate</b> the age of rocks. The rock layers can <b>bend</b> without breaking. Many mountain shapes <b>derive from</b> volcanic activity. Strong winds can sound like <b>screaming</b> across the peaks. Tourists <b>gaze at</b> the beautiful views.
+</p>
+</div>
+<div id="outline-container-orgfaf4b57" class="outline-4">
+<h4 id="orgfaf4b57"><b>Comprehension Questions:</b></h4>
+<div class="outline-text-4" id="text-orgfaf4b57">
+<ol class="org-ol">
+<li>What did tectonic forces do to land masses? (unite)</li>
+<li>What did the forces do to the flat land? (conquer)</li>
+<li>Did the earth need to leap? (no)</li>
+<li>What would it be an exaggeration to say? (that it happened fast)</li>
+<li>What can heat do to rock? (melt)</li>
+<li>What can magma do to cracks in the rock? (invade)</li>
+<li>What do rain and wind do to the mountain shape? (modify)</li>
+<li>What do rain and wind scatter? (soil and rock)</li>
+<li>What must the mountain undergo? (this process for millions of years)</li>
+<li>What do scientists evaluate? (the age of rocks)</li>
+<li>What can rock layers do? (bend)</li>
+<li>What do many mountain shapes derive from? (volcanic activity)</li>
+<li>What can strong winds sound like? (screaming)</li>
+<li>What do tourists do? (gaze at the views)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org3fc27c3" class="outline-4">
+<h4 id="org3fc27c3"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-org3fc27c3">
+<ol class="org-ol">
+<li>Tectonic forces began to <span class="underline"><span class="underline">_</span></span> land masses.</li>
+<li>They <span class="underline"><span class="underline">_</span></span> the flat land by pushing it up.</li>
+<li>The earth didn&rsquo;t need to <span class="underline"><span class="underline">_</span></span>.</li>
+<li>To say it happened fast would be to <span class="underline"><span class="underline">_</span></span>.</li>
+<li>Heat can <span class="underline"><span class="underline">_</span></span> rock into magma.</li>
+<li>Magma can <span class="underline"><span class="underline">_</span></span> cracks in the rock.</li>
+<li>Rain and wind <span class="underline"><span class="underline">_</span></span> the mountain shape.</li>
+<li>They <span class="underline"><span class="underline">_</span></span> soil and rock down the slopes.</li>
+<li>The mountain must <span class="underline"><span class="underline">_</span></span> this for millions of years.</li>
+<li>Scientists <span class="underline"><span class="underline">_</span></span> the age of rocks.</li>
+<li>Rock layers can <span class="underline"><span class="underline">_</span></span> without breaking.</li>
+<li>Many shapes <span class="underline"><span class="underline">_</span></span> from volcanic activity.</li>
+<li>Strong winds sound like <span class="underline"><span class="underline">_</span></span>.</li>
+<li>Tourists <span class="underline"><span class="underline">_</span></span> at the beautiful views.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org337f96c" class="outline-3">
+<h3 id="org337f96c">Text 4: Procedural/Instructional (How to Make a Model Volcano)</h3>
+<div class="outline-text-3" id="text-org337f96c">
+<p>
+Today, we will <b>unite</b> art and science. First, <b>conquer</b> your fear of mess! Take a <b>leap</b> of faith and start. Don&rsquo;t <b>exaggerate</b> the danger – it&rsquo;s safe. The baking soda will <b>melt</b> into the vinegar. The foam will <b>invade</b> the model&rsquo;s crater. You can <b>modify</b> the shape with clay. Use a spoon to <b>scatter</b> baking soda. The project will <b>undergo</b> a chemical reaction. After the reaction, <b>evaluate</b> the model&rsquo;s strength. Do not <b>bend</b> the cardboard base. The eruption&rsquo;s color can <b>derive from</b> food coloring. The kids will be <b>screaming</b> with excitement. They will <b>gaze at</b> the erupting volcano.
+</p>
+</div>
+<div id="outline-container-orga303e70" class="outline-4">
+<h4 id="orga303e70"><b>Comprehension Questions:</b></h4>
+<div class="outline-text-4" id="text-orga303e70">
+<ol class="org-ol">
+<li>What will we unite in this project? (art and science)</li>
+<li>What should you conquer first? (your fear of mess)</li>
+<li>What should you take a leap of? (faith)</li>
+<li>What should you not exaggerate? (the danger)</li>
+<li>What will the baking soda do into the vinegar? (melt)</li>
+<li>What will the foam do to the model&rsquo;s crater? (invade)</li>
+<li>What can you modify with clay? (the shape)</li>
+<li>What do you scatter with a spoon? (baking soda)</li>
+<li>What will the project undergo? (a chemical reaction)</li>
+<li>What should you evaluate? (the model&rsquo;s strength)</li>
+<li>What should you not bend? (the cardboard base)</li>
+<li>What can the eruption&rsquo;s color derive from? (food coloring)</li>
+<li>What will the kids be doing? (screaming with excitement)</li>
+<li>What will they do to the erupting volcano? (gaze at)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0d3de11" class="outline-4">
+<h4 id="org0d3de11"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-org0d3de11">
+<ol class="org-ol">
+<li>We will <span class="underline"><span class="underline">_</span></span> art and science.</li>
+<li>First, <span class="underline"><span class="underline">_</span></span> your fear of mess.</li>
+<li>Take a <span class="underline"><span class="underline">_</span></span> of faith.</li>
+<li>Don&rsquo;t <span class="underline"><span class="underline">_</span></span> the danger.</li>
+<li>The baking soda will <span class="underline"><span class="underline">_</span></span> into the vinegar.</li>
+<li>The foam will <span class="underline"><span class="underline">_</span></span> the model&rsquo;s crater.</li>
+<li>You can <span class="underline"><span class="underline">_</span></span> the shape with clay.</li>
+<li>Use a spoon to <span class="underline"><span class="underline">_</span></span> baking soda.</li>
+<li>The project will <span class="underline"><span class="underline">_</span></span> a chemical reaction.</li>
+<li><span class="underline"><span class="underline">_</span></span> the model&rsquo;s strength.</li>
+<li>Do not <span class="underline"><span class="underline">_</span></span> the cardboard base.</li>
+<li>The color can <span class="underline"><span class="underline">_</span></span> from food coloring.</li>
+<li>The kids will be <span class="underline"><span class="underline">_</span></span> with excitement.</li>
+<li>They will <span class="underline"><span class="underline">_</span></span> at the erupting volcano.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf9502de" class="outline-2">
+<h2 id="orgf9502de">Answers to Comprehension Questions (Texts 1-4)</h2>
+<div class="outline-text-2" id="text-orgf9502de">
+</div>
+<div id="outline-container-org3ab7d40" class="outline-3">
+<h3 id="org3ab7d40"><b>Text 1:</b></h3>
+<div class="outline-text-3" id="text-org3ab7d40">
+<ol class="org-ol">
+<li>unite</li>
+<li>conquer</li>
+<li>leap</li>
+<li>exaggerate</li>
+<li>invade</li>
+<li>melt</li>
+<li>modify</li>
+<li>scatter</li>
+<li>undergo</li>
+<li>evaluate</li>
+<li>bend</li>
+<li>his father</li>
+<li>screaming</li>
+<li>gaze at</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2675392" class="outline-3">
+<h3 id="org2675392"><b>Text 2:</b></h3>
+<div class="outline-text-3" id="text-org2675392">
+<ol class="org-ol">
+<li>unite</li>
+<li>exaggerate</li>
+<li>modify</li>
+<li>scatter</li>
+<li>melt</li>
+<li>invade</li>
+<li>leap</li>
+<li>ancient Roman ideas</li>
+<li>evaluate</li>
+<li>a lot of reading</li>
+<li>bend</li>
+<li>scream</li>
+<li>gaze at</li>
+<li>conquer</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org273ae77" class="outline-3">
+<h3 id="org273ae77"><b>Text 3:</b></h3>
+<div class="outline-text-3" id="text-org273ae77">
+<ol class="org-ol">
+<li>unite</li>
+<li>conquer</li>
+<li>no</li>
+<li>happened fast</li>
+<li>melt</li>
+<li>invade</li>
+<li>modify</li>
+<li>soil and rock</li>
+<li>this process</li>
+<li>the age of rocks</li>
+<li>bend</li>
+<li>volcanic activity</li>
+<li>screaming</li>
+<li>gaze at</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1e65f45" class="outline-3">
+<h3 id="org1e65f45"><b>Text 4:</b></h3>
+<div class="outline-text-3" id="text-org1e65f45">
+<ol class="org-ol">
+<li>art and science</li>
+<li>your fear of mess</li>
+<li>faith</li>
+<li>the danger</li>
+<li>melt</li>
+<li>invade</li>
+<li>the shape</li>
+<li>baking soda</li>
+<li>a chemical reaction</li>
+<li>the model&rsquo;s strength</li>
+<li>the cardboard base</li>
+<li>food coloring</li>
+<li>screaming with excitement</li>
+<li>gaze at</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org67e6e95" class="outline-3">
+<h3 id="org67e6e95">Answers to Cloze Questions (Texts 1-4)</h3>
+<div class="outline-text-3" id="text-org67e6e95">
+</div>
+<div id="outline-container-orgdf5b44f" class="outline-4">
+<h4 id="orgdf5b44f"><b>Text 1:</b></h4>
+<div class="outline-text-4" id="text-orgdf5b44f">
+<ol class="org-ol">
+<li>unite</li>
+<li>conquer</li>
+<li>leap</li>
+<li>exaggerate</li>
+<li>invade</li>
+<li>melt</li>
+<li>modify</li>
+<li>scatter</li>
+<li>undergo</li>
+<li>evaluate</li>
+<li>bend</li>
+<li>derive</li>
+<li>screaming</li>
+<li>gaze</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org188a8db" class="outline-4">
+<h4 id="org188a8db"><b>Text 2:</b></h4>
+<div class="outline-text-4" id="text-org188a8db">
+<ol class="org-ol">
+<li>unite</li>
+<li>exaggerate</li>
+<li>modify</li>
+<li>scatter</li>
+<li>melt</li>
+<li>invade</li>
+<li>leap</li>
+<li>derive</li>
+<li>evaluate</li>
+<li>undergo</li>
+<li>bend</li>
+<li>scream</li>
+<li>gaze</li>
+<li>conquer</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgbec233d" class="outline-4">
+<h4 id="orgbec233d"><b>Text 3:</b></h4>
+<div class="outline-text-4" id="text-orgbec233d">
+<ol class="org-ol">
+<li>unite</li>
+<li>conquer</li>
+<li>leap</li>
+<li>exaggerate</li>
+<li>melt</li>
+<li>invade</li>
+<li>modify</li>
+<li>scatter</li>
+<li>undergo</li>
+<li>evaluate</li>
+<li>bend</li>
+<li>derive</li>
+<li>screaming</li>
+<li>gaze</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2dfcab5" class="outline-4">
+<h4 id="org2dfcab5"><b>Text 4:</b></h4>
+<div class="outline-text-4" id="text-org2dfcab5">
+<ol class="org-ol">
+<li>unite</li>
+<li>conquer</li>
+<li>leap</li>
+<li>exaggerate</li>
+<li>melt</li>
+<li>invade</li>
+<li>modify</li>
+<li>scatter</li>
+<li>undergo</li>
+<li>Evaluate</li>
+<li>bend</li>
+<li>derive</li>
+<li>screaming</li>
+<li>gaze</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1b6959e" class="outline-2">
+<h2 id="org1b6959e"><a href="https://sendagirich.github.io/asuka_vocab/as_vocab_index.html">Home</a></h2>
+</div>
+</div>
+</body>
+</html>

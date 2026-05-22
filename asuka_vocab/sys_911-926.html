@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-05-22 Fri 20:21 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="outline-container-orgd0eb268" class="outline-2">
+<h2 id="orgd0eb268">911-926 verbs</h2>
+<div class="outline-text-2" id="text-orgd0eb268">
+<p>
+911 pray
+912 polish
+913 classify as
+914 assert that
+915 grab
+916 fold
+917 sweep
+918 whisper
+919 imitate
+920 stare at
+921 emphasize
+922 get rid of
+923 pour
+924 vanish
+925 restore
+926 deserve to be
+</p>
+
+
+
+<p>
+Write four separate reading comprehension texts that include all of the following words in each text. Write for CEFR level A2-B1 learners. Write each text in a different style including one dialogue. For each text, write a comprehension question for each of the target words and write a cloze question for each of the comprehension words. Do not write the target word next to the question. Write the answers to both sets of questions at the end in list form.
+</p>
+
+<p>
+pray
+polish
+classify as
+assert that
+grab
+fold
+sweep
+whisper
+imitate
+stare at
+emphasize
+get rid of
+pour
+vanish
+restore
+deserve to be
+</p>
+</div>
+</div>
+<div id="outline-container-org81bf957" class="outline-2">
+<h2 id="org81bf957">Texts</h2>
+<div class="outline-text-2" id="text-org81bf957">
+</div>
+<div id="outline-container-orgcab1d69" class="outline-3">
+<h3 id="orgcab1d69">Text 1 (Narrative)</h3>
+<div class="outline-text-3" id="text-orgcab1d69">
+<p>
+Mia loved her grandmother’s old silver teapot. One day, she saw dust on it. “I need to <b>polish</b> it,” she said. She began to <b>sweep</b> the shelf first. Then she <b>grabbed</b> a soft cloth. She poured a little cream and started to <b>fold</b> the cloth carefully. “I <b>assert that</b> this teapot is the most beautiful thing in the house,” she whispered. She tried to <b>imitate</b> her grandmother’s gentle hand movements. She would sometimes <b>stare at</b> the teapot and smile. “I must <b>emphasize</b> how special this is,” she thought. She wanted to <b>get rid of</b> every spot. She did <b>pray</b> that she would <b>restore</b> it perfectly. “It is perfect,” she said. “It does not <b>vanish</b> you know. It deserves to <b>be</b> here forever.” She <b>classify</b> <b>as</b> a family treasure.
+</p>
+</div>
+<div id="outline-container-orgacc41fe" class="outline-4">
+<h4 id="orgacc41fe"><b>Comprehension Questions (for each target word):</b></h4>
+<div class="outline-text-4" id="text-orgacc41fe">
+<ol class="org-ol">
+<li>How did Mia clean the shelf before polishing the teapot?</li>
+<li>What did she do with the cloth before using it?</li>
+<li>What was the first thing she did to the teapot&rsquo;s surface?</li>
+<li>What did she do with the silver cream before starting?</li>
+<li>What did Mia claim about the teapot?</li>
+<li>How did she speak when she called it beautiful?</li>
+<li>Whose movements did she copy?</li>
+<li>What did she do with her eyes to the teapot for a long time?</li>
+<li>What action did she think was very important to do?</li>
+<li>What did she want to remove completely?</li>
+<li>What did she do to hope for a good result?</li>
+<li>What did she say the teapot does not do?</li>
+<li>What did she believe the teapot is worthy of?</li>
+<li>How did she finally describe the teapot&rsquo;s place in the family?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org54e612b" class="outline-4">
+<h4 id="org54e612b"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-org54e612b">
+<p>
+Mia wanted to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the old teapot. First, she had to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the shelf. She <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> a soft cloth and then <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> it carefully. She <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> that it was the most beautiful thing. She <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to her grandmother. She would <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> at it lovingly. She wanted to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> every spot. She <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> for it to be perfect. She <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> that it was a special task. After she finished, the teapot did not <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span>. She knew it <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to be a family treasure.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org695ffe7" class="outline-3">
+<h3 id="org695ffe7">Text 2 (Dialogue)</h3>
+<div class="outline-text-3" id="text-org695ffe7">
+<p>
+<b>Tom:</b> Did you see this mess? I have to <b>sweep</b> the floor.
+<b>Lily:</b> I’ll help. First, <b>grab</b> the dustpan. Then <b>pour</b> the water into the bucket.
+<b>Tom:</b> I <b>assert that</b> this is the worst cleaning day ever!
+<b>Lily:</b> Don’t complain. Please <b>fold</b> the cloths neatly.
+<b>Tom:</b> I’ll <b>polish</b> the mirror after.
+<b>Lily:</b> Good. <b>Emphasize</b> the corners.
+<b>Tom:</b> I <b>whisper</b> to myself, &ldquo;This will never end.&rdquo;
+<b>Lily:</b> You can <b>imitate</b> my method. It’s faster.
+<b>Tom:</b> Stop <b>staring at</b> me!
+<b>Lily:</b> I just want to <b>get rid of</b> the dust.
+<b>Tom:</b> I <b>pray</b> we finish soon.
+<b>Lily:</b> When we’re done, the room will be <b>restore*d.
+*Tom:</b> I hope the dirt will <b>vanish</b>.
+<b>Lily:</b> It will. You <b>deserve to</b> rest after.
+<b>Tom:</b> I <b>classify</b> this <b>as</b> a bad memory.
+</p>
+</div>
+<div id="outline-container-org4da7185" class="outline-4">
+<h4 id="org4da7185"><b>Comprehension Questions (for each target word):</b></h4>
+<div class="outline-text-4" id="text-org4da7185">
+<ol class="org-ol">
+<li>What does Tom have to do to the floor?</li>
+<li>What does Lily tell Tom to take first?</li>
+<li>What does Lily do with the water into the bucket?</li>
+<li>What does Tom claim about the cleaning day?</li>
+<li>What does Lily ask Tom to do with the cloths?</li>
+<li>What will Tom do to the mirror after?</li>
+<li>Which part does Lily say to be careful about?</li>
+<li>How does Tom speak to himself?</li>
+<li>Whose method should Tom copy?</li>
+<li>What does Tom tell Lily to stop doing to him?</li>
+<li>What does Lily want to remove from the room?</li>
+<li>What does Tom hope for to end the cleaning?</li>
+<li>What will happen to the room when they finish?</li>
+<li>What does Lily say Tom can do after they finish?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org78ef95a" class="outline-4">
+<h4 id="org78ef95a"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-org78ef95a">
+<p>
+Tom needs to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the floor. Lily tells him to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the dustpan and <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> water into a bucket. Tom <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> that it is a bad day. Lily says to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the cloths and then <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the mirror. She says to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the corners. Tom <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to himself. Lily says he can <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> her method. Tom tells Lily to stop <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> at him. They want to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the dust. Tom <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> they finish soon. The room will be <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span>. The dirt will <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span>. Tom <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to rest.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org6732935" class="outline-3">
+<h3 id="org6732935">Text 3 (Instructions / How-to)</h3>
+<div class="outline-text-3" id="text-org6732935">
+<p>
+To clean your room effectively, first <b>sweep</b> the floor. Then <b>pour</b> some cleaner into a spray bottle. <b>Grab</b> a sponge and <b>fold</b> it in half. <b>Polish</b> the furniture with a dry cloth. I <b>assert that</b> this method works best. <b>Emphasize</b> the surfaces that are very dirty. <b>Whisper</b> instructions to yourself if it helps. <b>Imitate</b> the movements of a professional cleaner. Do not <b>stare at</b> the mess—just work. To <b>get rid of</b> stains, use more cleaner. <b>Pray</b> that you have enough time. When you finish, the dirt will <b>vanish</b>. You will <b>restore</b> the room to its original state. You <b>deserve to</b> feel proud. <b>Classify</b> this routine <b>as</b> a success when done.
+</p>
+</div>
+<div id="outline-container-org0ae6dd4" class="outline-4">
+<h4 id="org0ae6dd4"><b>Comprehension Questions (for each target word):</b></h4>
+<div class="outline-text-4" id="text-org0ae6dd4">
+<ol class="org-ol">
+<li>What is the first step to clean the room?</li>
+<li>What do you do with the cleaner into the spray bottle?</li>
+<li>What do you take next to use?</li>
+<li>What do you do to the sponge before using it?</li>
+<li>What do you do to the furniture after cleaning?</li>
+<li>What does the text claim about this method?</li>
+<li>Which part of the surfaces should you focus on more?</li>
+<li>How can you talk to yourself during cleaning?</li>
+<li>Whose movements should you copy?</li>
+<li>What should you not do to the mess?</li>
+<li>What is the purpose of using more cleaner?</li>
+<li>What action is suggested to hope for enough time?</li>
+<li>What happens to the dirt when you finish?</li>
+<li>What will the room become after cleaning?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgff930ff" class="outline-4">
+<h4 id="orgff930ff"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-orgff930ff">
+<p>
+First, <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the floor. Then <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> cleaner into a bottle. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> a sponge and <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> it in half. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the furniture. The text <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> that this method works. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the very dirty parts. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to yourself. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> a professional cleaner. Don&rsquo;t <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> at the mess. Use more cleaner to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> stains. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> you have time. The dirt will <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span>. You will <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the room. You <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to feel proud. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> this <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> a success.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb986548" class="outline-3">
+<h3 id="orgb986548">Text 4 (Descriptive / Opinion)</h3>
+<div class="outline-text-3" id="text-orgb986548">
+<p>
+This old painting is very important. First, <b>sweep</b> away the dust on the frame. <b>Pour</b> a little oil onto a cloth. <b>Grab</b> the cloth gently. <b>Fold</b> it so it is smooth. <b>Polish</b> the wooden frame carefully. I <b>assert that</b> this artwork is priceless. The artist wanted to <b>emphasize</b> the beauty of nature. You can almost <b>whisper</b> to the flowers in the painting. A beginner can <b>imitate</b> the painter&rsquo;s style. People often <b>stare at</b> the sky in the picture. To <b>get rid of</b> years of dirt is hard work. I <b>pray</b> the colors will never fade. The dirt will <b>vanish</b> with care. This work will <b>restore</b> the painting’s glory. It <b>deserve to</b> be in a museum. I <b>classify</b> it <b>as</b> a masterpiece.
+</p>
+</div>
+<div id="outline-container-org18174f7" class="outline-4">
+<h4 id="org18174f7"><b>Comprehension Questions (for each target word):</b></h4>
+<div class="outline-text-4" id="text-org18174f7">
+<ol class="org-ol">
+<li>What should you do to the dust on the frame?</li>
+<li>What do you do with the oil onto the cloth?</li>
+<li>What action is done to the cloth after that?</li>
+<li>What do you do to the cloth to prepare it?</li>
+<li>What do you do to the wooden frame?</li>
+<li>What is claimed about the artwork&rsquo;s value?</li>
+<li>What did the artist want to make very clear?</li>
+<li>How can you imagine speaking to the flowers?</li>
+<li>Who can copy the painter&rsquo;s style?</li>
+<li>What do people frequently do to the sky in the picture?</li>
+<li>What is the difficult thing to do with the dirt?</li>
+<li>What action is done for the colors to stay?</li>
+<li>What happens to the dirt with careful work?</li>
+<li>What will the work do to the painting&rsquo;s former beauty?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgbcc89bc" class="outline-4">
+<h4 id="orgbcc89bc"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-orgbcc89bc">
+<p>
+First, <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the dust from the frame. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> oil onto a cloth. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the cloth gently. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> it smooth. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the frame carefully. The text <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> that the artwork is priceless. The artist wanted to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> nature&rsquo;s beauty. You can <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to the flowers. A beginner can <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the painter. People <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> at the sky. They want to <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> years of dirt. The writer <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the colors will last. The dirt will <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span>. The work will <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> the painting. It <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> to be in a museum. <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> it <span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span> a masterpiece.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org45dfbaa" class="outline-2">
+<h2 id="org45dfbaa">Answers</h2>
+<div class="outline-text-2" id="text-org45dfbaa">
+<p>
+<b>Text 1 Answers</b>
+</p>
+
+<p>
+<i>Comprehension Questions:</i>
+</p>
+<ol class="org-ol">
+<li>She swept it.</li>
+<li>She folded it carefully.</li>
+<li>She polished it.</li>
+<li>She poured a little cream.</li>
+<li>She asserted that it was the most beautiful thing in the house.</li>
+<li>She whispered.</li>
+<li>Her grandmother&rsquo;s.</li>
+<li>She stared at it.</li>
+<li>She wanted to emphasize (how special it is).</li>
+<li>She wanted to get rid of every spot.</li>
+<li>She prayed.</li>
+<li>The teapot does not vanish.</li>
+<li>It deserves to be here forever.</li>
+<li>She classified it as a family treasure.</li>
+</ol>
+
+<p>
+<i>Cloze Questions:</i>
+polish, sweep, grabbed, folded, asserted, imitated, stare, get rid of, prayed, emphasized, vanish, deserved
+</p>
+
+<p>
+<b>Text 2 Answers</b>
+</p>
+
+<p>
+<i>Comprehension Questions:</i>
+</p>
+<ol class="org-ol">
+<li>Sweep the floor.</li>
+<li>The dustpan.</li>
+<li>She pours it.</li>
+<li>He asserts that it is the worst cleaning day.</li>
+<li>Fold the cloths neatly.</li>
+<li>Polish the mirror.</li>
+<li>The corners.</li>
+<li>He whispers.</li>
+<li>Lily&rsquo;s method.</li>
+<li>Staring at him.</li>
+<li>The dust.</li>
+<li>He prays they finish soon.</li>
+<li>It will be restored.</li>
+<li>She can rest.</li>
+</ol>
+
+<p>
+<i>Cloze Questions:</i>
+sweep, grab, pour, asserts, fold, polish, emphasize, whispers, imitate, staring, get rid of, prays, restored, vanish, deserves
+</p>
+
+<p>
+<b>Text 3 Answers</b>
+</p>
+
+<p>
+<i>Comprehension Questions:</i>
+</p>
+<ol class="org-ol">
+<li>Sweep the floor.</li>
+<li>Pour it.</li>
+<li>A sponge.</li>
+<li>Fold it in half.</li>
+<li>Polish it.</li>
+<li>It asserts that this method works best.</li>
+<li>The very dirty surfaces.</li>
+<li>Whisper instructions.</li>
+<li>A professional cleaner.</li>
+<li>Stare at the mess.</li>
+<li>To get rid of stains.</li>
+<li>Pray.</li>
+<li>It will vanish.</li>
+<li>It will be restored to its original state. / It will be restored.</li>
+</ol>
+
+<p>
+<i>Cloze Questions:</i>
+sweep, pour, Grab, fold, Polish, asserts, Emphasize, Whisper, Imitate, stare, get rid of, Pray, vanish, restore, deserve, Classify, as
+</p>
+
+<p>
+<b>Text 4 Answers</b>
+</p>
+
+<p>
+<i>Comprehension Questions:</i>
+</p>
+<ol class="org-ol">
+<li>Sweep it away.</li>
+<li>Pour it.</li>
+<li>It is grabbed gently.</li>
+<li>Fold it.</li>
+<li>Polish it.</li>
+<li>It asserts that it is priceless.</li>
+<li>The beauty of nature.</li>
+<li>Whisper to them.</li>
+<li>A beginner.</li>
+<li>Stare at it.</li>
+<li>Get rid of it (years of dirt).</li>
+<li>Pray.</li>
+<li>It will vanish.</li>
+<li>Restore its glory.</li>
+</ol>
+
+<p>
+<i>Cloze Questions:</i>
+sweep, Pour, Grab, Fold, Polish, asserts, emphasize, whisper, imitate, stare, get rid of, prays, vanish, restore, deserves, Classify, as
+</p>
+</div>
+</div>
+<div id="outline-container-org19c2048" class="outline-2">
+<h2 id="org19c2048"><a href="https://sendagirich.github.io/asuka_vocab/as_vocab_index.html">Home</a></h2>
+</div>
+</div>
+</body>
+</html>
