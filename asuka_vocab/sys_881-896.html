@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-05-22 Fri 19:30 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="outline-container-orgd7af417" class="outline-2">
+<h2 id="orgd7af417">Verbs 881-996</h2>
+<div class="outline-text-2" id="text-orgd7af417">
+<ul class="org-ul">
+<li>881 rescue</li>
+<li>882 beg to</li>
+<li>883 define as</li>
+<li>884 decision</li>
+<li>885 convey</li>
+<li>886 sustain</li>
+<li>887 purchase</li>
+<li>888 fade away</li>
+<li>889 regulate</li>
+<li>890 distribute</li>
+<li>891 enhance</li>
+<li>892 chat with</li>
+<li>893 exceed</li>
+<li>894 wipe</li>
+<li>895 cooperate with</li>
+<li>896 inherit from</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7c0ca79" class="outline-2">
+<h2 id="org7c0ca79">Texts</h2>
+<div class="outline-text-2" id="text-org7c0ca79">
+</div>
+<div id="outline-container-org98ceae2" class="outline-3">
+<h3 id="org98ceae2">Text 1 (Narrative)</h3>
+<div class="outline-text-3" id="text-org98ceae2">
+<p>
+Last summer, a <b>rescue</b> team saved hikers from a mountain. The hikers had to <b>beg to</b> the team for help. The team <b>define as</b> &ldquo;emergency&rdquo; any situation where life is in danger. Their <b>decision</b> to go at night was hard. They needed to <b>convey</b> the danger through radios. To <b>sustain</b> their energy, they ate high-energy bars. They had to <b>purchase</b> new ropes before the trip. As the sun set, their hope didn&rsquo;t <b>fade away</b>. They learned to <b>regulate</b> their breathing. They would <b>distribute</b> supplies evenly. Good weather would <b>enhance</b> their visibility. At base, they would <b>chat with</b> each other. The number of hikers didn&rsquo;t <b>exceed</b> the team&rsquo;s limit. They used snow to <b>wipe</b> their faces. They decided to <b>cooperate with</b> the local police. The leader&rsquo;s courage seemed to <b>inherit from</b> his father.
+</p>
+</div>
+</div>
+<div id="outline-container-org9af492f" class="outline-3">
+<h3 id="org9af492f"><b>Comprehension Questions:</b></h3>
+<div class="outline-text-3" id="text-org9af492f">
+<ol class="org-ol">
+<li>What did the hikers have to do for help?</li>
+<li>How did the rescue team <b>define as</b> an emergency?</li>
+<li>What was difficult about their <b>decision</b>?</li>
+<li>How did they <b>convey</b> the danger?</li>
+<li>What did they eat to <b>sustain</b> energy?</li>
+<li>What did they <b>purchase</b> before the trip?</li>
+<li>What didn&rsquo;t <b>fade away</b> as the sun set?</li>
+<li>What did they learn to <b>regulate</b>?</li>
+<li>How would they <b>distribute</b> supplies?</li>
+<li>What would <b>enhance</b> their visibility?</li>
+<li>What did they do at base?</li>
+<li>What didn&rsquo;t <b>exceed</b> the team&rsquo;s limit?</li>
+<li>What did they use to <b>wipe</b> their faces?</li>
+<li>Who did they <b>cooperate with</b>?</li>
+<li>Where did the leader&rsquo;s courage seem to <b>inherit from</b>?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga18aa1e" class="outline-3">
+<h3 id="orga18aa1e"><b>Cloze Questions:</b></h3>
+<div class="outline-text-3" id="text-orga18aa1e">
+<ol class="org-ol">
+<li>The hikers had to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> to the team for help.</li>
+<li>The team <span class="underline"><span class="underline"><span class="underline">_</span></span></span> any situation where life is in danger as &ldquo;emergency&rdquo;.</li>
+<li>Their <span class="underline"><span class="underline"><span class="underline">_</span></span></span> to go at night was hard.</li>
+<li>They needed to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> the danger through radios.</li>
+<li>To <span class="underline"><span class="underline"><span class="underline">_</span></span></span> their energy, they ate high-energy bars.</li>
+<li>They had to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> new ropes before the trip.</li>
+<li>As the sun set, their hope didn&rsquo;t <span class="underline"><span class="underline"><span class="underline">_</span></span></span>.</li>
+<li>They learned to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> their breathing.</li>
+<li>They would <span class="underline"><span class="underline"><span class="underline">_</span></span></span> supplies evenly.</li>
+<li>Good weather would <span class="underline"><span class="underline"><span class="underline">_</span></span></span> their visibility.</li>
+<li>At base, they would <span class="underline"><span class="underline"><span class="underline">_</span></span></span> each other.</li>
+<li>The number of hikers didn&rsquo;t <span class="underline"><span class="underline"><span class="underline">_</span></span></span> the team&rsquo;s limit.</li>
+<li>They used snow to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> their faces.</li>
+<li>They decided to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> the local police.</li>
+<li>The leader&rsquo;s courage seemed to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> his father.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org21a2e2d" class="outline-3">
+<h3 id="org21a2e2d">Text 2 (Informational)</h3>
+<div class="outline-text-3" id="text-org21a2e2d">
+<p>
+Scientists <b>define as</b> &ldquo;climate&rdquo; the weather patterns over many years. A recent <b>rescue</b> effort saved animals from a flood. The government made a <b>decision</b> to build walls. Officials <b>convey</b> warnings through TV. Farmers need rain to <b>sustain</b> crops. People often <b>purchase</b> water filters. Old myths <b>fade away</b> slowly. Laws <b>regulate</b> pollution. The UN will <b>distribute</b> food to villages. New technology can <b>enhance</b> farming. Experts <b>chat with</b> local leaders. The heat should not <b>exceed</b> 40°C. Workers <b>wipe</b> dirt from solar panels. Nations must <b>cooperate with</b> each other. Some countries <b>inherit from</b> colonial systems. If people <b>beg to</b> stop deforestation, forests grow back.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb5d9912" class="outline-3">
+<h3 id="orgb5d9912"><b>Comprehension Questions:</b></h3>
+<div class="outline-text-3" id="text-orgb5d9912">
+<ol class="org-ol">
+<li>How do scientists <b>define as</b> climate?</li>
+<li>What recent <b>rescue</b> effort is mentioned?</li>
+<li>What <b>decision</b> did the government make?</li>
+<li>How do officials <b>convey</b> warnings?</li>
+<li>What do farmers need to <b>sustain</b> crops?</li>
+<li>What do people often <b>purchase</b>?</li>
+<li>What <b>fade away</b> slowly?</li>
+<li>What do laws <b>regulate</b>?</li>
+<li>What will the UN <b>distribute</b>?</li>
+<li>What can <b>enhance</b> farming?</li>
+<li>Who do experts <b>chat with</b>?</li>
+<li>What should not <b>exceed</b> 40°C?</li>
+<li>What do workers <b>wipe</b>?</li>
+<li>What must nations do?</li>
+<li>What do some countries <b>inherit from</b>?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org49cd651" class="outline-3">
+<h3 id="org49cd651"><b>Cloze Questions:</b></h3>
+<div class="outline-text-3" id="text-org49cd651">
+<ol class="org-ol">
+<li>Scientists <span class="underline"><span class="underline"><span class="underline">_</span></span></span> &ldquo;climate&rdquo; as the weather patterns over many years.</li>
+<li>A recent <span class="underline"><span class="underline"><span class="underline">_</span></span></span> effort saved animals from a flood.</li>
+<li>The government made a <span class="underline"><span class="underline"><span class="underline">_</span></span></span> to build walls.</li>
+<li>Officials <span class="underline"><span class="underline"><span class="underline">_</span></span></span> warnings through TV.</li>
+<li>Farmers need rain to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> crops.</li>
+<li>People often <span class="underline"><span class="underline"><span class="underline">_</span></span></span> water filters.</li>
+<li>Old myths <span class="underline"><span class="underline"><span class="underline">_</span></span></span> slowly.</li>
+<li>Laws <span class="underline"><span class="underline"><span class="underline">_</span></span></span> pollution.</li>
+<li>The UN will <span class="underline"><span class="underline"><span class="underline">_</span></span></span> food to villages.</li>
+<li>New technology can <span class="underline"><span class="underline"><span class="underline">_</span></span></span> farming.</li>
+<li>Experts <span class="underline"><span class="underline"><span class="underline">_</span></span></span> local leaders.</li>
+<li>The heat should not <span class="underline"><span class="underline"><span class="underline">_</span></span></span> 40°C.</li>
+<li>Workers <span class="underline"><span class="underline"><span class="underline">_</span></span></span> dirt from solar panels.</li>
+<li>Nations must <span class="underline"><span class="underline"><span class="underline">_</span></span></span> each other.</li>
+<li>Some countries <span class="underline"><span class="underline"><span class="underline">_</span></span></span> colonial systems.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgb38d0fb" class="outline-3">
+<h3 id="orgb38d0fb">Text 3 (Instructional)</h3>
+<div class="outline-text-3" id="text-orgb38d0fb">
+<p>
+To make a good camping plan, first <b>define as</b> &ldquo;danger zone&rdquo; any area near cliffs. Always <b>beg to</b> a friend for help if lost. The <b>decision</b> to camp is yours. <b>Convey</b> your location with a map. To <b>sustain</b> your body, drink water. <b>Purchase</b> a strong tent. Let fear <b>fade away</b> with practice. <b>Regulate</b> your fire size. <b>Distribute</b> weight in your backpack. Use dry wood to <b>enhance</b> the fire. <b>Chat with</b> your group about plans. Do not <b>exceed</b> two hours without a break. <b>Wipe</b> your hands before eating. <b>Cooperate with</b> park rules. You might <b>inherit from</b> your family a love of nature. Call for a <b>rescue</b> only in real emergency.
+</p>
+</div>
+<div id="outline-container-orgef00737" class="outline-4">
+<h4 id="orgef00737"><b>Comprehension Questions:</b></h4>
+<div class="outline-text-4" id="text-orgef00737">
+<ol class="org-ol">
+<li>How do you <b>define as</b> &ldquo;danger zone&rdquo;?</li>
+<li>What should you always <b>beg to</b> a friend for?</li>
+<li>What is your <b>decision</b> about?</li>
+<li>How do you <b>convey</b> your location?</li>
+<li>What should you do to <b>sustain</b> your body?</li>
+<li>What should you <b>purchase</b>?</li>
+<li>What should <b>fade away</b> with practice?</li>
+<li>What should you <b>regulate</b>?</li>
+<li>How should you <b>distribute</b> weight?</li>
+<li>What can <b>enhance</b> the fire?</li>
+<li>Who do you <b>chat with</b> about plans?</li>
+<li>What should you not <b>exceed</b>?</li>
+<li>When should you <b>wipe</b> your hands?</li>
+<li>What should you <b>cooperate with</b>?</li>
+<li>What might you <b>inherit from</b> your family?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org462fe9f" class="outline-4">
+<h4 id="org462fe9f"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-org462fe9f">
+<ol class="org-ol">
+<li>First, <span class="underline"><span class="underline"><span class="underline">_</span></span></span> &ldquo;danger zone&rdquo; as any area near cliffs.</li>
+<li>Always <span class="underline"><span class="underline"><span class="underline">_</span></span></span> a friend for help if lost.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">_</span></span></span> to camp is yours.</li>
+<li><span class="underline"><span class="underline"><span class="underline">_</span></span></span> your location with a map.</li>
+<li>To <span class="underline"><span class="underline"><span class="underline">_</span></span></span> your body, drink water.</li>
+<li><span class="underline"><span class="underline"><span class="underline">_</span></span></span> a strong tent.</li>
+<li>Let fear <span class="underline"><span class="underline"><span class="underline">_</span></span></span> with practice.</li>
+<li><span class="underline"><span class="underline"><span class="underline">_</span></span></span> your fire size.</li>
+<li><span class="underline"><span class="underline"><span class="underline">_</span></span></span> weight in your backpack.</li>
+<li>Use dry wood to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> the fire.</li>
+<li><span class="underline"><span class="underline"><span class="underline">_</span></span></span> your group about plans.</li>
+<li>Do not <span class="underline"><span class="underline"><span class="underline">_</span></span></span> two hours without a break.</li>
+<li><span class="underline"><span class="underline"><span class="underline">_</span></span></span> your hands before eating.</li>
+<li><span class="underline"><span class="underline"><span class="underline">_</span></span></span> park rules.</li>
+<li>You might <span class="underline"><span class="underline"><span class="underline">_</span></span></span> your family a love of nature.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfc9cde2" class="outline-3">
+<h3 id="orgfc9cde2">Text 4 (Dialogue)</h3>
+<div class="outline-text-3" id="text-orgfc9cde2">
+<p>
+A: &ldquo;I had to <b>beg to</b> the shop for a refund.&rdquo;
+B: &ldquo;Why? Did the <b>purchase</b> break?&rdquo;
+A: &ldquo;Yes. I <b>define as</b> a defect anything that stops working in one day.&rdquo;
+B: &ldquo;What was your <b>decision</b>? Call for a <b>rescue</b>?&rdquo;
+A: &ldquo;No. I just want the money back. They didn&rsquo;t <b>convey</b> the problem clearly.&rdquo;
+B: &ldquo;You need to <b>sustain</b> your patience. Don&rsquo;t let hope <b>fade away</b>.&rdquo;
+A: &ldquo;I know. I should <b>regulate</b> my anger. They will <b>distribute</b> the refund to me.&rdquo;
+B: &ldquo;That will <b>enhance</b> your mood. Let&rsquo;s <b>chat with</b> the manager.&rdquo;
+A: &ldquo;Good idea. But we can&rsquo;t <b>exceed</b> the store&rsquo;s hours. Let&rsquo;s <b>wipe</b> the receipt clean.&rdquo;
+B: &ldquo;We should <b>cooperate with</b> each other. You <b>inherit from</b> your dad that fighting spirit.&rdquo;
+A: &ldquo;True. Let&rsquo;s go!&rdquo;
+</p>
+</div>
+<div id="outline-container-org60efd87" class="outline-4">
+<h4 id="org60efd87"><b>Comprehension Questions:</b></h4>
+<div class="outline-text-4" id="text-org60efd87">
+<ol class="org-ol">
+<li>What did A have to <b>beg to</b> the shop for?</li>
+<li>What broke in the <b>purchase</b>?</li>
+<li>How does A <b>define as</b> a defect?</li>
+<li>What was A&rsquo;s <b>decision</b> about?</li>
+<li>Did A call for a <b>rescue</b>?</li>
+<li>How did the shop fail to <b>convey</b> the problem?</li>
+<li>What does B advise to <b>sustain</b>?</li>
+<li>What should not <b>fade away</b>?</li>
+<li>What should A <b>regulate</b>?</li>
+<li>What will the shop <b>distribute</b>?</li>
+<li>What will <b>enhance</b> A&rsquo;s mood?</li>
+<li>Who does B suggest they <b>chat with</b>?</li>
+<li>What should not <b>exceed</b> the store&rsquo;s hours?</li>
+<li>What does B say to <b>wipe</b>?</li>
+<li>Who does A <b>inherit from</b> the fighting spirit?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgccbd6b7" class="outline-4">
+<h4 id="orgccbd6b7"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-orgccbd6b7">
+<ol class="org-ol">
+<li>I had to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> the shop for a refund.</li>
+<li>Did the <span class="underline"><span class="underline"><span class="underline">_</span></span></span> break?</li>
+<li>I <span class="underline"><span class="underline"><span class="underline">_</span></span></span> a defect as anything that stops working in one day.</li>
+<li>What was your <span class="underline"><span class="underline"><span class="underline">_</span></span></span>?</li>
+<li>Call for a <span class="underline"><span class="underline"><span class="underline">_</span></span></span>?</li>
+<li>They didn&rsquo;t <span class="underline"><span class="underline"><span class="underline">_</span></span></span> the problem clearly.</li>
+<li>You need to <span class="underline"><span class="underline"><span class="underline">_</span></span></span> your patience.</li>
+<li>Don&rsquo;t let hope <span class="underline"><span class="underline"><span class="underline">_</span></span></span>.</li>
+<li>You should <span class="underline"><span class="underline"><span class="underline">_</span></span></span> your anger.</li>
+<li>They will <span class="underline"><span class="underline"><span class="underline">_</span></span></span> the refund to me.</li>
+<li>That will <span class="underline"><span class="underline"><span class="underline">_</span></span></span> your mood.</li>
+<li>Let&rsquo;s <span class="underline"><span class="underline"><span class="underline">_</span></span></span> the manager.</li>
+<li>We can&rsquo;t <span class="underline"><span class="underline"><span class="underline">_</span></span></span> the store&rsquo;s hours.</li>
+<li>Let&rsquo;s <span class="underline"><span class="underline"><span class="underline">_</span></span></span> the receipt clean.</li>
+<li>You <span class="underline"><span class="underline"><span class="underline">_</span></span></span> your dad that fighting spirit.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org564cacb" class="outline-2">
+<h2 id="org564cacb">Answers</h2>
+<div class="outline-text-2" id="text-org564cacb">
+</div>
+<div id="outline-container-org8f195b7" class="outline-3">
+<h3 id="org8f195b7"><b>Text 1 (Narrative)</b></h3>
+<div class="outline-text-3" id="text-org8f195b7">
+</div>
+<div id="outline-container-org62c57fb" class="outline-4">
+<h4 id="org62c57fb">Comprehension answers:</h4>
+<div class="outline-text-4" id="text-org62c57fb">
+<ol class="org-ol">
+<li>beg to</li>
+<li>any situation where life is in danger as &ldquo;emergency&rdquo;</li>
+<li>to go at night</li>
+<li>through radios</li>
+<li>high-energy bars</li>
+<li>new ropes</li>
+<li>hope</li>
+<li>breathing</li>
+<li>evenly</li>
+<li>good weather</li>
+<li>chat with each other</li>
+<li>the number of hikers</li>
+<li>snow</li>
+<li>the local police</li>
+<li>his father</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org156f067" class="outline-4">
+<h4 id="org156f067">Cloze answers:</h4>
+<div class="outline-text-4" id="text-org156f067">
+<ol class="org-ol">
+<li>beg</li>
+<li>define</li>
+<li>decision</li>
+<li>convey</li>
+<li>sustain</li>
+<li>purchase</li>
+<li>fade away</li>
+<li>regulate</li>
+<li>distribute</li>
+<li>enhance</li>
+<li>chat with</li>
+<li>exceed</li>
+<li>wipe</li>
+<li>cooperate with</li>
+<li>inherit from</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org9be8751" class="outline-3">
+<h3 id="org9be8751"><b>Text 2 (Informational)</b></h3>
+<div class="outline-text-3" id="text-org9be8751">
+</div>
+<div id="outline-container-org775bcd9" class="outline-4">
+<h4 id="org775bcd9">Comprehension answers:</h4>
+<div class="outline-text-4" id="text-org775bcd9">
+<ol class="org-ol">
+<li>the weather patterns over many years as &ldquo;climate&rdquo;</li>
+<li>saved animals from a flood</li>
+<li>to build walls</li>
+<li>through TV</li>
+<li>rain</li>
+<li>water filters</li>
+<li>old myths</li>
+<li>pollution</li>
+<li>food to villages</li>
+<li>new technology</li>
+<li>local leaders</li>
+<li>the heat</li>
+<li>dirt from solar panels</li>
+<li>cooperate with each other</li>
+<li>colonial systems</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6494056" class="outline-4">
+<h4 id="org6494056">Cloze answers:</h4>
+<div class="outline-text-4" id="text-org6494056">
+<ol class="org-ol">
+<li>define</li>
+<li>rescue</li>
+<li>decision</li>
+<li>convey</li>
+<li>sustain</li>
+<li>purchase</li>
+<li>fade away</li>
+<li>regulate</li>
+<li>distribute</li>
+<li>enhance</li>
+<li>chat with</li>
+<li>exceed</li>
+<li>wipe</li>
+<li>cooperate with</li>
+<li>inherit from</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orga5bc0e5" class="outline-3">
+<h3 id="orga5bc0e5"><b>Text 3 (Instructional)</b></h3>
+<div class="outline-text-3" id="text-orga5bc0e5">
+</div>
+<div id="outline-container-org5707358" class="outline-4">
+<h4 id="org5707358">Comprehension answers:</h4>
+<div class="outline-text-4" id="text-org5707358">
+<ol class="org-ol">
+<li>any area near cliffs as &ldquo;danger zone&rdquo;</li>
+<li>for help if lost</li>
+<li>to camp</li>
+<li>with a map</li>
+<li>drink water</li>
+<li>a strong tent</li>
+<li>fear</li>
+<li>fire size</li>
+<li>in your backpack</li>
+<li>dry wood</li>
+<li>your group</li>
+<li>two hours without a break</li>
+<li>before eating</li>
+<li>park rules</li>
+<li>a love of nature</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf3a5ddd" class="outline-4">
+<h4 id="orgf3a5ddd">Cloze answers:</h4>
+<div class="outline-text-4" id="text-orgf3a5ddd">
+<ol class="org-ol">
+<li>define</li>
+<li>beg to</li>
+<li>decision</li>
+<li>Convey</li>
+<li>sustain</li>
+<li>Purchase</li>
+<li>fade away</li>
+<li>Regulate</li>
+<li>Distribute</li>
+<li>enhance</li>
+<li>Chat with</li>
+<li>exceed</li>
+<li>Wipe</li>
+<li>Cooperate with</li>
+<li>inherit from</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org14d97d2" class="outline-3">
+<h3 id="org14d97d2"><b>Text 4 (Dialogue)</b></h3>
+<div class="outline-text-3" id="text-org14d97d2">
+</div>
+<div id="outline-container-orgd667334" class="outline-4">
+<h4 id="orgd667334">Comprehension answers:</h4>
+<div class="outline-text-4" id="text-orgd667334">
+<ol class="org-ol">
+<li>a refund</li>
+<li>the purchase</li>
+<li>anything that stops working in one day as a defect</li>
+<li>to get the money back</li>
+<li>No</li>
+<li>clearly</li>
+<li>patience</li>
+<li>hope</li>
+<li>anger</li>
+<li>the refund</li>
+<li>the refund</li>
+<li>the manager</li>
+<li>the store&rsquo;s hours</li>
+<li>the receipt clean</li>
+<li>her dad</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga4c03a8" class="outline-4">
+<h4 id="orga4c03a8">Cloze answers:</h4>
+<div class="outline-text-4" id="text-orga4c03a8">
+<ol class="org-ol">
+<li>beg to</li>
+<li>purchase</li>
+<li>define</li>
+<li>decision</li>
+<li>rescue</li>
+<li>convey</li>
+<li>sustain</li>
+<li>fade away</li>
+<li>regulate</li>
+<li>distribute</li>
+<li>enhance</li>
+<li>chat with</li>
+<li>exceed</li>
+<li>wipe</li>
+<li>inherit from</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org5d53ac1" class="outline-2">
+<h2 id="org5d53ac1"><a href="https://sendagirich.github.io/asuka_vocab/as_vocab_index.html">Home</a></h2>
+</div>
+</div>
+</body>
+</html>

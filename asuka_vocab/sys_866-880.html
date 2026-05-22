@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-05-22 Fri 19:21 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="outline-container-org511dc96" class="outline-2">
+<h2 id="org511dc96">Verbs 866-880</h2>
+<div class="outline-text-2" id="text-org511dc96">
+<ul class="org-ul">
+<li>866 conclude</li>
+<li>867 guarantee</li>
+<li>868 dominate</li>
+<li>869 confirm</li>
+<li>870 greet</li>
+<li>871 entertain</li>
+<li>872 defend against</li>
+<li>873 forbid to</li>
+<li>874 broadcast</li>
+<li>875 sacrifice</li>
+<li>876 punish for</li>
+<li>877 glance at</li>
+<li>878 retain</li>
+<li>879 calculate</li>
+<li>880 sinking</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org931e4c5" class="outline-2">
+<h2 id="org931e4c5">Texts</h2>
+<div class="outline-text-2" id="text-org931e4c5">
+</div>
+<div id="outline-container-orgcfcad7f" class="outline-3">
+<h3 id="orgcfcad7f">Text 1 (Narrative – A story about a village festival)</h3>
+<div class="outline-text-3" id="text-orgcfcad7f">
+<p>
+Every year, the village holds a big festival. The villagers <b>conclude</b> the event with a fireworks show. They <b>guarantee</b> that no one will miss it. One family always tries to <b>dominate</b> the music competition, but others have a chance. Before the festival, the mayor will <b>confirm</b> the date in a speech. He will <b>greet</b> everyone at the gate. Children <b>entertain</b> the crowd with dances. Some men <b>defend against</b> rain by putting up tents. The rules <b>forbid to</b> anyone from bringing loudspeakers after midnight. The local radio will <b>broadcast</b> the best parts. A young girl will <b>sacrifice</b> her dessert prize to her little brother. The judges will <b>punish for</b> any cheating with a warning. I often <b>glance at</b> the schedule to see what is next. The village wants to <b>retain</b> its old traditions. They <b>calculate</b> the cost of fireworks months in advance. During the final dance, my heart feels like it is <b>sinking</b> with joy.
+</p>
+</div>
+<div id="outline-container-org47cddea" class="outline-4">
+<h4 id="org47cddea"><b>Comprehension Questions:</b></h4>
+<div class="outline-text-4" id="text-org47cddea">
+<ol class="org-ol">
+<li>How do the villagers conclude the festival?</li>
+<li>What do they guarantee about the festival?</li>
+<li>Which family tries to dominate the competition?</li>
+<li>What will the mayor confirm?</li>
+<li>How will the mayor greet everyone?</li>
+<li>How do the children entertain the crowd?</li>
+<li>What do some men defend against?</li>
+<li>What do the rules forbid to anyone after midnight?</li>
+<li>What will the radio broadcast?</li>
+<li>What does the young girl sacrifice?</li>
+<li>How will the judges punish for cheating?</li>
+<li>What do I glance at?</li>
+<li>What do the villagers want to retain?</li>
+<li>What do they calculate months in advance?</li>
+<li>What does the narrator’s heart feel like it is doing?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2b24293" class="outline-4">
+<h4 id="org2b24293"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-org2b24293">
+<ol class="org-ol">
+<li>The villagers <span class="underline"><span class="underline">__</span></span> the event with fireworks.</li>
+<li>They <span class="underline"><span class="underline">__</span></span> that no one will miss it.</li>
+<li>One family tries to <span class="underline"><span class="underline">__</span></span> the music competition.</li>
+<li>The mayor will <span class="underline"><span class="underline">__</span></span> the date in a speech.</li>
+<li>He will <span class="underline"><span class="underline">__</span></span> everyone at the gate.</li>
+<li>Children <span class="underline"><span class="underline">__</span></span> the crowd with dances.</li>
+<li>Some men <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> rain by putting up tents.</li>
+<li>The rules <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> anyone from bringing loudspeakers.</li>
+<li>The local radio will <span class="underline"><span class="underline">__</span></span> the best parts.</li>
+<li>A young girl will <span class="underline"><span class="underline">__</span></span> her dessert prize to her brother.</li>
+<li>The judges will <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> any cheating with a warning.</li>
+<li>I often <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> the schedule.</li>
+<li>The village wants to <span class="underline"><span class="underline">__</span></span> its old traditions.</li>
+<li>They <span class="underline"><span class="underline">__</span></span> the cost of fireworks months in advance.</li>
+<li>My heart feels like it is <span class="underline"><span class="underline">__</span></span>.</li>
+</ol>
+
+<p>
+&mdash;
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7e1eec3" class="outline-3">
+<h3 id="org7e1eec3">Text 2 (Dialogue – Two friends at a football match)</h3>
+<div class="outline-text-3" id="text-org7e1eec3">
+<p>
+<b>Anna:</b> I think this match will <b>conclude</b> with a draw.  
+<b>Ben:</b> I <b>guarantee</b> our team will win. They always <b>dominate</b> in the last 10 minutes.  
+<b>Anna:</b> We need to <b>confirm</b> the score from the referee.  
+<b>Ben:</b> Let&rsquo;s <b>greet</b> the players as they leave.  
+<b>Anna:</b> The halftime show will <b>entertain</b> the fans.  
+<b>Ben:</b> But our defenders must <b>defend against</b> their fast attackers.  
+<b>Anna:</b> The rules <b>forbid to</b> players from arguing with the referee.  
+<b>Ben:</b> Yes, or they’ll get a yellow card. I hope the TV <b>broadcast</b> shows the best goals.  
+<b>Anna:</b> I would <b>sacrifice</b> my snack to see a goal now.  
+<b>Ben:</b> The referee will <b>punish for</b> diving with a free kick for the other team.  
+<b>Anna:</b> I <b>glance at</b> the clock every minute.  
+<b>Ben:</b> We need to <b>retain</b> our position in the league.  
+<b>Anna:</b> The manager will <b>calculate</b> the points after the game.  
+<b>Ben:</b> If we lose, our hopes will be <b>sinking</b> fast.
+</p>
+</div>
+<div id="outline-container-orga2087e0" class="outline-4">
+<h4 id="orga2087e0"><b>Comprehension Questions:</b></h4>
+<div class="outline-text-4" id="text-orga2087e0">
+<ol class="org-ol">
+<li>What does Anna think the match will conclude with?</li>
+<li>What does Ben guarantee?</li>
+<li>Who dominates in the last 10 minutes?</li>
+<li>What do they need to confirm from the referee?</li>
+<li>What will they do as the players leave?</li>
+<li>What will the halftime show do?</li>
+<li>What must the defenders defend against?</li>
+<li>What do the rules forbid to players?</li>
+<li>What does Ben hope the TV broadcast shows?</li>
+<li>What would Anna sacrifice?</li>
+<li>How will the referee punish for diving?</li>
+<li>What does Anna glance at?</li>
+<li>What does Ben want to retain?</li>
+<li>What will the manager calculate?</li>
+<li>What will happen to their hopes if they lose?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org67fa047" class="outline-4">
+<h4 id="org67fa047"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-org67fa047">
+<ol class="org-ol">
+<li>Anna thinks the match will <span class="underline"><span class="underline">__</span></span> with a draw.</li>
+<li>Ben <span class="underline"><span class="underline">__</span></span> that their team will win.</li>
+<li>Their team always <span class="underline"><span class="underline">__</span></span> in the last 10 minutes.</li>
+<li>They need to <span class="underline"><span class="underline">__</span></span> the score from the referee.</li>
+<li>Let’s <span class="underline"><span class="underline">__</span></span> the players as they leave.</li>
+<li>The halftime show will <span class="underline"><span class="underline">__</span></span> the fans.</li>
+<li>Defenders must <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> fast attackers.</li>
+<li>The rules <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> players from arguing with the referee.</li>
+<li>The TV <span class="underline"><span class="underline">__</span></span> shows the best goals.</li>
+<li>Anna would <span class="underline"><span class="underline">__</span></span> her snack to see a goal.</li>
+<li>The referee will <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> diving with a free kick.</li>
+<li>Anna <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> the clock every minute.</li>
+<li>They need to <span class="underline"><span class="underline">__</span></span> their position in the league.</li>
+<li>The manager will <span class="underline"><span class="underline">__</span></span> the points after the game.</li>
+<li>If they lose, their hopes will be <span class="underline"><span class="underline">__</span></span>.</li>
+</ol>
+
+<p>
+&mdash;
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7262ea2" class="outline-3">
+<h3 id="org7262ea2">Text 3 (Informational – About a new smartphone)</h3>
+<div class="outline-text-3" id="text-org7262ea2">
+<p>
+The company will <b>conclude</b> its product launch next week. They <b>guarantee</b> the battery lasts all day. One feature will <b>dominate</b> the market: a super camera. The CEO will <b>confirm</b> the price at the event. She will <b>greet</b> journalists personally. The device will <b>entertain</b> users with games and movies. It can <b>defend against</b> water damage. The warranty <b>forbid to</b> any repairs from unofficial shops. The company will <b>broadcast</b> the launch online. Some employees <b>sacrifice</b> weekends to finish testing. The company will <b>punish for</b> leaking secrets with fines. I <b>glance at</b> the screen often because it&rsquo;s beautiful. The phone will <b>retain</b> high value for years. Engineers <b>calculate</b> the weight carefully. If the price is too high, sales will start <b>sinking</b>.
+</p>
+</div>
+<div id="outline-container-orgeb89fcb" class="outline-4">
+<h4 id="orgeb89fcb"><b>Comprehension Questions:</b></h4>
+<div class="outline-text-4" id="text-orgeb89fcb">
+<ol class="org-ol">
+<li>When will the company conclude its product launch?</li>
+<li>What do they guarantee about the battery?</li>
+<li>Which feature will dominate the market?</li>
+<li>What will the CEO confirm?</li>
+<li>How will the CEO greet journalists?</li>
+<li>How will the device entertain users?</li>
+<li>What can it defend against?</li>
+<li>What does the warranty forbid to any repairs from?</li>
+<li>Where will the company broadcast the launch?</li>
+<li>Why do some employees sacrifice weekends?</li>
+<li>How will the company punish for leaking secrets?</li>
+<li>Why does the narrator glance at the screen?</li>
+<li>What will the phone retain for years?</li>
+<li>What do engineers calculate?</li>
+<li>What will happen to sales if the price is too high?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1917cb4" class="outline-4">
+<h4 id="org1917cb4"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-org1917cb4">
+<ol class="org-ol">
+<li>The company will <span class="underline"><span class="underline">__</span></span> its product launch next week.</li>
+<li>They <span class="underline"><span class="underline">__</span></span> the battery lasts all day.</li>
+<li>One feature will <span class="underline"><span class="underline">__</span></span> the market.</li>
+<li>The CEO will <span class="underline"><span class="underline">__</span></span> the price at the event.</li>
+<li>She will <span class="underline"><span class="underline">__</span></span> journalists personally.</li>
+<li>The device will <span class="underline"><span class="underline">__</span></span> users with games and movies.</li>
+<li>It can <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> water damage.</li>
+<li>The warranty <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> any repairs from unofficial shops.</li>
+<li>The company will <span class="underline"><span class="underline">__</span></span> the launch online.</li>
+<li>Some employees <span class="underline"><span class="underline">__</span></span> weekends to finish testing.</li>
+<li>The company will <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> leaking secrets with fines.</li>
+<li>I <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> the screen often.</li>
+<li>The phone will <span class="underline"><span class="underline">__</span></span> high value for years.</li>
+<li>Engineers <span class="underline"><span class="underline">__</span></span> the weight carefully.</li>
+<li>Sales will start <span class="underline"><span class="underline">__</span></span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org447096f" class="outline-3">
+<h3 id="org447096f">Text 4 (Descriptive – A day at the beach)</h3>
+<div class="outline-text-3" id="text-org447096f">
+<p>
+We <b>conclude</b> our beach trip as the sun sets. The lifeguard can <b>guarantee</b> safety. The sun will <b>dominate</b> the sky all afternoon. I need to <b>confirm</b> the tide times. When we arrive, we <b>greet</b> our friends with hugs. The waves <b>entertain</b> us all day. We have to <b>defend against</b> sunburn with lotion. The signs <b>forbid to</b> anyone from feeding the seagulls. A loudspeaker will <b>broadcast</b> weather warnings. I <b>sacrifice</b> my ice cream to a seagull that stole it. The park ranger will <b>punish for</b> littering with a fine. I <b>glance at</b> my watch to see the time. I want to <b>retain</b> the feeling of this perfect day. We <b>calculate</b> how many shells we collected. At night, a dark cloud makes the horizon look <b>sinking</b>.
+</p>
+</div>
+<div id="outline-container-org9261401" class="outline-4">
+<h4 id="org9261401"><b>Comprehension Questions:</b></h4>
+<div class="outline-text-4" id="text-org9261401">
+<ol class="org-ol">
+<li>When do they conclude their beach trip?</li>
+<li>What can the lifeguard guarantee?</li>
+<li>What will dominate the sky all afternoon?</li>
+<li>What do they need to confirm?</li>
+<li>How do they greet their friends?</li>
+<li>How do the waves entertain them?</li>
+<li>What must they defend against?</li>
+<li>What do the signs forbid to anyone?</li>
+<li>What will the loudspeaker broadcast?</li>
+<li>What does the narrator sacrifice?</li>
+<li>How will the ranger punish for littering?</li>
+<li>Why does the narrator glance at their watch?</li>
+<li>What does the narrator want to retain?</li>
+<li>What do they calculate?</li>
+<li>What makes the horizon look sinking?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org4ac0945" class="outline-4">
+<h4 id="org4ac0945"><b>Cloze Questions:</b></h4>
+<div class="outline-text-4" id="text-org4ac0945">
+<ol class="org-ol">
+<li>They <span class="underline"><span class="underline">__</span></span> their beach trip as the sun sets.</li>
+<li>The lifeguard can <span class="underline"><span class="underline">__</span></span> safety.</li>
+<li>The sun will <span class="underline"><span class="underline">__</span></span> the sky all afternoon.</li>
+<li>I need to <span class="underline"><span class="underline">__</span></span> the tide times.</li>
+<li>When we arrive, we <span class="underline"><span class="underline">__</span></span> our friends with hugs.</li>
+<li>The waves <span class="underline"><span class="underline">__</span></span> us all day.</li>
+<li>We have to <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> sunburn with lotion.</li>
+<li>The signs <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> anyone from feeding the seagulls.</li>
+<li>A loudspeaker will <span class="underline"><span class="underline">__</span></span> weather warnings.</li>
+<li>I <span class="underline"><span class="underline">__</span></span> my ice cream to a seagull that stole it.</li>
+<li>The ranger will <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> littering with a fine.</li>
+<li>I <span class="underline"><span class="underline">__</span></span> <span class="underline"><span class="underline">__</span></span> my watch to see the time.</li>
+<li>I want to <span class="underline"><span class="underline">__</span></span> the feeling of this perfect day.</li>
+<li>We <span class="underline"><span class="underline">__</span></span> how many shells we collected.</li>
+<li>A dark cloud makes the horizon look <span class="underline"><span class="underline">__</span></span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgce91dcf" class="outline-2">
+<h2 id="orgce91dcf">Answers to All Questions</h2>
+<div class="outline-text-2" id="text-orgce91dcf">
+</div>
+<div id="outline-container-orgb88d041" class="outline-3">
+<h3 id="orgb88d041">Text 1 Answers</h3>
+<div class="outline-text-3" id="text-orgb88d041">
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>With a fireworks show.</li>
+<li>That no one will miss it.</li>
+<li>One family.</li>
+<li>The date.</li>
+<li>In a speech / at the gate.</li>
+<li>With dances.</li>
+<li>Rain.</li>
+<li>Bringing loudspeakers after midnight.</li>
+<li>The best parts.</li>
+<li>Her dessert prize.</li>
+<li>With a warning.</li>
+<li>At the schedule.</li>
+<li>Its old traditions.</li>
+<li>The cost of fireworks.</li>
+<li>Sinking.</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>conclude</li>
+<li>guarantee</li>
+<li>dominate</li>
+<li>confirm</li>
+<li>greet</li>
+<li>entertain</li>
+<li>defend against</li>
+<li>forbid to</li>
+<li>broadcast</li>
+<li>sacrifice</li>
+<li>punish for</li>
+<li>glance at</li>
+<li>retain</li>
+<li>calculate</li>
+<li>sinking</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf6a4f03" class="outline-3">
+<h3 id="orgf6a4f03">Text 2 Answers</h3>
+<div class="outline-text-3" id="text-orgf6a4f03">
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>With a draw.</li>
+<li>Their team will win.</li>
+<li>Their team.</li>
+<li>The score.</li>
+<li>Greet them.</li>
+<li>Entertain the fans.</li>
+<li>Fast attackers.</li>
+<li>Arguing with the referee.</li>
+<li>The best goals.</li>
+<li>Her snack.</li>
+<li>With a free kick.</li>
+<li>At the clock.</li>
+<li>Their position in the league.</li>
+<li>The points.</li>
+<li>Sinking.</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>conclude</li>
+<li>guarantees</li>
+<li>dominate</li>
+<li>confirm</li>
+<li>greet</li>
+<li>entertain</li>
+<li>defend against</li>
+<li>forbid to</li>
+<li>broadcast</li>
+<li>sacrifice</li>
+<li>punish for</li>
+<li>glance at</li>
+<li>retain</li>
+<li>calculate</li>
+<li>sinking</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org94fe724" class="outline-3">
+<h3 id="org94fe724">Text 3 Answers</h3>
+<div class="outline-text-3" id="text-org94fe724">
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>Next week.</li>
+<li>It lasts all day.</li>
+<li>A super camera.</li>
+<li>The price.</li>
+<li>Personally.</li>
+<li>With games and movies.</li>
+<li>Water damage.</li>
+<li>Unofficial shops.</li>
+<li>Online.</li>
+<li>To finish testing.</li>
+<li>With fines.</li>
+<li>Because it’s beautiful.</li>
+<li>High value.</li>
+<li>The weight.</li>
+<li>Start sinking.</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>conclude</li>
+<li>guarantee</li>
+<li>dominate</li>
+<li>confirm</li>
+<li>greet</li>
+<li>entertain</li>
+<li>defend against</li>
+<li>forbids to (or <i>forbid</i> but note subject “warranty” is singular → “forbids” is correct)</li>
+<li>broadcast</li>
+<li>sacrifice</li>
+<li>punish for</li>
+<li>glance at</li>
+<li>retain</li>
+<li>calculate</li>
+<li>sinking</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf06721f" class="outline-3">
+<h3 id="orgf06721f">Text 4 Answers</h3>
+<div class="outline-text-3" id="text-orgf06721f">
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>As the sun sets.</li>
+<li>Safety.</li>
+<li>The sun.</li>
+<li>The tide times.</li>
+<li>With hugs.</li>
+<li>All day.</li>
+<li>Sunburn.</li>
+<li>Feeding the seagulls.</li>
+<li>Weather warnings.</li>
+<li>Her ice cream.</li>
+<li>With a fine.</li>
+<li>To see the time.</li>
+<li>The feeling of the perfect day.</li>
+<li>How many shells they collected.</li>
+<li>A dark cloud.</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>conclude</li>
+<li>guarantee</li>
+<li>dominate</li>
+<li>confirm</li>
+<li>greet</li>
+<li>entertain</li>
+<li>defend against</li>
+<li>forbid to</li>
+<li>broadcast</li>
+<li>sacrifice</li>
+<li>punish for</li>
+<li>glance at</li>
+<li>retain</li>
+<li>calculate</li>
+<li>sinking</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org3d4f748" class="outline-3">
+<h3 id="org3d4f748"><a href="https://sendagirich.github.io/asuka_vocab/as_vocab_index.html">Home</a></h3>
+</div>
+</div>
+</div>
+</body>
+</html>
