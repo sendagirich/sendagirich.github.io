@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-05-22 Fri 18:50 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="outline-container-org0872706" class="outline-2">
+<h2 id="org0872706">Verbs 853-866</h2>
+<div class="outline-text-2" id="text-org0872706">
+<ul class="org-ul">
+<li>854 <b>alter</b></li>
+<li>855 <b>arise from</b></li>
+<li>856 <b>transform into</b></li>
+<li>857 <b>defeat</b></li>
+<li>858 <b>investigate</b></li>
+<li>859 <b>distinguish from</b></li>
+<li>860 <b>bury</b></li>
+<li>861 <b>cope with</b></li>
+<li>862 <b>occur</b></li>
+<li>863 <b>accomplish</b></li>
+<li>864 <b>hesitate to</b></li>
+<li>865 <b>endure</b></li>
+<li>866 <b>conclude</b></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org41561f0" class="outline-2">
+<h2 id="org41561f0">Text 1 (Adventure story)</h2>
+<div class="outline-text-2" id="text-org41561f0">
+<p>
+Last year, a team of explorers travelled to a remote island. They wanted to <b>investigate</b> strange lights that <b>occur</b> at night. During their trip, a terrible storm <b>arose from</b> the sea. It was very hard to <b>cope with</b> the strong wind and rain. The explorers had to <b>endure</b> many cold, wet nights. One day, they found a cave which they could <b>transform into</b> a shelter. Inside, they discovered an old chest full of gold coins. &ldquo;I <b>declare</b> this treasure found!&rdquo; shouted the leader. &ldquo;This will <b>alter</b> our lives,&rdquo; said another. They had to <b>distinguish</b> the real gold <b>from</b> fake stones. &ldquo;Do not <b>hesitate to</b> take the coins,&rdquo; said the leader. They needed to <b>bury</b> most of the treasure to hide it. Finally, they <b>concluded</b> their adventure by bringing a few coins home. They felt they had <b>accomplished</b> something great. They had <b>defeated</b> the storm and found treasure.
+</p>
+</div>
+<div id="outline-container-orga384c81" class="outline-3">
+<h3 id="orga384c81">Comprehension questions</h3>
+<div class="outline-text-3" id="text-orga384c81">
+<ol class="org-ol">
+<li>What did the leader shout when they found the gold?</li>
+<li>How would finding the gold change the explorers&rsquo; lives?</li>
+<li>Where did the terrible storm come from?</li>
+<li>What could the explorers turn the cave into?</li>
+<li>What did the explorers defeat during their trip?</li>
+<li>Why did the explorers travel to the remote island?</li>
+<li>What did the explorers need to separate from fake stones?</li>
+<li>What did the explorers do with most of the treasure?</li>
+<li>What was difficult for the explorers to deal with?</li>
+<li>When do the strange lights happen on the island?</li>
+<li>What did the explorers feel they had achieved?</li>
+<li>What did the leader tell the explorers not to be slow about doing?</li>
+<li>What kind of nights did the explorers have to live through?</li>
+<li>How did the adventure finish?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9553c27" class="outline-3">
+<h3 id="org9553c27"><b>Cloze Questions:</b></h3>
+<div class="outline-text-3" id="text-org9553c27">
+<ol class="org-ol">
+<li>&ldquo;I <span class="underline"><span class="underline">__</span></span> this treasure found!&rdquo; shouted the leader. (declare)</li>
+<li>&ldquo;This will <span class="underline"><span class="underline">__</span></span> our lives,&rdquo; said another. (alter)</li>
+<li>A terrible storm <span class="underline"><span class="underline">__</span></span> the sea. (arise from / arose from)</li>
+<li>They could <span class="underline"><span class="underline">__</span></span> the cave <span class="underline"><span class="underline">__</span></span> a shelter. (transform&hellip;into)</li>
+<li>They had <span class="underline"><span class="underline">__</span></span> the storm. (defeat)</li>
+<li>They wanted to <span class="underline"><span class="underline">__</span></span> strange lights. (investigate)</li>
+<li>They had to <span class="underline"><span class="underline">__</span></span> the real gold <span class="underline"><span class="underline">__</span></span> fake stones. (distinguish&hellip;from)</li>
+<li>They needed to <span class="underline"><span class="underline">__</span></span> most of the treasure. (bury)</li>
+<li>It was very hard to <span class="underline"><span class="underline">__</span></span> the strong wind. (cope with)</li>
+<li>Strange lights <span class="underline"><span class="underline">__</span></span> at night. (occur)</li>
+<li>They felt they had <span class="underline"><span class="underline">__</span></span> something great. (accomplish)</li>
+<li>&ldquo;Do not <span class="underline"><span class="underline">__</span></span> to take the coins,&rdquo; said the leader. (hesitate to)</li>
+<li>The explorers had to <span class="underline"><span class="underline">__</span></span> many cold, wet nights. (endure)</li>
+<li>Finally, they <span class="underline"><span class="underline">__</span></span> their adventure. (conclude)</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgddd46a8" class="outline-2">
+<h2 id="orgddd46a8">Text 2 (Dialogue / Everyday Problem)</h2>
+<div class="outline-text-2" id="text-orgddd46a8">
+<ul class="org-ul">
+<li><b>Anna:</b> I can&rsquo;t <b>cope with</b> all this mess! How can we <b>accomplish</b> anything here?</li>
+<li><b>Ben:</b> Don&rsquo;t worry. First, let&rsquo;s <b>investigate</b> what&rsquo;s in these boxes. I <b>declare</b> today a &ldquo;cleaning day&rdquo;!</li>
+<li><b>Anna:</b> OK. But a problem might <b>arise from</b> putting everything away without a plan.</li>
+<li><b>Ben:</b> True. Let&rsquo;s <b>distinguish</b> items we need <b>from</b> things to throw away. Do not <b>hesitate to</b> decide.</li>
+<li><b>Anna:</b> I think we can <b>transform</b> this room <b>into</b> a nice office. But we must <b>endure</b> a few hours of work.</li>
+<li><b>Ben:</b> Yes. After we <b>bury</b> all the rubbish in the bin, we&rsquo;ll feel great. A clean room will <b>alter</b> our mood.</li>
+<li><b>Anna:</b> Good. What if a problem <b>occur</b> while we work?</li>
+<li><b>Ben:</b> Then we will <b>defeat</b> it together. I <b>conclude</b> this is the best plan. Let&rsquo;s start!</li>
+</ul>
+</div>
+<div id="outline-container-org495a518" class="outline-3">
+<h3 id="org495a518"><b>Text 2 Comprehension Questions:</b></h3>
+<div class="outline-text-3" id="text-org495a518">
+<ol class="org-ol">
+<li>What is Anna unable to manage at the beginning?</li>
+<li>What does Anna wonder if they can achieve?</li>
+<li>What does Ben suggest they do first with the boxes?</li>
+<li>What does Ben say he is declaring today?</li>
+<li>What problem might come from putting things away without a plan?</li>
+<li>What does Ben want to separate?</li>
+<li>What does Ben tell Anna not to be slow about?</li>
+<li>What do they want to change the room into?</li>
+<li>What must they live through?</li>
+<li>What will they do with the rubbish?</li>
+<li>What will a clean room change?</li>
+<li>What should they do if a problem happens?</li>
+<li>What will Ben promise to do with a problem?</li>
+<li>What does Ben say at the end about the plan?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org172c385" class="outline-3">
+<h3 id="org172c385"><b>Text 2 Cloze Questions:</b></h3>
+<div class="outline-text-3" id="text-org172c385">
+<ol class="org-ol">
+<li>I can&rsquo;t <span class="underline"><span class="underline">__</span></span> all this mess!</li>
+<li>How can we <span class="underline"><span class="underline">__</span></span> anything here?</li>
+<li>Let&rsquo;s <span class="underline"><span class="underline">__</span></span> what&rsquo;s in these boxes.</li>
+<li>I <span class="underline"><span class="underline">__</span></span> today a &ldquo;cleaning day&rdquo;!</li>
+<li>A problem might <span class="underline"><span class="underline">__</span></span> putting everything away.</li>
+<li>Let&rsquo;s <span class="underline"><span class="underline">__</span></span> items we need <span class="underline"><span class="underline">__</span></span> things to throw away.</li>
+<li>Do not <span class="underline"><span class="underline">__</span></span> to decide.</li>
+<li>We can <span class="underline"><span class="underline">__</span></span> this room <span class="underline"><span class="underline">__</span></span> a nice office.</li>
+<li>We must <span class="underline"><span class="underline">__</span></span> a few hours of work.</li>
+<li>After we <span class="underline"><span class="underline">__</span></span> all the rubbish in the bin&hellip;</li>
+<li>A clean room will <span class="underline"><span class="underline">__</span></span> our mood.</li>
+<li>What if a problem <span class="underline"><span class="underline">__</span></span> while we work?</li>
+<li>Then we will <span class="underline"><span class="underline">__</span></span> it together.</li>
+<li>I <span class="underline"><span class="underline">__</span></span> this is the best plan.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org6c1ecca" class="outline-2">
+<h2 id="org6c1ecca">Text 3 (Science News Report)</h2>
+<div class="outline-text-2" id="text-org6c1ecca">
+<p>
+Scientists <b>investigate</b> changes in the Arctic. They <b>conclude</b> that ice is melting faster. This change can <b>arise from</b> warmer ocean temperatures. To <b>cope with</b> this, researchers try new methods. They want to <b>transform</b> sea water <b>into</b> fresh water for melting ice. They hope to <b>accomplish</b> a big goal: to slow down ice loss. Some scientists <b>declare</b> that we must act now. &ldquo;We cannot <b>hesitate to</b> act,&rdquo; one expert said. The ice will not easily <b>defeat</b> us if we work together. We must <b>distinguish</b> good ideas <b>from</b> bad ones quickly. We may need to <b>bury</b> some plans that don&rsquo;t work. The changes will <b>alter</b> life for animals. &ldquo;Polar bears <b>endure</b> difficult times,&rdquo; they say. These changes <b>occur</b> faster every year.
+</p>
+</div>
+<div id="outline-container-org34cdcb4" class="outline-3">
+<h3 id="org34cdcb4"><b>Text 3 Comprehension Questions:</b></h3>
+<div class="outline-text-3" id="text-org34cdcb4">
+<ol class="org-ol">
+<li>What do scientists investigate in the Arctic?</li>
+<li>What do scientists say about the ice melting?</li>
+<li>What can the change in ice come from?</li>
+<li>What do researchers try to do with the problem?</li>
+<li>What do researchers want to change sea water into?</li>
+<li>What big goal do the scientists hope to achieve?</li>
+<li>What do some scientists say we must do now?</li>
+<li>What does one expert say we must not be slow about?</li>
+<li>What will the ice not easily do to us?</li>
+<li>What must we separate quickly?</li>
+<li>What might we need to do with plans that don&rsquo;t work?</li>
+<li>What will the changes do to life for animals?</li>
+<li>What do polar bears experience now?</li>
+<li>How do these changes happen over time?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org750ef5a" class="outline-3">
+<h3 id="org750ef5a"><b>Text 3 Cloze Questions:</b></h3>
+<div class="outline-text-3" id="text-org750ef5a">
+<ol class="org-ol">
+<li>Scientists <span class="underline"><span class="underline">__</span></span> changes in the Arctic.</li>
+<li>They <span class="underline"><span class="underline">__</span></span> that ice is melting faster.</li>
+<li>This change can <span class="underline"><span class="underline">__</span></span> warmer ocean temperatures.</li>
+<li>To <span class="underline"><span class="underline">__</span></span> this, researchers try new methods.</li>
+<li>They want to <span class="underline"><span class="underline">__</span></span> sea water <span class="underline"><span class="underline">__</span></span> fresh water.</li>
+<li>They hope to <span class="underline"><span class="underline">__</span></span> a big goal.</li>
+<li>Some scientists <span class="underline"><span class="underline">__</span></span> that we must act now.</li>
+<li>&ldquo;We cannot <span class="underline"><span class="underline">__</span></span> to act,&rdquo; one expert said.</li>
+<li>The ice will not easily <span class="underline"><span class="underline">__</span></span> us.</li>
+<li>We must <span class="underline"><span class="underline">__</span></span> good ideas <span class="underline"><span class="underline">__</span></span> bad ones.</li>
+<li>We may need to <span class="underline"><span class="underline">__</span></span> some plans.</li>
+<li>The changes will <span class="underline"><span class="underline">__</span></span> life for animals.</li>
+<li>&ldquo;Polar bears <span class="underline"><span class="underline">__</span></span> difficult times,&rdquo; they say.</li>
+<li>These changes <span class="underline"><span class="underline">__</span></span> faster every year.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orge3b5fa9" class="outline-2">
+<h2 id="orge3b5fa9">Text 4 (Fairy Tale)</h2>
+<div class="outline-text-2" id="text-orge3b5fa9">
+<p>
+A little village had to <b>cope with</b> a dangerous dragon. It would <b>occur</b> every full moon. &ldquo;I <b>declare</b> we must fight!&rdquo; said the brave knight. But the people <b>hesitate to</b> attack. They could not <b>defeat</b> the beast alone. One wise woman said, &ldquo;This problem <b>arise from</b> an old curse. We must <b>investigate</b> its source.&rdquo; They found a magic stone that could <b>transform</b> a person <b>into</b> a hero. To <b>accomplish</b> the task, the knight used the stone. He had to <b>endure</b> a terrible battle. He managed to <b>alter</b> the dragon&rsquo;s heart. He did not kill it but changed it. He learned to <b>distinguish</b> the monster&rsquo;s anger <b>from</b> its sadness. Then, they <b>bury</b> the old curse under a tree. They <b>conclude</b> that kindness is stronger than fire.
+</p>
+</div>
+<div id="outline-container-org4598788" class="outline-3">
+<h3 id="org4598788"><b>Text 4 Comprehension Questions:</b></h3>
+<div class="outline-text-3" id="text-org4598788">
+<ol class="org-ol">
+<li>What did the village have to deal with?</li>
+<li>When did the dragon appear?</li>
+<li>What did the brave knight say they must do?</li>
+<li>What did the people not want to do?</li>
+<li>What couldn&rsquo;t the people do alone?</li>
+<li>Where did the wise woman say the problem came from?</li>
+<li>What did they need to do to the source of the curse?</li>
+<li>What could the magic stone do to a person?</li>
+<li>What did the knight need to achieve?</li>
+<li>What did the knight have to live through?</li>
+<li>What did the knight manage to change?</li>
+<li>What did the knight learn to tell apart?</li>
+<li>Where did they put the old curse?</li>
+<li>What did they decide about kindness?</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org76633a1" class="outline-3">
+<h3 id="org76633a1"><b>Text 4 Cloze Questions:</b></h3>
+<div class="outline-text-3" id="text-org76633a1">
+<ol class="org-ol">
+<li>A little village had to <span class="underline"><span class="underline">__</span></span> a dangerous dragon.</li>
+<li>It would <span class="underline"><span class="underline">__</span></span> every full moon.</li>
+<li>&ldquo;I <span class="underline"><span class="underline">__</span></span> we must fight!&rdquo; said the brave knight.</li>
+<li>But the people <span class="underline"><span class="underline">__</span></span> to attack.</li>
+<li>They could not <span class="underline"><span class="underline">__</span></span> the beast alone.</li>
+<li>&ldquo;This problem <span class="underline"><span class="underline">__</span></span> an old curse.&rdquo;</li>
+<li>&ldquo;We must <span class="underline"><span class="underline">__</span></span> its source.&rdquo;</li>
+<li>A magic stone could <span class="underline"><span class="underline">__</span></span> a person <span class="underline"><span class="underline">__</span></span> a hero.</li>
+<li>To <span class="underline"><span class="underline">__</span></span> the task, the knight used the stone.</li>
+<li>He had to <span class="underline"><span class="underline">__</span></span> a terrible battle.</li>
+<li>He managed to <span class="underline"><span class="underline">__</span></span> the dragon&rsquo;s heart.</li>
+<li>He learned to <span class="underline"><span class="underline">__</span></span> the monster&rsquo;s anger <span class="underline"><span class="underline">__</span></span> its sadness.</li>
+<li>Then, they <span class="underline"><span class="underline">__</span></span> the old curse under a tree.</li>
+<li>They <span class="underline"><span class="underline">__</span></span> that kindness is stronger than fire.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd2842a9" class="outline-2">
+<h2 id="orgd2842a9">Answers</h2>
+<div class="outline-text-2" id="text-orgd2842a9">
+</div>
+<div id="outline-container-orga43629f" class="outline-3">
+<h3 id="orga43629f">Text 1 comprehension questions  <b>Answers:</b></h3>
+<div class="outline-text-3" id="text-orga43629f">
+<ol class="org-ol">
+<li>&ldquo;I declare this treasure found!&rdquo;</li>
+<li>It would change their lives.</li>
+<li>It came from the sea.</li>
+<li>They could turn the cave into a shelter.</li>
+<li>They defeated the storm.</li>
+<li>To investigate strange lights.</li>
+<li>Real gold from fake stones.</li>
+<li>They buried most of it.</li>
+<li>The strong wind and rain.</li>
+<li>At night.</li>
+<li>They felt they had accomplished something great.</li>
+<li>Do not hesitate to take the coins.</li>
+<li>Cold, wet nights.</li>
+<li>They concluded by bringing a few coins home.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9fc5ce9" class="outline-3">
+<h3 id="org9fc5ce9">Text 1 cloze questions  <b>Answers:</b></h3>
+<div class="outline-text-3" id="text-org9fc5ce9">
+<ol class="org-ol">
+<li>declare</li>
+<li>alter</li>
+<li>arose from</li>
+<li>transform&hellip;into</li>
+<li>defeated</li>
+<li>investigate</li>
+<li>distinguish&hellip;from</li>
+<li>bury</li>
+<li>cope with</li>
+<li>occur</li>
+<li>accomplished</li>
+<li>hesitate to</li>
+<li>endure</li>
+<li>concluded</li>
+</ol>
+
+<p>
+&mdash;
+</p>
+</div>
+</div>
+<div id="outline-container-org95803c4" class="outline-3">
+<h3 id="org95803c4">Text 2 comprehension questions <b>Answers:</b></h3>
+<div class="outline-text-3" id="text-org95803c4">
+<ol class="org-ol">
+<li>The mess.</li>
+<li>Anything / the cleaning.</li>
+<li>Look inside them / investigate them.</li>
+<li>A &ldquo;cleaning day&rdquo;.</li>
+<li>A problem / mess.</li>
+<li>Items they need from things to throw away.</li>
+<li>Decide / make a decision.</li>
+<li>A nice office.</li>
+<li>A few hours of work.</li>
+<li>Bury it in the bin.</li>
+<li>Their mood.</li>
+<li>They will defeat it together.</li>
+<li>Defeat it together.</li>
+<li>It is the best plan.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org12731ac" class="outline-3">
+<h3 id="org12731ac">Text 2 Cloze questions <b>Answers:</b></h3>
+<div class="outline-text-3" id="text-org12731ac">
+<ol class="org-ol">
+<li>cope with</li>
+<li>accomplish</li>
+<li>investigate</li>
+<li>declare</li>
+<li>arise from / arise from</li>
+<li>distinguish&hellip;from</li>
+<li>hesitate to</li>
+<li>transform&hellip;into</li>
+<li>endure</li>
+<li>bury</li>
+<li>alter</li>
+<li>occurs / occur</li>
+<li>defeat</li>
+<li>conclude</li>
+</ol>
+
+<p>
+&mdash;
+</p>
+</div>
+</div>
+<div id="outline-container-orge31ab03" class="outline-3">
+<h3 id="orge31ab03">Text 3 Comprehension Questions <b>Answers:</b></h3>
+<div class="outline-text-3" id="text-orge31ab03">
+<ol class="org-ol">
+<li>Changes in the Arctic.</li>
+<li>It is melting faster.</li>
+<li>Warmer ocean temperatures.</li>
+<li>They try new methods to cope with it.</li>
+<li>Fresh water.</li>
+<li>To slow down ice loss.</li>
+<li>We must act now.</li>
+<li>Not hesitate to act.</li>
+<li>Defeat us.</li>
+<li>Good ideas from bad ones.</li>
+<li>Bury them.</li>
+<li>Alter life for animals.</li>
+<li>Difficult times.</li>
+<li>They occur faster every year.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgdcfae86" class="outline-3">
+<h3 id="orgdcfae86"><b>Text 3 Cloze Questions</b> <b>Answers:</b></h3>
+<div class="outline-text-3" id="text-orgdcfae86">
+<ol class="org-ol">
+<li>investigate</li>
+<li>conclude</li>
+<li>arise from</li>
+<li>cope with</li>
+<li>transform&hellip;into</li>
+<li>accomplish</li>
+<li>declare</li>
+<li>hesitate to</li>
+<li>defeat</li>
+<li>distinguish&hellip;from</li>
+<li>bury</li>
+<li>alter</li>
+<li>endure</li>
+<li>occur</li>
+</ol>
+
+<p>
+&mdash;
+</p>
+</div>
+</div>
+<div id="outline-container-org2e32a6b" class="outline-3">
+<h3 id="org2e32a6b"><b>Text 4 Comprehension Questions Answers:</b></h3>
+<div class="outline-text-3" id="text-org2e32a6b">
+<ol class="org-ol">
+<li>A dangerous dragon.</li>
+<li>Every full moon.</li>
+<li>Fight.</li>
+<li>Attack.</li>
+<li>Defeat the beast.</li>
+<li>An old curse.</li>
+<li>Investigate it.</li>
+<li>Transform a person into a hero.</li>
+<li>Complete the task / defeat the dragon.</li>
+<li>A terrible battle.</li>
+<li>The dragon&rsquo;s heart.</li>
+<li>The monster&rsquo;s anger from its sadness.</li>
+<li>Under a tree.</li>
+<li>Kindness is stronger than fire.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgabede77" class="outline-3">
+<h3 id="orgabede77">Text 4 Cloze Questions Answers:</h3>
+<div class="outline-text-3" id="text-orgabede77">
+<ol class="org-ol">
+<li>cope with</li>
+<li>occur</li>
+<li>declare</li>
+<li>hesitated to (or hesitate to)</li>
+<li>defeat</li>
+<li>arises from / arose from</li>
+<li>investigate</li>
+<li>transform&hellip;into</li>
+<li>accomplish</li>
+<li>endure</li>
+<li>alter</li>
+<li>distinguish&hellip;from</li>
+<li>buried</li>
+<li>concluded</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgcb518f1" class="outline-3">
+<h3 id="orgcb518f1"><a href="https://sendagirich.github.io/asuka_vocab/as_vocab_index.html">Home</a></h3>
+</div>
+</div>
+</div>
+</body>
+</html>
