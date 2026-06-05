@@ -1,300 +1,479 @@
-<!DOCTYPE html>
-<html lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Film History</title>
-<meta name="author" content="Richard Williams"/>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
-.underline { text-decoration: underline; }
-</style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/league.css" id="theme"/>
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
 </head>
 <body>
-<div class="reveal">
-<div class="slides">
+<div id="content" class="content">
+<h1 class="title">Film History</h1>
 
-<section>
-<section id="slide-orgb55564b">
-<h2 id="orgb55564b">The History Of Film Timeline</h2>
-<ul>
+<div id="outline-container-org1e06dfc" class="outline-2">
+<h2 id="org1e06dfc">The History Of Film Timeline</h2>
+<div class="outline-text-2" id="text-org1e06dfc">
+<ul class="org-ul">
 <li>The history of film can be traced back to the late 19th century, with the invention of motion picture cameras and the earliest recorded screenings of moving images.</li>
-
 </ul>
-</section>
-</section>
-<section>
-<section id="slide-org7575de0">
-<h2 id="org7575de0">Before film</h2>
-<div class="outline-text-2" id="text-org7575de0">
 </div>
-</section>
-<section id="slide-org426b281">
-<h3 id="org426b281">Before films people told stories in ways that combined visuals and storytelling in various ways:</h3>
-<div class="outline-text-3" id="text-org426b281">
 </div>
-</section>
-<section id="slide-org09bbe8c">
-<h4 id="org09bbe8c">theatre</h4>
+<div id="outline-container-orgbe1683a" class="outline-2">
+<h2 id="orgbe1683a">Before film</h2>
+<div class="outline-text-2" id="text-orgbe1683a">
+</div>
+<div id="outline-container-org22d0c1f" class="outline-3">
+<h3 id="org22d0c1f">Before films people told stories in ways that combined visuals and storytelling in various ways:</h3>
+<div class="outline-text-3" id="text-org22d0c1f">
+</div>
+<div id="outline-container-org9888e3e" class="outline-4">
+<h4 id="org9888e3e">theatre</h4>
+<div class="outline-text-4" id="text-org9888e3e">
 
-<div id="orgf2a76f8" class="figure">
+<div id="org212d8ef" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/play.jpg" alt="play.jpg" />
 </p>
 </div>
-</section>
-<section id="slide-org157785d">
-<h4 id="org157785d">puppet theatre</h4>
+</div>
+</div>
+<div id="outline-container-org059146e" class="outline-4">
+<h4 id="org059146e">puppet theatre</h4>
+<div class="outline-text-4" id="text-org059146e">
 
-<div id="org30f7df1" class="figure">
+<div id="orgb3be647" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/wat.jpg" alt="wat.jpg" />
 </p>
 </div>
-</section>
-<section id="slide-org69b1d4e">
-<h4 id="org69b1d4e">kamishibai</h4>
+</div>
+</div>
+<div id="outline-container-orgfb6f099" class="outline-4">
+<h4 id="orgfb6f099">kamishibai</h4>
+<div class="outline-text-4" id="text-orgfb6f099">
 
-<div id="org56e5578" class="figure">
+<div id="org3e9707c" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/kam.jpg" alt="kam.jpg" />
 </p>
 </div>
-</section>
-<section id="slide-org2767bbb">
-<h3 id="org2767bbb"></h3>
-<ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org19c0fd2" class="outline-3">
+<h3 id="org19c0fd2"></h3>
+<div class="outline-text-3" id="text-org19c0fd2">
+<ul class="org-ul">
 <li>These used dialogue and narration and actors, puppets or pictures to tell stories</li>
 <li>There was no way of recording these performances.</li>
-
 </ul>
-</section>
-<section id="slide-orgcdc98b4">
-<h3 id="orgcdc98b4">Photography</h3>
-<ul>
+</div>
+</div>
+<div id="outline-container-org04497e5" class="outline-3">
+<h3 id="org04497e5">Photography</h3>
+<div class="outline-text-3" id="text-org04497e5">
+<ul class="org-ul">
 <li>People had known about lens technology for hundreds of years.</li>
-
 </ul>
+</div>
+<div id="outline-container-org8adce2a" class="outline-4">
+<h4 id="org8adce2a">camera obscura</h4>
+<div class="outline-text-4" id="text-org8adce2a">
 
-<div id="org32cb228" class="figure">
+<div id="org70d3851" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/obscura.jpg" alt="obscura.jpg" />
 </p>
 </div>
-<ul>
-<li>The discovery of adding chemicals to paper that turned black in the light enabled lenses to capture permanent images.</li>
+</div>
+</div>
+<div id="outline-container-org7ac017c" class="outline-4">
+<h4 id="org7ac017c">The discovery of adding chemicals to paper that turned black in the light enabled lenses to capture permanent images.</h4>
+</div>
+<div id="outline-container-orge97804e" class="outline-4">
+<h4 id="orge97804e">Niepce&rsquo;s camera</h4>
+<div class="outline-text-4" id="text-orge97804e">
 
-</ul>
-
-<div id="orgda66a06" class="figure">
+<div id="orgdb7c148" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/cam.jpg" alt="cam.jpg" />
 </p>
 </div>
-</section>
-<section id="slide-org18e909e">
-<h3 id="org18e909e">Niepce</h3>
-<ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeb7444b" class="outline-3">
+<h3 id="orgeb7444b">Niepce</h3>
+<div class="outline-text-3" id="text-orgeb7444b">
+<ul class="org-ul">
 <li>In 1827 Nicéphore Niépce took one of the earliest photos on France.</li>
-
 </ul>
 
-<div id="org89fffaf" class="figure">
+<div id="orgc876c4c" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/niepce.jpg" alt="niepce.jpg" />
 </p>
 </div>
-</section>
-</section>
-<section>
-<section id="slide-org6fb39fb">
-<h2 id="org6fb39fb">Early film</h2>
-<div class="outline-text-2" id="text-org6fb39fb">
 </div>
-</section>
-<section id="slide-orgc064dc1">
-<h3 id="orgc064dc1">Muybridge</h3>
+</div>
+</div>
+<div id="outline-container-org78cbd35" class="outline-2">
+<h2 id="org78cbd35">Early film</h2>
+<div class="outline-text-2" id="text-org78cbd35">
+</div>
+<div id="outline-container-org612c320" class="outline-3">
+<h3 id="org612c320">Muybridge</h3>
+<div class="outline-text-3" id="text-org612c320">
 <p>
 In 1878 Muybridge invented a system of taking lots of photos quickly of a moving horse then put them together to make a motion picture.
 </p>
-</section>
-<section id="slide-org3bc31dc">
-<h5 id="org3bc31dc"></h5>
+</div>
+<div id="outline-container-org40f5b72" class="outline-5">
+<h5 id="org40f5b72"></h5>
+<div class="outline-text-5" id="text-org40f5b72">
 
-<div id="orge0505b2" class="figure">
+<div id="org6d5a60d" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/horse.png" alt="horse.png" />
 </p>
 </div>
-</section>
-<section id="slide-orgf015097">
-<h5 id="orgf015097"></h5>
+</div>
+</div>
+<div id="outline-container-org5a34f07" class="outline-5">
+<h5 id="org5a34f07"></h5>
+<div class="outline-text-5" id="text-org5a34f07">
 
-<div id="org6520e17" class="figure">
+<div id="org08af707" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/hos.gif" alt="hos.gif" />
 </p>
 </div>
-</section>
-<section id="slide-orgb242ef4">
-<h3 id="orgb242ef4">Showing films</h3>
-<ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org7a6eca6" class="outline-3">
+<h3 id="org7a6eca6">Showing films</h3>
+<div class="outline-text-3" id="text-org7a6eca6">
+<ul class="org-ul">
 <li>People invented different ways of projecting film.</li>
-
 </ul>
-</section>
-<section id="slide-orgf825954">
-<h4 id="orgf825954"></h4>
+</div>
+<div id="outline-container-orgf5bf9c4" class="outline-4">
+<h4 id="orgf5bf9c4"></h4>
+<div class="outline-text-4" id="text-orgf5bf9c4">
 
-<div id="org658c7e6" class="figure">
+<div id="orgefbab70" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/proj.jpg" alt="proj.jpg" />
 </p>
 </div>
-</section>
-<section id="slide-orga942bb6">
-<h4 id="orga942bb6">1895 The first public screening of a film</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org608c1bb" class="outline-4">
+<h4 id="org608c1bb">1895 The first public screening of a film</h4>
+<div class="outline-text-4" id="text-org608c1bb">
+<ul class="org-ul">
 <li>The Lumiere brothers used their invention of the Cinematograph in Paris, France</li>
-
 </ul>
-</section>
-<section id="slide-orgff82ba5">
-<h4 id="orgff82ba5">1896</h4>
+</div>
+</div>
+<div id="outline-container-org340e73e" class="outline-4">
+<h4 id="org340e73e">1896: The Lumiere Brothers 1896:  The Arrival of a Train at La Ciotat Station</h4>
+<div class="outline-text-4" id="text-org340e73e">
 
-<div id="org4a3884a" class="figure">
+<div id="orgf65ef39" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/lumiere.gif" alt="lumiere.gif" />
 </p>
 </div>
-<ul>
-<li>The Lumiere Brothers 1896:  The Arrival of a Train at La Ciotat Station</li>
+</div>
+</div>
+</div>
+<div id="outline-container-org7ebe4f8" class="outline-3">
+<h3 id="org7ebe4f8">Film was used for news style short films of real life this.</h3>
+</div>
+<div id="outline-container-org6f6555b" class="outline-3">
+<h3 id="org6f6555b">Narrative films (stories) also started to be made</h3>
+<div class="outline-text-3" id="text-org6f6555b">
+</div>
+<div id="outline-container-org239001b" class="outline-4">
+<h4 id="org239001b">Un homme de têtes (or The Four Troublesome Heads) by Georges Melies, 1898</h4>
+<div class="outline-text-4" id="text-org239001b">
 
-</ul>
-</section>
-<section id="slide-org6ab392e">
-<h3 id="org6ab392e">Film was used for news style short films of real life this.</h3>
-</section>
-<section id="slide-org1aa230c">
-<h3 id="org1aa230c">Narrative films (stories) also started to be made</h3>
-<ul>
-<li>Un homme de têtes (or The Four Troublesome Heads) by Georges Melies, 1898</li>
-<li><img src="https://sendagirich.github.io/asuka/assets/history/tete.gif" alt="tete.gif" /></li>
-
-</ul>
-</section>
-<section id="slide-orgbbd5216">
-<h3 id="orgbbd5216">Un homme de têtes</h3>
+<div id="org82fe5cd" class="figure">
+<p><img src="https://sendagirich.github.io/asuka/assets/history/tete.gif" alt="tete.gif" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org58dbdcb" class="outline-3">
+<h3 id="org58dbdcb">Un homme de têtes</h3>
+<div class="outline-text-3" id="text-org58dbdcb">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IKQRV4XKZt4?si=Oktm_E-u6GkcjpBj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</section>
-<section id="slide-orgca24687">
-<h3 id="orgca24687">Films techniques</h3>
-<ul>
+</div>
+</div>
+<div id="outline-container-org790967b" class="outline-3">
+<h3 id="org790967b">Films techniques</h3>
+<div class="outline-text-3" id="text-org790967b">
+<ul class="org-ul">
 <li>Early films were black and white with no sound.</li>
 <li>Film makers found new ways to use lighting</li>
 <li>Film makers found new ways to edit films.</li>
-
 </ul>
-</section>
-</section>
-<section>
-<section id="slide-orgb4e16f0">
-<h2 id="orgb4e16f0">Sound</h2>
-<div class="outline-text-2" id="text-orgb4e16f0">
 </div>
-</section>
-<section id="slide-org23c09b4">
-<h3 id="org23c09b4">1927: The first “talkie” (motion picture with synchronized sound) is released, The Jazz Singer.</h3>
+</div>
+</div>
+<div id="outline-container-org538a6d3" class="outline-2">
+<h2 id="org538a6d3">Sound</h2>
+<div class="outline-text-2" id="text-org538a6d3">
+</div>
+<div id="outline-container-org617101d" class="outline-3">
+<h3 id="org617101d">1927: The first “talkie” (motion picture with synchronized sound) is released, The Jazz Singer.</h3>
+<div class="outline-text-3" id="text-org617101d">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/22NQuPrwbHA?si=EsYps3DISaq5ps4Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</section>
-</section>
-<section>
-<section id="slide-org5f0de89">
-<h2 id="org5f0de89">Colour</h2>
-<div class="outline-text-2" id="text-org5f0de89">
 </div>
-</section>
-<section id="slide-org58f3174">
-<h3 id="org58f3174">Early films</h3>
-<ul>
-<li>Some early films added colour tints by hand</li>
+</div>
+</div>
+<div id="outline-container-org373fc5a" class="outline-2">
+<h2 id="org373fc5a">Colour</h2>
+<div class="outline-text-2" id="text-org373fc5a">
+</div>
+<div id="outline-container-org9daddec" class="outline-3">
+<h3 id="org9daddec">Early films: Some early films added colour tints by hand</h3>
+<div class="outline-text-3" id="text-org9daddec">
 
-</ul>
-
-<div id="orgf5ceed4" class="figure">
+<div id="orgdea5f25" class="figure">
 <p><img src="https://sendagirich.github.io/asuka/assets/history/color.gif" alt="color.gif" />
 </p>
 </div>
-</section>
-<section id="slide-org2bd0d14">
-<h3 id="org2bd0d14">Bradford</h3>
-<ul>
-<li>The world&rsquo;s oldest colour film discovered in Bradford (circa 1902)</li>
-
-</ul>
-
+</div>
+</div>
+<div id="outline-container-orgb9f5d09" class="outline-3">
+<h3 id="orgb9f5d09">The world&rsquo;s oldest colour film discovered in Bradford (circa 1902)</h3>
+<div class="outline-text-3" id="text-orgb9f5d09">
 <iframe width="426" height="240" src="https://www.youtube.com/embed/53kN4t0MRa0?si=OTbfC1FVZRF29N7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</section>
-<section id="slide-org79b3e25">
-<h3 id="org79b3e25">Disney Flowers and trees</h3>
-<p>
-In 1932 Disney introduced the Technicolor technique to capture colour film.
-[[<img src="https://sendagirich.github.io/asuka/assets/history/flowers.gif" alt="flowers.gif" />
+</div>
+</div>
+<div id="outline-container-org7caea49" class="outline-3">
+<h3 id="org7caea49">In 1932 Disney introduced the Technicolor technique to capture colour film.</h3>
+<div class="outline-text-3" id="text-org7caea49">
+
+<div id="org240259e" class="figure">
+<p><img src="https://sendagirich.github.io/asuka/assets/history/flowers.gif" alt="flowers.gif" />
 </p>
-
+</div>
+</div>
+<div id="outline-container-orgfe7df50" class="outline-4">
+<h4 id="orgfe7df50">Full version</h4>
+<div class="outline-text-4" id="text-orgfe7df50">
 <iframe width="426" height="240" src="https://www.youtube.com/embed/_NKcsg8vE_U?si=XgmYbAetNx4sMyxu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</section>
-</section>
-<section>
-<section id="slide-org49d7467">
-<h2 id="org49d7467"></h2>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfac7da2" class="outline-2">
+<h2 id="orgfac7da2"></h2>
+<div class="outline-text-2" id="text-orgfac7da2">
 
-<div id="org4e35b17" class="figure">
+<div id="org9c66567" class="figure">
 <p><a href="https://sendagirich.github.io/asuka/vl_lessons.html" width="60%"><img src="https://sendagirich.github.io/general-english/assets/lsn-1.png" alt="lsn-1.png" width="60%" /></a>
 </p>
 </div>
 
 
-<div id="org6a9ebf2" class="figure">
+<div id="org0649d0f" class="figure">
 <p><a href="https://sendagirich.github.io/asuka/vl_film_english.html" width="60%"><img src="https://sendagirich.github.io/general-english/assets/fe-1.png" alt="fe-1.png" width="60%" /></a>
 </p>
 </div>
 
 
-<div id="org156f473" class="figure">
+<div id="org6d46d26" class="figure">
 <p><a href="https://sendagirich.github.io/asuka/vl_index.html" width="100%"><img src="https://sendagirich.github.io/general-english/assets/hm-1.png" alt="hm-1.png" width="100%" /></a>
 </p>
 </div>
-</section>
-</section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/search/search.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
-<script>
-// Full list of configuration options available here:
-// https://github.com/hakimel/reveal.js#configuration
-Reveal.initialize({
-
-controls: true,
-progress: true,
-history: false,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-mouseWheel: false,
-fragmentInURL: false,
-hashOneBasedIndex: false,
-pdfSeparateFragments: true,
-overview: true,
-margin: 0.00,
-
-transition: 'cube',
-transitionSpeed: '',
-
-// Plugins with reveal.js 4.x
-plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
-
-// Optional libraries used to extend reveal.js
-dependencies: [
-]
-
-});
-</script>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Richard Williams</p>
+</div>
 </body>
 </html>
