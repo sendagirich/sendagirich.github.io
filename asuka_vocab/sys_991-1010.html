@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-06-18 Thu 08:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="outline-container-orga84add0" class="outline-2">
+<h2 id="orga84add0">Vocabulary: 991-1010</h2>
+<div class="outline-text-2" id="text-orga84add0">
+<ul class="org-ul">
+<li>991 ambition to</li>
+<li>992 weather forecast</li>
+<li>993 psychology</li>
+<li>994 labor</li>
+<li>995 committee</li>
+<li>996 physician</li>
+<li>997 philosophy</li>
+<li>998 affection for</li>
+<li>999 candidate for</li>
+<li>1000 bomb</li>
+<li>1001 priority</li>
+<li>1002 obstacle two</li>
+<li>1003 appetite</li>
+<li>1004 tension</li>
+<li>1005 tribe</li>
+<li>1006 budget</li>
+<li>1007 campaign to</li>
+<li>1008 sorrow</li>
+<li>1009 satellite</li>
+<li>1010 insight into</li>
+</ul>
+</div>
+<div id="outline-container-org71c8756" class="outline-4">
+<h4 id="org71c8756">Text 1: Village Health Project</h4>
+<div class="outline-text-4" id="text-org71c8756">
+<p>
+A small <b>tribe</b> living near a remote mountain had a serious health <b>obstacle</b>: no clean water. A <b>committee</b> of villagers and a visiting <b>physician</b> worked together. Their <b>priority</b> was to build a well. The <b>budget</b> was small, so they began a <b>campaign to</b> raise funds. Every family showed great <b>affection for</b> the project and worked hard <b>labor</b>. One elder shared his <b>philosophy</b>: “Health comes from nature.” The <b>psychology</b> of the tribe was positive, and their <b>appetite</b> for success grew. A <b>satellite</b> helped them get a good <b>weather forecast</b> to plan work. One night, a loud <b>bomb</b> sound from a mining company caused <b>tension</b> and <b>sorrow</b>, but the team continued. A young leader became a <b>candidate for</b> team leader. Her <b>ambition to</b> finish the well gave everyone <b>insight into</b> the power of teamwork.
+</p>
+
+<p>
+<b>Comprehension Questions (one per target word):</b>
+</p>
+<ol class="org-ol">
+<li>What was the tribe’s physical problem? (obstacle)</li>
+<li>Who worked with the villagers to solve the problem? (physician)</li>
+<li>What did the committee decide was most important? (priority)</li>
+<li>What did the campaign try to raise? (budget)</li>
+<li>How did villagers feel about the project? (affection for)</li>
+<li>What kind of work did everyone do? (labor)</li>
+<li>What did the elder share with the group? (philosophy)</li>
+<li>What helped the tribe’s positive thinking? (psychology)</li>
+<li>What did the villagers want more of as they succeeded? (appetite)</li>
+<li>What technology gave them weather information? (satellite)</li>
+<li>What caused a loud sound at night? (bomb)</li>
+<li>What did the loud sound create in the group? (tension)</li>
+<li>What emotion did the noise cause? (sorrow)</li>
+<li>Who did the young leader want to become? (candidate for)</li>
+<li>What did the young leader have a strong desire to do? (ambition to)</li>
+<li>What did her leadership give everyone? (insight into)</li>
+<li>What did the weather forecast help them do? (weather forecast)</li>
+<li>Who formed the committee? (committee)</li>
+<li>What was the tribe’s main obstacle? (obstacle)</li>
+</ol>
+
+<p>
+<b>Cloze Questions (one per target word):</b>
+</p>
+<ol class="org-ol">
+<li>The small <span class="underline"><span class="underline">__</span></span> lived near a remote mountain.</li>
+<li>They faced an <span class="underline"><span class="underline">__</span></span> : no clean water.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> of villagers and a physician worked together.</li>
+<li>A visiting <span class="underline"><span class="underline">__</span></span> helped with health problems.</li>
+<li>Their top <span class="underline"><span class="underline">__</span></span> was to build a well.</li>
+<li>The project <span class="underline"><span class="underline">__</span></span> was very small.</li>
+<li>They began a <span class="underline"><span class="underline">__</span></span> raise funds.</li>
+<li>Villagers showed great <span class="underline"><span class="underline">__</span></span> the project.</li>
+<li>Everyone did hard physical <span class="underline"><span class="underline">__</span></span> .</li>
+<li>The elder shared his personal <span class="underline"><span class="underline">__</span></span> .</li>
+<li>The positive <span class="underline"><span class="underline">__</span></span> of the tribe helped.</li>
+<li>Their <span class="underline"><span class="underline">__</span></span> for success grew stronger.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> gave them the weather forecast.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> said it would rain tomorrow.</li>
+<li>A loud <span class="underline"><span class="underline">__</span></span> sound came from a mining company.</li>
+<li>This caused <span class="underline"><span class="underline">__</span></span> and conflict in the group.</li>
+<li>The noise also brought feelings of <span class="underline"><span class="underline">__</span></span> .</li>
+<li>The young leader was a <span class="underline"><span class="underline">__</span></span> team leader.</li>
+<li>She had a strong <span class="underline"><span class="underline">__</span></span> finish the well.</li>
+<li>Her leadership gave everyone <span class="underline"><span class="underline">__</span></span> teamwork.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6cdddf0" class="outline-4">
+<h4 id="org6cdddf0">Text 2: <b>The Election in Green Valley</b></h4>
+<div class="outline-text-4" id="text-org6cdddf0">
+<p>
+Maya had a deep <b>affection for</b> her hometown. She became a <b>candidate for</b> mayor. Her <b>ambition to</b> improve the town was strong. An <b>obstacle</b> appeared: the town’s <b>budget</b> had only enough for one project. A <b>committee</b> of local people would decide the <b>priority</b>. Maya started a <b>campaign to</b> clean the river, but a <b>bomb</b> explosion at the old factory caused <b>tension</b> and <b>sorrow</b>. A <b>physician</b> helped injured workers. The <b>weather forecast</b> said storms were coming, so she used a <b>satellite</b> to track the weather. A <b>tribe</b> of artists offered to paint murals. Their <b>philosophy</b> was “beauty heals.” Maya studied the <b>psychology</b> of the town to understand their fears. Her <b>labor</b> was long, but her <b>appetite</b> for change grew. Finally, she gave a speech with great <b>insight into</b> the town’s needs.
+</p>
+
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>What did Maya feel for her hometown? (affection for)</li>
+<li>What role did Maya want to get? (candidate for)</li>
+<li>What strong desire did Maya have? (ambition to)</li>
+<li>What was the first problem Maya faced? (obstacle)</li>
+<li>What was the town’s money limit called? (budget)</li>
+<li>Who would decide the most important project? (committee)</li>
+<li>What did Maya start to clean the river? (campaign to)</li>
+<li>What caused the explosion at the factory? (bomb)</li>
+<li>What feelings did the explosion cause? (tension)</li>
+<li>What other emotion did the explosion bring? (sorrow)</li>
+<li>Who helped the injured workers? (physician)</li>
+<li>What technology did Maya use to track weather? (satellite)</li>
+<li>What gave information about coming storms? (weather forecast)</li>
+<li>What group of artists offered help? (tribe)</li>
+<li>What belief system did they share? (philosophy)</li>
+<li>What field did Maya study to understand fears? (psychology)</li>
+<li>What kind of work did Maya do for a long time? (labor)</li>
+<li>What grew stronger as Maya worked? (appetite)</li>
+<li>What did Maya show in her speech? (insight into)</li>
+<li>What was the town’s top priority? (priority)</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>Maya had a deep <span class="underline"><span class="underline">__</span></span> her hometown.</li>
+<li>She was a <span class="underline"><span class="underline">__</span></span> mayor.</li>
+<li>She had a strong <span class="underline"><span class="underline">__</span></span> improve the town.</li>
+<li>The first <span class="underline"><span class="underline">__</span></span> was the small budget.</li>
+<li>The town’s <span class="underline"><span class="underline">__</span></span> was very limited.</li>
+<li>A local <span class="underline"><span class="underline">__</span></span> would decide the priority.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> was to clean the river.</li>
+<li>Maya began a <span class="underline"><span class="underline">__</span></span> clean the river.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> explosion damaged the factory.</li>
+<li>The explosion caused great <span class="underline"><span class="underline">__</span></span> .</li>
+<li>It also brought feelings of <span class="underline"><span class="underline">__</span></span> .</li>
+<li>A <span class="underline"><span class="underline">__</span></span> treated the injured workers.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> said storms were coming.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> tracked the storms from space.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> of artists offered to help.</li>
+<li>Their <span class="underline"><span class="underline">__</span></span> was “beauty heals.”</li>
+<li>Maya studied <span class="underline"><span class="underline">__</span></span> to understand fears.</li>
+<li>Her <span class="underline"><span class="underline">__</span></span> was long and tiring.</li>
+<li>Her <span class="underline"><span class="underline">__</span></span> for change grew stronger.</li>
+<li>Her speech gave <span class="underline"><span class="underline">__</span></span> the town’s true needs.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc0061dd" class="outline-4">
+<h4 id="orgc0061dd">Text 3: The Community Meeting*</h4>
+<div class="outline-text-4" id="text-orgc0061dd">
+<p>
+Anna: Our <b>tribe</b> of volunteers has a problem. Our <b>priority</b> is fixing the school roof before rain.
+Ben: But the <b>weather forecast</b> says storms tonight! We need a <b>satellite</b> phone for emergency calls.
+Anna: The <b>committee</b> voted to keep a small <b>budget</b> for a <b>physician</b> in case someone gets hurt.
+Ben: Good. A loud <b>bomb</b> sound from the construction site is causing <b>tension</b>. People feel <b>sorrow</b>.
+Anna: I have an <b>affection for</b> this town. My <b>ambition to</b> help is strong. But there’s an <b>obstacle</b> – no volunteers tomorrow.
+Ben: Then let’s start a <b>campaign to</b> find more. Your <b>philosophy</b> of hard <b>labor</b> inspires us.
+Anna: Thanks. Your <b>insight into</b> people’s <b>psychology</b> helps. Your <b>appetite</b> for solving problems is great.
+Ben: And you are the best <b>candidate for</b> leader.
+</p>
+
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>What word describes the group of volunteers? (tribe)</li>
+<li>What was the most important task? (priority)</li>
+<li>What gave information about upcoming rain? (weather forecast)</li>
+<li>What technology did Ben want for emergencies? (satellite)</li>
+<li>Who voted on how to spend money? (committee)</li>
+<li>What was the limited amount of money called? (budget)</li>
+<li>What kind of doctor did they budget for? (physician)</li>
+<li>What caused the loud noise? (bomb)</li>
+<li>What was the loud noise creating? (tension)</li>
+<li>What emotion did the noise cause people to feel? (sorrow)</li>
+<li>What strong positive feeling did Anna have for the town? (affection for)</li>
+<li>What was Anna’s strong desire? (ambition to)</li>
+<li>What was the problem with volunteers? (obstacle)</li>
+<li>What did Ben want to start to find more people? (campaign to)</li>
+<li>What belief system did Anna have about work? (philosophy)</li>
+<li>What kind of work did Anna believe in? (labor)</li>
+<li>What did Ben have about people’s thinking? (insight into)</li>
+<li>What field did Ben understand well? (psychology)</li>
+<li>What did Ben have a strong desire for in solving problems? (appetite)</li>
+<li>What role was Anna best for? (candidate for)</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>Our <span class="underline"><span class="underline">__</span></span> of volunteers has a problem.</li>
+<li>The top <span class="underline"><span class="underline">__</span></span> is fixing the school roof.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> says storms tonight.</li>
+<li>We need a <span class="underline"><span class="underline">__</span></span> phone for emergencies.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> voted on the budget.</li>
+<li>We kept a small <span class="underline"><span class="underline">__</span></span> for a doctor.</li>
+<li>We budgeted for a <span class="underline"><span class="underline">__</span></span> in case of injury.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> sound from construction causes tension.</li>
+<li>The loud noise creates <span class="underline"><span class="underline">__</span></span> in the community.</li>
+<li>People feel <span class="underline"><span class="underline">__</span></span> about the noise.</li>
+<li>I have a great <span class="underline"><span class="underline">__</span></span> this town.</li>
+<li>My strong <span class="underline"><span class="underline">__</span></span> help is still here.</li>
+<li>There is an <span class="underline"><span class="underline">__</span></span> – no volunteers tomorrow.</li>
+<li>We should start a <span class="underline"><span class="underline">__</span></span> find new volunteers.</li>
+<li>Your <span class="underline"><span class="underline">__</span></span> of hard work inspires us.</li>
+<li>Your belief in hard <span class="underline"><span class="underline">__</span></span> is great.</li>
+<li>You have good <span class="underline"><span class="underline">__</span></span> people’s psychology.</li>
+<li>You understand the <span class="underline"><span class="underline">__</span></span> of our team.</li>
+<li>Your <span class="underline"><span class="underline">__</span></span> for solving problems is strong.</li>
+<li>You are the best <span class="underline"><span class="underline">__</span></span> leader.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf7db7c5" class="outline-4">
+<h4 id="orgf7db7c5">Text 4: On Remote Island Wellbeing</h4>
+<div class="outline-text-4" id="text-orgf7db7c5">
+<p>
+A recent study examined a <b>tribe</b> on a remote island. The researchers had an <b>ambition to</b> understand how the <b>psychology</b> of the community affected health. A <b>physician</b> visited weekly. The <b>committee</b> that managed the <b>budget</b> had to set a <b>priority</b> for clean water. The <b>weather forecast</b> was obtained through a <b>satellite</b>. A mining company’s <b>bomb</b> testing nearby caused <b>tension</b> and <b>sorrow</b>. The tribe showed great <b>affection for</b> their land. Hard <b>labor</b> was part of their daily life. Their <b>philosophy</b> valued patience. One young man became a <b>candidate for</b> village leader. The main <b>obstacle</b> was limited time. The team gained deep <b>insight into</b> the community’s needs. Their <b>appetite</b> for learning grew. They started a <b>campaign to</b> share their findings.
+</p>
+
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>What group of people was studied? (tribe)</li>
+<li>What was the researchers’ strong desire? (ambition to)</li>
+<li>What field helped understand community health? (psychology)</li>
+<li>What medical professional visited weekly? (physician)</li>
+<li>Who managed the money? (committee)</li>
+<li>What was the money limit called? (budget)</li>
+<li>What was the most important goal? (priority)</li>
+<li>What gave weather information? (weather forecast)</li>
+<li>What technology provided the forecast? (satellite)</li>
+<li>What caused the loud noise from mining? (bomb)</li>
+<li>What negative feelings did the noise create? (tension)</li>
+<li>What other emotion did it cause? (sorrow)</li>
+<li>What did the tribe feel for their land? (affection for)</li>
+<li>What kind of work was part of daily life? (labor)</li>
+<li>What belief system did they value? (philosophy)</li>
+<li>What role did the young man want? (candidate for)</li>
+<li>What was the main problem for the team? (obstacle)</li>
+<li>What did the team gain into the community’s needs? (insight into)</li>
+<li>What grew stronger as they learned? (appetite)</li>
+<li>What did they start to share findings? (campaign to)</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>A recent study examined a <span class="underline"><span class="underline">__</span></span> on a remote island.</li>
+<li>The researchers had an <span class="underline"><span class="underline">__</span></span> understand the community.</li>
+<li>They studied the <span class="underline"><span class="underline">__</span></span> of the tribe.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> visited the island weekly.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> managed the budget.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> was small but carefully used.</li>
+<li>Clean water was the top <span class="underline"><span class="underline">__</span></span> .</li>
+<li>The <span class="underline"><span class="underline">__</span></span> warned of a storm.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> provided the weather images.</li>
+<li>A mining company’s <span class="underline"><span class="underline">__</span></span> testing caused trouble.</li>
+<li>The testing created <span class="underline"><span class="underline">__</span></span> among the people.</li>
+<li>It also caused deep <span class="underline"><span class="underline">__</span></span> .</li>
+<li>The tribe showed great <span class="underline"><span class="underline">__</span></span> their land.</li>
+<li>Hard physical <span class="underline"><span class="underline">__</span></span> was a daily activity.</li>
+<li>Their <span class="underline"><span class="underline">__</span></span> valued patience and respect.</li>
+<li>One young man became a <span class="underline"><span class="underline">__</span></span> village leader.</li>
+<li>The main <span class="underline"><span class="underline">__</span></span> was lack of time.</li>
+<li>The team gained deep <span class="underline"><span class="underline">__</span></span> the community.</li>
+<li>Their <span class="underline"><span class="underline">__</span></span> for knowledge grew quickly.</li>
+<li>They started a <span class="underline"><span class="underline">__</span></span> share their results.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org39b2aa1" class="outline-3">
+<h3 id="org39b2aa1">Answers</h3>
+<div class="outline-text-3" id="text-org39b2aa1">
+</div>
+<div id="outline-container-org4e67499" class="outline-4">
+<h4 id="org4e67499">Text 1 Answers</h4>
+<div class="outline-text-4" id="text-org4e67499">
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>No clean water</li>
+<li>A physician</li>
+<li>To build a well (priority)</li>
+<li>Funds / money (budget)</li>
+<li>Affection for the project</li>
+<li>Hard physical work (labor)</li>
+<li>A philosophy</li>
+<li>Positive psychology</li>
+<li>Appetite for success</li>
+<li>Satellite</li>
+<li>A bomb</li>
+<li>Tension</li>
+<li>Sorrow</li>
+<li>Candidate for team leader</li>
+<li>Ambition to finish the well</li>
+<li>Insight into teamwork</li>
+<li>To plan work (weather forecast)</li>
+<li>Villagers and a physician (committee)</li>
+<li>No clean water</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>tribe</li>
+<li>obstacle</li>
+<li>committee</li>
+<li>physician</li>
+<li>priority</li>
+<li>budget</li>
+<li>campaign to</li>
+<li>affection for</li>
+<li>labor</li>
+<li>philosophy</li>
+<li>psychology</li>
+<li>appetite</li>
+<li>satellite</li>
+<li>weather forecast</li>
+<li>bomb</li>
+<li>tension</li>
+<li>sorrow</li>
+<li>candidate for</li>
+<li>ambition to</li>
+<li>insight into</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgbd9d519" class="outline-4">
+<h4 id="orgbd9d519">Text 2 Answers</h4>
+<div class="outline-text-4" id="text-orgbd9d519">
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>Affection for</li>
+<li>Candidate for mayor</li>
+<li>Ambition to improve the town</li>
+<li>The small budget (obstacle)</li>
+<li>Budget</li>
+<li>Committee</li>
+<li>Campaign to clean the river</li>
+<li>A bomb</li>
+<li>Tension</li>
+<li>Sorrow</li>
+<li>A physician</li>
+<li>Satellite</li>
+<li>Weather forecast</li>
+<li>A tribe of artists</li>
+<li>Philosophy</li>
+<li>Psychology</li>
+<li>Labor</li>
+<li>Appetite</li>
+<li>Insight into the town’s needs</li>
+<li>Cleaning the river (priority)</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>affection for</li>
+<li>candidate for</li>
+<li>ambition to</li>
+<li>obstacle</li>
+<li>budget</li>
+<li>committee</li>
+<li>priority</li>
+<li>campaign to</li>
+<li>bomb</li>
+<li>tension</li>
+<li>sorrow</li>
+<li>physician</li>
+<li>weather forecast</li>
+<li>satellite</li>
+<li>tribe</li>
+<li>philosophy</li>
+<li>psychology</li>
+<li>labor</li>
+<li>appetite</li>
+<li>insight into</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgd8013b3" class="outline-4">
+<h4 id="orgd8013b3">Text 3 Answers</h4>
+<div class="outline-text-4" id="text-orgd8013b3">
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>Tribe</li>
+<li>Fixing the school roof (priority)</li>
+<li>Weather forecast</li>
+<li>Satellite phone</li>
+<li>Committee</li>
+<li>Budget</li>
+<li>Physician</li>
+<li>Bomb</li>
+<li>Tension</li>
+<li>Sorrow</li>
+<li>Affection for</li>
+<li>Ambition to help</li>
+<li>No volunteers tomorrow (obstacle)</li>
+<li>Campaign to find more people</li>
+<li>Philosophy</li>
+<li>Labor</li>
+<li>Insight into</li>
+<li>Psychology</li>
+<li>Appetite</li>
+<li>Candidate for leader</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>tribe</li>
+<li>priority</li>
+<li>weather forecast</li>
+<li>satellite</li>
+<li>committee</li>
+<li>budget</li>
+<li>physician</li>
+<li>bomb</li>
+<li>tension</li>
+<li>sorrow</li>
+<li>affection for</li>
+<li>ambition to</li>
+<li>obstacle</li>
+<li>campaign to</li>
+<li>philosophy</li>
+<li>labor</li>
+<li>insight into</li>
+<li>psychology</li>
+<li>appetite</li>
+<li>candidate for</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgaee2036" class="outline-4">
+<h4 id="orgaee2036">Text 4 Answers</h4>
+<div class="outline-text-4" id="text-orgaee2036">
+<p>
+<b>Comprehension Questions:</b>
+</p>
+<ol class="org-ol">
+<li>A tribe</li>
+<li>Ambition to understand</li>
+<li>Psychology</li>
+<li>A physician</li>
+<li>A committee</li>
+<li>Budget</li>
+<li>Clean water (priority)</li>
+<li>Weather forecast</li>
+<li>Satellite</li>
+<li>A bomb</li>
+<li>Tension</li>
+<li>Sorrow</li>
+<li>Affection for their land</li>
+<li>Labor</li>
+<li>Philosophy</li>
+<li>Candidate for village leader</li>
+<li>Limited time (obstacle)</li>
+<li>Insight into</li>
+<li>Appetite for learning</li>
+<li>Campaign to share findings</li>
+</ol>
+
+<p>
+<b>Cloze Questions:</b>
+</p>
+<ol class="org-ol">
+<li>tribe</li>
+<li>ambition to</li>
+<li>psychology</li>
+<li>physician</li>
+<li>committee</li>
+<li>budget</li>
+<li>priority</li>
+<li>weather forecast</li>
+<li>satellite</li>
+<li>bomb</li>
+<li>tension</li>
+<li>sorrow</li>
+<li>affection for</li>
+<li>labor</li>
+<li>philosophy</li>
+<li>candidate for</li>
+<li>obstacle</li>
+<li>insight into</li>
+<li>appetite</li>
+<li>campaign to</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org07b1afb" class="outline-2">
+<h2 id="org07b1afb"><a href="https://sendagirich.github.io/asuka_vocab/as_vocab_index.html">Home</a></h2>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-06-18 Thu 08:58 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="outline-container-org8acc468" class="outline-2">
+<h2 id="org8acc468">Vocabulary: 971-990</h2>
+<div class="outline-text-2" id="text-org8acc468">
+<ul class="org-ul">
+<li>971 genius</li>
+<li>972 seeds</li>
+<li>973 symptoms</li>
+<li>974 merit</li>
+<li>975 layer</li>
+<li>976 clue</li>
+<li>977 under any circumstances</li>
+<li>978 district</li>
+<li>979 prison</li>
+<li>980 companion</li>
+<li>981 executive</li>
+<li>982 justice</li>
+<li>983 procedure</li>
+<li>984 rays</li>
+<li>985 heaven</li>
+<li>986 luxury</li>
+<li>987 oxygen</li>
+<li>988 funds</li>
+<li>989 theme</li>
+<li>990 boundary between</li>
+</ul>
+</div>
+<div id="outline-container-org55683cb" class="outline-4">
+<h4 id="org55683cb">Text 1: Garden of Justice</h4>
+<div class="outline-text-4" id="text-org55683cb">
+<p>
+In a quiet district of the city, an old gardener named Leo was considered a genius with plants. He believed every seed had merit, no matter how small. One day, strange symptoms appeared on his flowers: yellow spots on every layer of leaf. He had no clue what caused it. “Under any circumstances, don’t use chemicals,” his companion warned. Leo ignored the advice, but the procedure he tried failed. He needed funds for new soil, but had none. Then, a local executive offered a luxury grant. The theme of Leo’s garden became “healing through nature,” and he grew a plant that produced pure oxygen. The boundary between life and death for his garden had been crossed—he saved it, feeling like heaven on earth.
+</p>
+
+<p>
+<b>Comprehension Questions (Target Words):</b>
+</p>
+<ol class="org-ol">
+<li>What did people call Leo because he was very good with plants?</li>
+<li>What did Leo believe every small plant part had?</li>
+<li>What appeared on the leaves of Leo’s flowers?</li>
+<li>How many layers of leaves had the yellow spots?</li>
+<li>What did Leo have no idea about regarding the problem?</li>
+<li>When should Leo not use chemicals?</li>
+<li>Who warned Leo not to use chemicals?</li>
+<li>What was the name of the method Leo tried that did not work?</li>
+<li>What did Leo need to buy new soil?</li>
+<li>Who offered a luxury grant to Leo?</li>
+<li>What kind of grant was it?</li>
+<li>What became the main subject of Leo’s garden?</li>
+<li>What important gas did the new plant produce?</li>
+<li>What did Leo cross to save his garden?</li>
+<li>How did Leo feel when he saved his garden?</li>
+</ol>
+
+<p>
+<b>Cloze Questions (Target Words):</b>
+</p>
+<ol class="org-ol">
+<li>The old gardener was a <span class="underline"><span class="underline"><span class="underline">__</span></span></span> with plants.</li>
+<li>Leo believed every <span class="underline"><span class="underline"><span class="underline">__</span></span></span> had value.</li>
+<li>Yellow <span class="underline"><span class="underline"><span class="underline">__</span></span></span> appeared on the flowers.</li>
+<li>The spots were on every <span class="underline"><span class="underline"><span class="underline">__</span></span></span> of leaf.</li>
+<li>He had no <span class="underline"><span class="underline"><span class="underline">__</span></span></span> what caused it.</li>
+<li><span class="underline"><span class="underline"><span class="underline">__</span></span></span> <span class="underline"><span class="underline"><span class="underline">__</span></span></span>, don’t use chemicals.</li>
+<li>His <span class="underline"><span class="underline"><span class="underline">__</span></span></span> warned him.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> he tried failed.</li>
+<li>He needed <span class="underline"><span class="underline"><span class="underline">__</span></span></span> for new soil.</li>
+<li>A local <span class="underline"><span class="underline"><span class="underline">__</span></span></span> offered help.</li>
+<li>The grant was a <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> of the garden was healing.</li>
+<li>The plant produced pure <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+<li>He crossed the <span class="underline"><span class="underline"><span class="underline">__</span></span></span> between death and life.</li>
+<li>He felt like <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc6f4186" class="outline-4">
+<h4 id="orgc6f4186">Text 2: <b>The Museum Visit</b></h4>
+<div class="outline-text-4" id="text-orgc6f4186">
+<p>
+<b>Anna:</b> Wow, this painting is a genius work! Look at the seeds of color in it.
+<b>Ben:</b> I see. But the symptoms of old paint worry me—it’s cracking on this layer.
+<b>Anna:</b> Any clue why?
+<b>Ben:</b> Not really. Under any circumstances, don’t touch it. This district is famous for art, but the museum has no funds for restoration.
+<b>Anna:</b> My companion, the director, is an executive. Maybe he can help.
+<b>Ben:</b> Does he believe in justice for old art?
+<b>Anna:</b> Yes. The procedure is simple: apply for a grant. It’s a luxury to save such beauty.
+<b>Ben:</b> The theme here is nature. Look at the sky—it’s like heaven.
+<b>Anna:</b> And the trees give oxygen. But what’s the boundary between art and life?
+<b>Ben:</b> That’s a deep question.
+</p>
+
+<p>
+<b>Comprehension Questions (Target Words):</b>
+</p>
+<ol class="org-ol">
+<li>What did Anna call the painting?</li>
+<li>What did she see in the colors?</li>
+<li>What worried Ben about the paint?</li>
+<li>How many layers of paint were cracking?</li>
+<li>What did Anna ask about the problem?</li>
+<li>When should they not touch the painting?</li>
+<li>What is the museum’s district famous for?</li>
+<li>What does the museum not have for restoration?</li>
+<li>Who is Anna’s companion?</li>
+<li>What job does the companion have?</li>
+<li>Does the companion believe in justice for old art? (Yes/No)</li>
+<li>What is the simple procedure?</li>
+<li>What kind of luxury is saving such beauty?</li>
+<li>What is the theme of the painting?</li>
+<li>What does the sky look like?</li>
+</ol>
+
+<p>
+<b>Cloze Questions (Target Words):</b>
+</p>
+<ol class="org-ol">
+<li>“This painting is a <span class="underline"><span class="underline"><span class="underline">__</span></span></span> work!”</li>
+<li>“Look at the <span class="underline"><span class="underline"><span class="underline">__</span></span></span> of color.”</li>
+<li>“The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> of old paint worry me.”</li>
+<li>“It’s cracking on this <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.”</li>
+<li>“Any <span class="underline"><span class="underline"><span class="underline">__</span></span></span> why?”</li>
+<li>“________ <span class="underline"><span class="underline"><span class="underline">__</span></span></span> <span class="underline"><span class="underline"><span class="underline">__</span></span></span>, don’t touch it.”</li>
+<li>“This <span class="underline"><span class="underline"><span class="underline">__</span></span></span> is famous for art.”</li>
+<li>“The museum has no <span class="underline"><span class="underline"><span class="underline">__</span></span></span> for restoration.”</li>
+<li>“My <span class="underline"><span class="underline"><span class="underline">__</span></span></span> is the director.”</li>
+<li>“He is an <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.”</li>
+<li>“Does he believe in <span class="underline"><span class="underline"><span class="underline">__</span></span></span>?”</li>
+<li>“The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> is simple.”</li>
+<li>“It’s a <span class="underline"><span class="underline"><span class="underline">__</span></span></span> to save such beauty.”</li>
+<li>“The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> here is nature.”</li>
+<li>“The sky is like <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.”</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org8dc1ba4" class="outline-4">
+<h4 id="org8dc1ba4">Text 3:  Space Program: A Report</h4>
+<div class="outline-text-4" id="text-org8dc1ba4">
+<p>
+A genius engineer designed a new rocket. Its seeds of innovation were small but powerful. However, the crew reported symptoms of dizziness—a clue that air quality was poor. Under any circumstances, the launch was delayed. The district where the rocket was built is a high-tech zone. An executive from the space agency approved funds for a new oxygen system. The procedure for installation took one week. It was not a luxury, but a necessity. The theme of the mission was “exploration without harm.” The boundary between Earth and heaven was the goal. Justice meant giving every crew member a safe companion—a robot helper. Each layer of the rocket was checked for leaks.
+</p>
+
+<p>
+<b>Comprehension Questions (Target Words):</b>
+</p>
+<ol class="org-ol">
+<li>What was the engineer called?</li>
+<li>What were the seeds of the innovation?</li>
+<li>What symptoms did the crew report?</li>
+<li>What was a clue about the crew’s condition?</li>
+<li>When was the launch delayed?</li>
+<li>What is the district like where the rocket was built?</li>
+<li>Who approved the funds?</li>
+<li>What did the funds pay for?</li>
+<li>What was the procedure for the new system?</li>
+<li>Was the new system a luxury? (Yes/No)</li>
+<li>What was the theme of the mission?</li>
+<li>What was the space goal?</li>
+<li>What did justice mean for the crew?</li>
+<li>What kind of companion did each crew member get?</li>
+<li>How many layers of the rocket were checked?</li>
+</ol>
+
+<p>
+<b>Cloze Questions (Target Words):</b>
+</p>
+<ol class="org-ol">
+<li>A <span class="underline"><span class="underline"><span class="underline">__</span></span></span> engineer designed a new rocket.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> of innovation were small.</li>
+<li>The crew reported <span class="underline"><span class="underline"><span class="underline">__</span></span></span> of dizziness.</li>
+<li>The dizziness was a <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+<li><span class="underline"><span class="underline"><span class="underline">__</span></span></span> <span class="underline"><span class="underline"><span class="underline">__</span></span></span> <span class="underline"><span class="underline"><span class="underline">__</span></span></span>, the launch was delayed.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> is a high-tech zone.</li>
+<li>An <span class="underline"><span class="underline"><span class="underline">__</span></span></span> approved the funds.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> paid for a new oxygen system.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> took one week.</li>
+<li>It was not a <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> of the mission was exploration.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> between Earth and heaven was the goal.</li>
+<li><span class="underline"><span class="underline"><span class="underline">__</span></span></span> meant a safe companion.</li>
+<li>Each crew member got a <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+<li>Every <span class="underline"><span class="underline"><span class="underline">__</span></span></span> of the rocket was checked.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgba8c83e" class="outline-4">
+<h4 id="orgba8c83e">Text 4: Style:  Council,</h4>
+<div class="outline-text-4" id="text-orgba8c83e">
+<p>
+A genius plan exists to save our district: a community garden. Plant seeds of hope—each has merit. I have seen symptoms of stress in residents. Here is a clue: people rarely smile. Under any circumstances, do not ignore this. The procedure is simple: allocate funds. This is not a luxury; it is justice for our health. The theme of our proposal is “green peace.” The boundary between neglect and care is thin. Let us provide oxygen for our children. An executive can lead, with a companion volunteer. Together, we can create heaven on earth.
+</p>
+
+<p>
+<b>Comprehension Questions (Target Words):</b>
+</p>
+<ol class="org-ol">
+<li>What kind of plan exists to save the district?</li>
+<li>What should be planted in the garden?</li>
+<li>What does the writer say about each seed?</li>
+<li>What symptoms have been seen in residents?</li>
+<li>What is the clue that people are stressed?</li>
+<li>When should the council not ignore the problem?</li>
+<li>What is the name of the letter’s author’s area?</li>
+<li>What is the simple procedure mentioned?</li>
+<li>What should the council allocate?</li>
+<li>Is the garden considered a luxury? (Yes/No)</li>
+<li>What is the theme of the proposal?</li>
+<li>What is the boundary between?</li>
+<li>What gas will the garden provide?</li>
+<li>Who can lead the project?</li>
+<li>What will the companion be?</li>
+</ol>
+
+<p>
+<b>Cloze Questions (Target Words):</b>
+</p>
+<ol class="org-ol">
+<li>A <span class="underline"><span class="underline"><span class="underline">__</span></span></span> plan exists.</li>
+<li>Plant <span class="underline"><span class="underline"><span class="underline">__</span></span></span> of hope.</li>
+<li>Each seed has <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+<li>I have seen <span class="underline"><span class="underline"><span class="underline">__</span></span></span> of stress.</li>
+<li>Here is a <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+<li><span class="underline"><span class="underline"><span class="underline">__</span></span></span> <span class="underline"><span class="underline"><span class="underline">__</span></span></span> <span class="underline"><span class="underline"><span class="underline">__</span></span></span>, do not ignore this.</li>
+<li>Save our <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> is simple.</li>
+<li>Allocate <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+<li>This is not a <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+<li>It is <span class="underline"><span class="underline"><span class="underline">__</span></span></span> for our health.</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> is “green peace.”</li>
+<li>The <span class="underline"><span class="underline"><span class="underline">__</span></span></span> between neglect and care is thin.</li>
+<li>Provide <span class="underline"><span class="underline"><span class="underline">__</span></span></span> for our children.</li>
+<li>An <span class="underline"><span class="underline"><span class="underline">__</span></span></span> can lead with a <span class="underline"><span class="underline"><span class="underline">__</span></span></span>.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga180ee3" class="outline-4">
+<h4 id="orga180ee3">Answers</h4>
+<div class="outline-text-4" id="text-orga180ee3">
+<p>
+<b>Text 1:</b>
+</p>
+<ol class="org-ol">
+<li>A genius</li>
+<li>Merit</li>
+<li>Yellow spots / symptoms</li>
+<li>Every layer</li>
+<li>A clue</li>
+<li>Under any circumstances</li>
+<li>His companion</li>
+<li>Procedure</li>
+<li>Funds</li>
+<li>An executive</li>
+<li>A luxury</li>
+<li>Theme</li>
+<li>Oxygen</li>
+<li>Boundary between life and death</li>
+<li>Like heaven</li>
+<li>genius</li>
+<li>seed</li>
+<li>symptoms</li>
+<li>layer</li>
+<li>clue</li>
+<li>Under any circumstances</li>
+<li>companion</li>
+<li>procedure</li>
+<li>funds</li>
+<li>executive</li>
+<li>luxury</li>
+<li>theme</li>
+<li>oxygen</li>
+<li>boundary between</li>
+<li>heaven</li>
+</ol>
+
+<p>
+<b>Text 2:</b>
+</p>
+<ol class="org-ol">
+<li>A genius work</li>
+<li>Seeds of color</li>
+<li>Symptoms of old paint</li>
+<li>This layer</li>
+<li>Any clue</li>
+<li>Under any circumstances</li>
+<li>Art</li>
+<li>Funds</li>
+<li>The director / her companion</li>
+<li>An executive</li>
+<li>Yes</li>
+<li>Apply for a grant</li>
+<li>A luxury</li>
+<li>Nature</li>
+<li>Heaven</li>
+<li>genius</li>
+<li>seeds</li>
+<li>symptoms</li>
+<li>layer</li>
+<li>clue</li>
+<li>Under any circumstances</li>
+<li>district</li>
+<li>funds</li>
+<li>companion</li>
+<li>executive</li>
+<li>justice</li>
+<li>procedure</li>
+<li>luxury</li>
+<li>theme</li>
+<li>heaven</li>
+</ol>
+
+<p>
+<b>Text 3:</b>
+</p>
+<ol class="org-ol">
+<li>A genius engineer</li>
+<li>Small but powerful / seeds of innovation</li>
+<li>Symptoms of dizziness</li>
+<li>Clue about poor air</li>
+<li>Under any circumstances</li>
+<li>High-tech zone</li>
+<li>An executive</li>
+<li>A new oxygen system</li>
+<li>One week / installation</li>
+<li>No</li>
+<li>Exploration without harm</li>
+<li>Boundary between Earth and heaven</li>
+<li>A safe companion</li>
+<li>A robot helper</li>
+<li>Every layer</li>
+<li>genius</li>
+<li>seeds</li>
+<li>symptoms</li>
+<li>clue</li>
+<li>Under any circumstances</li>
+<li>district</li>
+<li>executive</li>
+<li>funds</li>
+<li>procedure</li>
+<li>luxury</li>
+<li>theme</li>
+<li>boundary between</li>
+<li>Justice</li>
+<li>companion</li>
+<li>layer</li>
+</ol>
+
+<p>
+<b>Text 4:</b>
+</p>
+<ol class="org-ol">
+<li>A genius plan</li>
+<li>Seeds of hope</li>
+<li>Merit</li>
+<li>Symptoms of stress</li>
+<li>People rarely smile</li>
+<li>Under any circumstances</li>
+<li>The district</li>
+<li>Allocate funds</li>
+<li>Funds</li>
+<li>No</li>
+<li>Green peace</li>
+<li>Neglect and care</li>
+<li>Oxygen</li>
+<li>An executive</li>
+<li>A companion volunteer</li>
+<li>genius</li>
+<li>seeds</li>
+<li>merit</li>
+<li>symptoms</li>
+<li>clue</li>
+<li>Under any circumstances</li>
+<li>district</li>
+<li>procedure</li>
+<li>funds</li>
+<li>luxury</li>
+<li>justice</li>
+<li>theme</li>
+<li>boundary between</li>
+<li>oxygen</li>
+<li>executive, companion</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org5b5faf5" class="outline-2">
+<h2 id="org5b5faf5"><a href="https://sendagirich.github.io/asuka_vocab/as_vocab_index.html">Home</a></h2>
+</div>
+</div>
+</body>
+</html>

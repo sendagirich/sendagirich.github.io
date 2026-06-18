@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-06-18 Thu 08:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Richard Williams" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-c:before { content: 'C'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'JavaScript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}html{font-family:'PT Sans',sans-serif}pre,code{font-family:'Inconsolata',sans-serif}h1,h2,h3,h4,h5,h6{font-family:'PT Sans Narrow',sans-serif;font-weight:700}html{background-color:#d3c5a0;color:#282828;margin:1em}body{background-color:#ebdbb2;margin:0 auto;max-width:23cm;border:1pt solid #767372;padding:1em}code{background-color:#dfad4d;padding:2px}a{color:#689d6a}a:visited{color:#427b58}a:hover{color:#cb4b16}h1{color:#cc241d}h2{color:#305d5f}h3{color:#076678}h4{color:#504945}h5{color:#665c54}h6{color:#638656}pre{background-color:#fdf6e3;color:#657b83;border:1pt solid #93a1a1;padding:1em;box-shadow:5pt 5pt 8pt #eee8d5}pre code{background-color:#fdf6e3}h1{font-size:2.8em}h2{font-size:2.4em}h3{font-size:1.8em}h4{font-size:1.4em}h5{font-size:1.3em}h6{font-size:1.15em}.tag{background-color:#eee8d5;color:#d33682;padding:0 .2em}.todo,.next,.done{color:#fdf6e3;background-color:#dc322f;padding:0 .2em}.tag{-webkit-border-radius:.35em;-moz-border-radius:.35em;border-radius:.35em}.TODO{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#2aa198}.NEXT{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.ACTIVE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#268bd2}.DONE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}.WAITING{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#cb4b16}.HOLD{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.NOTE{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#d33682}.CANCELLED{-webkit-border-radius:.2em;-moz-border-radius:.2em;border-radius:.2em;background-color:#859900}
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="outline-container-orgd34fb5f" class="outline-2">
+<h2 id="orgd34fb5f">Vocabulary: 1011-1030</h2>
+<div class="outline-text-2" id="text-orgd34fb5f">
+<ul class="org-ul">
+<li>1011 cough</li>
+<li>1012 fate</li>
+<li>1013 scheme</li>
+<li>1014 insult</li>
+<li>1015 inhabitants of</li>
+<li>1016 fossil fuels</li>
+<li>1017 motive</li>
+<li>1018 instinct</li>
+<li>1019 legend</li>
+<li>1020 Empire</li>
+<li>1021 suburbs</li>
+<li>1022 architecture</li>
+<li>1023 passion</li>
+<li>1024 cancer</li>
+<li>1025 logic</li>
+<li>1026 dozen</li>
+<li>1027 harvest</li>
+<li>1028 ingredients</li>
+<li>1029 test the hypothesis</li>
+<li>1030 voyage</li>
+</ul>
+</div>
+<div id="outline-container-org779cbb4" class="outline-4">
+<h4 id="org779cbb4">Text 1: Story</h4>
+<div class="outline-text-4" id="text-org779cbb4">
+<p>
+A young woman named Clara had a <b>passion</b> for old <b>architecture</b>. She lived in the <b>suburbs</b> but often visited the city. One day, she heard a <b>legend</b> about a hidden treasure from an ancient <b>Empire</b>. She found a <b>dozen</b> old maps in a shop. Her <b>instinct</b> told her to follow them. After a long <b>voyage</b> across the sea, she reached a ruined city. The <b>inhabitants of</b> a nearby village warned her about a curse. She ignored their warning and had a bad <b>cough</b>. She thought her <b>fate</b> was to get sick. But she realized the <b>motive</b> of the curse was to protect the treasure. She used <b>logic</b> to find the hidden room. Inside, there was an old <b>scheme</b> of the Empire written on a wall. She found a box with strange <b>ingredients</b> for a medicine. She used them to <b>test the hypothesis</b> that the curse was just a poison. The medicine cured her cough. She later found out the treasure was a <b>harvest</b> of gold. But she used <b>fossil fuels</b> to burn it and stop the <b>cancer</b> of greed in the empire. An old man called her an <b>insult</b> for burning gold, but she smiled.
+</p>
+
+<p>
+<b>Comprehension questions (target words):</b>
+</p>
+<ol class="org-ol">
+<li>What did Clara have a strong feeling for?</li>
+<li>What did she love to look at in the city?</li>
+<li>Where did Clara live?</li>
+<li>What old story did she hear about?</li>
+<li>How many maps did she find?</li>
+<li>What told her to follow the maps?</li>
+<li>What did Clara go on across the sea?</li>
+<li>Who warned her about the curse?</li>
+<li>What illness did Clara get?</li>
+<li>What did Clara think her destiny was?</li>
+<li>What was the reason for the curse?</li>
+<li>What did Clara use to find the hidden room?</li>
+<li>What was written on the old wall?</li>
+<li>What did the box contain?</li>
+<li>What did Clara use the ingredients to do?</li>
+<li>What was the treasure made of?</li>
+<li>What type of fuel did Clara use to burn the gold?</li>
+<li>What disease did she want to stop?</li>
+<li>What did the old man call Clara?</li>
+</ol>
+
+<p>
+<b>Cloze questions:</b>
+</p>
+<ol class="org-ol">
+<li>Clara’s <span class="underline"><span class="underline">__</span></span> for architecture made her travel.</li>
+<li>She loved the old <span class="underline"><span class="underline">__</span></span> of the city.</li>
+<li>Clara lived in the quiet <span class="underline"><span class="underline">__</span></span>.</li>
+<li>She heard a <span class="underline"><span class="underline">__</span></span> about treasure.</li>
+<li>She bought a <span class="underline"><span class="underline">__</span></span> maps.</li>
+<li>Her <span class="underline"><span class="underline">__</span></span> told her to follow them.</li>
+<li>She went on a dangerous <span class="underline"><span class="underline">__</span></span>.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> a nearby village warned her.</li>
+<li>She developed a bad <span class="underline"><span class="underline">__</span></span>.</li>
+<li>She thought her <span class="underline"><span class="underline">__</span></span> was to be sick.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> of the curse was protection.</li>
+<li>She used <span class="underline"><span class="underline">__</span></span> to find the answer.</li>
+<li>The old <span class="underline"><span class="underline">__</span></span> was on the wall.</li>
+<li>The box had strange <span class="underline"><span class="underline">__</span></span>.</li>
+<li>She mixed them to <span class="underline"><span class="underline">__</span></span>.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> of gold was large.</li>
+<li>She used <span class="underline"><span class="underline">__</span></span> to burn the treasure.</li>
+<li>She wanted to stop <span class="underline"><span class="underline">__</span></span> in the empire.</li>
+<li>He called her an <span class="underline"><span class="underline">__</span></span> for her actions.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgebc5b44" class="outline-4">
+<h4 id="orgebc5b44">Text 2: Dialogue</h4>
+<div class="outline-text-4" id="text-orgebc5b44">
+<p>
+Anna: Hey Mark, why do you have that bad <b>cough</b>?
+Mark: I don&rsquo;t know. Maybe it&rsquo;s my <b>fate</b>. I feel sick.
+Anna: Don&rsquo;t be silly. We need a <b>scheme</b> to get you to the doctor.
+Mark: That&rsquo;s an <b>insult</b> to my intelligence! I&rsquo;m fine.
+Anna: The <b>inhabitants of</b> this town say you need rest. They don&rsquo;t use <b>fossil fuels</b> here, so the air is clean.
+Mark: My <b>motive</b> for staying is my work. I have a <b>passion</b> for history.
+Anna: I know. You love old <b>architecture</b>. But this town is in the <b>suburbs</b>. It&rsquo;s boring.
+Mark: No! There&rsquo;s a <b>legend</b> about an old <b>Empire</b> here. I found a <b>dozen</b> old coins. My <b>instinct</b> says there&rsquo;s more.
+Anna: Let&rsquo;s use <b>logic</b>. We can <b>test the hypothesis</b> that the coins are from a treasure. We need <b>ingredients</b> for a map.
+Mark: That <b>voyage</b> of discovery is my dream. This could be a great <b>harvest</b>.
+Anna: But your cough could be <b>cancer</b>! Stop this fantasy.
+</p>
+
+<p>
+<b>Comprehension questions (target words):</b>
+</p>
+<ol class="org-ol">
+<li>What does Mark have?</li>
+<li>What does Mark think his sickness is?</li>
+<li>What does Anna suggest they make?</li>
+<li>What does Mark think Anna&rsquo;s suggestion is?</li>
+<li>Who says Mark needs rest?</li>
+<li>What kind of energy do the townspeople avoid?</li>
+<li>What is Mark&rsquo;s reason for staying?</li>
+<li>What is Mark very interested in?</li>
+<li>What does Mark love about the old buildings?</li>
+<li>Where does the town lie?</li>
+<li>What old story is there about this place?</li>
+<li>What kingdom is mentioned in the legend?</li>
+<li>How many coins did Mark find?</li>
+<li>What told Mark there was more treasure?</li>
+<li>What tool of thinking does Anna suggest?</li>
+<li>What do they want to do with the hypothesis?</li>
+<li>What does the map need?</li>
+<li>What does Mark call his dream trip?</li>
+<li>What could the harvest of treasure be?</li>
+<li>What serious disease does Anna worry about?</li>
+</ol>
+
+<p>
+<b>Cloze questions:</b>
+</p>
+<ol class="org-ol">
+<li>Mark has a bad <span class="underline"><span class="underline">__</span></span>.</li>
+<li>He thinks his <span class="underline"><span class="underline">__</span></span> is to be sick.</li>
+<li>Anna wants a <span class="underline"><span class="underline">__</span></span> to help him.</li>
+<li>Mark thinks that&rsquo;s an <span class="underline"><span class="underline">__</span></span>.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> this town say rest.</li>
+<li>They don&rsquo;t burn <span class="underline"><span class="underline">__</span></span>.</li>
+<li>Mark&rsquo;s <span class="underline"><span class="underline">__</span></span> is his work.</li>
+<li>He has a <span class="underline"><span class="underline">__</span></span> for history.</li>
+<li>He loves old <span class="underline"><span class="underline">__</span></span>.</li>
+<li>The town is in the <span class="underline"><span class="underline">__</span></span>.</li>
+<li>There&rsquo;s a <span class="underline"><span class="underline">__</span></span> about an empire.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> had coins.</li>
+<li>He found a <span class="underline"><span class="underline">__</span></span> coins.</li>
+<li>His <span class="underline"><span class="underline">__</span></span> tells him more exists.</li>
+<li>Let&rsquo;s use <span class="underline"><span class="underline">__</span></span>.</li>
+<li>Let&rsquo;s <span class="underline"><span class="underline">__</span></span> the hypothesis.</li>
+<li>We need <span class="underline"><span class="underline">__</span></span> for a map.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> is his dream.</li>
+<li>This could be a great <span class="underline"><span class="underline">__</span></span>.</li>
+<li>Your cough could be <span class="underline"><span class="underline">__</span></span>.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgeb98258" class="outline-4">
+<h4 id="orgeb98258">Text 3: Descriptive</h4>
+<div class="outline-text-4" id="text-orgeb98258">
+<p>
+The <b>inhabitants of</b> the old city had a strong <b>passion</b> for their <b>architecture</b>. The city was once part of a great <b>Empire</b>. A <b>legend</b> says the Empire fell because of a <b>scheme</b> to use too many <b>fossil fuels</b>. This caused <b>cancer</b> rates to rise. People had a constant <b>cough</b>. Their <b>fate</b> was sealed. After the fall, survivors moved to the <b>suburbs</b>. They had an <b>instinct</b> to live simply. Their <b>motive</b> was survival. They used <b>logic</b> to build new homes. They planted a <b>dozen</b> fields. Each <b>harvest</b> was celebrated. The <b>ingredients</b> for their meals came from local farms. Scientists wanted to <b>test the hypothesis</b> that clean air helped. They took a long <b>voyage</b> to study. They found no <b>insult</b> to nature. The plan was a success.
+</p>
+
+<p>
+<b>Comprehension questions (target words):</b>
+</p>
+<ol class="org-ol">
+<li>Who had a strong passion?</li>
+<li>What did they love?</li>
+<li>What empire was the city part of?</li>
+<li>What story explains the fall?</li>
+<li>What bad plan caused problems?</li>
+<li>What type of fuels did they overuse?</li>
+<li>What disease increased?</li>
+<li>What symptom did people have?</li>
+<li>What was sealed?</li>
+<li>Where did survivors move?</li>
+<li>What natural feeling did they have?</li>
+<li>What was their reason for living simply?</li>
+<li>What thinking method did they use?</li>
+<li>How many fields did they plant?</li>
+<li>What was celebrated each season?</li>
+<li>What did the meals need?</li>
+<li>What did scientists want to test?</li>
+<li>What long journey did they take?</li>
+<li>What did they not find in nature?</li>
+</ol>
+
+<p>
+<b>Cloze questions:</b>
+</p>
+<ol class="org-ol">
+<li>The <span class="underline"><span class="underline">__</span></span> the old city loved things.</li>
+<li>They had a <span class="underline"><span class="underline">__</span></span> for architecture.</li>
+<li>The city was in an <span class="underline"><span class="underline">__</span></span>.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> tells about the fall.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> caused the problem.</li>
+<li>They used too many <span class="underline"><span class="underline">__</span></span>.</li>
+<li><span class="underline"><span class="underline">__</span></span> rates rose.</li>
+<li>People had a constant <span class="underline"><span class="underline">__</span></span>.</li>
+<li>Their <span class="underline"><span class="underline">__</span></span> was sealed.</li>
+<li>They moved to the <span class="underline"><span class="underline">__</span></span>.</li>
+<li>Their <span class="underline"><span class="underline">__</span></span> was to live simply.</li>
+<li>Their <span class="underline"><span class="underline">__</span></span> was survival.</li>
+<li>They used <span class="underline"><span class="underline">__</span></span> to build homes.</li>
+<li>They planted a <span class="underline"><span class="underline">__</span></span> fields.</li>
+<li>Each <span class="underline"><span class="underline">__</span></span> was celebrated.</li>
+<li>Meals needed fresh <span class="underline"><span class="underline">__</span></span>.</li>
+<li>They wanted to <span class="underline"><span class="underline">__</span></span>.</li>
+<li>They took a <span class="underline"><span class="underline">__</span></span>.</li>
+<li>They found no <span class="underline"><span class="underline">__</span></span> to nature.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org84b3542" class="outline-4">
+<h4 id="org84b3542">Text 4: Opinion</h4>
+<div class="outline-text-4" id="text-org84b3542">
+<p>
+We must change our <b>scheme</b> for energy. Using <b>fossil fuels</b> is an <b>insult</b> to our future. The <b>inhabitants of</b> many cities have a constant <b>cough</b> from pollution. This can lead to <b>cancer</b>. Our <b>fate</b> depends on action. Our <b>motive</b> should be health. It is <b>logic</b> to use clean energy. Our <b>instinct</b> tells us to protect nature. Think of old <b>architecture</b> in the <b>suburbs</b> – we can save it. A <b>legend</b> from the Roman <b>Empire</b> warns us about greed. They had a <b>passion</b> for power. They made a <b>dozen</b> mistakes. Their last <b>harvest</b> was poor. The <b>ingredients</b> for life were gone. We can <b>test the hypothesis</b> that a <b>voyage</b> to green energy works. Let&rsquo;s not wait.
+</p>
+
+<p>
+<b>Comprehension questions (target words):</b>
+</p>
+<ol class="org-ol">
+<li>What should we change?</li>
+<li>What type of fuels are bad?</li>
+<li>What is using fossil fuels called?</li>
+<li>Who has a constant cough?</li>
+<li>What disease can pollution cause?</li>
+<li>What depends on action?</li>
+<li>What should our reason be?</li>
+<li>What way of thinking is recommended?</li>
+<li>What tells us to protect nature?</li>
+<li>What old buildings are mentioned?</li>
+<li>Where are these buildings located?</li>
+<li>What old story is mentioned?</li>
+<li>Which empire warned us?</li>
+<li>What did the empire have a passion for?</li>
+<li>How many mistakes did they make?</li>
+<li>What was poor in the empire?</li>
+<li>What was gone from life?</li>
+<li>What can we test?</li>
+<li>What kind of journey is suggested?</li>
+</ol>
+
+<p>
+<b>Cloze questions:</b>
+</p>
+<ol class="org-ol">
+<li>Change our <span class="underline"><span class="underline">__</span></span> for energy.</li>
+<li>Stop using <span class="underline"><span class="underline">__</span></span>.</li>
+<li>That is an <span class="underline"><span class="underline">__</span></span> to the future.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> many cities are sick.</li>
+<li>They have a <span class="underline"><span class="underline">__</span></span>.</li>
+<li>This leads to <span class="underline"><span class="underline">__</span></span>.</li>
+<li>Our <span class="underline"><span class="underline">__</span></span> is in our hands.</li>
+<li>Our <span class="underline"><span class="underline">__</span></span> should be health.</li>
+<li>Use <span class="underline"><span class="underline">__</span></span> to decide.</li>
+<li>Follow your <span class="underline"><span class="underline">__</span></span>.</li>
+<li>Save old <span class="underline"><span class="underline">__</span></span>.</li>
+<li>It is in the <span class="underline"><span class="underline">__</span></span>.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> warns us.</li>
+<li>The Roman <span class="underline"><span class="underline">__</span></span> fell.</li>
+<li>They had a <span class="underline"><span class="underline">__</span></span> for power.</li>
+<li>They made a <span class="underline"><span class="underline">__</span></span> mistakes.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> was poor.</li>
+<li>The <span class="underline"><span class="underline">__</span></span> for life were gone.</li>
+<li><span class="underline"><span class="underline">__</span></span> the hypothesis.</li>
+<li>A <span class="underline"><span class="underline">__</span></span> to green energy works.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orge0684e3" class="outline-4">
+<h4 id="orge0684e3">Answers</h4>
+<div class="outline-text-4" id="text-orge0684e3">
+</div>
+<div id="outline-container-org5f21e2a" class="outline-5">
+<h5 id="org5f21e2a">Text 1 Answers</h5>
+<div class="outline-text-5" id="text-org5f21e2a">
+<p>
+<b>Comprehension:</b>
+</p>
+<ol class="org-ol">
+<li>passion (for old architecture)</li>
+<li>architecture</li>
+<li>suburbs</li>
+<li>legend (about treasure)</li>
+<li>a dozen</li>
+<li>instinct</li>
+<li>voyage</li>
+<li>inhabitants of (a nearby village)</li>
+<li>cough</li>
+<li>fate</li>
+<li>motive (of the curse)</li>
+<li>logic</li>
+<li>scheme (of the Empire)</li>
+<li>ingredients (for medicine)</li>
+<li>test the hypothesis</li>
+<li>harvest (of gold)</li>
+<li>fossil fuels</li>
+<li>cancer</li>
+<li>insult</li>
+</ol>
+<p>
+<b>Cloze:</b>
+</p>
+<ol class="org-ol">
+<li>passion / 2. architecture / 3. suburbs / 4. legend / 5. dozen / 6. instinct / 7. voyage / 8. inhabitants of / 9. cough / 10. fate / 11. motive / 12. logic / 13. scheme / 14. ingredients / 15. test the hypothesis / 16. harvest / 17. fossil fuels / 18. cancer / 19. insult</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org61add51" class="outline-5">
+<h5 id="org61add51">Text 2 Answers</h5>
+<div class="outline-text-5" id="text-org61add51">
+<p>
+<b>Comprehension:</b>
+</p>
+<ol class="org-ol">
+<li>cough / 2. fate / 3. scheme (to go to the doctor) / 4. insult / 5. inhabitants of (the town) / 6. fossil fuels / 7. motive (his work) / 8. passion (for history) / 9. architecture / 10. suburbs / 11. legend / 12. Empire / 13. a dozen / 14. instinct / 15. logic / 16. test the hypothesis / 17. ingredients / 18. voyage / 19. harvest / 20. cancer</li>
+</ol>
+<p>
+<b>Cloze:</b>
+</p>
+<ol class="org-ol">
+<li>cough / 2. fate / 3. scheme / 4. insult / 5. inhabitants of / 6. fossil fuels / 7. motive / 8. passion / 9. architecture / 10. suburbs / 11. legend / 12. Empire / 13. dozen / 14. instinct / 15. logic / 16. test the hypothesis / 17. ingredients / 18. voyage / 19. harvest / 20. cancer</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgcec5eec" class="outline-5">
+<h5 id="orgcec5eec">Text 3 Answers</h5>
+<div class="outline-text-5" id="text-orgcec5eec">
+<p>
+<b>Comprehension:</b>
+</p>
+<ol class="org-ol">
+<li>inhabitants of (the old city) / 2. architecture / 3. Empire / 4. legend / 5. scheme / 6. fossil fuels / 7. cancer / 8. cough / 9. fate / 10. suburbs / 11. instinct / 12. motive / 13. logic / 14. a dozen / 15. harvest / 16. ingredients / 17. test the hypothesis / 18. voyage / 19. insult</li>
+</ol>
+<p>
+<b>Cloze:</b>
+</p>
+<ol class="org-ol">
+<li>inhabitants of / 2. passion / 3. Empire / 4. legend / 5. scheme / 6. fossil fuels / 7. cancer / 8. cough / 9. fate / 10. suburbs / 11. instinct / 12. motive / 13. logic / 14. dozen / 15. harvest / 16. ingredients / 17. test the hypothesis / 18. voyage / 19. insult</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org5da730b" class="outline-5">
+<h5 id="org5da730b">Text 4 Answers</h5>
+<div class="outline-text-5" id="text-org5da730b">
+<p>
+<b>Comprehension:</b>
+</p>
+<ol class="org-ol">
+<li>scheme (for energy) / 2. fossil fuels / 3. insult / 4. inhabitants of (many cities) / 5. cancer / 6. fate / 7. motive / 8. logic / 9. instinct / 10. architecture / 11. suburbs / 12. legend / 13. Empire / 14. passion / 15. a dozen / 16. harvest / 17. ingredients / 18. test the hypothesis / 19. voyage</li>
+</ol>
+<p>
+<b>Cloze:</b>
+</p>
+<ol class="org-ol">
+<li>scheme / 2. fossil fuels / 3. insult / 4. inhabitants of / 5. cough / 6. cancer / 7. fate / 8. motive / 9. logic / 10. instinct / 11. architecture / 12. suburbs / 13. legend / 14. Empire / 15. passion / 16. dozen / 17. harvest / 18. ingredients / 19. test the hypothesis / 20. voyage</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org6a4d9ec" class="outline-2">
+<h2 id="org6a4d9ec"><a href="https://sendagirich.github.io/asuka_vocab/as_vocab_index.html">Home</a></h2>
+</div>
+</div>
+</body>
+</html>
